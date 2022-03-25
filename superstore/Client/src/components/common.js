@@ -5,7 +5,7 @@ export const BoxContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 20px;
 `;
 
 export const FormContainer = styled.form`
@@ -39,16 +39,7 @@ export const Input = styled.input`
   border-bottom: 1.4px solid transparent;
   transition: all 200ms ease-in-out;
   font-size: 12px;
-  &::placeholder {
-    color: rgba(200, 200, 200, 1);
-  }
-  &:not(:last-of-type) {
-    border-bottom: 1.5px solid rgba(200, 200, 200, 0.4);
-  }
-  &:focus {
-    outline: none;
-    border-bottom: 2px solid rgb(241, 196, 15);
-  }
+
 `;
 
 export const SubmitButton = styled.button`

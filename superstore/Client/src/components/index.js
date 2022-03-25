@@ -120,7 +120,7 @@ export function AccountBox(props) {
     }, 400);
   };
 
-  const contextValue = { switchToSignup, switchToSignin };
+  const contextValue = {switchToSignup, switchToSignin};
 
   return (
     <AccountContext.Provider value={contextValue}>
@@ -129,20 +129,16 @@ export function AccountBox(props) {
           <BackDrop
             initial={false}
             animate={isExpanded ? "expanded" : "collapsed"}
-            variants={backdropVariants}
-            transition={expandingTransition}
+
           />
           {active === "signin" && (
             <HeaderContainer>
               <HeaderText>Login</HeaderText>
-              <SmallText>Please sign-in to continue!</SmallText>
             </HeaderContainer>
           )}
           {active === "signup" && (
             <HeaderContainer>
-              <HeaderText>Create</HeaderText>
-              <HeaderText>Account</HeaderText>
-              <SmallText>Please sign-up to continue!</SmallText>
+              <HeaderText>Create Account</HeaderText>
             </HeaderContainer>
           )}
         </TopContainer>

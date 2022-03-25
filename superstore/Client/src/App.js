@@ -22,14 +22,15 @@ function App() {
     <>
   
     <div className="application">
-            <Helmet>
-                <style>{'body { background-color: salmon; }'}</style>
-            </Helmet>
-        </div>
+      <Helmet>
+          <style>{'body { background-color: salmon; }'}</style>
+      </Helmet>
+    </div>
+    
     <div>
       <text style={{fontSize:40, backgroundColor:'darkslateblue', width:50, marginLeft:600, color:'white' }}>Welcome To Superstore</text>
     </div>
-    <img src={logo} alt="logo_superstore" width={300}/>
+    
 
     <span className="block-example border border-primary"></span>
 
