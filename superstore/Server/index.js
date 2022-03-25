@@ -6,12 +6,23 @@
 //creating an express server
 const express = require('express')
 const app = express()
+const mysql = require('mysql')      // to get the mysql dependency
 
-
+const db = mysql.createConnection({
+    host: 'localhost',                      // host name
+    user: 'root',                           // username
+    password: 'password',                   // the password stored in vault
+    database: 'superstore_database'             // this is the name of the table
+})
 
 // res is to send, THE RESPONSE, to send it to the front end.
 // req is require, REQUIRE, get information from the front end.
 app.get('/', (req, res) => {
+    const sqlInsert = "INSERT INTO customer(Email, minAge, maxAge, customer_name) VALUES ('suvrat.kumra@ucalgary.ca', 10, 20, 'Suvrat');";
+    
+    db.query(sqlInsert, (err, result) => {
+        res.send("The new information added.")
+    })
     res.send('hello world');
 })
 
