@@ -15,12 +15,12 @@ return(
     
 
   <Router>
-    <div>
-      <Route path="/signup" component={Signup} />
-      
-    </div>
+    <Routes>
+      <Route path="/" />     
+      <Route path="/signup" element={<Signup />} />
+    </Routes>
   </Router>
-  <button >signup</button>
+  <button onClick = {<Signup />}>signup</button>
   </>
   
   
