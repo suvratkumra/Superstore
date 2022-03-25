@@ -1,7 +1,0 @@
-2022-03-25T06:13:58.503449Z 0 [Warning] [MY-010915] [Server] 'NO_ZERO_DATE', 'NO_ZERO_IN_DATE' and 'ERROR_FOR_DIVISION_BY_ZERO' sql modes should be used with strict mode. They will be merged with strict mode in a future release.
-2022-03-25T06:13:58.504865Z 0 [System] [MY-010116] [Server] C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqld.exe (mysqld 8.0.28) starting as process 12944
-2022-03-25T06:13:58.525170Z 0 [Warning] [MY-010075] [Server] No existing UUID has been found, so we assume that this is the first time that this server has been started. Generating a new UUID: c1ef706e-ac02-11ec-b959-04d4c479a019.
-2022-03-25T06:13:58.542528Z 1 [ERROR] [MY-011011] [Server] Failed to find valid data directory.
-2022-03-25T06:13:58.543391Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
-2022-03-25T06:13:58.544024Z 0 [ERROR] [MY-010119] [Server] Aborting
-2022-03-25T06:13:58.544884Z 0 [System] [MY-010910] [Server] C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqld.exe: Shutdown complete (mysqld 8.0.28)  MySQL Community Server - GPL.
