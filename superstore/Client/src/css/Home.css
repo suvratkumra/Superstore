@@ -1,3 +1,31 @@
 *{
-    background-color: black;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background: #4e54c8;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #8f94fb, #4e54c8);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #8f94fb, #4e54c8);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+*/
+
 }
+
+.name__container {
+    margin: 10px;
+    border: 3px solid rgb(245, 230, 230);
+    border-radius: 40%;
+}
+
+.superstore_name {
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 5rem;
+    font-weight: 900;
+    background-color: #ff8177;
+    background-image: linear-gradient(to left, #ffffff, #cfb9b9);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
