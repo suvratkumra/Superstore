@@ -16,7 +16,7 @@ return(
   <Router>
     <Routes>
       <Route path="/WelcomePage" element = {<WelcomePage />} /> 
-      <Route path="/" element={<Navigate replace to ="/Home" />} />
+      <Route path="/" element={<Navigate replace to ="/WelcomePage" />} />
       <Route path="/signup" element= {<Signup />} />
       <Route path="/mainpage" element={<MainPage />} />
       <Route path="*" element={<ErrorPage />} />
