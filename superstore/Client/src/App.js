@@ -6,7 +6,6 @@ import WelcomePage from "./Home/Home";
 import ForgotPassword from "./Authentication/ForgotPassword";
 import React, { useState } from 'react';
 import {Navigate} from 'react-router-dom';
-
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {

@@ -1,16 +1,256 @@
-/* Add your styles here */
-body {
-    background: #eee;
-    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  }
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background: #ca81ba;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #8f94fb, #4e54c8);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #e6e7e7, #d5d6da);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+*/
+
+}
+
+.name1 {
+  display: flex;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  position:relative;
+  left: -550px;
+  font-size: 3rem;
+  font-weight: 600;
+  bottom: -20px;
+  background-color: #ff8177;
+  background-image: linear-gradient(to left, #050505, #cfb9b9);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+
+.mainPage_container {
+  margin: 10px;
+  bottom: -10px;
+  height: 19cm;
+  border: 3px dotted rgb(8, 8, 8);
+  border-radius: 5%;
+}
+
+
+input{
+  position: relative;
+  margin: 10px;
+  left: 400px;
+  bottom: 30px;
+  height: 30px;
+  white-space: nowrap;
+
+  image-orientation: url(../images/search.png);
   
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
+  background-color: linear-gradient(to right, #e6e7e7, #d5d6da);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+*/
+
+}
+.styledBakery {
+  margin: 10px;
+  border: 2;
+  border-radius: 2cm;
+  border-color: black;
+  line-height: 2.5;
+  padding: 0 20px;
+  font-size: 3rem;
+  height: 3cm;
+  position: relative;
+  bottom: -100px;
+  left: 30px;
+  right: 50px;
+  width: 7.5cm;
+  text-align: center;
+  color: #fff;
+  border-radius: 10%;
+
   
-  li {
-    display: inline-block;
-    margin-right: 20px;
-  }
+  background: #4ECDC4;  /* fallback for old browsers */
+  background-image: linear-gradient(to top left,
+   rgba(0, 0, 0, .2),
+  rgba(0, 0, 0, .2) 30%,
+  rgba(0, 0, 0, 0));
+
+}
+
+.styledBakery:hover {
+  background-color: rgb(87, 3, 241);
+}
+
+
+.styledProduce {
+  margin: 10px;
+  height: 3cm;
+  position: relative;
+  left: 370px;
+  width: 7.5cm;
+  bottom: 0.8cm;
+  border: 2;
+  border-radius: 2cm;
+  border-color: black;
+  line-height: 2.5;
+  padding: 0 20px;
+  font-size: 3rem;
+ 
+
+  text-align: center;
+  color: #fff;
+  border-radius: 10%;
+
+  
+  background: #4ECDC4;  /* fallback for old browsers */
+  background-image: linear-gradient(to top left,
+   rgba(0, 0, 0, .2),
+  rgba(0, 0, 0, .2) 30%,
+  rgba(0, 0, 0, 0));
+
+}
+
+.styledProduce:hover {
+  background-color: rgb(87, 3, 241);
+}
+
+
+.styledDairy {
+  margin: 10px;
+  height: 3cm;
+  position: relative;
+  left: 700px;
+  width: 9cm;
+  bottom: 4.5cm;
+ 
+  border: 2;
+  border-radius: 2cm;
+  border-color: black;
+  line-height: 2.5;
+  padding: 0 20px;
+  font-size: 3rem;
+  
+
+  text-align: center;
+  color: #fff;
+  border-radius: 10%;
+
+  
+  background: #4ECDC4;  /* fallback for old browsers */
+  background-image: linear-gradient(to top left,
+   rgba(0, 0, 0, .2),
+  rgba(0, 0, 0, .2) 30%,
+  rgba(0, 0, 0, 0));
+
+}
+
+.styledDairy:hover {
+  background-color: rgb(87, 3, 241);
+}
+
+
+
+.styledEquipment {
+  margin: 10px;
+  height: 3cm;
+  position: relative;
+  left: 1080px;
+  width: 10cm;
+  bottom: 8cm;
+ 
+ 
+  border: 2;
+  border-radius: 2cm;
+  border-color: black;
+  line-height: 2.5;
+  padding: 0 20px;
+  font-size: 3rem;
+
+
+  text-align: center;
+  color: #fff;
+  border-radius: 10%;
+
+  
+  background: #4ECDC4;  /* fallback for old browsers */
+  background-image: linear-gradient(to top left,
+   rgba(0, 0, 0, .2),
+  rgba(0, 0, 0, .2) 30%,
+  rgba(0, 0, 0, 0));
+
+}
+
+.styledEquipment:hover {
+  background-color: rgb(87, 3, 241);
+}
+
+
+
+.styledMeat {
+  margin: 10px;
+  height: 3cm;
+  position: relative;
+  left: 200px;
+  width: 11cm;
+  bottom: 6cm;
+ 
+ 
+  border: 2;
+  border-radius: 2cm;
+  border-color: black;
+  line-height: 2.5;
+  padding: 0 20px;
+  font-size: 3rem;
+ 
+  text-align: center;
+  color: #fff;
+  border-radius: 10%;
+
+  
+  background: #4ECDC4;  /* fallback for old browsers */
+  background-image: linear-gradient(to top left,
+   rgba(0, 0, 0, .2),
+  rgba(0, 0, 0, .2) 30%,
+  rgba(0, 0, 0, 0));
+
+}
+
+.styledMeat:hover {
+  background-color: rgb(87, 3, 241);
+}
+
+
+.styledFrozen {
+  margin: 10px;
+  height: 3cm;
+  position: relative;
+  left: 800px;
+  width: 13cm;
+  bottom: 9.5cm;
+ 
+ 
+  border: 2;
+  border-radius: 2cm;
+  border-color: black;
+  line-height: 2.5;
+  padding: 0 20px;
+  font-size: 3rem;
+
+  text-align: center;
+  color: #fff;
+  border-radius: 10%;
+
+  background: #4ECDC4;  /* fallback for old browsers */
+  background-image: linear-gradient(to top left,
+  rgba(0, 0, 0, .2),
+  rgba(0, 0, 0, .2) 30%,
+  rgba(0, 0, 0, 0));
+
+}
+
+.styledFrozen:hover {
+  background-color: rgb(87, 3, 241);
+}
+
+
+
+
