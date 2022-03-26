@@ -62,6 +62,18 @@ app.post('/api/signup', (req, res) => {
     })
 })
 
+app.post('/api/login', (req, res) => {
+    const email = req.body.email;
+    const password = req.body.password;
+
+    const sqlCheck = "SELECT * FROM login_details WHERE Email_Id = ? AND Password = ?";
+    db.query(sqlCheck, [email, password], (err, result) => {
+        if(result.length > 0) {
+            return res.send("User Found, redirecting to the store page")
+        }
+    })
+})
+
 
 // to listen
 app.listen(3001, () => {

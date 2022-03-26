@@ -1,16 +1,16 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import '../css/Home.css';     // two dots because you have to go to previous directory first
-export default function WelcomePage() {
+import MainPage from '../mainPage/main';
+import Axios from 'axios'
 
-  // const [username, setUsername] = useState('')
-  //   const [emailId, setEmailId] = useState('')
-  //   const [password, setPassword] = useState('')
+export default function WelcomePage() {
 
   const initialValues = {email:"", password:""};
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
+  const [dataFetched, setDataFetched] = useState('');
 
   const handleChange = (e) => {
     const {name, value} = e.target;
@@ -21,16 +21,32 @@ export default function WelcomePage() {
     e.preventDefault();
     setFormErrors(validate(formValues));
     setIsSubmit(true);
+    if(isSubmit){
+      window.location.href = "http://localhost:3000/MainPage";
+    }
   }
 
-  useEffect = (() => {
+  useEffect(() => {
     if(Object.keys(formErrors).length === 0 && isSubmit) {
-      // correct form values with validation.
+      Axios.post("http://localhost:3001/api/login", {
+      email:formValues.email,
+      password:formValues.password
+      }).then((res) => {
+        console.log(res.data);
+       setDataFetched(res.data);
+      })    
+      console.log(dataFetched);
     }
+    if(dataFetched.length > 0)
+      setIsSubmit(true);
+    
+    console.log(isSubmit);
+    setDataFetched('');
   },[formErrors]);
+
+
   const validate = (values) => {
     const errors = {};
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
     if(!values.email) {
       errors.email = "Email is required!";
     }
