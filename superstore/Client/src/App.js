@@ -1,9 +1,8 @@
-import "./App.css";
-import { useNavigate } from "react-router-dom";
-import Signup from './signup';
+import "./css/App.css";
+import Signup from './Authentication/signup';
 import MainPage from "./mainPage/main";
-import ErrorPage from "./ErrorPage";
-import Home from "./Home";
+import ErrorPage from "./HelpPages/ErrorPage";
+import WelcomePage from "./Home/Home";
 import React, { useState } from 'react';
 import {Navigate} from 'react-router-dom';
 
@@ -16,7 +15,7 @@ return(
   
   <Router>
     <Routes>
-      <Route path="/Home" element = {<Home />} /> 
+      <Route path="/WelcomePage" element = {<WelcomePage />} /> 
       <Route path="/" element={<Navigate replace to ="/Home" />} />
       <Route path="/signup" element= {<Signup />} />
       <Route path="/mainpage" element={<MainPage />} />

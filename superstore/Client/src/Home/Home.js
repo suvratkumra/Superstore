@@ -1,6 +1,6 @@
 import React from 'react';
-
-export default function Home() {
+import '../css/Home.css';     // two dots because you have to go to previous directory first
+export default function WelcomePage() {
   return (
     <div>
         <span class = "superstore_name">WELCOME TO SUPERSTORE</span>
