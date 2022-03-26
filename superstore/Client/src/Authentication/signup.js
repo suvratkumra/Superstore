@@ -10,6 +10,7 @@ function Signup() {
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(true);
+  const [dataFetched, setDataFetched] = useState('');
 
   const handleChange = (e) => {
     const {name, value} = e.target;
@@ -19,49 +20,37 @@ function Signup() {
   const handleSubmit = (e) => {
     e.preventDefault();       // so that page doesnt refresh on submit
     setFormErrors(validate(formValues));
-    // post request into our backend
-    console.log(isSubmit);
-    console.log(Object.keys(formErrors));
-    if(Object.keys(formErrors).length === 0 && isSubmit){
+    setIsSubmit(true);   
+  }
+
+  useEffect((values) => {
+    if(Object.keys(formErrors).length === 0 && isSubmit) {
       console.log("working");
       Axios.post("http://localhost:3001/api/signup", {
       username:formValues.username,
       email:formValues.email,
       password:formValues.password
-      }).then(() => {
-      console('successful insert of sql');
-      })
-    }
-    
-  }
-
-  useEffect = ((values) => {
-    if(Object.keys(formErrors).length === 0 && isSubmit) {
-      alert('Submitted');
-      
+      }).then((res) => {
+       setDataFetched(res.data);
+      })    
     }
   },[formErrors]);
 
   const validate = (values) => {
     const errors = {};
     if(!values.email) {
-      setIsSubmit(false);
       errors.email = "Email is required!";
     }
     if (!values.password) {
-      setIsSubmit(false);
       errors.password = "Password is required!";
     }
     if (!values.username) {
-      setIsSubmit(false);
       errors.username = "Username is required";
     }
     if(values.confirmPassword !== values.password) {
-      setIsSubmit(false);
       errors.confirmPassword = "Two passwords do not match";
     }
     if(!values.confirmPassword){
-      setIsSubmit(false);
       errors.confirmPassword = "Please enter the password again";
     }
     return errors;
@@ -74,6 +63,7 @@ function Signup() {
     </div>
     
     <form className = "signup" onSubmit={handleSubmit}>
+       <p> {dataFetched} </p>
       <label for = "username">Username*: </label>
       <input type = "text" 
         name = "username" 
