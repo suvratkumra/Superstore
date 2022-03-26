@@ -1,6 +1,7 @@
 import "./App.css";
 import { useNavigate } from "react-router-dom";
 import Signup from './signup';
+import MainPage from "./mainPage/main";
 
 import React, { useState } from 'react';
 import {Link} from "react-router-dom";
@@ -18,6 +19,7 @@ return(
     <Routes>
       <Route path="/" />     
       <Route path="/signup" element={<Signup />} />
+      <Route path="/mainpage" element={<MainPage />} />
     </Routes>
   </Router>
   <button onClick = {<Signup />}>signup</button>
