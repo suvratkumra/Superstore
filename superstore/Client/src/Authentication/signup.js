@@ -3,6 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import '../css/signup.css'
 import Axios from 'axios'
+import {Navigate} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import MainPage from '../mainPage/main';
 
 function Signup() {
 
@@ -20,7 +23,11 @@ function Signup() {
   const handleSubmit = (e) => {
     e.preventDefault();       // so that page doesnt refresh on submit
     setFormErrors(validate(formValues));
-    setIsSubmit(true);   
+    setIsSubmit(true);  
+    console.log(isSubmit);
+    if(isSubmit){
+      window.location.href = "http://localhost:3000/MainPage";
+    }
   }
 
   useEffect((values) => {
@@ -34,6 +41,8 @@ function Signup() {
       })    
     }
     setDataFetched('');
+    if(dataFetched.length === 0)
+      setIsSubmit(true);
   },[formErrors]);
 
   const validate = (values) => {

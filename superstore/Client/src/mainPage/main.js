@@ -5,7 +5,7 @@ import Search from '../images/search.png';
 import { useState } from 'react';
 
 
-export default function MainPage() {
+function MainPage() {
   const [username, setSearch] = useState('')
 
   return (
@@ -16,8 +16,8 @@ export default function MainPage() {
             <span class = "name1"> SUPERSTORE </span>
         </div>  
         <div className='searchBar_container'>
-        <img src={Search} alt="search" width={20}/>
-          <input type = "text" size={80} 
+                    <input className = 'searchbar' 
+            type = "text" size={80} 
             name = "search" 
             placeholder='Search'
    
@@ -79,5 +79,6 @@ export default function MainPage() {
     </>
   )
 }
+export default MainPage;
 
 
