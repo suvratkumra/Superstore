@@ -1,11 +1,44 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import '../css/Home.css';     // two dots because you have to go to previous directory first
 export default function WelcomePage() {
 
-  const [username, setUsername] = useState('')
-    const [emailId, setEmailId] = useState('')
-    const [password, setPassword] = useState('')
+  // const [username, setUsername] = useState('')
+  //   const [emailId, setEmailId] = useState('')
+  //   const [password, setPassword] = useState('')
+
+  const initialValues = {email:"", password:""};
+  const [formValues, setFormValues] = useState(initialValues);
+  const [formErrors, setFormErrors] = useState({});
+  const [isSubmit, setIsSubmit] = useState(false);
+
+  const handleChange = (e) => {
+    const {name, value} = e.target;
+    setFormValues({...formValues, [name]: value});
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setFormErrors(validate(formValues));
+    setIsSubmit(true);
+  }
+
+  useEffect = (() => {
+    if(Object.keys(formErrors).length === 0 && isSubmit) {
+      // correct form values with validation.
+    }
+  },[formErrors]);
+  const validate = (values) => {
+    const errors = {};
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+    if(!values.email) {
+      errors.email = "Email is required!";
+    }
+    if (!values.password) {
+      errors.password = "Password is required!";
+    }
+    return errors;
+  };
 
   return (
     <>
@@ -18,25 +51,38 @@ export default function WelcomePage() {
 
 
       {/* Now making the login page */}
-      <div className = 'login__container'>
+      <form className = 'login__container' onSubmit={handleSubmit}>
         <div className='login__containerHeader'>
           A registered user? Login below...
         </div>
         <div className='login__credentials'>
-          <label for = "username">Username: </label>
-          <input type = "text" name = "username" onChange={(e) => {
-            setUsername(e.target.value)
-          }}/>
-          <label for = "Email_Id">EmailID: </label>
-          <input type = "text" name = "Email_Id" onChange={(e) => {
-            setEmailId(e.target.value)
-          }}/>
-          <label for = "password">Password: </label>
-          <input type = "password" name = "username" onChange={(e) => {
-            setPassword(e.target.value)
-          }}/>
+          
+          <label for = "Email_Id">Email ID*: </label>
+          <input type = "email" 
+            name = "email" 
+            placeholder='Email'
+            value = { formValues.email } 
+            onChange= {handleChange} />
+            <p>{ formErrors.email }</p>
+            
+          <label for = "password">Password*: </label>
+          <input type = "password" 
+            name = "password"
+            placeholder='password' 
+            value = { formValues.password }
+            onChange= {handleChange} />
+            <p>{ formErrors.password }</p>
+          <button className = 'LoginButton'> Login </button>
         </div>
-      </div>
+        <div className='forgotPassword__container'>
+          <span className='forgotPassword'> <i> <a href = '/ForgotPassword'> Forgot your password? </a> </i> </span>
+        </div>
+        <br/>
+        <div className='signup__container'>
+          <span> New user? </span>
+          <span className='signup'><a href = "/signup">Sign Up!</a></span>
+        </div>
+      </form>
     </div>
     
 

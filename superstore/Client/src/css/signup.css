@@ -1,0 +1,46 @@
+.welcome {
+    padding: 100px;
+    background-color: white;
+      background-image: linear-gradient(to right, #ffefba, #ffffff);
+      background-size: 100%;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-text-fill-color: transparent;
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+      font-weight: 900;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 3rem;
+  }
+  
+  .signup {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 20px 250px;
+        padding: 30px;
+        border: 2px solid black;
+        border-radius: 30px;
+  }
+
+  .signup input {
+    width: 300px;
+    height: 30px;
+    margin: 10px;
+    padding: 5px;
+    font-size: large;
+    background-color: rgb(250, 233, 233);
+    border-radius: 5px;
+}
+
+.make_btn {
+    display: flex;
+    justify-content: center;
+    font-style: italic;
+    width: 200px;
+
+}

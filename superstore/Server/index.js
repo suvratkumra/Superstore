@@ -10,7 +10,7 @@ const cors = require('cors')
 const app = express()
 const mysql = require('mysql')      // to get the mysql dependency
 
-const db = mysql.createConnection({
+const db = mysql.createPool({
     host: 'localhost',                      // host name
     user: 'root',                           // username
     password: 'password',                   // the password stored in vault
@@ -25,22 +25,29 @@ app.use(express.json())     // allows to get the request from frontend.
 // res is to send, THE RESPONSE, to send it to the front end.
 // req is require, REQUIRE, get information from the front end.
 app.get('/', (req, res) => {
-   
+    res.send("hello");
 })
 
-app.post('/signup/insert', (req, res) => {
+app.post('/api/signup', (req, res) => {
 
-    // requesting information from front end
-    const Username = req.body.Username
-    const Email_Id = req.body.Email_Id
-    const Password = req.body.Password
+    const username = req.body.username;
+    const email = req.body.email;
+    const password = req.body.password;
 
-    const sqlInsert = "INSERT INTO login_details(Username, Email_Id, Password) VALUES (?,?,?)";
+    // first we will check if the emailId already exists in database or not.
+    const checkingQuery = "SELECT * FROM login_details WHERE Email_id = ?;"
+    db.query(checkingQuery, [email], (err, result) => {
+        console.log(err);
+        console.log(result);
+    })
     
-    db.query(sqlInsert, [Username, Email_Id, Password], (err, result) => {
-
-    });
+    // const sqlInsert = "INSERT INTO login_details (Username, Email_Id, Password) VALUES (?,?,?);";
+    // console.log(sqlInsert, [username, email, password]);
+    // db.query(sqlInsert, [username, email, password], (err, result) => {
+    //     console.log(err);
+    // })
 })
+
 
 // to listen
 app.listen(3001, () => {
