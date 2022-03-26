@@ -9,7 +9,7 @@ function Signup() {
   const initialValues = {email:"", password:"", username:"", confirmPassword:""};
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
-  const [isSubmit, setIsSubmit] = useState(true);
+  const [isSubmit, setIsSubmit] = useState(false);
   const [dataFetched, setDataFetched] = useState('');
 
   const handleChange = (e) => {
@@ -25,7 +25,6 @@ function Signup() {
 
   useEffect((values) => {
     if(Object.keys(formErrors).length === 0 && isSubmit) {
-      console.log("working");
       Axios.post("http://localhost:3001/api/signup", {
       username:formValues.username,
       email:formValues.email,
@@ -34,6 +33,7 @@ function Signup() {
        setDataFetched(res.data);
       })    
     }
+    setDataFetched('');
   },[formErrors]);
 
   const validate = (values) => {
