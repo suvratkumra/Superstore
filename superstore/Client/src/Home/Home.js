@@ -20,28 +20,27 @@ export default function WelcomePage() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormErrors(validate(formValues));
-    setIsSubmit(true);
-    if(isSubmit){
+    console.log(dataFetched);
+    
+    if(dataFetched.length > 0){
       window.location.href = "http://localhost:3000/MainPage";
     }
   }
 
   useEffect(() => {
-    if(Object.keys(formErrors).length === 0 && isSubmit) {
+    if(Object.keys(formErrors).length === 0) {
       Axios.post("http://localhost:3001/api/login", {
       email:formValues.email,
       password:formValues.password
       }).then((res) => {
-        console.log(res.data);
-       setDataFetched(res.data);
-      })    
-      console.log(dataFetched);
+        setDataFetched(res.data);
+        //console.log(dataFetched);
+      }) 
+      setDataFetched('')
+      if(dataFetched > 0){
+        setIsSubmit(true);
+      }
     }
-    if(dataFetched.length > 0)
-      setIsSubmit(true);
-    
-    console.log(isSubmit);
-    setDataFetched('');
   },[formErrors]);
 
 
