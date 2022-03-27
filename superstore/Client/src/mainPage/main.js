@@ -130,15 +130,36 @@ function MainPage() {
 
       <footer>
         <div className='footer__container'>
-          <div className='about__container'>
-            ABOUT
+          <div className='headings'>
+            <div className='about__container'>
+              <span>ABOUT</span>
+            </div>
+            <div className='contact__container'>
+              CONTACT US
+            </div>
+            <div className='news__container'>
+              LATEST NEWS
+            </div>
           </div>
-          <div className='contact__container'>
-            CONTACT US
+          <hr/>
+          <div className='informations'>
+            <div className='about__information'>
+              A superstore website where <br/>
+              families can forget about their problems <br/>
+              and have a smooth shopping experience with <br/>
+              wide variety of products to choose from!<br/>
+            </div>
+
+            <div className='contactUs__information'>
+              <span className='name'>Suvrat Kumra<a href = 'https://www.linkedin.com/in/suvrat-kumra-420017193/'> (LinkedIn)</a></span><br/>
+              <span className='name'>Shreya Patel<a href = 'linkedin.com/in/shreya-patel-9902b61b7'> (LinkedIn)</a></span>
+            </div>
+
+            <div className='latestNews__container'>
+              MORE DEALS AND PROMOS <br/>COMING SOON!...<br/>
+            </div>
           </div>
-          <div className='news_container'>
-            LATEST NEWS
-          </div>
+          
         </div>
       </footer>
 
