@@ -2,10 +2,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  /* background: #ca81ba;  /* fallback for old browsers */
-  /* background: -webkit-linear-gradient(to right, #8f94fb, #4e54c8);  Chrome 10-25, Safari 5.1-6 */
-  /* background: linear-gradient(to right, #e6e7e7, #d5d6da);W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
-
 }
 
 .name1 {
@@ -25,7 +21,11 @@
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
 }
-
+.ageName{
+  display: flex;
+  position:absolute;
+  left: 400px;
+}
 
 .mainPage_container {
   margin: 10px;

@@ -25,6 +25,18 @@ function MainPage() {
         
         </div>  
 
+        <div className= 'ageName_container'>
+          <span class = "ageName"> Filter by Age</span>
+        </div>
+
+        <div className= 'cartName_container'>
+          <span class = "cartName"> CART</span>
+        </div>
+
+        <div className= 'menu_container'>
+          <span class = "menu"> MENU</span>
+        </div>
+
         <div className='bakery_container'>
           <button class="favorite styledBakery"
               type="button">
