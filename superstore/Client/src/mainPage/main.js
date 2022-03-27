@@ -50,23 +50,24 @@ function MainPage() {
     </div>
 
       <div className='departments__container'>
+        <span className='department__name'>DEPARTMENTS</span>
         <div className='row1__container'>
           <div className='Bakery'>
-            <button className="favorite styledBakery"
+            <button className="favorite buttonStyle"
                 type="button">
                 BAKERY
             </button>
           </div>
 
           <div className='produce_container'>
-            <button className="favorite styledBakery"
+            <button className="favorite buttonStyle"
                   type="button">
                   PRODUCE
               </button>
           </div> 
 
           <div className='dairy_container'>
-            <button className="favorite styledBakery"
+            <button className="favorite buttonStyle"
                   type="button">
                   DAIRY/EGGS
               </button>
@@ -75,7 +76,7 @@ function MainPage() {
 
         <div className='row2__container'>
           <div className='equipment_container'>
-            <button className="favorite styledBakery"
+            <button className="favorite buttonStyle"
                   type="button">
                   EQUIPMENT
               </button>
@@ -83,14 +84,14 @@ function MainPage() {
 
 
           <div className='meat_container'>
-            <button className="favorite styledBakery"
+            <button className="favorite buttonStyle"
                   type="button">
                   MEAT/SEAFOOD
               </button>
           </div> 
 
           <div className='frozen_container'>
-            <button className="favorite styledBakery"
+            <button className="favorite buttonStyle"
                   type="button">
                   FROZEN
               </button>
@@ -99,28 +100,41 @@ function MainPage() {
 
         <div className='row3__container'>
           <div className='toys__container'>
-            <button className="styledBakery"
+            <button className="buttonStyle"
                   type="button">
                   TOYS
             </button>
           </div>
 
           <div className='Cosmetics__container'>
-            <button className="styledBakery"
+            <button className="buttonStyle"
                   type="button">
                   CONTAINERS
             </button>
           </div>
 
           <div className='Medical__container'>
-            <button className="styledBakery"
+            <button className="buttonStyle"
                   type="button">
                   MEDICAL
             </button>
           </div>
         </div>
       </div>        
-  
+
+      <footer>
+        <div className='footer__container'>
+          <div className='about__container'>
+            ABOUT
+          </div>
+          <div className='contact__container'>
+            CONTACT US
+          </div>
+          <div className='news_container'>
+            LATEST NEWS
+          </div>
+        </div>
+      </footer>
 
 
   
