@@ -241,16 +241,32 @@ a {
   margin-left:475px;
 }
 
-@media screen and (max-width:1300px) {
-  .footer__container {
-    display: flex;
-    margin: auto 100px;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    align-self: center;
+@media screen and (max-width:1300px){
+  .headings {
+    font-size: 1.5rem;
+  }
+
+  .informations{
+    font-size: small;
+  }
+
+  .contactUs__information {
+    margin-left:90px;
+  }
+
+  .contact__container {
+    margin-left:20px;
+  }
+
+  .news__container {
+    padding-right:10px;
+  }
+
+  .latestNews__container {
+    margin-left:250px;
   }
 }
+
 
 .button {
   background-color: #1ee682;
