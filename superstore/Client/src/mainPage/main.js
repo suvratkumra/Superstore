@@ -29,6 +29,7 @@ function MainPage() {
         <span className = "menu"> MENU</span>
       </div>
     </div>
+
     <div className='search__container'>
       <div className='searchbar_withImage'>
         <div className='searchbar__container'>
@@ -47,27 +48,25 @@ function MainPage() {
           <span className = "ageName"> Filter by Age</span>
         </div>
     </div>
-        
-
-        
 
       <div className='departments__container'>
         <div className='row1__container'>
-          <button className="favorite styledBakery"
+          <div className='Bakery'>
+            <button className="favorite styledBakery"
                 type="button">
                 BAKERY
             </button>
-          </div> 
+          </div>
 
           <div className='produce_container'>
-            <button className="favorite styledProduce"
+            <button className="favorite styledBakery"
                   type="button">
                   PRODUCE
               </button>
           </div> 
 
           <div className='dairy_container'>
-            <button className="favorite styledDairy"
+            <button className="favorite styledBakery"
                   type="button">
                   DAIRY/EGGS
               </button>
@@ -76,7 +75,7 @@ function MainPage() {
 
         <div className='row2__container'>
           <div className='equipment_container'>
-            <button className="favorite styledEquipment"
+            <button className="favorite styledBakery"
                   type="button">
                   EQUIPMENT
               </button>
@@ -84,14 +83,14 @@ function MainPage() {
 
 
           <div className='meat_container'>
-            <button className="favorite styledMeat"
+            <button className="favorite styledBakery"
                   type="button">
                   MEAT/SEAFOOD
               </button>
           </div> 
 
           <div className='frozen_container'>
-            <button className="favorite styledFrozen"
+            <button className="favorite styledBakery"
                   type="button">
                   FROZEN
               </button>
@@ -100,27 +99,27 @@ function MainPage() {
 
         <div className='row3__container'>
           <div className='toys__container'>
-            <button className="toys"
+            <button className="styledBakery"
                   type="button">
                   TOYS
             </button>
           </div>
 
           <div className='Cosmetics__container'>
-            <button className="cosmetics"
+            <button className="styledBakery"
                   type="button">
                   CONTAINERS
             </button>
           </div>
 
           <div className='Medical__container'>
-            <button className="medical"
+            <button className="styledBakery"
                   type="button">
                   MEDICAL
             </button>
           </div>
         </div>
-        
+      </div>        
   
 
 
