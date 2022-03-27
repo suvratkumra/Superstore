@@ -20,10 +20,6 @@
   margin-left: 50px;
 }
 
-.menu__container{
-  margin-right: 200px;
-}
-
 .cart__container {
   margin-left: 800px;
 }
@@ -279,8 +275,8 @@ a {
 
 
 .dropdown {
-  margin-top: 50px;
-  margin-right: 100px;
+  margin-top: 45px;
+  margin-right: 350px;
   font-size:1.0rem;
   position: relative;
   display: inline-block;
@@ -308,6 +304,93 @@ a {
   display: block;
 }
 
-.dropdown:hover .dropbtn {
+.dropdown:hover .button {
   background-color: #3e8e41;
+}
+
+
+#menu__toggle {
+  opacity: 0;
+}
+
+#menu__toggle:checked + .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0deg);
+}
+
+#menu__toggle:checked + .menu__btn > span {
+  transform: rotate(45deg);
+}
+
+#menu__toggle:checked + .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+#menu__toggle:checked ~ .menu__box {
+  right: 0;
+}
+
+.menu__item a:hover {
+  background-color: #CFD8DC;
+}
+.menu__item a {
+  display: block;
+  padding: 20px;
+  color: #333;
+  font-family:'Times New Roman', Times, serif;
+  font-size: 20px;
+
+}
+
+.menu__btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 26px;
+  height: 26px;
+  cursor:pointer;
+  z-index: 10;
+}
+
+.menu__btn > span
+{
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #eee2e2;
+}
+
+.menu__btn > span::before
+{
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #eee2e2;
+  content: '';
+  top: -10px;
+}
+
+.menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #eee2e2;
+  content: '';
+  top: 10px;
+
+
+}
+
+.menu__box {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 300px;
+  height: 100%;
+  padding: 80px 0;
+  background-color: #759cb6;
 }

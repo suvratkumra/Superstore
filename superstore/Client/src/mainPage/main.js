@@ -25,9 +25,21 @@ function MainPage() {
         <span className = "cartName"> CART</span>
       </div>
 
-      <div className= 'menu__container'>
-        <span className = "menu"> MENU</span>
+      <div className="hamburger-menu">
+        <input id="menu__toggle" type="checkbox" />
+        <label className="menu__btn" for="menu__toggle">
+          <span></span>
+        </label>
+
+        <div className="menu__box">
+          <div className="menu__item">
+            <a href ="#">View History</a>
+            <a href="#">Account Settings</a>
+          </div>
+          
+        </div>
       </div>
+      
     </div>
 
     <div className='search__container'>
