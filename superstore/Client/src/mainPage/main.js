@@ -44,9 +44,15 @@ function MainPage() {
         </div>
       </div>
        
-        <div className= 'ageName__container'>
-          <span className = "ageName"> Filter by Age</span>
+      <div className="dropdown">
+        <button className="button">Filter by Age</button>
+        <div className="dropdown-content">
+          <a href="#">1 to 10 years</a>
+          <a href="#">11 to 25 years</a>
+          <a href="#">26 to 50 years</a>
+          <a href="#">50+ years</a>
         </div>
+      </div>
     </div>
 
       <div className='departments__container'>
