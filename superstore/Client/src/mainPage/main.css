@@ -190,21 +190,55 @@ footer {
 
 
 footer {
+  margin-top:100px;
   background-color: black;
   color:white;
 }
 
 .footer__container {
+  padding-top: 10px;
+  padding-left:50px;
+  padding-right: 50px;
   display: flex;
-  margin: auto 300px;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  align-self: center;
+  flex-direction: column;
 }
 
-.about__container {
-  /* //margin: auto 100px; */
+
+.headings {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.contact__container {
+  margin-left:200px;
+}
+
+.news__container {
+  padding-right:40px;
+}
+
+.informations {
+  display: flex;
+  flex-direction: row;
+  font-family:'Times New Roman', Times, serif;
+  font-size: large;
+  margin-top:40px;
+}
+
+.contactUs__information {
+  margin-left:450px;
+}
+
+a {
+  color:rgb(184, 153, 241);
+}
+
+.latestNews__container {
+  margin-left:475px;
 }
 
 @media screen and (max-width:1300px) {
