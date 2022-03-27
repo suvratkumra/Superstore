@@ -68,7 +68,7 @@ app.post('/api/login', (req, res) => {
 
     const sqlCheck = "SELECT * FROM login_details WHERE Email_Id = ? AND Password = ?";
     db.query(sqlCheck, [email, password], (err, result) => {
-        console.log(result.length);
+        // console.log(result.length);
         if(result.length > 0) {
             return res.send("User Found, redirecting to the store page");
         }

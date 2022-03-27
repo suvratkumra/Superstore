@@ -45,12 +45,21 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
-
 }
 
 .ageName__container{
   margin-right: 350px;
+}
+
+.searchbar_withImage {
+  display: flex;
+  flex-direction: row;
+}
+
+img {
+  max-width: 30px;
+  max-height:30px;
+  size:25px;
 }
 
 .searchbar {

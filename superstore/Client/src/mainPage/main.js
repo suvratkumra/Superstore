@@ -3,7 +3,11 @@ import { useNavigate } from "react-router-dom";
 import "./main.css";
 import Search from '../images/search.png';
 import { useState } from 'react';
+import search from '../images/search.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
+
+var FontAwesome = require('react-fontawesome');
 
 function MainPage() {
   const [username, setSearch] = useState('')
@@ -26,16 +30,22 @@ function MainPage() {
       </div>
     </div>
     <div className='search__container'>
-      <div className='searchbar__container'>
+      <div className='searchbar_withImage'>
+        <div className='searchbar__container'>
           <input className = 'searchbar' 
             type = "text" 
             name = "search" 
             placeholder='Search'
           />
-        </div> 
-        <div className= 'ageName__container'>
-        <span className = "ageName"> Filter by Age</span>
+        </div>
+        <div className='search__image'>
+          <img src= {search} alt="Logo"/>
+        </div>
       </div>
+       
+        <div className= 'ageName__container'>
+          <span className = "ageName"> Filter by Age</span>
+        </div>
     </div>
         
 
