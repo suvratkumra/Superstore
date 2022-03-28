@@ -1,0 +1,418 @@
+import React, { useState } from 'react'
+import '../css/Bakery.css'
+import { BsFillArrowLeftCircleFill } from "react-icons/bs";
+import { GiMagnifyingGlass } from "react-icons/gi";
+
+import mccain_frenchFriedPotatoes from "../images/Frozen/mccain_frenchFriedPotatoes.png"
+import michelina_macNCheese from "../images/Frozen/michelina_macNCheese.png"
+import NN_chopped_spinach300g from "../images/Frozen/NN_chopped_spinach300g.png"
+import NN_crinkleCut_FriedPotatoes from "../images/Frozen/NN_crinkleCut_FriedPotatoes.png"
+import NN_friedPotatoes_Crispy_SkinOn from "../images/Frozen/NN_friedPotatoes_Crispy_SkinOn.png"
+import NN_green_peas750g from "../images/Frozen/NN_green_peas750g.png"
+import NN_mixed_vegatables750g from "../images/Frozen/NN_mixed_vegatables750g.png"
+import NN_mixed_vegatables2000g from "../images/Frozen/NN_mixed_vegatables2000g.png"
+import NN_peas_carrots750g from "../images/Frozen/NN_peas_carrots750g.png"
+import NN_potato_patties20ea from "../images/Frozen/NN_potato_patties20ea.png"
+import NN_whole_kernel_corns750g from "../images/Frozen/NN_whole_kernel_corns750g.png"
+import PC_broccoli_florets500g from "../images/Frozen/PC_broccoli_florets500g.png"
+import PC_mango_chunks600g from "../images/Frozen/PC_mango_chunks600g.png"
+import PC_pacific_white_shrimp_raw_peeled from "../images/Frozen/PC_pacific_white_shrimp_raw_peeled.png"
+import PC_sliced_strawberries600g from "../images/Frozen/PC_sliced_strawberries600g.png"
+
+
+export default function Frozen() {
+  const initialBoolean = false;
+  const initializeValues = {mccain_frenchFriedPotatoes:initialBoolean, michelina_macNCheese:initialBoolean, NN_chopped_spinach300g:initialBoolean, NN_chopped_spinach300g:initialBoolean, NN_friedPotatoes_Crispy_SkinOn:initialBoolean, NN_green_peas750g:initialBoolean, NN_mixed_vegatables750g:initialBoolean, NN_mixed_vegatables2000g:initialBoolean, NN_peas_carrots750g:initialBoolean, NN_potato_patties20ea:initialBoolean, NN_whole_kernel_corns750g:initialBoolean, PC_broccoli_florets500g :initialBoolean, PC_mango_chunks600g:initialBoolean, PC_pacific_white_shrimp_raw_peeled:initialBoolean, naan:initialBoolean};
+  const [cartText, setCartText] = useState(initializeValues);
+  const [showButton, setShowButton] = useState({showButton: false, showButton2: false});  
+  const initializeNumber = {mccain_frenchFriedPotatoes:1, michelina_macNCheese:1, NN_chopped_spinach300g:1, NN_chopped_spinach300g:1, NN_friedPotatoes_Crispy_SkinOn:1, NN_green_peas750g:1, NN_mixed_vegatables750g:1, NN_mixed_vegatables2000g:1, NN_peas_carrots750g:1, NN_potato_patties20ea:1, NN_whole_kernel_corns750g:1, PC_broccoli_florets500g :1, PC_mango_chunks600g:1, PC_pacific_white_shrimp_raw_peeled:1, PC_sliced_strawberries600g:1};
+  const [itemIncrementer, setItemIncrementer] = useState(initializeNumber);
+
+
+  return (
+    <>
+    
+    <div className='header__container'>
+      <div className='superstore__container'>
+          <span class = "name1">  SUPERSTORE  </span>
+      </div>  
+    </div>
+
+    <div className = 'previous__container'>
+      <div classname = 'back'>
+         <a href = '../MainPage' ><span class = "back_icon"><BsFillArrowLeftCircleFill /></span></a>
+        <span class='goto_previous'>  View all departments</span>
+      </div>
+      
+    <div className = 'search__container'>
+      <div>
+        <input className = 'searchbar__departments' 
+            type = "text" 
+            name = "search" 
+            placeholder='Search'
+          />
+      </div>
+  
+      
+      <span class = 'search__image'> <GiMagnifyingGlass/> </span>
+    </div>
+    </div>
+    {/* <div>
+      {console.log(showButton)}
+      {showButton.showButton ? <h1> SHow me </h1> : null}
+      {showButton.showButton2 ? <h1> SHow me </h1> : null}
+    </div> */}
+
+    <div className='products_name__container'>
+      <div className='departmentName'>
+        FROZEN
+      </div>
+
+
+
+      <div className='bigProducts__container'>
+        <div className='item__container'>
+          <span className = 'company_name'>Country Harvest</span>
+          <img src = { mccain_frenchFriedPotatoes } alt = 'Bread Picture' className = 'product_image' />
+          <div className = 'price_product__container'>
+            <span className = 'product_name'>14 Grain Whole Wheat Bread</span>
+            <span className = 'price'>$3.21</span> 
+          </div>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, mccain_frenchFriedPotatoes: true});}}>
+            {
+              cartText.mccain_frenchFriedPotatoes ? <div className = 'increment__container'> 
+                                      <button className = 'minus' onClick = {() => {
+                                                                                    if(itemIncrementer.mccain_frenchFriedPotatoes > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, mccain_frenchFriedPotatoes: itemIncrementer.mccain_frenchFriedPotatoes-1});                                                                          
+                                                                                    } }> - </button>
+                                      <span className = 'number'> {itemIncrementer.mccain_frenchFriedPotatoes} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, mccain_frenchFriedPotatoes: itemIncrementer.mccain_frenchFriedPotatoes+1}) }> + </button>                                    
+                                     </div> 
+                                     : <span className = 'add_to_cart__name'> Add to Cart </span>
+            }
+          </button>
+        </div>
+
+
+
+        <div className='item__container'>
+          <span className = 'company_name'>Farmer's Market</span>
+          <img src = { michelina_macNCheese } alt = 'Bread Picture' className = 'product_image' />
+          <div className = 'price_product__container'>
+            <span className = 'product_name'>Banana Chocolate Muffin</span>
+            <span className = 'price'>$3.21</span> 
+          </div>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, michelina_macNCheese: true});}}>
+            {
+              cartText.michelina_macNCheese ? <div className = 'increment__container'> 
+                                      <button className = 'minus' onClick = {() => {
+                                                                                    if(itemIncrementer.michelina_macNCheese > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, michelina_macNCheese: itemIncrementer.michelina_macNCheese-1});                                                                          
+                                                                                    } }> - </button>
+                                      <span className = 'number'> {itemIncrementer.michelina_macNCheese} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, michelina_macNCheese: itemIncrementer.michelina_macNCheese+1}) }> + </button>                                    
+                                     </div> 
+                                     : <span className = 'add_to_cart__name'> Add to Cart </span>
+            }
+          </button>
+        </div>
+
+        <div className='item__container'>
+          <span className = 'company_name'>Farmer's Market</span>
+          <img src = { NN_chopped_spinach300g } alt = 'Bread Picture' className = 'product_image' />
+          <div className = 'price_product__container'>
+            <span className = 'product_name'>Banana Loaf Cake</span>
+            <span className = 'price'>$3.21</span> 
+          </div>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, NN_chopped_spinach300g: true});}}>
+            {
+              cartText.NN_chopped_spinach300g ? <div className = 'increment__container'> 
+                                      <button className = 'minus' onClick = {() => {
+                                                                                    if(itemIncrementer.NN_chopped_spinach300g > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, NN_chopped_spinach300g: itemIncrementer.NN_chopped_spinach300g-1});                                                                          
+                                                                                    } }> - </button>
+                                      <span className = 'number'> {itemIncrementer.NN_chopped_spinach300g} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, NN_chopped_spinach300g: itemIncrementer.NN_chopped_spinach300g+1}) }> + </button>                                    
+                                     </div> 
+                                     : <span className = 'add_to_cart__name'> Add to Cart </span>
+            }
+          </button>
+        </div>
+         
+        <div className='item__container'>
+          <span className = 'company_name'>Farmer's Market</span>
+          <img src = { NN_crinkleCut_FriedPotatoes } alt = 'Bread Picture' className = 'product_image' />
+          <div className = 'price_product__container'>
+            <span className = 'product_name'>Butter Croissant</span>
+            <span className = 'price'>$3.21</span> 
+          </div>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, NN_chopped_spinach300g: true});}}>
+            {
+              cartText.NN_chopped_spinach300g ? <div className = 'increment__container'> 
+                                      <button className = 'minus' onClick = {() => {
+                                                                                    if(itemIncrementer.NN_chopped_spinach300g > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, NN_chopped_spinach300g: itemIncrementer.NN_chopped_spinach300g-1});                                                                          
+                                                                                    } }> - </button>
+                                      <span className = 'number'> {itemIncrementer.NN_chopped_spinach300g} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, NN_chopped_spinach300g: itemIncrementer.NN_chopped_spinach300g+1}) }> + </button>                                    
+                                     </div> 
+                                     : <span className = 'add_to_cart__name'> Add to Cart </span>
+            }
+          </button>
+        </div>
+
+        <div className='item__container'>
+          <span className = 'company_name'>President's Choice</span>
+          <img src = { NN_friedPotatoes_Crispy_SkinOn } alt = 'Bread Picture' className = 'product_image' />
+          <div className = 'price_product__container'>
+            <span className = 'product_name'>Chocolate Mini Muffin</span>
+            <span className = 'price'>$3.21</span> 
+          </div>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, NN_friedPotatoes_Crispy_SkinOn: true});}}>
+            {
+              cartText.NN_friedPotatoes_Crispy_SkinOn ? <div className = 'increment__container'> 
+                                      <button className = 'minus' onClick = {() => {
+                                                                                    if(itemIncrementer.NN_friedPotatoes_Crispy_SkinOn > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, NN_friedPotatoes_Crispy_SkinOn: itemIncrementer.NN_friedPotatoes_Crispy_SkinOn-1});                                                                          
+                                                                                    } }> - </button>
+                                      <span className = 'number'> {itemIncrementer.NN_friedPotatoes_Crispy_SkinOn} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, NN_friedPotatoes_Crispy_SkinOn: itemIncrementer.NN_friedPotatoes_Crispy_SkinOn+1}) }> + </button>                                    
+                                     </div> 
+                                     : <span className = 'add_to_cart__name'> Add to Cart </span>
+            }
+          </button>
+        </div>
+        
+        <div className='item__container'>
+          <span className = 'company_name'>Farmer's Market</span>
+          <img src = { NN_green_peas750g } alt = 'Bread Picture' className = 'product_image' />
+          <div className = 'price_product__container'>
+            <span className = 'product_name'>Chocolate Chip Muffin</span>
+            <span className = 'price'>$3.21</span> 
+          </div>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, NN_green_peas750g: true});}}>
+            {
+              cartText.NN_green_peas750g ? <div className = 'increment__container'> 
+                                      <button className = 'minus' onClick = {() => {
+                                                                                    if(itemIncrementer.NN_green_peas750g > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, NN_green_peas750g: itemIncrementer.NN_green_peas750g-1});                                                                          
+                                                                                    } }> - </button>
+                                      <span className = 'number'> {itemIncrementer.NN_green_peas750g} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, NN_green_peas750g: itemIncrementer.NN_green_peas750g+1}) }> + </button>                                    
+                                     </div> 
+                                     : <span className = 'add_to_cart__name'> Add to Cart </span>
+            }
+          </button>
+        </div>
+        
+        <div className='item__container'>
+          <span className = 'company_name'>Country Harvest</span>
+          <img src = { NN_mixed_vegatables750g } alt = 'Bread Picture' className = 'product_image' />
+          <div className = 'price_product__container'>
+            <span className = 'product_name'>cinnamon Raisin Bread</span>
+            <span className = 'price'>$3.21</span>  
+          </div>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, NN_mixed_vegatables750g: true});}}>
+            {
+              cartText.NN_mixed_vegatables750g ? <div className = 'increment__container'> 
+                                      <button className = 'minus' onClick = {() => {
+                                                                                    if(itemIncrementer.NN_mixed_vegatables750g > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, NN_mixed_vegatables750g: itemIncrementer.NN_mixed_vegatables750g-1});                                                                          
+                                                                                    } }> - </button>
+                                      <span className = 'number'> {itemIncrementer.NN_mixed_vegatables750g} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, NN_mixed_vegatables750g: itemIncrementer.NN_mixed_vegatables750g+1}) }> + </button>                                    
+                                     </div> 
+                                     : <span className = 'add_to_cart__name'> Add to Cart </span>
+            }
+          </button>
+        </div>
+        
+        <div className='item__container'>
+          <span className = 'company_name'>Farmer's Market</span>
+          <img src = { NN_mixed_vegatables2000g } alt = 'Bread Picture' className = 'product_image' />
+          <div className = 'price_product__container'>
+            <span className = 'product_name'>Double Chocolate Muffin</span>
+            <span className = 'price'>$3.21</span> 
+          </div>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, NN_mixed_vegatables2000g: true});}}>
+            {
+              cartText.NN_mixed_vegatables2000g ? <div className = 'increment__container'> 
+                                      <button className = 'minus' onClick = {() => {
+                                                                                    if(itemIncrementer.NN_mixed_vegatables2000g > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, NN_mixed_vegatables2000g: itemIncrementer.NN_mixed_vegatables2000g-1});                                                                          
+                                                                                    } }> -</button>
+                                      <span className = 'number'> {itemIncrementer.NN_mixed_vegatables2000g} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, NN_mixed_vegatables2000g: itemIncrementer.NN_mixed_vegatables2000g+1}) }> + </button>                                    
+                                     </div> 
+                                     : <span className = 'add_to_cart__name'> Add to Cart </span>
+            }
+          </button>
+        </div>
+        
+        <div className='item__container'>
+          <span className = 'company_name'>Superstore</span>
+          <img src = { NN_peas_carrots750g } alt = 'Bread Picture' className = 'product_image' />
+          <div className = 'price_product__container'>
+            <span className = 'product_name'>French Bread</span>
+            <span className = 'price'>$3.21</span> 
+          </div>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, NN_peas_carrots750g: true});}}>
+            {
+              cartText.NN_peas_carrots750g ? <div className = 'increment__container'> 
+                                      <button className = 'minus' onClick = {() => {
+                                                                                    if(itemIncrementer.NN_peas_carrots750g > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, NN_peas_carrots750g: itemIncrementer.NN_peas_carrots750g-1});                                                                          
+                                                                                    } }> - </button>
+                                      <span className = 'number'> {itemIncrementer.NN_peas_carrots750g} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, NN_peas_carrots750g: itemIncrementer.NN_peas_carrots750g+1}) }> + </button>                                    
+                                     </div> 
+                                     : <span className = 'add_to_cart__name'> Add to Cart </span>
+            }
+          </button>
+        </div>
+        
+        <div className='item__container'>
+          <span className = 'company_name'>Casa Mendosa</span>
+          <img src = { NN_potato_patties20ea } alt = 'Bread Picture' className = 'product_image' />
+          <div className = 'price_product__container'>
+            <span className = 'product_name'>Large Original Tortillas</span>
+            <span className = 'price'>$3.21</span> 
+          </div>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, NN_potato_patties20ea: true});}}>
+            {
+              cartText.NN_potato_patties20ea ? <div className = 'increment__container'> 
+                                      <button className = 'minus' onClick = {() => {
+                                                                                    if(itemIncrementer.NN_potato_patties20ea > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, NN_potato_patties20ea: itemIncrementer.NN_potato_patties20ea-1});                                                                          
+                                                                                    } }> - </button>
+                                      <span className = 'number'> {itemIncrementer.NN_potato_patties20ea} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, NN_potato_patties20ea: itemIncrementer.NN_potato_patties20ea+1}) }> + </button>                                    
+                                     </div> 
+                                     : <span className = 'add_to_cart__name'> Add to Cart </span>
+            }
+          </button>
+        </div>
+        
+        <div className='item__container'>
+          <span className = 'company_name'>President's Choice</span>
+          <img src = { NN_whole_kernel_corns750g } alt = 'Bread Picture' className = 'product_image' />
+          <div className = 'price_product__container'>
+            <span className = 'product_name'>Tortillas Original</span>
+            <span className = 'price'>$3.21</span> 
+          </div>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, NN_whole_kernel_corns750g: true});}}>
+            {
+              cartText.NN_whole_kernel_corns750g ? <div className = 'increment__container'> 
+                                      <button className = 'minus' onClick = {() => {
+                                                                                    if(itemIncrementer.NN_whole_kernel_corns750g > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, NN_whole_kernel_corns750g: itemIncrementer.NN_whole_kernel_corns750g-1});                                                                          
+                                                                                    } }> - </button>
+                                      <span className = 'number'> {itemIncrementer.NN_whole_kernel_corns750g} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, NN_whole_kernel_corns750g: itemIncrementer.NN_whole_kernel_corns750g+1}) }> + </button>                                    
+                                     </div> 
+                                     : <span className = 'add_to_cart__name'> Add to Cart </span>
+            }
+          </button>
+        </div>
+        
+        <div className='item__container'>
+          <span className = 'company_name'>Superstore</span>
+          <img src = { PC_broccoli_florets500g } alt = 'Bread Picture' className = 'product_image' />
+          <div className = 'price_product__container'>
+            <span className = 'product_name'>PC_broccoli_florets500g  6 Pack</span>
+            <span className = 'price'>$3.21</span> 
+          </div>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, PC_broccoli_florets500g : true});}}>
+            {
+              cartText.PC_broccoli_florets500g  ? <div className = 'increment__container'> 
+                                      <button className = 'minus' onClick = {() => {
+                                                                                    if(itemIncrementer.PC_broccoli_florets500g  > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, PC_broccoli_florets500g : itemIncrementer.PC_broccoli_florets500g -1});                                                                          
+                                                                                    } }> - </button>
+                                      <span className = 'number'> {itemIncrementer.PC_broccoli_florets500g } </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, PC_broccoli_florets500g : itemIncrementer.PC_broccoli_florets500g +1}) }> + </button>                                    
+                                     </div> 
+                                     : <span className = 'add_to_cart__name'> Add to Cart </span>
+            }
+          </button>
+        </div>
+        
+        <div className='item__container'>
+          <span className = 'company_name'>Superstore</span>
+          <img src = { PC_mango_chunks600g } alt = 'Bread Picture' className = 'product_image' />
+          <div className = 'price_product__container'>
+            <span className = 'product_name'>Sourdough Loaf Sliced</span>
+            <span className = 'price'>$3.21</span> 
+          </div>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, PC_mango_chunks600g: true});}}>
+            {
+              cartText.PC_mango_chunks600g ? <div className = 'increment__container'> 
+                                      <button className = 'minus' onClick = {() => {
+                                                                                    if(itemIncrementer.PC_mango_chunks600g > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, PC_mango_chunks600g: itemIncrementer.PC_mango_chunks600g-1});                                                                          
+                                                                                    } }> - </button>
+                                      <span className = 'number'> {itemIncrementer.PC_mango_chunks600g} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, PC_mango_chunks600g: itemIncrementer.PC_mango_chunks600g+1}) }> + </button>                                    
+                                     </div> 
+                                     : <span className = 'add_to_cart__name'> Add to Cart </span>
+            }
+          </button>
+        </div>
+        
+        <div className='item__container'>
+          <span className = 'company_name'>Counter Harvest</span>
+          <img src = { PC_pacific_white_shrimp_raw_peeled } alt = 'Bread Picture' className = 'product_image' />
+          <div className = 'price_product__container'>
+            <span className = 'product_name'>Stone Milled With Roasted Wheat</span>
+            <span className = 'price'>$3.21</span> 
+          </div>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, PC_pacific_white_shrimp_raw_peeled: true});}}>
+            {
+              cartText.PC_pacific_white_shrimp_raw_peeled ? <div className = 'increment__container'> 
+                                      <button className = 'minus' onClick = {() => {
+                                                                                    if(itemIncrementer.PC_pacific_white_shrimp_raw_peeled > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, PC_pacific_white_shrimp_raw_peeled: itemIncrementer.PC_pacific_white_shrimp_raw_peeled-1});                                                                          
+                                                                                    } }> - </button>
+                                      <span className = 'number'> {itemIncrementer.PC_pacific_white_shrimp_raw_peeled} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, PC_pacific_white_shrimp_raw_peeled: itemIncrementer.PC_pacific_white_shrimp_raw_peeled+1}) }> + </button>                                    
+                                     </div> 
+                                     : <span className = 'add_to_cart__name'> Add to Cart </span>
+            }
+          </button>
+        </div>
+        
+        <div className='item__container'>
+          <span className = 'company_name'>Suraj</span>
+          <img src = { PC_sliced_strawberries600g } alt = 'Bread Picture' className = 'product_image' />
+          <div className = 'price_product__container'>
+            <span className = 'product_name'>Naan Original (5-Pack)</span>
+            <span className = 'price'>$3.21</span> 
+          </div>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, naan: true});}}>
+            {
+              cartText.naan ? <div className = 'increment__container'> 
+                                      <button className = 'minus' onClick = {() => {
+                                                                                    if(itemIncrementer.naan > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, naan: itemIncrementer.naan-1});                                                                          
+                                                                                    } }> - </button>
+                                      <span className = 'number'> {itemIncrementer.naan} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, naan: itemIncrementer.naan+1}) }> + </button>                                    
+                                     </div> 
+                                     : <span className = 'add_to_cart__name'> Add to Cart </span>
+            }
+          </button>
+        </div>
+        
+        
+      </div>
+    </div>
+
+  
+      
+
+    
+      
+
+    </>
+  )
+}

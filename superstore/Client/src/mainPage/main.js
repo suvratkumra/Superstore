@@ -6,6 +6,8 @@ import { useState } from 'react';
 import search from '../images/search.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
+//Importing all the departments.
+
 
 var FontAwesome = require('react-fontawesome');
 
@@ -77,21 +79,27 @@ function MainPage() {
         <div className='row1__container'>
           <div className='Bakery'>
             <button className="favorite buttonStyle"
-                type="button">
+                type="button" onClick={() => {
+                  window.location.href = "http://localhost:3000/Departments/Bakery";
+                }}>
                 BAKERY
             </button>
           </div>
 
           <div className='produce_container'>
             <button className="favorite buttonStyle"
-                  type="button">
+                  type="button"onClick={() => {
+                    window.location.href = "http://localhost:3000/Departments/Produce";
+                  }}>
                   PRODUCE
               </button>
           </div> 
 
           <div className='dairy_container'>
             <button className="favorite buttonStyle"
-                  type="button">
+                  type="button"onClick={() => {
+                    window.location.href = "http://localhost:3000/Departments/Dairy";
+                  }}>
                   DAIRY/EGGS
               </button>
           </div> 
@@ -100,7 +108,9 @@ function MainPage() {
         <div className='row2__container'>
           <div className='equipment_container'>
             <button className="favorite buttonStyle"
-                  type="button">
+                  type="button" onClick={() => {
+                    window.location.href = "http://localhost:3000/Departments/Equipment";
+                  }}>
                   EQUIPMENT
               </button>
           </div> 
@@ -108,14 +118,18 @@ function MainPage() {
 
           <div className='meat_container'>
             <button className="favorite buttonStyle"
-                  type="button">
+                  type="button" onClick={() => {
+                    window.location.href = "http://localhost:3000/Departments/Meat";
+                  }}>
                   MEAT/SEAFOOD
               </button>
           </div> 
 
           <div className='frozen_container'>
             <button className="favorite buttonStyle"
-                  type="button">
+                  type="button" onClick={() => {
+                    window.location.href = "http://localhost:3000/Departments/Frozen";
+                  }}>
                   FROZEN
               </button>
           </div>
@@ -124,7 +138,9 @@ function MainPage() {
         <div className='row3__container'>
           <div className='toys__container'>
             <button className="buttonStyle"
-                  type="button">
+                  type="button" onClick={() => {
+                    window.location.href = "http://localhost:3000/Departments/Toys";
+                  }}>
                   TOYS
             </button>
           </div>
@@ -138,7 +154,9 @@ function MainPage() {
 
           <div className='Medical__container'>
             <button className="buttonStyle"
-                  type="button">
+                  type="button" onClick={() => {
+                    window.location.href = "http://localhost:3000/Departments/Medical";
+                  }}>
                   MEDICAL
             </button>
           </div>
@@ -169,7 +187,7 @@ function MainPage() {
 
             <div className='contactUs__information'>
               <span className='name'>Suvrat Kumra<a href = 'https://www.linkedin.com/in/suvrat-kumra-420017193/'> (LinkedIn)</a></span><br/>
-              <span className='name'>Shreya Patel<a href = 'linkedin.com/in/shreya-patel-9902b61b7'> (LinkedIn)</a></span>
+              <span className='name'>Shreya Patel<a href = 'https://www.linkedin.com/in/shreya-patel-9902b61b7'> (LinkedIn)</a></span>
             </div>
 
             <div className='latestNews__container'>
