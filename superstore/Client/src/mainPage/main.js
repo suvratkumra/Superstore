@@ -11,7 +11,12 @@ var FontAwesome = require('react-fontawesome');
 
 function MainPage() {
   const [username, setSearch] = useState('')
-
+  const BakeryList = [
+    { id: '1', name: 'Bread' },
+    { id: '2', name: 'Doughnut' },
+    { id: '3', name: 'Brownie' },
+    { id: '4', name: 'Wraps' },
+];
   return (
     <>
     
