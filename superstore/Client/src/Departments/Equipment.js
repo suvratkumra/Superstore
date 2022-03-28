@@ -22,10 +22,10 @@ import slim_cat6_ethernet_cable from "../images/Equipment/slim_cat6_ethernet_cab
 
 export default function Equipment() {
   const initialBoolean = false;
-  const initializeValues = {grainBread:initialBoolean, bananaMuffin:initialBoolean, bananaCake:initialBoolean, butterCroissant:initialBoolean, chocolateMini:initialBoolean, chocChipMuffin:initialBoolean, cinnamonBread:initialBoolean, doubleChoc:initialBoolean, frenchBread:initialBoolean, largeOriginal:initialBoolean, PCtortillas:initialBoolean, rolls:initialBoolean, sourdoughLoaf:initialBoolean, roastedWheat:initialBoolean, naan:initialBoolean};
+  const initializeValues = {asus_prime_H410M_E_LGA_1200_Intel_H410_SATA:initialBoolean, canon_imageClass_D1650_monochrome_lazer:initialBoolean, cat5e_ethernet_cable:initialBoolean, cat6_green_ethernet_cable_10foot:initialBoolean, decora_wall_plate_white_dual:initialBoolean, energizer_batteries_alkaline_AA24:initialBoolean, energizer_maxAA_batteries_8pack:initialBoolean, fiber_optic_cable_LC_Duplex:initialBoolean, fiber_optic_cable_singlemodeDuplex:initialBoolean, globe_electric_with_slim_plug:initialBoolean, JVC_inear_headphones:initialBoolean, samsung_27_curved_FHD_VA_monitor:initialBoolean, samsung_black_toner_cartridge:initialBoolean, Xtrike_Me_HP_310_gaming_headset:initialBoolean, slim_cat6_ethernet_cable:initialBoolean};
   const [cartText, setCartText] = useState(initializeValues);
   const [showButton, setShowButton] = useState({showButton: false, showButton2: false});  
-  const initializeNumber = {grainBread:1, bananaMuffin:1, bananaCake:1, butterCroissant:1, chocolateMini:1, chocChipMuffin:1, cinnamonBread:1, doubleChoc:1, frenchBread:1, largeOriginal:1, PCtortillas:1, rolls:1, sourdoughLoaf:1, roastedWheat:1, naan:1};
+  const initializeNumber = {asus_prime_H410M_E_LGA_1200_Intel_H410_SATA:1, canon_imageClass_D1650_monochrome_lazer:1, cat5e_ethernet_cable:1, cat6_green_ethernet_cable_10foot:1, decora_wall_plate_white_dual:1, energizer_batteries_alkaline_AA24:1, energizer_maxAA_batteries_8pack:1, fiber_optic_cable_LC_Duplex:1, fiber_optic_cable_singlemodeDuplex:1, globe_electric_with_slim_plug:1, JVC_inear_headphones:1, samsung_27_curved_FHD_VA_monitor:1, samsung_black_toner_cartridge:1, Xtrike_Me_HP_310_gaming_headset:1, slim_cat6_ethernet_cable:1};
   const [itemIncrementer, setItemIncrementer] = useState(initializeNumber);
 
 
@@ -57,11 +57,6 @@ export default function Equipment() {
       <span class = 'search__image'> <GiMagnifyingGlass/> </span>
     </div>
     </div>
-    {/* <div>
-      {console.log(showButton)}
-      {showButton.showButton ? <h1> SHow me </h1> : null}
-      {showButton.showButton2 ? <h1> SHow me </h1> : null}
-    </div> */}
 
     <div className='products_name__container'>
       <div className='departmentName'>
@@ -72,21 +67,21 @@ export default function Equipment() {
 
       <div className='bigProducts__container'>
         <div className='item__container'>
-          <span className = 'company_name'>Country Harvest</span>
-          <img src = { asus_prime_H410M_E_LGA_1200_Intel_H410_SATA } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Asus</span>
+          <img src = { asus_prime_H410M_E_LGA_1200_Intel_H410_SATA } alt = 'prime_H410M_E_LGA_1200_Intel_H410_SATA' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>14 Grain Whole Wheat Bread</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Prime H410M E-LGA 1200-Intel H410 SATA</span>
+            <span className = 'price'>$199.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, grainBread: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, asus_prime_H410M_E_LGA_1200_Intel_H410_SATA: true});}}>
             {
-              cartText.grainBread ? <div className = 'increment__container'> 
+              cartText.asus_prime_H410M_E_LGA_1200_Intel_H410_SATA ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.grainBread > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, grainBread: itemIncrementer.grainBread-1});                                                                          
+                                                                                    if(itemIncrementer.asus_prime_H410M_E_LGA_1200_Intel_H410_SATA > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, asus_prime_H410M_E_LGA_1200_Intel_H410_SATA: itemIncrementer.asus_prime_H410M_E_LGA_1200_Intel_H410_SATA-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.grainBread} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, grainBread: itemIncrementer.grainBread+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.asus_prime_H410M_E_LGA_1200_Intel_H410_SATA} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, asus_prime_H410M_E_LGA_1200_Intel_H410_SATA: itemIncrementer.asus_prime_H410M_E_LGA_1200_Intel_H410_SATA+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -96,21 +91,21 @@ export default function Equipment() {
 
 
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
-          <img src = { canon_imageClass_D1650_monochrome_lazer } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Canon</span>
+          <img src = { canon_imageClass_D1650_monochrome_lazer } alt = 'canon_imageClass_D1650_monochrome_lazer' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Banana Chocolate Muffin</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Image Class D1650 Monochrome Lazer Printer</span>
+            <span className = 'price'>$399.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, bananaMuffin: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, canon_imageClass_D1650_monochrome_lazer: true});}}>
             {
-              cartText.bananaMuffin ? <div className = 'increment__container'> 
+              cartText.canon_imageClass_D1650_monochrome_lazer ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.bananaMuffin > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, bananaMuffin: itemIncrementer.bananaMuffin-1});                                                                          
+                                                                                    if(itemIncrementer.canon_imageClass_D1650_monochrome_lazer > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, canon_imageClass_D1650_monochrome_lazer: itemIncrementer.canon_imageClass_D1650_monochrome_lazer-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.bananaMuffin} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, bananaMuffin: itemIncrementer.bananaMuffin+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.canon_imageClass_D1650_monochrome_lazer} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, canon_imageClass_D1650_monochrome_lazer: itemIncrementer.canon_imageClass_D1650_monochrome_lazer+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -118,21 +113,21 @@ export default function Equipment() {
         </div>
 
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
-          <img src = { cat5e_ethernet_cable } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Superstore</span>
+          <img src = { cat5e_ethernet_cable } alt = 'cat5e_ethernet_cable' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Banana Loaf Cake</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>cat5e Ethernet Cable</span>
+            <span className = 'price'>$10.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, bananaCake: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, cat5e_ethernet_cable: true});}}>
             {
-              cartText.bananaCake ? <div className = 'increment__container'> 
+              cartText.cat5e_ethernet_cable ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.bananaCake > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, bananaCake: itemIncrementer.bananaCake-1});                                                                          
+                                                                                    if(itemIncrementer.cat5e_ethernet_cable > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, cat5e_ethernet_cable: itemIncrementer.cat5e_ethernet_cable-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.bananaCake} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, bananaCake: itemIncrementer.bananaCake+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.cat5e_ethernet_cable} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, cat5e_ethernet_cable: itemIncrementer.cat5e_ethernet_cable+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -140,21 +135,21 @@ export default function Equipment() {
         </div>
          
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
-          <img src = { cat6_green_ethernet_cable_10foot } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Superstore</span>
+          <img src = { cat6_green_ethernet_cable_10foot } alt = 'cat6_green_ethernet_cable_10foot' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Butter Croissant</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>cat6 Green Ethernet Cable (10 Foot)</span>
+            <span className = 'price'>$9.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, butterCroissant: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, cat6_green_ethernet_cable_10foot: true});}}>
             {
-              cartText.butterCroissant ? <div className = 'increment__container'> 
+              cartText.cat6_green_ethernet_cable_10foot ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.butterCroissant > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, butterCroissant: itemIncrementer.butterCroissant-1});                                                                          
+                                                                                    if(itemIncrementer.cat6_green_ethernet_cable_10foot > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, cat6_green_ethernet_cable_10foot: itemIncrementer.cat6_green_ethernet_cable_10foot-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.butterCroissant} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, butterCroissant: itemIncrementer.butterCroissant+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.cat6_green_ethernet_cable_10foot} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, cat6_green_ethernet_cable_10foot: itemIncrementer.cat6_green_ethernet_cable_10foot+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -162,21 +157,21 @@ export default function Equipment() {
         </div>
 
         <div className='item__container'>
-          <span className = 'company_name'>President's Choice</span>
-          <img src = { decora_wall_plate_white_dual } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Decora</span>
+          <img src = { decora_wall_plate_white_dual } alt = 'decora_wall_plate_white_dual' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Chocolate Mini Muffin</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Wall Plate White Dual</span>
+            <span className = 'price'>$15.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, chocolateMini: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, decora_wall_plate_white_dual: true});}}>
             {
-              cartText.chocolateMini ? <div className = 'increment__container'> 
+              cartText.decora_wall_plate_white_dual ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.chocolateMini > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, chocolateMini: itemIncrementer.chocolateMini-1});                                                                          
+                                                                                    if(itemIncrementer.decora_wall_plate_white_dual > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, decora_wall_plate_white_dual: itemIncrementer.decora_wall_plate_white_dual-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.chocolateMini} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, chocolateMini: itemIncrementer.chocolateMini+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.decora_wall_plate_white_dual} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, decora_wall_plate_white_dual: itemIncrementer.decora_wall_plate_white_dual+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -184,21 +179,21 @@ export default function Equipment() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
-          <img src = { energizer_batteries_alkaline_AA24 } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Energizer</span>
+          <img src = { energizer_batteries_alkaline_AA24 } alt = 'energizer_batteries_alkaline_AA24' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Chocolate Chip Muffin</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Batteries Alkaline AA (24-pack)</span>
+            <span className = 'price'>$21.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, chocChipMuffin: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, energizer_batteries_alkaline_AA24: true});}}>
             {
-              cartText.chocChipMuffin ? <div className = 'increment__container'> 
+              cartText.energizer_batteries_alkaline_AA24 ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.chocChipMuffin > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, chocChipMuffin: itemIncrementer.chocChipMuffin-1});                                                                          
+                                                                                    if(itemIncrementer.energizer_batteries_alkaline_AA24 > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, energizer_batteries_alkaline_AA24: itemIncrementer.energizer_batteries_alkaline_AA24-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.chocChipMuffin} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, chocChipMuffin: itemIncrementer.chocChipMuffin+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.energizer_batteries_alkaline_AA24} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, energizer_batteries_alkaline_AA24: itemIncrementer.energizer_batteries_alkaline_AA24+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -206,21 +201,21 @@ export default function Equipment() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Country Harvest</span>
-          <img src = { energizer_maxAA_batteries_8pack } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Energizer</span>
+          <img src = { energizer_maxAA_batteries_8pack } alt = 'energizer_maxAA_batteries_8pack' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>cinnamon Raisin Bread</span>
-            <span className = 'price'>$3.21</span>  
+            <span className = 'product_name'>Batteries Alkaline AA (8-pack)</span>
+            <span className = 'price'>$8.99</span>  
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, cinnamonBread: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, energizer_maxAA_batteries_8pack: true});}}>
             {
-              cartText.cinnamonBread ? <div className = 'increment__container'> 
+              cartText.energizer_maxAA_batteries_8pack ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.cinnamonBread > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, cinnamonBread: itemIncrementer.cinnamonBread-1});                                                                          
+                                                                                    if(itemIncrementer.energizer_maxAA_batteries_8pack > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, energizer_maxAA_batteries_8pack: itemIncrementer.energizer_maxAA_batteries_8pack-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.cinnamonBread} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, cinnamonBread: itemIncrementer.cinnamonBread+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.energizer_maxAA_batteries_8pack} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, energizer_maxAA_batteries_8pack: itemIncrementer.energizer_maxAA_batteries_8pack+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -228,21 +223,21 @@ export default function Equipment() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
-          <img src = { fiber_optic_cable_LC_Duplex } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Superstore</span>
+          <img src = { fiber_optic_cable_LC_Duplex } alt = 'fiber_optic_cable_LC_Duplex' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Double Chocolate Muffin</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Fiber Optic Cable LC-Duplex</span>
+            <span className = 'price'>$6.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, doubleChoc: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, fiber_optic_cable_LC_Duplex: true});}}>
             {
-              cartText.doubleChoc ? <div className = 'increment__container'> 
+              cartText.fiber_optic_cable_LC_Duplex ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.doubleChoc > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, doubleChoc: itemIncrementer.doubleChoc-1});                                                                          
+                                                                                    if(itemIncrementer.fiber_optic_cable_LC_Duplex > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, fiber_optic_cable_LC_Duplex: itemIncrementer.fiber_optic_cable_LC_Duplex-1});                                                                          
                                                                                     } }> -</button>
-                                      <span className = 'number'> {itemIncrementer.doubleChoc} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, doubleChoc: itemIncrementer.doubleChoc+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.fiber_optic_cable_LC_Duplex} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, fiber_optic_cable_LC_Duplex: itemIncrementer.fiber_optic_cable_LC_Duplex+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -251,20 +246,20 @@ export default function Equipment() {
         
         <div className='item__container'>
           <span className = 'company_name'>Superstore</span>
-          <img src = { fiber_optic_cable_singlemodeDuplex } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { fiber_optic_cable_singlemodeDuplex } alt = 'Fiber Optic Cable LC-Duplex' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>French Bread</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Fiber Optic Cable Single Mode Duplex</span>
+            <span className = 'price'>$4.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, frenchBread: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, fiber_optic_cable_singlemodeDuplex: true});}}>
             {
-              cartText.frenchBread ? <div className = 'increment__container'> 
+              cartText.fiber_optic_cable_singlemodeDuplex ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.frenchBread > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, frenchBread: itemIncrementer.frenchBread-1});                                                                          
+                                                                                    if(itemIncrementer.fiber_optic_cable_singlemodeDuplex > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, fiber_optic_cable_singlemodeDuplex: itemIncrementer.fiber_optic_cable_singlemodeDuplex-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.frenchBread} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, frenchBread: itemIncrementer.frenchBread+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.fiber_optic_cable_singlemodeDuplex} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, fiber_optic_cable_singlemodeDuplex: itemIncrementer.fiber_optic_cable_singlemodeDuplex+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -272,21 +267,21 @@ export default function Equipment() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Casa Mendosa</span>
-          <img src = { globe_electric_with_slim_plug } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Globe</span>
+          <img src = { globe_electric_with_slim_plug } alt = 'globe_electric_with_slim_plug' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Large Original Tortillas</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Globe Electric With Slim Plug</span>
+            <span className = 'price'>$10.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, largeOriginal: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, globe_electric_with_slim_plug: true});}}>
             {
-              cartText.largeOriginal ? <div className = 'increment__container'> 
+              cartText.globe_electric_with_slim_plug ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.largeOriginal > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, largeOriginal: itemIncrementer.largeOriginal-1});                                                                          
+                                                                                    if(itemIncrementer.globe_electric_with_slim_plug > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, globe_electric_with_slim_plug: itemIncrementer.globe_electric_with_slim_plug-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.largeOriginal} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, largeOriginal: itemIncrementer.largeOriginal+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.globe_electric_with_slim_plug} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, globe_electric_with_slim_plug: itemIncrementer.globe_electric_with_slim_plug+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -294,21 +289,87 @@ export default function Equipment() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>President's Choice</span>
-          <img src = { JVC_inear_headphones } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>JVC</span>
+          <img src = { JVC_inear_headphones } alt = 'JVC_inear_headphones' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Tortillas Original</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>In-Ear Headphones</span>
+            <span className = 'price'>$23.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, PCtortillas: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, JVC_inear_headphones: true});}}>
             {
-              cartText.PCtortillas ? <div className = 'increment__container'> 
+              cartText.JVC_inear_headphones ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.PCtortillas > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, PCtortillas: itemIncrementer.PCtortillas-1});                                                                          
+                                                                                    if(itemIncrementer.JVC_inear_headphones > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, JVC_inear_headphones: itemIncrementer.JVC_inear_headphones-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.PCtortillas} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, PCtortillas: itemIncrementer.PCtortillas+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.JVC_inear_headphones} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, JVC_inear_headphones: itemIncrementer.JVC_inear_headphones+1}) }> + </button>                                    
+                                     </div> 
+                                     : <span className = 'add_to_cart__name'> Add to Cart </span>
+            }
+          </button>
+        </div>
+        
+        <div className='item__container'>
+          <span className = 'company_name'>Samsung</span>
+          <img src = { samsung_27_curved_FHD_VA_monitor } alt = 'samsung_27_curved_FHD_VA_monitor' className = 'product_image' />
+          <div className = 'price_product__container'>
+            <span className = 'product_name'>27" Curved FHD-VA monitor</span>
+            <span className = 'price'>$259.99</span> 
+          </div>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, samsung_27_curved_FHD_VA_monitor: true});}}>
+            {
+              cartText.samsung_27_curved_FHD_VA_monitor ? <div className = 'increment__container'> 
+                                      <button className = 'minus' onClick = {() => {
+                                                                                    if(itemIncrementer.samsung_27_curved_FHD_VA_monitor > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, samsung_27_curved_FHD_VA_monitor: itemIncrementer.samsung_27_curved_FHD_VA_monitor-1});                                                                          
+                                                                                    } }> - </button>
+                                      <span className = 'number'> {itemIncrementer.samsung_27_curved_FHD_VA_monitor} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, samsung_27_curved_FHD_VA_monitor: itemIncrementer.samsung_27_curved_FHD_VA_monitor+1}) }> + </button>                                    
+                                     </div> 
+                                     : <span className = 'add_to_cart__name'> Add to Cart </span>
+            }
+          </button>
+        </div>
+        
+        <div className='item__container'>
+          <span className = 'company_name'>Samsung</span>
+          <img src = { samsung_black_toner_cartridge } alt = 'samsung_black_toner_cartridge' className = 'product_image' />
+          <div className = 'price_product__container'>
+            <span className = 'product_name'>Black Toner Cartridge</span>
+            <span className = 'price'>$14.99</span> 
+          </div>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, samsung_black_toner_cartridge: true});}}>
+            {
+              cartText.samsung_black_toner_cartridge ? <div className = 'increment__container'> 
+                                      <button className = 'minus' onClick = {() => {
+                                                                                    if(itemIncrementer.samsung_black_toner_cartridge > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, samsung_black_toner_cartridge: itemIncrementer.samsung_black_toner_cartridge-1});                                                                          
+                                                                                    } }> - </button>
+                                      <span className = 'number'> {itemIncrementer.samsung_black_toner_cartridge} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, samsung_black_toner_cartridge: itemIncrementer.samsung_black_toner_cartridge+1}) }> + </button>                                    
+                                     </div> 
+                                     : <span className = 'add_to_cart__name'> Add to Cart </span>
+            }
+          </button>
+        </div>
+        
+        <div className='item__container'>
+          <span className = 'company_name'>Xtrike</span>
+          <img src = { Xtrike_Me_HP_310_gaming_headset } alt = 'Xtrike_Me_HP_310_gaming_headset' className = 'product_image' />
+          <div className = 'price_product__container'>
+            <span className = 'product_name'>HP 310 Gaming Headset</span>
+            <span className = 'price'>$23.99</span> 
+          </div>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Xtrike_Me_HP_310_gaming_headset: true});}}>
+            {
+              cartText.Xtrike_Me_HP_310_gaming_headset ? <div className = 'increment__container'> 
+                                      <button className = 'minus' onClick = {() => {
+                                                                                    if(itemIncrementer.Xtrike_Me_HP_310_gaming_headset > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Xtrike_Me_HP_310_gaming_headset: itemIncrementer.Xtrike_Me_HP_310_gaming_headset-1});                                                                          
+                                                                                    } }> - </button>
+                                      <span className = 'number'> {itemIncrementer.Xtrike_Me_HP_310_gaming_headset} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Xtrike_Me_HP_310_gaming_headset: itemIncrementer.Xtrike_Me_HP_310_gaming_headset+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -317,86 +378,20 @@ export default function Equipment() {
         
         <div className='item__container'>
           <span className = 'company_name'>Superstore</span>
-          <img src = { samsung_27_curved_FHD_VA_monitor } alt = 'Bread Picture' className = 'product_image' />
-          <div className = 'price_product__container'>
-            <span className = 'product_name'>Rolls 6 Pack</span>
-            <span className = 'price'>$3.21</span> 
-          </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, rolls: true});}}>
-            {
-              cartText.rolls ? <div className = 'increment__container'> 
-                                      <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.rolls > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, rolls: itemIncrementer.rolls-1});                                                                          
-                                                                                    } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.rolls} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, rolls: itemIncrementer.rolls+1}) }> + </button>                                    
-                                     </div> 
-                                     : <span className = 'add_to_cart__name'> Add to Cart </span>
-            }
-          </button>
-        </div>
-        
-        <div className='item__container'>
-          <span className = 'company_name'>Superstore</span>
-          <img src = { samsung_black_toner_cartridge } alt = 'Bread Picture' className = 'product_image' />
-          <div className = 'price_product__container'>
-            <span className = 'product_name'>Sourdough Loaf Sliced</span>
-            <span className = 'price'>$3.21</span> 
-          </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, sourdoughLoaf: true});}}>
-            {
-              cartText.sourdoughLoaf ? <div className = 'increment__container'> 
-                                      <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.sourdoughLoaf > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, sourdoughLoaf: itemIncrementer.sourdoughLoaf-1});                                                                          
-                                                                                    } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.sourdoughLoaf} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, sourdoughLoaf: itemIncrementer.sourdoughLoaf+1}) }> + </button>                                    
-                                     </div> 
-                                     : <span className = 'add_to_cart__name'> Add to Cart </span>
-            }
-          </button>
-        </div>
-        
-        <div className='item__container'>
-          <span className = 'company_name'>Counter Harvest</span>
           <img src = { slim_cat6_ethernet_cable } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Stone Milled With Roasted Wheat</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Slim cat6 Ethernet Cable</span>
+            <span className = 'price'>$10.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, roastedWheat: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, slim_cat6_ethernet_cable: true});}}>
             {
-              cartText.roastedWheat ? <div className = 'increment__container'> 
+              cartText.slim_cat6_ethernet_cable ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.roastedWheat > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, roastedWheat: itemIncrementer.roastedWheat-1});                                                                          
+                                                                                    if(itemIncrementer.slim_cat6_ethernet_cable > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, slim_cat6_ethernet_cable: itemIncrementer.slim_cat6_ethernet_cable-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.roastedWheat} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, roastedWheat: itemIncrementer.roastedWheat+1}) }> + </button>                                    
-                                     </div> 
-                                     : <span className = 'add_to_cart__name'> Add to Cart </span>
-            }
-          </button>
-        </div>
-        
-        <div className='item__container'>
-          <span className = 'company_name'>Suraj</span>
-          <img src = { Xtrike_Me_HP_310_gaming_headset } alt = 'Bread Picture' className = 'product_image' />
-          <div className = 'price_product__container'>
-            <span className = 'product_name'>Naan Original (5-Pack)</span>
-            <span className = 'price'>$3.21</span> 
-          </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, naan: true});}}>
-            {
-              cartText.naan ? <div className = 'increment__container'> 
-                                      <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.naan > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, naan: itemIncrementer.naan-1});                                                                          
-                                                                                    } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.naan} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, naan: itemIncrementer.naan+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.slim_cat6_ethernet_cable} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, slim_cat6_ethernet_cable: itemIncrementer.slim_cat6_ethernet_cable+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }

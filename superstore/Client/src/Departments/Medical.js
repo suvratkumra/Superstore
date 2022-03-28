@@ -26,10 +26,10 @@ import Vicks_Vaporub_Ointment from "../images/Medical/Vicks_Vaporub_Ointment.web
 
 export default function Medical() {
   const initialBoolean = false;
-  const initializeValues = {grainBread:initialBoolean, bananaMuffin:initialBoolean, bananaCake:initialBoolean, butterCroissant:initialBoolean, chocolateMini:initialBoolean, chocChipMuffin:initialBoolean, cinnamonBread:initialBoolean, doubleChoc:initialBoolean, frenchBread:initialBoolean, largeOriginal:initialBoolean, PCtortillas:initialBoolean, rolls:initialBoolean, sourdoughLoaf:initialBoolean, roastedWheat:initialBoolean, naan:initialBoolean};
+  const initializeValues = {Band_Aid_Large_Gauze_Pads:initialBoolean, Band_Aid_Wet_Flex_Bandages:initialBoolean, Blistex_Medicated_Berry_Lip_Balm:initialBoolean, Br45_Flex_Fab_Band:initialBoolean, Drive_Medical_Foam_Ring_Cushion:initialBoolean, Equate_Cot_Style_Finger_Splin:initialBoolean, Equate_Oral_Medication_Dispenser:initialBoolean, Equate_Self_Adhering_Bandage:initialBoolean, Equate_Small_Rolled_Gauze:initialBoolean, Gold_Bond_Medicated_Anti_Itch_Cream:initialBoolean, Gold_Bond_Medicated_Body_Powder:initialBoolean, Nexcare_Sensitive_Skin_Removable_Tape:initialBoolean, Penaten_Medicated_Cream:initialBoolean, Tylenol_500_Mg_Eztabs:initialBoolean, Vicks_Vaporub_Ointment:initialBoolean};
   const [cartText, setCartText] = useState(initializeValues);
   const [showButton, setShowButton] = useState({showButton: false, showButton2: false});  
-  const initializeNumber = {grainBread:1, bananaMuffin:1, bananaCake:1, butterCroissant:1, chocolateMini:1, chocChipMuffin:1, cinnamonBread:1, doubleChoc:1, frenchBread:1, largeOriginal:1, PCtortillas:1, rolls:1, sourdoughLoaf:1, roastedWheat:1, naan:1};
+  const initializeNumber = {Band_Aid_Large_Gauze_Pads:1, Band_Aid_Wet_Flex_Bandages:1, Blistex_Medicated_Berry_Lip_Balm:1, Br45_Flex_Fab_Band:1, Drive_Medical_Foam_Ring_Cushion:1, Equate_Cot_Style_Finger_Splin:1, Equate_Oral_Medication_Dispenser:1, Equate_Self_Adhering_Bandage:1, Equate_Small_Rolled_Gauze:1, Gold_Bond_Medicated_Anti_Itch_Cream:1, Gold_Bond_Medicated_Body_Powder:1, Nexcare_Sensitive_Skin_Removable_Tape:1, Penaten_Medicated_Cream:1, Tylenol_500_Mg_Eztabs:1, Vicks_Vaporub_Ointment:1};
   const [itemIncrementer, setItemIncrementer] = useState(initializeNumber);
 
 
@@ -61,36 +61,32 @@ export default function Medical() {
       <span class = 'search__image'> <GiMagnifyingGlass/> </span>
     </div>
     </div>
-    {/* <div>
-      {console.log(showButton)}
-      {showButton.showButton ? <h1> SHow me </h1> : null}
-      {showButton.showButton2 ? <h1> SHow me </h1> : null}
-    </div> */}
+    
 
     <div className='products_name__container'>
       <div className='departmentName'>
-        BAKERY
+        MEDICAL
       </div>
 
 
 
       <div className='bigProducts__container'>
         <div className='item__container'>
-          <span className = 'company_name'>Country Harvest</span>
-          <img src = { Band_Aid_Large_Gauze_Pads } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Johnson-Johnson</span>
+          <img src = { Band_Aid_Large_Gauze_Pads } alt = 'Band_Aid_Large_Gauze_Pads' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>14 Grain Whole Wheat Bread</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Band Aid Wet Flex Bandages</span>
+            <span className = 'price'>$5.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, grainBread: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Band_Aid_Large_Gauze_Pads: true});}}>
             {
-              cartText.grainBread ? <div className = 'increment__container'> 
+              cartText.Band_Aid_Large_Gauze_Pads ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.grainBread > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, grainBread: itemIncrementer.grainBread-1});                                                                          
+                                                                                    if(itemIncrementer.Band_Aid_Large_Gauze_Pads > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Band_Aid_Large_Gauze_Pads: itemIncrementer.Band_Aid_Large_Gauze_Pads-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.grainBread} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, grainBread: itemIncrementer.grainBread+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Band_Aid_Large_Gauze_Pads} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Band_Aid_Large_Gauze_Pads: itemIncrementer.Band_Aid_Large_Gauze_Pads+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -100,21 +96,21 @@ export default function Medical() {
 
 
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
-          <img src = { Band_Aid_Wet_Flex_Bandages } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Johnson-Johnson</span>
+          <img src = { Band_Aid_Wet_Flex_Bandages } alt = 'Band_Aid_Wet_Flex_Bandages' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Banana Chocolate Muffin</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Band Aid Wet Flex Bandages</span>
+            <span className = 'price'>$5.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, bananaMuffin: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Band_Aid_Wet_Flex_Bandages: true});}}>
             {
-              cartText.bananaMuffin ? <div className = 'increment__container'> 
+              cartText.Band_Aid_Wet_Flex_Bandages ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.bananaMuffin > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, bananaMuffin: itemIncrementer.bananaMuffin-1});                                                                          
+                                                                                    if(itemIncrementer.Band_Aid_Wet_Flex_Bandages > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Band_Aid_Wet_Flex_Bandages: itemIncrementer.Band_Aid_Wet_Flex_Bandages-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.bananaMuffin} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, bananaMuffin: itemIncrementer.bananaMuffin+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Band_Aid_Wet_Flex_Bandages} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Band_Aid_Wet_Flex_Bandages: itemIncrementer.Band_Aid_Wet_Flex_Bandages+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -122,21 +118,21 @@ export default function Medical() {
         </div>
 
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
-          <img src = { Blistex_Medicated_Berry_Lip_Balm } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Blistex</span>
+          <img src = { Blistex_Medicated_Berry_Lip_Balm } alt = 'Blistex_Medicated_Berry_Lip_Balm' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Banana Loaf Cake</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Medicated Berry Lip Balm</span>
+            <span className = 'price'>$6.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, bananaCake: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Blistex_Medicated_Berry_Lip_Balm: true});}}>
             {
-              cartText.bananaCake ? <div className = 'increment__container'> 
+              cartText.Blistex_Medicated_Berry_Lip_Balm ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.bananaCake > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, bananaCake: itemIncrementer.bananaCake-1});                                                                          
+                                                                                    if(itemIncrementer.Blistex_Medicated_Berry_Lip_Balm > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Blistex_Medicated_Berry_Lip_Balm: itemIncrementer.Blistex_Medicated_Berry_Lip_Balm-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.bananaCake} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, bananaCake: itemIncrementer.bananaCake+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Blistex_Medicated_Berry_Lip_Balm} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Blistex_Medicated_Berry_Lip_Balm: itemIncrementer.Blistex_Medicated_Berry_Lip_Balm+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -144,21 +140,21 @@ export default function Medical() {
         </div>
          
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
-          <img src = { Br45_Flex_Fab_Band } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Johnson-Johnson</span>
+          <img src = { Br45_Flex_Fab_Band } alt = 'Br45_Flex_Fab_Band' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Butter Croissant</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Flexible Band Aid</span>
+            <span className = 'price'>$5.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, butterCroissant: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Br45_Flex_Fab_Band: true});}}>
             {
-              cartText.butterCroissant ? <div className = 'increment__container'> 
+              cartText.Br45_Flex_Fab_Band ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.butterCroissant > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, butterCroissant: itemIncrementer.butterCroissant-1});                                                                          
+                                                                                    if(itemIncrementer.Br45_Flex_Fab_Band > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Br45_Flex_Fab_Band: itemIncrementer.Br45_Flex_Fab_Band-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.butterCroissant} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, butterCroissant: itemIncrementer.butterCroissant+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Br45_Flex_Fab_Band} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Br45_Flex_Fab_Band: itemIncrementer.Br45_Flex_Fab_Band+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -166,21 +162,21 @@ export default function Medical() {
         </div>
 
         <div className='item__container'>
-          <span className = 'company_name'>President's Choice</span>
-          <img src = { Drive_Medical_Foam_Ring_Cushion } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Drive Medical</span>
+          <img src = { Drive_Medical_Foam_Ring_Cushion } alt = 'Drive_Medical_Foam_Ring_Cushion' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Chocolate Mini Muffin</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Foam Ring Cushion</span>
+            <span className = 'price'>$6.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, chocolateMini: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Drive_Medical_Foam_Ring_Cushion: true});}}>
             {
-              cartText.chocolateMini ? <div className = 'increment__container'> 
+              cartText.Drive_Medical_Foam_Ring_Cushion ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.chocolateMini > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, chocolateMini: itemIncrementer.chocolateMini-1});                                                                          
+                                                                                    if(itemIncrementer.Drive_Medical_Foam_Ring_Cushion > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Drive_Medical_Foam_Ring_Cushion: itemIncrementer.Drive_Medical_Foam_Ring_Cushion-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.chocolateMini} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, chocolateMini: itemIncrementer.chocolateMini+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Drive_Medical_Foam_Ring_Cushion} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Drive_Medical_Foam_Ring_Cushion: itemIncrementer.Drive_Medical_Foam_Ring_Cushion+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -188,21 +184,21 @@ export default function Medical() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
-          <img src = { Equate_Cot_Style_Finger_Splin } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Equate</span>
+          <img src = { Equate_Cot_Style_Finger_Splin } alt = 'Equate_Cot_Style_Finger_Splin' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Chocolate Chip Muffin</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Cot Style Finger Splin</span>
+            <span className = 'price'>$3.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, chocChipMuffin: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Equate_Cot_Style_Finger_Splin: true});}}>
             {
-              cartText.chocChipMuffin ? <div className = 'increment__container'> 
+              cartText.Equate_Cot_Style_Finger_Splin ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.chocChipMuffin > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, chocChipMuffin: itemIncrementer.chocChipMuffin-1});                                                                          
+                                                                                    if(itemIncrementer.Equate_Cot_Style_Finger_Splin > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Equate_Cot_Style_Finger_Splin: itemIncrementer.Equate_Cot_Style_Finger_Splin-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.chocChipMuffin} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, chocChipMuffin: itemIncrementer.chocChipMuffin+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Equate_Cot_Style_Finger_Splin} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Equate_Cot_Style_Finger_Splin: itemIncrementer.Equate_Cot_Style_Finger_Splin+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -210,21 +206,21 @@ export default function Medical() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Country Harvest</span>
-          <img src = { Equate_Oral_Medication_Dispenser } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Equate</span>
+          <img src = { Equate_Oral_Medication_Dispenser } alt = 'Equate_Oral_Medication_Dispenser' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>cinnamon Raisin Bread</span>
-            <span className = 'price'>$3.21</span>  
+            <span className = 'product_name'>Oral Medication Dispenser</span>
+            <span className = 'price'>$5.99</span>  
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, cinnamonBread: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Equate_Oral_Medication_Dispenser: true});}}>
             {
-              cartText.cinnamonBread ? <div className = 'increment__container'> 
+              cartText.Equate_Oral_Medication_Dispenser ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.cinnamonBread > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, cinnamonBread: itemIncrementer.cinnamonBread-1});                                                                          
+                                                                                    if(itemIncrementer.Equate_Oral_Medication_Dispenser > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Equate_Oral_Medication_Dispenser: itemIncrementer.Equate_Oral_Medication_Dispenser-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.cinnamonBread} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, cinnamonBread: itemIncrementer.cinnamonBread+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Equate_Oral_Medication_Dispenser} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Equate_Oral_Medication_Dispenser: itemIncrementer.Equate_Oral_Medication_Dispenser+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -232,21 +228,21 @@ export default function Medical() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
-          <img src = { Equate_Self_Adhering_Bandage } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Equate</span>
+          <img src = { Equate_Self_Adhering_Bandage } alt = 'Equate_Self_Adhering_Bandage' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Double Chocolate Muffin</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Self Adhering Bandage</span>
+            <span className = 'price'>$8.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, doubleChoc: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Equate_Self_Adhering_Bandage: true});}}>
             {
-              cartText.doubleChoc ? <div className = 'increment__container'> 
+              cartText.Equate_Self_Adhering_Bandage ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.doubleChoc > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, doubleChoc: itemIncrementer.doubleChoc-1});                                                                          
+                                                                                    if(itemIncrementer.Equate_Self_Adhering_Bandage > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Equate_Self_Adhering_Bandage: itemIncrementer.Equate_Self_Adhering_Bandage-1});                                                                          
                                                                                     } }> -</button>
-                                      <span className = 'number'> {itemIncrementer.doubleChoc} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, doubleChoc: itemIncrementer.doubleChoc+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Equate_Self_Adhering_Bandage} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Equate_Self_Adhering_Bandage: itemIncrementer.Equate_Self_Adhering_Bandage+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -254,21 +250,21 @@ export default function Medical() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Superstore</span>
-          <img src = { Equate_Small_Rolled_Gauze } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Equate</span>
+          <img src = { Equate_Small_Rolled_Gauze } alt = 'Equate_Small_Rolled_Gauze' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>French Bread</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Small Rolled Gauze</span>
+            <span className = 'price'>$3.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, frenchBread: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Equate_Small_Rolled_Gauze: true});}}>
             {
-              cartText.frenchBread ? <div className = 'increment__container'> 
+              cartText.Equate_Small_Rolled_Gauze ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.frenchBread > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, frenchBread: itemIncrementer.frenchBread-1});                                                                          
+                                                                                    if(itemIncrementer.Equate_Small_Rolled_Gauze > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Equate_Small_Rolled_Gauze: itemIncrementer.Equate_Small_Rolled_Gauze-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.frenchBread} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, frenchBread: itemIncrementer.frenchBread+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Equate_Small_Rolled_Gauze} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Equate_Small_Rolled_Gauze: itemIncrementer.Equate_Small_Rolled_Gauze+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -276,21 +272,21 @@ export default function Medical() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Casa Mendosa</span>
-          <img src = { Gold_Bond_Medicated_Anti_Itch_Cream } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Gold Bond</span>
+          <img src = { Gold_Bond_Medicated_Anti_Itch_Cream } alt = 'Gold_Bond_Medicated_Anti_Itch_Cream' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Large Original Tortillas</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Medicated Anti Itch Cream</span>
+            <span className = 'price'>$5.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, largeOriginal: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Gold_Bond_Medicated_Anti_Itch_Cream: true});}}>
             {
-              cartText.largeOriginal ? <div className = 'increment__container'> 
+              cartText.Gold_Bond_Medicated_Anti_Itch_Cream ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.largeOriginal > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, largeOriginal: itemIncrementer.largeOriginal-1});                                                                          
+                                                                                    if(itemIncrementer.Gold_Bond_Medicated_Anti_Itch_Cream > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Gold_Bond_Medicated_Anti_Itch_Cream: itemIncrementer.Gold_Bond_Medicated_Anti_Itch_Cream-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.largeOriginal} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, largeOriginal: itemIncrementer.largeOriginal+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Gold_Bond_Medicated_Anti_Itch_Cream} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Gold_Bond_Medicated_Anti_Itch_Cream: itemIncrementer.Gold_Bond_Medicated_Anti_Itch_Cream+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -298,21 +294,21 @@ export default function Medical() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>President's Choice</span>
-          <img src = { Gold_Bond_Medicated_Body_Powder } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Gold Bond</span>
+          <img src = { Gold_Bond_Medicated_Body_Powder } alt = 'Gold_Bond_Medicated_Body_Powder' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Tortillas Original</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Medicated Body Powder</span>
+            <span className = 'price'>$3.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, PCtortillas: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Gold_Bond_Medicated_Body_Powder: true});}}>
             {
-              cartText.PCtortillas ? <div className = 'increment__container'> 
+              cartText.Gold_Bond_Medicated_Body_Powder ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.PCtortillas > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, PCtortillas: itemIncrementer.PCtortillas-1});                                                                          
+                                                                                    if(itemIncrementer.Gold_Bond_Medicated_Body_Powder > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Gold_Bond_Medicated_Body_Powder: itemIncrementer.Gold_Bond_Medicated_Body_Powder-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.PCtortillas} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, PCtortillas: itemIncrementer.PCtortillas+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Gold_Bond_Medicated_Body_Powder} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Gold_Bond_Medicated_Body_Powder: itemIncrementer.Gold_Bond_Medicated_Body_Powder+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -320,21 +316,21 @@ export default function Medical() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Superstore</span>
-          <img src = { Nexcare_Sensitive_Skin_Removable_Tape } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Nexcare</span>
+          <img src = { Nexcare_Sensitive_Skin_Removable_Tape } alt = 'Nexcare_Sensitive_Skin_Removable_Tape' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Rolls 6 Pack</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Sensitive Skin Removable Tape</span>
+            <span className = 'price'>$5.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, rolls: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Nexcare_Sensitive_Skin_Removable_Tape: true});}}>
             {
-              cartText.rolls ? <div className = 'increment__container'> 
+              cartText.Nexcare_Sensitive_Skin_Removable_Tape ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.rolls > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, rolls: itemIncrementer.rolls-1});                                                                          
+                                                                                    if(itemIncrementer.Nexcare_Sensitive_Skin_Removable_Tape > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Nexcare_Sensitive_Skin_Removable_Tape: itemIncrementer.Nexcare_Sensitive_Skin_Removable_Tape-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.rolls} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, rolls: itemIncrementer.rolls+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Nexcare_Sensitive_Skin_Removable_Tape} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Nexcare_Sensitive_Skin_Removable_Tape: itemIncrementer.Nexcare_Sensitive_Skin_Removable_Tape+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -342,21 +338,21 @@ export default function Medical() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Superstore</span>
-          <img src = { Penaten_Medicated_Cream } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Paneten</span>
+          <img src = { Penaten_Medicated_Cream } alt = 'Penaten_Medicated_Cream' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Sourdough Loaf Sliced</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Medicated Cream</span>
+            <span className = 'price'>$4.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, sourdoughLoaf: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Penaten_Medicated_Cream: true});}}>
             {
-              cartText.sourdoughLoaf ? <div className = 'increment__container'> 
+              cartText.Penaten_Medicated_Cream ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.sourdoughLoaf > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, sourdoughLoaf: itemIncrementer.sourdoughLoaf-1});                                                                          
+                                                                                    if(itemIncrementer.Penaten_Medicated_Cream > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Penaten_Medicated_Cream: itemIncrementer.Penaten_Medicated_Cream-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.sourdoughLoaf} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, sourdoughLoaf: itemIncrementer.sourdoughLoaf+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Penaten_Medicated_Cream} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Penaten_Medicated_Cream: itemIncrementer.Penaten_Medicated_Cream+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -364,21 +360,21 @@ export default function Medical() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Counter Harvest</span>
-          <img src = { Tylenol_500_Mg_Eztabs } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Tylenol</span>
+          <img src = { Tylenol_500_Mg_Eztabs } alt = 'Tylenol_500_Mg_Eztabs' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Stone Milled With Roasted Wheat</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Tylenol 500Mg Eztabs (24 Tablets)</span>
+            <span className = 'price'>$4.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, roastedWheat: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Tylenol_500_Mg_Eztabs: true});}}>
             {
-              cartText.roastedWheat ? <div className = 'increment__container'> 
+              cartText.Tylenol_500_Mg_Eztabs ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.roastedWheat > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, roastedWheat: itemIncrementer.roastedWheat-1});                                                                          
+                                                                                    if(itemIncrementer.Tylenol_500_Mg_Eztabs > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Tylenol_500_Mg_Eztabs: itemIncrementer.Tylenol_500_Mg_Eztabs-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.roastedWheat} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, roastedWheat: itemIncrementer.roastedWheat+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Tylenol_500_Mg_Eztabs} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Tylenol_500_Mg_Eztabs: itemIncrementer.Tylenol_500_Mg_Eztabs+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -386,21 +382,21 @@ export default function Medical() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Suraj</span>
-          <img src = { Vicks_Vaporub_Ointment } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Vicks</span>
+          <img src = { Vicks_Vaporub_Ointment } alt = 'Vicks_Vaporub_Ointment' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Naan Original (5-Pack)</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Vaporub Ointment</span>
+            <span className = 'price'>$5.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, naan: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Vicks_Vaporub_Ointment: true});}}>
             {
-              cartText.naan ? <div className = 'increment__container'> 
+              cartText.Vicks_Vaporub_Ointment ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.naan > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, naan: itemIncrementer.naan-1});                                                                          
+                                                                                    if(itemIncrementer.Vicks_Vaporub_Ointment > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Vicks_Vaporub_Ointment: itemIncrementer.Vicks_Vaporub_Ointment-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.naan} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, naan: itemIncrementer.naan+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Vicks_Vaporub_Ointment} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Vicks_Vaporub_Ointment: itemIncrementer.Vicks_Vaporub_Ointment+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }

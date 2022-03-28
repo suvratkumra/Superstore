@@ -70,11 +70,11 @@ export default function Meat() {
 
       <div className='bigProducts__container'>
         <div className='item__container'>
-          <span className = 'company_name'>Country Harvest</span>
-          <img src = { chicken_breast_clubPack } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Superstore</span>
+          <img src = { chicken_breast_clubPack } alt = 'chicken_breast_clubPack' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>14 Grain Whole Wheat Bread</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Chicken Breast ClubPack</span>
+            <span className = 'price'>$23.99</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, grainBread: true});}}>
             {
@@ -94,11 +94,11 @@ export default function Meat() {
 
 
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
-          <img src = { chicken_leg_clubPack } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Superstore</span>
+          <img src = { chicken_leg_clubPack } alt = 'Chicken Leg ClubPack' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Banana Chocolate Muffin</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Chicken Leg ClubPack</span>
+            <span className = 'price'>$18.99</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, chicken_leg_clubPack: true});}}>
             {
@@ -116,11 +116,11 @@ export default function Meat() {
         </div>
 
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
-          <img src = { chicken_thigh_clubPack } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Superstore</span>
+          <img src = { chicken_thigh_clubPack } alt = 'Chicken Thigh ClubPack' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Banana Loaf Cake</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Chicken Thigh ClubPack</span>
+            <span className = 'price'>$16.99</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, chicken_thigh_clubPack: true});}}>
             {
@@ -138,11 +138,11 @@ export default function Meat() {
         </div>
          
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
-          <img src = { extra_lean_ground_beef } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Superstore</span>
+          <img src = { extra_lean_ground_beef } alt = 'extra_lean_ground_beef' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Butter Croissant</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Extra Lean Ground Beef (954g)</span>
+            <span className = 'price'>$12.99</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, extra_lean_ground_beef: true});}}>
             {
@@ -160,11 +160,11 @@ export default function Meat() {
         </div>
 
         <div className='item__container'>
-          <span className = 'company_name'>President's Choice</span>
-          <img src = { juicy_jumbo_all_beef_wieners } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Schneiders</span>
+          <img src = { juicy_jumbo_all_beef_wieners } alt = 'juicy_jumbo_all_beef_wieners' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Chocolate Mini Muffin</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Juicy Jumbo All Beef Wieners</span>
+            <span className = 'price'>$11.99</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, juicy_jumbo_all_beef_wieners: true});}}>
             {
@@ -183,10 +183,10 @@ export default function Meat() {
         
         <div className='item__container'>
           <span className = 'company_name'>Farmer's Market</span>
-          <img src = { lean_ground_beef } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { lean_ground_beef } alt = 'lean_ground_beef' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Chocolate Chip Muffin</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Lean Ground Beef (456g) </span>
+            <span className = 'price'>$7.99</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, lean_ground_beef: true});}}>
             {
@@ -204,11 +204,11 @@ export default function Meat() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Country Harvest</span>
-          <img src = { mild_sugar_cured_bacon } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>No Name</span>
+          <img src = { mild_sugar_cured_bacon } alt = 'mild_sugar_cured_bacon' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>cinnamon Raisin Bread</span>
-            <span className = 'price'>$3.21</span>  
+            <span className = 'product_name'>Mild Sugar Cured Bacon</span>
+            <span className = 'price'>$3.99</span>  
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, minced_turkey: true});}}>
             {
@@ -226,11 +226,11 @@ export default function Meat() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
-          <img src = { minced_turkey } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>PC Blue Menu</span>
+          <img src = { minced_turkey } alt = 'minced_turkey' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Double Chocolate Muffin</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Minced Turkey</span>
+            <span className = 'price'>$6.99</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, mild_sugar_cured_bacon: true});}}>
             {
@@ -248,11 +248,11 @@ export default function Meat() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Superstore</span>
-          <img src = { ML_natural_top_dogs } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Maple Leaf</span>
+          <img src = { ML_natural_top_dogs } alt = 'ML_natural_top_dogs' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>French Bread</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Natural Top Dogs</span>
+            <span className = 'price'>$8.99</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, ML_natural_top_dogs: true});}}>
             {
@@ -270,11 +270,11 @@ export default function Meat() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Casa Mendosa</span>
-          <img src = { nn_hotdogs } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>No Name</span>
+          <img src = { nn_hotdogs } alt = 'hotdogs' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Large Original Tortillas</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Hot Dogs</span>
+            <span className = 'price'>$5.99</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, nn_hotdogs: true});}}>
             {
@@ -292,11 +292,11 @@ export default function Meat() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>President's Choice</span>
-          <img src = { PC_boneless_chickenBreast } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>PC Blue Menu</span>
+          <img src = { PC_boneless_chickenBreast } alt = 'PC_boneless_chickenBreast' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Tortillas Original</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Boneless Chicken Breast</span>
+            <span className = 'price'>$10.99</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, PC_boneless_chickenBreast: true});}}>
             {
@@ -314,11 +314,11 @@ export default function Meat() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Superstore</span>
-          <img src = { PC_FF_mild_italian_pork } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>President's Choice FF</span>
+          <img src = { PC_FF_mild_italian_pork } alt = 'PC_FF_mild_italian_pork' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>PC_FF_mild_italian_pork 6 Pack</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Mild Italian Pork (6-Pack)</span>
+            <span className = 'price'>$9.99</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, PC_FF_mild_italian_pork: true});}}>
             {
@@ -337,10 +337,10 @@ export default function Meat() {
         
         <div className='item__container'>
           <span className = 'company_name'>Superstore</span>
-          <img src = { pork_tendelion_2pack } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { pork_tendelion_2pack } alt = 'pork_tendelion_2pack' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Sourdough Loaf Sliced</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Pork Tendalion (2-Pack)</span>
+            <span className = 'price'>$21.99</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, pork_tendelion_2pack: true});}}>
             {
@@ -358,11 +358,11 @@ export default function Meat() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Counter Harvest</span>
-          <img src = { smoked_classicCut_bacon } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Schneiders</span>
+          <img src = { smoked_classicCut_bacon } alt = 'smoked_classicCut_bacon' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Stone Milled With Roasted Wheat</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Classic Cut Bacon</span>
+            <span className = 'price'>$5.99</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, smoked_classicCut_bacon: true});}}>
             {
@@ -380,11 +380,11 @@ export default function Meat() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Suraj</span>
-          <img src = { smokehouse_bacon } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Smokehouse</span>
+          <img src = { smokehouse_bacon } alt = 'smoked_classicCut_bacon' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>smokehouse_bacon Original (5-Pack)</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Bacon Original</span>
+            <span className = 'price'>$6.99</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, smokehouse_bacon: true});}}>
             {
