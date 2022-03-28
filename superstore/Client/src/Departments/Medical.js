@@ -20,10 +20,6 @@ import Tylenol_500_Mg_Eztabs from "../images/Medical/Tylenol_500_Mg_Eztabs.webp"
 import Vicks_Vaporub_Ointment from "../images/Medical/Vicks_Vaporub_Ointment.webp"
 
 
-
-
-
-
 export default function Medical() {
   const initialBoolean = false;
   const initializeValues = {Band_Aid_Large_Gauze_Pads:initialBoolean, Band_Aid_Wet_Flex_Bandages:initialBoolean, Blistex_Medicated_Berry_Lip_Balm:initialBoolean, Br45_Flex_Fab_Band:initialBoolean, Drive_Medical_Foam_Ring_Cushion:initialBoolean, Equate_Cot_Style_Finger_Splin:initialBoolean, Equate_Oral_Medication_Dispenser:initialBoolean, Equate_Self_Adhering_Bandage:initialBoolean, Equate_Small_Rolled_Gauze:initialBoolean, Gold_Bond_Medicated_Anti_Itch_Cream:initialBoolean, Gold_Bond_Medicated_Body_Powder:initialBoolean, Nexcare_Sensitive_Skin_Removable_Tape:initialBoolean, Penaten_Medicated_Cream:initialBoolean, Tylenol_500_Mg_Eztabs:initialBoolean, Vicks_Vaporub_Ointment:initialBoolean};
