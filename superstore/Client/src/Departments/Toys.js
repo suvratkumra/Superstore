@@ -74,7 +74,7 @@ export default function Toys() {
           <span className = 'company_name'>Country Harvest</span>
           <img src = { Kid_Connection_Music_Keyboard } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>14 Grain Whole Wheat Bread</span>
+            <span className = 'product_name'>Kid Connection Music Keyboard</span>
             <span className = 'price'>$3.21</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, grainBread: true});}}>
@@ -98,7 +98,7 @@ export default function Toys() {
           <span className = 'company_name'>Farmer's Market</span>
           <img src = { Play_Doh_Drill_n_Fill_Dentist_Toy } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Banana Chocolate Muffin</span>
+            <span className = 'product_name'>Play Doh Drill'n Fill Dentist Toy</span>
             <span className = 'price'>$3.21</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, bananaMuffin: true});}}>
@@ -120,7 +120,7 @@ export default function Toys() {
           <span className = 'company_name'>Farmer's Market</span>
           <img src = { Mattel_Hot_Wheels_5_Car_Pack_Assortment } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Banana Loaf Cake</span>
+            <span className = 'product_name'>Mattel Hot Wheels 5 Car Pack Assortment</span>
             <span className = 'price'>$3.21</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, bananaCake: true});}}>
@@ -142,7 +142,7 @@ export default function Toys() {
           <span className = 'company_name'>Farmer's Market</span>
           <img src = { Kid_Connection_Utility_Trucks_Toy } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Butter Croissant</span>
+            <span className = 'product_name'>Kid Connection Utility Trucks Toy</span>
             <span className = 'price'>$3.21</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, butterCroissant: true});}}>
@@ -164,7 +164,7 @@ export default function Toys() {
           <span className = 'company_name'>President's Choice</span>
           <img src = { Mattel_Hot_Wheels_Vehicles } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Chocolate Mini Muffin</span>
+            <span className = 'product_name'>Mattel Hot Wheels Vehicles</span>
             <span className = 'price'>$3.21</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, chocolateMini: true});}}>
@@ -186,7 +186,7 @@ export default function Toys() {
           <span className = 'company_name'>Farmer's Market</span>
           <img src = { Pressman_Shark_Bite_Game } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Chocolate Chip Muffin</span>
+            <span className = 'product_name'>Pressman Shark Bite Game</span>
             <span className = 'price'>$3.21</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, chocChipMuffin: true});}}>
@@ -208,7 +208,7 @@ export default function Toys() {
           <span className = 'company_name'>Country Harvest</span>
           <img src = { Regent_Soccerball } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>cinnamon Raisin Bread</span>
+            <span className = 'product_name'>Regent Soccerball</span>
             <span className = 'price'>$3.21</span>  
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, cinnamonBread: true});}}>
@@ -230,7 +230,7 @@ export default function Toys() {
           <span className = 'company_name'>Farmer's Market</span>
           <img src = { Size_3T_Paw_Patrol } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Double Chocolate Muffin</span>
+            <span className = 'product_name'>Size 3T Paw Patrol</span>
             <span className = 'price'>$3.21</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, doubleChoc: true});}}>
@@ -252,7 +252,7 @@ export default function Toys() {
           <span className = 'company_name'>Superstore</span>
           <img src = { Spark_Wooden_Puzzle_Set } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>French Bread</span>
+            <span className = 'product_name'>Spark Wooden Puzzle Set</span>
             <span className = 'price'>$3.21</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, frenchBread: true});}}>
@@ -274,7 +274,7 @@ export default function Toys() {
           <span className = 'company_name'>Casa Mendosa</span>
           <img src = { Barbie_Pop_Star_Doll } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Large Original Tortillas</span>
+            <span className = 'product_name'>Barbie Pop Star Doll</span>
             <span className = 'price'>$3.21</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, largeOriginal: true});}}>
@@ -296,7 +296,7 @@ export default function Toys() {
           <span className = 'company_name'>President's Choice</span>
           <img src = { Munchkin_Duck_Dunk_Bath_Toy } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Tortillas Original</span>
+            <span className = 'product_name'>Munchkin Duck Dunk Bath Toy</span>
             <span className = 'price'>$3.21</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, PCtortillas: true});}}>
@@ -318,7 +318,7 @@ export default function Toys() {
           <span className = 'company_name'>Superstore</span>
           <img src = { Mattel_Kerplunk } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Rolls 6 Pack</span>
+            <span className = 'product_name'>Mattel Kerplunk</span>
             <span className = 'price'>$3.21</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, rolls: true});}}>
@@ -340,7 +340,7 @@ export default function Toys() {
           <span className = 'company_name'>Superstore</span>
           <img src = { PlayMonster_Things } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Sourdough Loaf Sliced</span>
+            <span className = 'product_name'>PlayMonster Things</span>
             <span className = 'price'>$3.21</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, sourdoughLoaf: true});}}>
@@ -362,7 +362,7 @@ export default function Toys() {
           <span className = 'company_name'>Counter Harvest</span>
           <img src = { Play_Day_Play_Balls } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Stone Milled With Roasted Wheat</span>
+            <span className = 'product_name'>Play Day Play Balls</span>
             <span className = 'price'>$3.21</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, roastedWheat: true});}}>
@@ -384,7 +384,7 @@ export default function Toys() {
           <span className = 'company_name'>Suraj</span>
           <img src = { Playmobil_School_Bus_Playset } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Naan Original (5-Pack)</span>
+            <span className = 'product_name'>Playmobil School Bus Playset</span>
             <span className = 'price'>$3.21</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, naan: true});}}>

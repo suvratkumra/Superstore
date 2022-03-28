@@ -2,21 +2,21 @@ import React from 'react'
 import { useState } from 'react';
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 import { GiMagnifyingGlass } from "react-icons/gi";
-import Coconut from "./images/Toys/Coconut"
-import Cranberries from "./images/Toys/Cranberries"
-import Dill from "./images/Toys/Dill"
-import Fresh_Mint from "./images/Toys/Fresh_Mint"
-import Garlic from "./images/Toys/Garlic"
-import Great_Value_Fruit_Salad_With_Cherries from "./images/Toys/Great_Value_Fruit_Salad_With_Cherries"
-import Kale_Sweet_Salad from "./images/Toys/Kale_Sweet_Salad"
-import Lemon from "./images/Toys/Lemon"
-import Lettuce_Butter from "./images/Toys/Lettuce_Butter"
-import Mango_Red from "./images/Toys/Mango_Red"
-import Organic_Brown_Bell_Pepper from "./images/Toys/Organic_Brown_Bell_Pepper"
-import Organic_Cauliflower from "./images/Toys/Organic_Cauliflower"
-import Parsnip from "./images/Toys/Parsnip"
-import Potatoes_Yellow from "./images/Toys/Potatoes_Yellow"
-import Raspberries from "./images/Toys/Raspberries"
+import Coconut from "./images/Produce/Coconut"
+import Cranberries from "./images/Produce/Cranberries"
+import Dill from "./images/Produce/Dill"
+import Fresh_Mint from "./images/Produce/Fresh_Mint"
+import Garlic from "./images/Produce/Garlic"
+import Great_Value_Fruit_Salad_With_Cherries from "./images/Produce/Great_Value_Fruit_Salad_With_Cherries"
+import Kale_Sweet_Salad from "./images/Produce/Kale_Sweet_Salad"
+import Lemon from "./images/Produce/Lemon"
+import Lettuce_Butter from "./images/Produce/Lettuce_Butter"
+import Mango_Red from "./images/Produce/Mango_Red"
+import Organic_Brown_Bell_Pepper from "./images/Produce/Organic_Brown_Bell_Pepper"
+import Organic_Cauliflower from "./images/Produce/Organic_Cauliflower"
+import Parsnip from "./images/Produce/Parsnip"
+import Potatoes_Yellow from "./images/Produce/Potatoes_Yellow"
+import Raspberries from "./images/Produce/Raspberries"
 
 
 export default function Produce() {
