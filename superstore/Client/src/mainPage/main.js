@@ -78,15 +78,15 @@ function MainPage() {
           <a href="#"onClick= {() => {
             setCounter(2);
           }}>26 to 50 years</a>
-
-         
+          
+          
+          
           <a href="#"onClick= {() => {
             setCounter(3);
           }}>50+ years</a>
         </div>
       </div>
     </div>
-    
 
       <div className='departments__container'>
         <span className='department__name'>DEPARTMENTS</span>
@@ -210,7 +210,8 @@ function MainPage() {
               (counter === 1 || counter === 2 || counter === 3) ? null :
               <button className="buttonStyle"
                     type="button" onClick={() => {
-                      window.location.href = "http://localhost:3000/Departments/Kid_Clothes";
+                     window.location.href = "http://localhost:3000/Departments/Kid_Clothes";
+
                     }}>
                     KIDS CLOTHES
               </button> 
@@ -222,7 +223,7 @@ function MainPage() {
               (counter === 0) ? null :
               <button className="buttonStyle"
                     type="button" onClick={() => {
-                      window.location.href = "http://localhost:3000/Departments/Medical";
+                      window.location.href = "http://localhost:3000/Departments/MenClothes";
                     }}>
                     MEN CLOTHES
               </button>
@@ -234,7 +235,7 @@ function MainPage() {
                 (counter === 0) ? null :
                 <button className="buttonStyle"
                       type="button" onClick={() => {
-                        window.location.href = "http://localhost:3000/Departments/Medical";
+                        window.location.href = "http://localhost:3000/Departments/WomenClothes";
                       }}>
                       WOMEN CLOTHES
                 </button>
@@ -249,7 +250,7 @@ function MainPage() {
                 (counter === 0) ? null :
                 <button className="buttonStyle"
                       type="button" onClick={() => {
-                        window.location.href = "http://localhost:3000/Departments/Medical";
+                        window.location.href = "http://localhost:3000/Departments/Household";
                       }}>
                       HOUSEHOLD
                 </button>
