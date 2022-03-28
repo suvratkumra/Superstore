@@ -91,6 +91,7 @@ function MainPage() {
         </div>
       </div>
     </div>
+    
 
       <div className='departments__container'>
         <span className='department__name'>DEPARTMENTS</span>
