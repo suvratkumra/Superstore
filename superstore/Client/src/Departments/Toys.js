@@ -21,10 +21,10 @@ import { GiMagnifyingGlass } from "react-icons/gi";
 
 export default function Toys() {
   const initialBoolean = false;
-  const initializeValues = {grainBread:initialBoolean, bananaMuffin:initialBoolean, bananaCake:initialBoolean, butterCroissant:initialBoolean, chocolateMini:initialBoolean, chocChipMuffin:initialBoolean, cinnamonBread:initialBoolean, doubleChoc:initialBoolean, frenchBread:initialBoolean, largeOriginal:initialBoolean, PCtortillas:initialBoolean, rolls:initialBoolean, sourdoughLoaf:initialBoolean, roastedWheat:initialBoolean, naan:initialBoolean};
+  const initializeValues = {Kid_Connection_Music_Keyboard:initialBoolean, Play_Doh_Drill_n_Fill_Dentist_Toy:initialBoolean, Mattel_Hot_Wheels_5_Car_Pack_Assortment:initialBoolean, Kid_Connection_Utility_Trucks_Toy:initialBoolean, Mattel_Hot_Wheels_Vehicles:initialBoolean, Pressman_Shark_Bite_Game:initialBoolean, Regent_Soccerball:initialBoolean, Size_3T_Paw_Patrol:initialBoolean, Spark_Wooden_Puzzle_Set:initialBoolean, Barbie_Pop_Star_Doll:initialBoolean, Munchkin_Duck_Dunk_Bath_Toy:initialBoolean, Mattel_Kerplunk:initialBoolean, Play_Day_Play_Balls:initialBoolean, Play_Day_Play_Balls:initialBoolean, Playmobil_School_Bus_Playset:initialBoolean};
   const [cartText, setCartText] = useState(initializeValues);
   const [showButton, setShowButton] = useState({showButton: false, showButton2: false});  
-  const initializeNumber = {grainBread:1, bananaMuffin:1, bananaCake:1, butterCroissant:1, chocolateMini:1, chocChipMuffin:1, cinnamonBread:1, doubleChoc:1, frenchBread:1, largeOriginal:1, PCtortillas:1, rolls:1, sourdoughLoaf:1, roastedWheat:1, naan:1};
+  const initializeNumber = {Kid_Connection_Music_Keyboard:1, Play_Doh_Drill_n_Fill_Dentist_Toy:1, Mattel_Hot_Wheels_5_Car_Pack_Assortment:1, Kid_Connection_Utility_Trucks_Toy:1, Mattel_Hot_Wheels_Vehicles:1, Pressman_Shark_Bite_Game:1, Regent_Soccerball:1, Size_3T_Paw_Patrol:1, Spark_Wooden_Puzzle_Set:1, Barbie_Pop_Star_Doll:1, Munchkin_Duck_Dunk_Bath_Toy:1, Mattel_Kerplunk:1, Play_Day_Play_Balls:1, Play_Day_Play_Balls:1, Playmobil_School_Bus_Playset:1};
   const [itemIncrementer, setItemIncrementer] = useState(initializeNumber);
 
 
@@ -64,28 +64,28 @@ export default function Toys() {
 
     <div className='products_name__container'>
       <div className='departmentName'>
-        BAKERY
+        TOYS
       </div>
 
 
 
       <div className='bigProducts__container'>
         <div className='item__container'>
-          <span className = 'company_name'>Country Harvest</span>
-          <img src = { Kid_Connection_Music_Keyboard } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Kid Connection</span>
+          <img src = { Kid_Connection_Music_Keyboard } alt = 'Kid_Connection_Music_Keyboard' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Kid Connection Music Keyboard</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Music Keyboard</span>
+            <span className = 'price'>$25.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, grainBread: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Kid_Connection_Music_Keyboard: true});}}>
             {
-              cartText.grainBread ? <div className = 'increment__container'> 
+              cartText.Kid_Connection_Music_Keyboard ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.grainBread > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, grainBread: itemIncrementer.grainBread-1});                                                                          
+                                                                                    if(itemIncrementer.Kid_Connection_Music_Keyboard > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Kid_Connection_Music_Keyboard: itemIncrementer.Kid_Connection_Music_Keyboard-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.grainBread} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, grainBread: itemIncrementer.grainBread+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Kid_Connection_Music_Keyboard} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Kid_Connection_Music_Keyboard: itemIncrementer.Kid_Connection_Music_Keyboard+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -95,21 +95,21 @@ export default function Toys() {
 
 
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
-          <img src = { Play_Doh_Drill_n_Fill_Dentist_Toy } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Play Doh</span>
+          <img src = { Play_Doh_Drill_n_Fill_Dentist_Toy } alt = 'Play_Doh_Drill_n_Fill_Dentist_Toy' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Play Doh Drill'n Fill Dentist Toy</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Drill'n Fill Dentist Toy</span>
+            <span className = 'price'>$11.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, bananaMuffin: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Play_Doh_Drill_n_Fill_Dentist_Toy: true});}}>
             {
-              cartText.bananaMuffin ? <div className = 'increment__container'> 
+              cartText.Play_Doh_Drill_n_Fill_Dentist_Toy ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.bananaMuffin > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, bananaMuffin: itemIncrementer.bananaMuffin-1});                                                                          
+                                                                                    if(itemIncrementer.Play_Doh_Drill_n_Fill_Dentist_Toy > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Play_Doh_Drill_n_Fill_Dentist_Toy: itemIncrementer.Play_Doh_Drill_n_Fill_Dentist_Toy-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.bananaMuffin} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, bananaMuffin: itemIncrementer.bananaMuffin+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Play_Doh_Drill_n_Fill_Dentist_Toy} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Play_Doh_Drill_n_Fill_Dentist_Toy: itemIncrementer.Play_Doh_Drill_n_Fill_Dentist_Toy+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -117,21 +117,21 @@ export default function Toys() {
         </div>
 
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
-          <img src = { Mattel_Hot_Wheels_5_Car_Pack_Assortment } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Mattel Hot Wheels</span>
+          <img src = { Mattel_Hot_Wheels_5_Car_Pack_Assortment } alt = 'Mattel Hot Wheels' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Mattel Hot Wheels 5 Car Pack Assortment</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>5 Car Pack Assortment</span>
+            <span className = 'price'>$5.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, bananaCake: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Mattel_Hot_Wheels_5_Car_Pack_Assortment: true});}}>
             {
-              cartText.bananaCake ? <div className = 'increment__container'> 
+              cartText.Mattel_Hot_Wheels_5_Car_Pack_Assortment ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.bananaCake > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, bananaCake: itemIncrementer.bananaCake-1});                                                                          
+                                                                                    if(itemIncrementer.Mattel_Hot_Wheels_5_Car_Pack_Assortment > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Mattel_Hot_Wheels_5_Car_Pack_Assortment: itemIncrementer.Mattel_Hot_Wheels_5_Car_Pack_Assortment-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.bananaCake} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, bananaCake: itemIncrementer.bananaCake+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Mattel_Hot_Wheels_5_Car_Pack_Assortment} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Mattel_Hot_Wheels_5_Car_Pack_Assortment: itemIncrementer.Mattel_Hot_Wheels_5_Car_Pack_Assortment+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -139,21 +139,21 @@ export default function Toys() {
         </div>
          
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
-          <img src = { Kid_Connection_Utility_Trucks_Toy } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Kid Connection </span>
+          <img src = { Kid_Connection_Utility_Trucks_Toy } alt = 'Kid Connection Utility Trucks Toy' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Kid Connection Utility Trucks Toy</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Utility Trucks Toy</span>
+            <span className = 'price'>$9.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, butterCroissant: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Kid_Connection_Utility_Trucks_Toy: true});}}>
             {
-              cartText.butterCroissant ? <div className = 'increment__container'> 
+              cartText.Kid_Connection_Utility_Trucks_Toy ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.butterCroissant > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, butterCroissant: itemIncrementer.butterCroissant-1});                                                                          
+                                                                                    if(itemIncrementer.Kid_Connection_Utility_Trucks_Toy > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Kid_Connection_Utility_Trucks_Toy: itemIncrementer.Kid_Connection_Utility_Trucks_Toy-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.butterCroissant} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, butterCroissant: itemIncrementer.butterCroissant+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Kid_Connection_Utility_Trucks_Toy} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Kid_Connection_Utility_Trucks_Toy: itemIncrementer.Kid_Connection_Utility_Trucks_Toy+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -161,21 +161,21 @@ export default function Toys() {
         </div>
 
         <div className='item__container'>
-          <span className = 'company_name'>President's Choice</span>
-          <img src = { Mattel_Hot_Wheels_Vehicles } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Mattel Hot Wheels</span>
+          <img src = { Mattel_Hot_Wheels_Vehicles } alt = 'Mattel Hot Wheels' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Mattel Hot Wheels Vehicles</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Vehicles</span>
+            <span className = 'price'>$15.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, chocolateMini: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Mattel_Hot_Wheels_Vehicles: true});}}>
             {
-              cartText.chocolateMini ? <div className = 'increment__container'> 
+              cartText.Mattel_Hot_Wheels_Vehicles ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.chocolateMini > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, chocolateMini: itemIncrementer.chocolateMini-1});                                                                          
+                                                                                    if(itemIncrementer.Mattel_Hot_Wheels_Vehicles > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Mattel_Hot_Wheels_Vehicles: itemIncrementer.Mattel_Hot_Wheels_Vehicles-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.chocolateMini} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, chocolateMini: itemIncrementer.chocolateMini+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Mattel_Hot_Wheels_Vehicles} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Mattel_Hot_Wheels_Vehicles: itemIncrementer.Mattel_Hot_Wheels_Vehicles+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -183,21 +183,21 @@ export default function Toys() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
-          <img src = { Pressman_Shark_Bite_Game } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Pressman</span>
+          <img src = { Pressman_Shark_Bite_Game } alt = 'Pressman' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Pressman Shark Bite Game</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'> Shark Bite Game</span>
+            <span className = 'price'>$20.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, chocChipMuffin: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Pressman_Shark_Bite_Game: true});}}>
             {
-              cartText.chocChipMuffin ? <div className = 'increment__container'> 
+              cartText.Pressman_Shark_Bite_Game ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.chocChipMuffin > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, chocChipMuffin: itemIncrementer.chocChipMuffin-1});                                                                          
+                                                                                    if(itemIncrementer.Pressman_Shark_Bite_Game > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Pressman_Shark_Bite_Game: itemIncrementer.Pressman_Shark_Bite_Game-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.chocChipMuffin} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, chocChipMuffin: itemIncrementer.chocChipMuffin+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Pressman_Shark_Bite_Game} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Pressman_Shark_Bite_Game: itemIncrementer.Pressman_Shark_Bite_Game+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -205,21 +205,21 @@ export default function Toys() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Country Harvest</span>
-          <img src = { Regent_Soccerball } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Regent </span>
+          <img src = { Regent_Soccerball } alt = 'Regent soccerball' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Regent Soccerball</span>
-            <span className = 'price'>$3.21</span>  
+            <span className = 'product_name'>Soccerball</span>
+            <span className = 'price'>$12.99</span>  
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, cinnamonBread: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Regent_Soccerball: true});}}>
             {
-              cartText.cinnamonBread ? <div className = 'increment__container'> 
+              cartText.Regent_Soccerball ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.cinnamonBread > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, cinnamonBread: itemIncrementer.cinnamonBread-1});                                                                          
+                                                                                    if(itemIncrementer.Regent_Soccerball > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Regent_Soccerball: itemIncrementer.Regent_Soccerball-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.cinnamonBread} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, cinnamonBread: itemIncrementer.cinnamonBread+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Regent_Soccerball} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Regent_Soccerball: itemIncrementer.Regent_Soccerball+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -227,21 +227,21 @@ export default function Toys() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
-          <img src = { Size_3T_Paw_Patrol } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Size 3T </span>
+          <img src = { Size_3T_Paw_Patrol } alt = 'Size 3T ' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Size 3T Paw Patrol</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Paw Patrol</span>
+            <span className = 'price'>$12.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, doubleChoc: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Size_3T_Paw_Patrol: true});}}>
             {
-              cartText.doubleChoc ? <div className = 'increment__container'> 
+              cartText.Size_3T_Paw_Patrol ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.doubleChoc > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, doubleChoc: itemIncrementer.doubleChoc-1});                                                                          
+                                                                                    if(itemIncrementer.Size_3T_Paw_Patrol > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Size_3T_Paw_Patrol: itemIncrementer.Size_3T_Paw_Patrol-1});                                                                          
                                                                                     } }> -</button>
-                                      <span className = 'number'> {itemIncrementer.doubleChoc} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, doubleChoc: itemIncrementer.doubleChoc+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Size_3T_Paw_Patrol} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Size_3T_Paw_Patrol: itemIncrementer.Size_3T_Paw_Patrol+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -249,21 +249,21 @@ export default function Toys() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Superstore</span>
-          <img src = { Spark_Wooden_Puzzle_Set } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Spark </span>
+          <img src = { Spark_Wooden_Puzzle_Set } alt = 'Spark ' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Spark Wooden Puzzle Set</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Wooden Puzzle Set</span>
+            <span className = 'price'>$20.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, frenchBread: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Spark_Wooden_Puzzle_Set: true});}}>
             {
-              cartText.frenchBread ? <div className = 'increment__container'> 
+              cartText.Spark_Wooden_Puzzle_Set ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.frenchBread > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, frenchBread: itemIncrementer.frenchBread-1});                                                                          
+                                                                                    if(itemIncrementer.Spark_Wooden_Puzzle_Set > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Spark_Wooden_Puzzle_Set: itemIncrementer.Spark_Wooden_Puzzle_Set-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.frenchBread} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, frenchBread: itemIncrementer.frenchBread+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Spark_Wooden_Puzzle_Set} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Spark_Wooden_Puzzle_Set: itemIncrementer.Spark_Wooden_Puzzle_Set+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -271,21 +271,21 @@ export default function Toys() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Casa Mendosa</span>
-          <img src = { Barbie_Pop_Star_Doll } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Barbie</span>
+          <img src = { Barbie_Pop_Star_Doll } alt = 'Barbie' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Barbie Pop Star Doll</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'price'>$12.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, largeOriginal: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Barbie_Pop_Star_Doll: true});}}>
             {
-              cartText.largeOriginal ? <div className = 'increment__container'> 
+              cartText.Barbie_Pop_Star_Doll ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.largeOriginal > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, largeOriginal: itemIncrementer.largeOriginal-1});                                                                          
+                                                                                    if(itemIncrementer.Barbie_Pop_Star_Doll > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Barbie_Pop_Star_Doll: itemIncrementer.Barbie_Pop_Star_Doll-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.largeOriginal} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, largeOriginal: itemIncrementer.largeOriginal+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Barbie_Pop_Star_Doll} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Barbie_Pop_Star_Doll: itemIncrementer.Barbie_Pop_Star_Doll+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -294,20 +294,20 @@ export default function Toys() {
         
         <div className='item__container'>
           <span className = 'company_name'>President's Choice</span>
-          <img src = { Munchkin_Duck_Dunk_Bath_Toy } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Munchkin_Duck_Dunk_Bath_Toy } alt = 'Munchkin Duck Dunk Bath Toy' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Munchkin Duck Dunk Bath Toy</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'price'>$7.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, PCtortillas: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Munchkin_Duck_Dunk_Bath_Toy: true});}}>
             {
-              cartText.PCtortillas ? <div className = 'increment__container'> 
+              cartText.Munchkin_Duck_Dunk_Bath_Toy ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.PCtortillas > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, PCtortillas: itemIncrementer.PCtortillas-1});                                                                          
+                                                                                    if(itemIncrementer.Munchkin_Duck_Dunk_Bath_Toy > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Munchkin_Duck_Dunk_Bath_Toy: itemIncrementer.Munchkin_Duck_Dunk_Bath_Toy-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.PCtortillas} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, PCtortillas: itemIncrementer.PCtortillas+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Munchkin_Duck_Dunk_Bath_Toy} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Munchkin_Duck_Dunk_Bath_Toy: itemIncrementer.Munchkin_Duck_Dunk_Bath_Toy+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -315,21 +315,21 @@ export default function Toys() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Superstore</span>
-          <img src = { Mattel_Kerplunk } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Mattel</span>
+          <img src = { Mattel_Kerplunk } alt = 'Mattel' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Mattel Kerplunk</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Kerplunk</span>
+            <span className = 'price'>$8.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, rolls: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Mattel_Kerplunk: true});}}>
             {
-              cartText.rolls ? <div className = 'increment__container'> 
+              cartText.Mattel_Kerplunk ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.rolls > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, rolls: itemIncrementer.rolls-1});                                                                          
+                                                                                    if(itemIncrementer.Mattel_Kerplunk > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Mattel_Kerplunk: itemIncrementer.Mattel_Kerplunk-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.rolls} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, rolls: itemIncrementer.rolls+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Mattel_Kerplunk} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Mattel_Kerplunk: itemIncrementer.Mattel_Kerplunk+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -337,21 +337,21 @@ export default function Toys() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Superstore</span>
-          <img src = { PlayMonster_Things } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>PlayMonster</span>
+          <img src = { PlayMonster_Things } alt = 'PlayMonster' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>PlayMonster Things</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Things</span>
+            <span className = 'price'>$16.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, sourdoughLoaf: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Play_Day_Play_Balls: true});}}>
             {
-              cartText.sourdoughLoaf ? <div className = 'increment__container'> 
+              cartText.Play_Day_Play_Balls ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.sourdoughLoaf > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, sourdoughLoaf: itemIncrementer.sourdoughLoaf-1});                                                                          
+                                                                                    if(itemIncrementer.Play_Day_Play_Balls > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Play_Day_Play_Balls: itemIncrementer.Play_Day_Play_Balls-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.sourdoughLoaf} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, sourdoughLoaf: itemIncrementer.sourdoughLoaf+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Play_Day_Play_Balls} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Play_Day_Play_Balls: itemIncrementer.Play_Day_Play_Balls+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -359,21 +359,21 @@ export default function Toys() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Counter Harvest</span>
-          <img src = { Play_Day_Play_Balls } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Play Day</span>
+          <img src = { Play_Day_Play_Balls } alt = 'Play Day' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Play Day Play Balls</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'price'>$21.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, roastedWheat: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Play_Day_Play_Balls: true});}}>
             {
-              cartText.roastedWheat ? <div className = 'increment__container'> 
+              cartText.Play_Day_Play_Balls ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.roastedWheat > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, roastedWheat: itemIncrementer.roastedWheat-1});                                                                          
+                                                                                    if(itemIncrementer.Play_Day_Play_Balls > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Play_Day_Play_Balls: itemIncrementer.Play_Day_Play_Balls-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.roastedWheat} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, roastedWheat: itemIncrementer.roastedWheat+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Play_Day_Play_Balls} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Play_Day_Play_Balls: itemIncrementer.Play_Day_Play_Balls+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -381,21 +381,21 @@ export default function Toys() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Suraj</span>
-          <img src = { Playmobil_School_Bus_Playset } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Playmobil</span>
+          <img src = { Playmobil_School_Bus_Playset } alt = 'Playmobil' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Playmobil School Bus Playset</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>School Bus Playset</span>
+            <span className = 'price'>$5.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, naan: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Playmobil_School_Bus_Playset: true});}}>
             {
-              cartText.naan ? <div className = 'increment__container'> 
+              cartText.Playmobil_School_Bus_Playset ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.naan > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, naan: itemIncrementer.naan-1});                                                                          
+                                                                                    if(itemIncrementer.Playmobil_School_Bus_Playset > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Playmobil_School_Bus_Playset: itemIncrementer.Playmobil_School_Bus_Playset-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.naan} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, naan: itemIncrementer.naan+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Playmobil_School_Bus_Playset} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Playmobil_School_Bus_Playset: itemIncrementer.Playmobil_School_Bus_Playset+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }

@@ -115,12 +115,13 @@
 
 
 .price_product__container {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+
 }
 
 .price {
-    margin-top: 20px;
+    margin-top: 25px;
     margin-right: 10px;
     font-size: 1.2rem;
 }

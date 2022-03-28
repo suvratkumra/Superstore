@@ -21,10 +21,10 @@ import xlarge_eggs_12pack from "../images/Dairy/xlarge_eggs_12pack.png"
 
 export default function Dairy() {
   const initialBoolean = false;
-  const initializeValues = {grainBread:initialBoolean, bananaMuffin:initialBoolean, bananaCake:initialBoolean, butterCroissant:initialBoolean, chocolateMini:initialBoolean, chocChipMuffin:initialBoolean, cinnamonBread:initialBoolean, doubleChoc:initialBoolean, frenchBread:initialBoolean, largeOriginal:initialBoolean, PCtortillas:initialBoolean, rolls:initialBoolean, sourdoughLoaf:initialBoolean, roastedWheat:initialBoolean, naan:initialBoolean};
+  const initializeValues = {astro_balkan_style_yogurt750g:initialBoolean, beatrice_onePercent_milk:initialBoolean, beatrice_twoPercent_milk:initialBoolean, beatrice_threePercent_milk:initialBoolean, becel_margarine_original907g:initialBoolean, lactantia_half_n_half_10percent:initialBoolean, lactantia_whipping_cream35percent:initialBoolean, large_eggs_12pack:initialBoolean, NN_pasteurized_cream_cheese:initialBoolean, NN_salted_butter:initialBoolean, NN_sourCream_14percent_500ml:initialBoolean, NN_unsalted_butter454g:initialBoolean, PC_free_run_brown_egg_large:initialBoolean, saputo_mozzarellissima_500g:initialBoolean, xlarge_eggs_12pack:initialBoolean};
   const [cartText, setCartText] = useState(initializeValues);
   const [showButton, setShowButton] = useState({showButton: false, showButton2: false});  
-  const initializeNumber = {grainBread:1, bananaMuffin:1, bananaCake:1, butterCroissant:1, chocolateMini:1, chocChipMuffin:1, cinnamonBread:1, doubleChoc:1, frenchBread:1, largeOriginal:1, PCtortillas:1, rolls:1, sourdoughLoaf:1, roastedWheat:1, naan:1};
+  const initializeNumber = {astro_balkan_style_yogurt750g:1, beatrice_onePercent_milk:1, beatrice_twoPercent_milk:1, beatrice_threePercent_milk:1, becel_margarine_original907g:1, lactantia_half_n_half_10percent:1, lactantia_whipping_cream35percent:1, large_eggs_12pack:1, NN_pasteurized_cream_cheese:1, NN_salted_butter:1, NN_sourCream_14percent_500ml:1, NN_unsalted_butter454g:1, PC_free_run_brown_egg_large:1, saputo_mozzarellissima_500g:1, xlarge_eggs_12pack:1};
   const [itemIncrementer, setItemIncrementer] = useState(initializeNumber);
 
 
@@ -64,28 +64,28 @@ export default function Dairy() {
 
     <div className='products_name__container'>
       <div className='departmentName'>
-        Dairy
+        DAIRY
       </div>
 
 
 
       <div className='bigProducts__container'>
         <div className='item__container'>
-          <span className = 'company_name'>Country Harvest</span>
-          <img src = { astro_balkan_style_yogurt750g } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Astro</span>
+          <img src = { astro_balkan_style_yogurt750g } alt = 'balkan_style_yogurt750g' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>14 Grain Whole Wheat Bread</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Balkan Style Yogurt (750g)</span>
+            <span className = 'price'>$4.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, grainBread: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, astro_balkan_style_yogurt750g: true});}}>
             {
-              cartText.grainBread ? <div className = 'increment__container'> 
+              cartText.astro_balkan_style_yogurt750g ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.grainBread > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, grainBread: itemIncrementer.grainBread-1});                                                                          
+                                                                                    if(itemIncrementer.astro_balkan_style_yogurt750g > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, astro_balkan_style_yogurt750g: itemIncrementer.astro_balkan_style_yogurt750g-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.grainBread} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, grainBread: itemIncrementer.grainBread+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.astro_balkan_style_yogurt750g} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, astro_balkan_style_yogurt750g: itemIncrementer.astro_balkan_style_yogurt750g+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -95,21 +95,21 @@ export default function Dairy() {
 
 
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
-          <img src = { beatrice_onePercent_milk } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Beatrice</span>
+          <img src = { beatrice_onePercent_milk } alt = 'Beatrice' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Banana Chocolate Muffin</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>1% milk (4L/1G)</span>
+            <span className = 'price'>$4.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, bananaMuffin: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, beatrice_onePercent_milk: true});}}>
             {
-              cartText.bananaMuffin ? <div className = 'increment__container'> 
+              cartText.beatrice_onePercent_milk ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.bananaMuffin > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, bananaMuffin: itemIncrementer.bananaMuffin-1});                                                                          
+                                                                                    if(itemIncrementer.beatrice_onePercent_milk > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, beatrice_onePercent_milk: itemIncrementer.beatrice_onePercent_milk-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.bananaMuffin} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, bananaMuffin: itemIncrementer.bananaMuffin+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.beatrice_onePercent_milk} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, beatrice_onePercent_milk: itemIncrementer.beatrice_onePercent_milk+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -117,21 +117,21 @@ export default function Dairy() {
         </div>
 
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
-          <img src = { beatrice_twoPercent_milk } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Beatrice</span>
+          <img src = { beatrice_twoPercent_milk } alt = 'Beatrice' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Banana Loaf Cake</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>2% milk (4L/1G)</span>
+            <span className = 'price'>$4.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, bananaCake: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, beatrice_twoPercent_milk: true});}}>
             {
-              cartText.bananaCake ? <div className = 'increment__container'> 
+              cartText.beatrice_twoPercent_milk ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.bananaCake > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, bananaCake: itemIncrementer.bananaCake-1});                                                                          
+                                                                                    if(itemIncrementer.beatrice_twoPercent_milk > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, beatrice_twoPercent_milk: itemIncrementer.beatrice_twoPercent_milk-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.bananaCake} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, bananaCake: itemIncrementer.bananaCake+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.beatrice_twoPercent_milk} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, beatrice_twoPercent_milk: itemIncrementer.beatrice_twoPercent_milk+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -139,21 +139,21 @@ export default function Dairy() {
         </div>
          
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
-          <img src = { beatrice_threePercent_milk } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Beatrice</span>
+          <img src = { beatrice_threePercent_milk } alt = 'Beatrice' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Butter Croissant</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>3% milk (4L/1G)</span>
+            <span className = 'price'>$4.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, butterCroissant: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, beatrice_threePercent_milk: true});}}>
             {
-              cartText.butterCroissant ? <div className = 'increment__container'> 
+              cartText.beatrice_threePercent_milk ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.butterCroissant > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, butterCroissant: itemIncrementer.butterCroissant-1});                                                                          
+                                                                                    if(itemIncrementer.beatrice_threePercent_milk > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, beatrice_threePercent_milk: itemIncrementer.beatrice_threePercent_milk-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.butterCroissant} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, butterCroissant: itemIncrementer.butterCroissant+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.beatrice_threePercent_milk} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, beatrice_threePercent_milk: itemIncrementer.beatrice_threePercent_milk+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -161,21 +161,21 @@ export default function Dairy() {
         </div>
 
         <div className='item__container'>
-          <span className = 'company_name'>President's Choice</span>
-          <img src = { becel_margarine_original907g } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Becel</span>
+          <img src = { becel_margarine_original907g } alt = 'becel_margarine_original907g' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Chocolate Mini Muffin</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Margarine Original (907g)</span>
+            <span className = 'price'>$6.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, chocolateMini: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, becel_margarine_original907g: true});}}>
             {
-              cartText.chocolateMini ? <div className = 'increment__container'> 
+              cartText.becel_margarine_original907g ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.chocolateMini > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, chocolateMini: itemIncrementer.chocolateMini-1});                                                                          
+                                                                                    if(itemIncrementer.becel_margarine_original907g > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, becel_margarine_original907g: itemIncrementer.becel_margarine_original907g-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.chocolateMini} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, chocolateMini: itemIncrementer.chocolateMini+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.becel_margarine_original907g} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, becel_margarine_original907g: itemIncrementer.becel_margarine_original907g+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -183,21 +183,21 @@ export default function Dairy() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
+          <span className = 'company_name'>Lactantia</span>
           <img src = { lactantia_half_n_half_10percent } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Chocolate Chip Muffin</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Half and Half - 10%</span>
+            <span className = 'price'>$2.59</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, chocChipMuffin: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, lactantia_half_n_half_10percent: true});}}>
             {
-              cartText.chocChipMuffin ? <div className = 'increment__container'> 
+              cartText.lactantia_half_n_half_10percent ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.chocChipMuffin > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, chocChipMuffin: itemIncrementer.chocChipMuffin-1});                                                                          
+                                                                                    if(itemIncrementer.lactantia_half_n_half_10percent > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, lactantia_half_n_half_10percent: itemIncrementer.lactantia_half_n_half_10percent-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.chocChipMuffin} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, chocChipMuffin: itemIncrementer.chocChipMuffin+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.lactantia_half_n_half_10percent} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, lactantia_half_n_half_10percent: itemIncrementer.lactantia_half_n_half_10percent+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -205,21 +205,21 @@ export default function Dairy() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Country Harvest</span>
-          <img src = { lactantia_whipping_cream35percent } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Lactantia</span>
+          <img src = { lactantia_whipping_cream35percent } alt = 'lactantia_whipping_cream35percent' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>cinnamon Raisin Bread</span>
-            <span className = 'price'>$3.21</span>  
+            <span className = 'product_name'>Whipping Cream - 35%</span>
+            <span className = 'price'>$3.59</span>  
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, cinnamonBread: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, lactantia_whipping_cream35percent: true});}}>
             {
-              cartText.cinnamonBread ? <div className = 'increment__container'> 
+              cartText.lactantia_whipping_cream35percent ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.cinnamonBread > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, cinnamonBread: itemIncrementer.cinnamonBread-1});                                                                          
+                                                                                    if(itemIncrementer.lactantia_whipping_cream35percent > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, lactantia_whipping_cream35percent: itemIncrementer.lactantia_whipping_cream35percent-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.cinnamonBread} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, cinnamonBread: itemIncrementer.cinnamonBread+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.lactantia_whipping_cream35percent} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, lactantia_whipping_cream35percent: itemIncrementer.lactantia_whipping_cream35percent+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -227,21 +227,109 @@ export default function Dairy() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
-          <img src = { large_eggs_12pack } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Superstore</span>
+          <img src = { large_eggs_12pack } alt = 'large_eggs_12pack' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Double Chocolate Muffin</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Large Eggs (12-Pack)</span>
+            <span className = 'price'>$3.19</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, doubleChoc: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, large_eggs_12pack: true});}}>
             {
-              cartText.doubleChoc ? <div className = 'increment__container'> 
+              cartText.large_eggs_12pack ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.doubleChoc > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, doubleChoc: itemIncrementer.doubleChoc-1});                                                                          
+                                                                                    if(itemIncrementer.large_eggs_12pack > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, large_eggs_12pack: itemIncrementer.large_eggs_12pack-1});                                                                          
                                                                                     } }> -</button>
-                                      <span className = 'number'> {itemIncrementer.doubleChoc} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, doubleChoc: itemIncrementer.doubleChoc+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.large_eggs_12pack} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, large_eggs_12pack: itemIncrementer.large_eggs_12pack+1}) }> + </button>                                    
+                                     </div> 
+                                     : <span className = 'add_to_cart__name'> Add to Cart </span>
+            }
+          </button>
+        </div>
+        
+        <div className='item__container'>
+          <span className = 'company_name'>No Name</span>
+          <img src = { NN_pasteurized_cream_cheese } alt = 'NN_pasteurized_cream_cheese' className = 'product_image' />
+          <div className = 'price_product__container'>
+            <span className = 'product_name'>Pasteurized Cream Cheese</span>
+            <span className = 'price'>$4.99</span> 
+          </div>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, NN_pasteurized_cream_cheese: true});}}>
+            {
+              cartText.NN_pasteurized_cream_cheese ? <div className = 'increment__container'> 
+                                      <button className = 'minus' onClick = {() => {
+                                                                                    if(itemIncrementer.NN_pasteurized_cream_cheese > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, NN_pasteurized_cream_cheese: itemIncrementer.NN_pasteurized_cream_cheese-1});                                                                          
+                                                                                    } }> - </button>
+                                      <span className = 'number'> {itemIncrementer.NN_pasteurized_cream_cheese} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, NN_pasteurized_cream_cheese: itemIncrementer.NN_pasteurized_cream_cheese+1}) }> + </button>                                    
+                                     </div> 
+                                     : <span className = 'add_to_cart__name'> Add to Cart </span>
+            }
+          </button>
+        </div>
+        
+        <div className='item__container'>
+          <span className = 'company_name'>No Name</span>
+          <img src = { NN_salted_butter } alt = 'NN_salted_butter' className = 'product_image' />
+          <div className = 'price_product__container'>
+            <span className = 'product_name'>Salted Butter</span>
+            <span className = 'price'>$2.99</span> 
+          </div>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, NN_salted_butter: true});}}>
+            {
+              cartText.NN_salted_butter ? <div className = 'increment__container'> 
+                                      <button className = 'minus' onClick = {() => {
+                                                                                    if(itemIncrementer.NN_salted_butter > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, NN_salted_butter: itemIncrementer.NN_salted_butter-1});                                                                          
+                                                                                    } }> - </button>
+                                      <span className = 'number'> {itemIncrementer.NN_salted_butter} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, NN_salted_butter: itemIncrementer.NN_salted_butter+1}) }> + </button>                                    
+                                     </div> 
+                                     : <span className = 'add_to_cart__name'> Add to Cart </span>
+            }
+          </button>
+        </div>
+        
+        <div className='item__container'>
+          <span className = 'company_name'>No Name</span>
+          <img src = { NN_sourCream_14percent_500ml } alt = 'NN_sourCream_14percent_500ml' className = 'product_image' />
+          <div className = 'price_product__container'>
+            <span className = 'product_name'>Sour Cream 14% (500ml)</span>
+            <span className = 'price'>$3.99</span> 
+          </div>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, NN_sourCream_14percent_500ml: true});}}>
+            {
+              cartText.NN_sourCream_14percent_500ml ? <div className = 'increment__container'> 
+                                      <button className = 'minus' onClick = {() => {
+                                                                                    if(itemIncrementer.NN_sourCream_14percent_500ml > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, NN_sourCream_14percent_500ml: itemIncrementer.NN_sourCream_14percent_500ml-1});                                                                          
+                                                                                    } }> - </button>
+                                      <span className = 'number'> {itemIncrementer.NN_sourCream_14percent_500ml} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, NN_sourCream_14percent_500ml: itemIncrementer.NN_sourCream_14percent_500ml+1}) }> + </button>                                    
+                                     </div> 
+                                     : <span className = 'add_to_cart__name'> Add to Cart </span>
+            }
+          </button>
+        </div>
+        
+        <div className='item__container'>
+          <span className = 'company_name'>No Name</span>
+          <img src = { NN_unsalted_butter454g } alt = 'NN_unsalted_butter454g' className = 'product_image' />
+          <div className = 'price_product__container'>
+            <span className = 'product_name'>Unsalted Butter</span>
+            <span className = 'price'>$2.99</span> 
+          </div>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, NN_unsalted_butter454g: true});}}>
+            {
+              cartText.NN_unsalted_butter454g ? <div className = 'increment__container'> 
+                                      <button className = 'minus' onClick = {() => {
+                                                                                    if(itemIncrementer.NN_unsalted_butter454g > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, NN_unsalted_butter454g: itemIncrementer.NN_unsalted_butter454g-1});                                                                          
+                                                                                    } }> - </button>
+                                      <span className = 'number'> {itemIncrementer.NN_unsalted_butter454g} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, NN_unsalted_butter454g: itemIncrementer.NN_unsalted_butter454g+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -250,20 +338,20 @@ export default function Dairy() {
         
         <div className='item__container'>
           <span className = 'company_name'>Superstore</span>
-          <img src = { NN_pasteurized_cream_cheese } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { PC_free_run_brown_egg_large } alt = 'PC_free_run_brown_egg_large' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>French Bread</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Free Run Brown Egg Large (12-pack)</span>
+            <span className = 'price'>$4.59</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, frenchBread: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, PC_free_run_brown_egg_large: true});}}>
             {
-              cartText.frenchBread ? <div className = 'increment__container'> 
+              cartText.PC_free_run_brown_egg_large ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.frenchBread > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, frenchBread: itemIncrementer.frenchBread-1});                                                                          
+                                                                                    if(itemIncrementer.PC_free_run_brown_egg_large > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, PC_free_run_brown_egg_large: itemIncrementer.PC_free_run_brown_egg_large-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.frenchBread} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, frenchBread: itemIncrementer.frenchBread+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.PC_free_run_brown_egg_large} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, PC_free_run_brown_egg_large: itemIncrementer.PC_free_run_brown_egg_large+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -271,43 +359,21 @@ export default function Dairy() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Casa Mendosa</span>
-          <img src = { NN_salted_butter } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Saputo</span>
+          <img src = { saputo_mozzarellissima_500g } alt = 'saputo_mozzarellissima_500g' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Large Original Tortillas</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Mozzarellissima (500g)</span>
+            <span className = 'price'>$11.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, largeOriginal: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, saputo_mozzarellissima_500g: true});}}>
             {
-              cartText.largeOriginal ? <div className = 'increment__container'> 
+              cartText.saputo_mozzarellissima_500g ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.largeOriginal > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, largeOriginal: itemIncrementer.largeOriginal-1});                                                                          
+                                                                                    if(itemIncrementer.saputo_mozzarellissima_500g > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, saputo_mozzarellissima_500g: itemIncrementer.saputo_mozzarellissima_500g-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.largeOriginal} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, largeOriginal: itemIncrementer.largeOriginal+1}) }> + </button>                                    
-                                     </div> 
-                                     : <span className = 'add_to_cart__name'> Add to Cart </span>
-            }
-          </button>
-        </div>
-        
-        <div className='item__container'>
-          <span className = 'company_name'>President's Choice</span>
-          <img src = { NN_sourCream_14percent_500ml } alt = 'Bread Picture' className = 'product_image' />
-          <div className = 'price_product__container'>
-            <span className = 'product_name'>Tortillas Original</span>
-            <span className = 'price'>$3.21</span> 
-          </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, PCtortillas: true});}}>
-            {
-              cartText.PCtortillas ? <div className = 'increment__container'> 
-                                      <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.PCtortillas > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, PCtortillas: itemIncrementer.PCtortillas-1});                                                                          
-                                                                                    } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.PCtortillas} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, PCtortillas: itemIncrementer.PCtortillas+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.saputo_mozzarellissima_500g} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, saputo_mozzarellissima_500g: itemIncrementer.saputo_mozzarellissima_500g+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -316,86 +382,20 @@ export default function Dairy() {
         
         <div className='item__container'>
           <span className = 'company_name'>Superstore</span>
-          <img src = { NN_unsalted_butter454g } alt = 'Bread Picture' className = 'product_image' />
-          <div className = 'price_product__container'>
-            <span className = 'product_name'>Rolls 6 Pack</span>
-            <span className = 'price'>$3.21</span> 
-          </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, rolls: true});}}>
-            {
-              cartText.rolls ? <div className = 'increment__container'> 
-                                      <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.rolls > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, rolls: itemIncrementer.rolls-1});                                                                          
-                                                                                    } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.rolls} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, rolls: itemIncrementer.rolls+1}) }> + </button>                                    
-                                     </div> 
-                                     : <span className = 'add_to_cart__name'> Add to Cart </span>
-            }
-          </button>
-        </div>
-        
-        <div className='item__container'>
-          <span className = 'company_name'>Superstore</span>
-          <img src = { PC_free_run_brown_egg_large } alt = 'Bread Picture' className = 'product_image' />
-          <div className = 'price_product__container'>
-            <span className = 'product_name'>Sourdough Loaf Sliced</span>
-            <span className = 'price'>$3.21</span> 
-          </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, sourdoughLoaf: true});}}>
-            {
-              cartText.sourdoughLoaf ? <div className = 'increment__container'> 
-                                      <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.sourdoughLoaf > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, sourdoughLoaf: itemIncrementer.sourdoughLoaf-1});                                                                          
-                                                                                    } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.sourdoughLoaf} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, sourdoughLoaf: itemIncrementer.sourdoughLoaf+1}) }> + </button>                                    
-                                     </div> 
-                                     : <span className = 'add_to_cart__name'> Add to Cart </span>
-            }
-          </button>
-        </div>
-        
-        <div className='item__container'>
-          <span className = 'company_name'>Counter Harvest</span>
-          <img src = { saputo_mozzarellissima_500g } alt = 'Bread Picture' className = 'product_image' />
-          <div className = 'price_product__container'>
-            <span className = 'product_name'>Stone Milled With Roasted Wheat</span>
-            <span className = 'price'>$3.21</span> 
-          </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, roastedWheat: true});}}>
-            {
-              cartText.roastedWheat ? <div className = 'increment__container'> 
-                                      <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.roastedWheat > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, roastedWheat: itemIncrementer.roastedWheat-1});                                                                          
-                                                                                    } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.roastedWheat} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, roastedWheat: itemIncrementer.roastedWheat+1}) }> + </button>                                    
-                                     </div> 
-                                     : <span className = 'add_to_cart__name'> Add to Cart </span>
-            }
-          </button>
-        </div>
-        
-        <div className='item__container'>
-          <span className = 'company_name'>Suraj</span>
           <img src = { xlarge_eggs_12pack } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Naan Original (5-Pack)</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>X-Large Eggs (12-pack)</span>
+            <span className = 'price'>$3.59</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, naan: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, xlarge_eggs_12pack: true});}}>
             {
-              cartText.naan ? <div className = 'increment__container'> 
+              cartText.xlarge_eggs_12pack ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.naan > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, naan: itemIncrementer.naan-1});                                                                          
+                                                                                    if(itemIncrementer.xlarge_eggs_12pack > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, xlarge_eggs_12pack: itemIncrementer.xlarge_eggs_12pack-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.naan} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, naan: itemIncrementer.naan+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.xlarge_eggs_12pack} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, xlarge_eggs_12pack: itemIncrementer.xlarge_eggs_12pack+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }

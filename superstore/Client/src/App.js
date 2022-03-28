@@ -15,6 +15,10 @@ import Medical from './Departments/Medical'
 import Household from './Departments/Household'
 import MenClothes from './Departments/MenClothes'
 import WomenClothes from './Departments/WomenClothes'
+import Cosmetics from './Departments/Cosmetics'
+import Snacks from './Departments/Snacks'
+import Kid_Clothes from './Departments/Kid_Clothes'
+
 import React, { useState } from 'react';
 import {Navigate} from 'react-router-dom';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -41,6 +45,10 @@ return(
       <Route path="/Departments/Household" element={<Household />} />
       <Route path="/Departments/MenClothes" element={<MenClothes />} />
       <Route path="/Departments/WomenClothes" element={<WomenClothes />} />
+      <Route path="/Departments/Cosmetics" element={<Cosmetics />} />
+      <Route path="/Departments/Snacks" element={<Snacks />} />
+      <Route path="/Departments/Kid_Clothes" element={<Kid_Clothes />} />
+
       <Route path="/ForgotPassword" element={<ForgotPassword />} />
       <Route path="*" element={<ErrorPage />} />
     </Routes>

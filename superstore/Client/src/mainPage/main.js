@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useNavigate } from "react-router-dom";
 import "./main.css";
 import Search from '../images/search.png';
@@ -14,9 +14,8 @@ var FontAwesome = require('react-fontawesome');
 
 function MainPage() {
   const [username, setSearch] = useState('')
-  const showBoolean = false;    //when it is false, it means show that department
-  const [departmentName, setDepartmentNames] = useState({Dairy: false, Bakery: false, Meat: false, Equipment: false, Produce: false, Toys:false, Medical: false, Frozen: false, Cosmetics: false, MenC: false, WomenC: false, KidsC: false, Household: false, Snacks_Candy: false})
- 
+  const [counter, setCounter] = useState(-1);
+
   return (
     <>
     
@@ -64,30 +63,26 @@ function MainPage() {
       <div className="dropdown">
         <button className="button">Filter by Age</button>
         <div className="dropdown-content">
-          <a href="#" onClick= {() => {
-            setDepartmentNames({...departmentName, MenC: true, WomenC: true, Household: true, Cosmetics: true, Equipment: true, Frozen: true, Meat: true, Medical: true, Produce: true, Dairy: true});
 
-          }}>1 to 10 years</a>
+          
+          <a href="#" onClick= {() => {
+            setCounter(0);
+            }}>1 to 10 years</a>
          
 
 
           <a href="#" onClick= {() => {
-            setDepartmentNames({...departmentName, Toys: true, Snacks_Candy: true, KidsC: true});
-          
+            setCounter(1);
           }}>11 to 25 years</a>
-         
-
-
+    
           <a href="#"onClick= {() => {
-            setDepartmentNames({...departmentName, Toys: true, Snacks_Candy: true, KidsC: true});
-          
+            setCounter(2);
           }}>26 to 50 years</a>
           
           
           
           <a href="#"onClick= {() => {
-            setDepartmentNames({...departmentName, Toys: true, Snacks_Candy: true, KidsC: true});
-          
+            setCounter(3);
           }}>50+ years</a>
         </div>
       </div>
@@ -97,8 +92,7 @@ function MainPage() {
         <span className='department__name'>DEPARTMENTS</span>
         <div className='row1__container'>
           <div className='Bakery'>
-            {
-              departmentName.Bakery ? null : 
+            { 
                 <button className="favorite buttonStyle"
                 type="button" onClick={() => {
                   window.location.href = "http://localhost:3000/Departments/Bakery";
@@ -110,7 +104,7 @@ function MainPage() {
 
           <div className='produce_container'>
             {
-              departmentName.Produce ? null :
+              (counter === 0) ? null :
               <button className="favorite buttonStyle"
                   type="button"onClick={() => {
                     window.location.href = "http://localhost:3000/Departments/Produce";
@@ -122,7 +116,7 @@ function MainPage() {
 
           <div className='dairy_container'>
             {
-            departmentName.Dairy ? null :
+            (counter === 0) ? null :
             <button className="favorite buttonStyle"
                   type="button"onClick={() => {
                     window.location.href = "http://localhost:3000/Departments/Dairy";
@@ -136,7 +130,7 @@ function MainPage() {
         <div className='row2__container'>
           <div className='equipment_container'>
             {
-            departmentName.Equipment? null :
+            (counter === 0) ? null :
             <button className="favorite buttonStyle"
                   type="button" onClick={() => {
                     window.location.href = "http://localhost:3000/Departments/Equipment";
@@ -149,7 +143,7 @@ function MainPage() {
 
           <div className='meat_container'>
             {
-            departmentName.Meat ? null :
+            (counter === 0) ? null :
             <button className="favorite buttonStyle"
                   type="button" onClick={() => {
                     window.location.href = "http://localhost:3000/Departments/Meat";
@@ -161,7 +155,7 @@ function MainPage() {
 
           <div className='frozen_container'>
             {
-            departmentName.Frozen ? null :
+            (counter === 0) ? null :
             <button className="favorite buttonStyle"
                   type="button" onClick={() => {
                     window.location.href = "http://localhost:3000/Departments/Frozen";
@@ -175,20 +169,20 @@ function MainPage() {
         <div className='row3__container'>
           <div className='Kids__C__container'>
             {
-            departmentName.Snacks_Candy ? null :
+            (counter === 1 || counter === 2 || counter === 3) ? null :
             <button className="buttonStyle"
                   type="button" onClick={() => {
-                    window.location.href = "http://localhost:3000/Departments/Medical";
+                    window.location.href = "http://localhost:3000/Departments/Snacks";
                   }}>
                   SNACKS/CANDY
-            </button>
+            </button> 
           }
           </div>
           
 
           <div className='Cosmetics__container'>
             {
-            departmentName.Cosmetics ? null :
+            (counter === 0 || counter === 3) ? null :
             <button className="buttonStyle"
                  type="button" onClick={() => {
                   window.location.href = "http://localhost:3000/Departments/Cosmetics";
@@ -200,7 +194,7 @@ function MainPage() {
 
           <div className='Medical__container'>
             {
-              departmentName.Medical ? null :
+              (counter === 0) ? null :
               <button className="buttonStyle"
                     type="button" onClick={() => {
                       window.location.href = "http://localhost:3000/Departments/Medical";
@@ -213,19 +207,20 @@ function MainPage() {
           <div className='row4__container'>
             <div className='Kids__C__container'>
               {
-              departmentName.KidsC ? null :
+              (counter === 1 || counter === 2 || counter === 3) ? null :
               <button className="buttonStyle"
                     type="button" onClick={() => {
-                      window.location.href = "http://localhost:3000/Departments/KidsClothes";
+                     window.location.href = "http://localhost:3000/Departments/Kid_Clothes";
+
                     }}>
                     KIDS CLOTHES
-              </button>
+              </button> 
             }
             </div>
 
             <div className='Men__C__container'>
               {
-              departmentName.MenC ? null :
+              (counter === 0) ? null :
               <button className="buttonStyle"
                     type="button" onClick={() => {
                       window.location.href = "http://localhost:3000/Departments/MenClothes";
@@ -237,7 +232,7 @@ function MainPage() {
 
             <div className='Women__C__container'>
               {
-                departmentName.WomenC ? null :
+                (counter === 0) ? null :
                 <button className="buttonStyle"
                       type="button" onClick={() => {
                         window.location.href = "http://localhost:3000/Departments/WomenClothes";
@@ -252,7 +247,7 @@ function MainPage() {
 
             <div className='Household__container'>
               {
-                departmentName.Household ? null :
+                (counter === 0) ? null :
                 <button className="buttonStyle"
                       type="button" onClick={() => {
                         window.location.href = "http://localhost:3000/Departments/Household";
@@ -263,17 +258,18 @@ function MainPage() {
               </div>
             <div className='toys__container'>
             {
-                departmentName.Toys ? null :
+              (counter === 1 || counter === 2 || counter === 3) ? null :
               <button className="buttonStyle"
                     type="button" onClick={() => {
                       window.location.href = "http://localhost:3000/Departments/Toys";
                     }}>
                     TOYS
-              </button>
+              </button> 
             }
             </div>
-
+            
           </div>
+          
       </div>        
 
       <footer>

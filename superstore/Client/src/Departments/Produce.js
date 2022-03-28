@@ -21,10 +21,10 @@ import Raspberries from "../images/Produce/Raspberries.webp"
 
 export default function Produce() {
   const initialBoolean = false;
-  const initializeValues = {grainBread:initialBoolean, bananaMuffin:initialBoolean, bananaCake:initialBoolean, butterCroissant:initialBoolean, chocolateMini:initialBoolean, chocChipMuffin:initialBoolean, cinnamonBread:initialBoolean, doubleChoc:initialBoolean, frenchBread:initialBoolean, largeOriginal:initialBoolean, PCtortillas:initialBoolean, rolls:initialBoolean, sourdoughLoaf:initialBoolean, roastedWheat:initialBoolean, naan:initialBoolean};
+  const initializeValues = {Coconut:initialBoolean, Cranberries:initialBoolean, Dill:initialBoolean, Fresh_Mint:initialBoolean, Garlic:initialBoolean, Great_Value_Fruit_Salad_With_Cherries:initialBoolean, Kale_Sweet_Salad:initialBoolean, Lemon:initialBoolean, Lettuce_Butter:initialBoolean, Mango_Red:initialBoolean, Organic_Brown_Bell_Pepper:initialBoolean, Organic_Cauliflower:initialBoolean, Parsnip:initialBoolean, Potatoes_Yellow:initialBoolean, Raspberries:initialBoolean};
   const [cartText, setCartText] = useState(initializeValues);
   const [showButton, setShowButton] = useState({showButton: false, showButton2: false});  
-  const initializeNumber = {grainBread:1, bananaMuffin:1, bananaCake:1, butterCroissant:1, chocolateMini:1, chocChipMuffin:1, cinnamonBread:1, doubleChoc:1, frenchBread:1, largeOriginal:1, PCtortillas:1, rolls:1, sourdoughLoaf:1, roastedWheat:1, naan:1};
+  const initializeNumber = {Coconut:1, Cranberries:1, Dill:1, Fresh_Mint:1, Garlic:1, Great_Value_Fruit_Salad_With_Cherries:1, Kale_Sweet_Salad:1, Lemon:1, Lettuce_Butter:1, Mango_Red:1, Organic_Brown_Bell_Pepper:1, Organic_Cauliflower:1, Parsnip:1, Potatoes_Yellow:1, Raspberries:1};
   const [itemIncrementer, setItemIncrementer] = useState(initializeNumber);
 
 
@@ -64,28 +64,28 @@ export default function Produce() {
 
     <div className='products_name__container'>
       <div className='departmentName'>
-        BAKERY
+        PRODUCE
       </div>
 
 
 
       <div className='bigProducts__container'>
         <div className='item__container'>
-          <span className = 'company_name'>Country Harvest</span>
+          <span className = 'company_name'>Superstore</span>
           <img src = { Coconut } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>14 Grain Whole Wheat Bread</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Coconut</span>
+            <span className = 'price'>$3.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, grainBread: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Coconut: true});}}>
             {
-              cartText.grainBread ? <div className = 'increment__container'> 
+              cartText.Coconut ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.grainBread > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, grainBread: itemIncrementer.grainBread-1});                                                                          
+                                                                                    if(itemIncrementer.Coconut > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Coconut: itemIncrementer.Coconut-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.grainBread} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, grainBread: itemIncrementer.grainBread+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Coconut} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Coconut: itemIncrementer.Coconut+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -95,21 +95,21 @@ export default function Produce() {
 
 
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
+          <span className = 'company_name'>Great Value</span>
           <img src = { Cranberries } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Banana Chocolate Muffin</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Cranberries</span>
+            <span className = 'price'>$3.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, bananaMuffin: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Cranberries: true});}}>
             {
-              cartText.bananaMuffin ? <div className = 'increment__container'> 
+              cartText.Cranberries ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.bananaMuffin > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, bananaMuffin: itemIncrementer.bananaMuffin-1});                                                                          
+                                                                                    if(itemIncrementer.Cranberries > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Cranberries: itemIncrementer.Cranberries-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.bananaMuffin} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, bananaMuffin: itemIncrementer.bananaMuffin+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Cranberries} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Cranberries: itemIncrementer.Cranberries+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -117,21 +117,21 @@ export default function Produce() {
         </div>
 
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
-          <img src = { Dill } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Superstore</span>
+          <img src = { Dill } alt = 'Dill' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Banana Loaf Cake</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Dill</span>
+            <span className = 'price'>$2.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, bananaCake: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Dill: true});}}>
             {
-              cartText.bananaCake ? <div className = 'increment__container'> 
+              cartText.Dill ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.bananaCake > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, bananaCake: itemIncrementer.bananaCake-1});                                                                          
+                                                                                    if(itemIncrementer.Dill > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Dill: itemIncrementer.Dill-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.bananaCake} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, bananaCake: itemIncrementer.bananaCake+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Dill} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Dill: itemIncrementer.Dill+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -139,21 +139,21 @@ export default function Produce() {
         </div>
          
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
-          <img src = { Fresh_Mint } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Superstore</span>
+          <img src = { Fresh_Mint } alt = 'Fresh_Mint' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Butter Croissant</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Fresh Mint</span>
+            <span className = 'price'>$1.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, butterCroissant: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Fresh_Mint: true});}}>
             {
-              cartText.butterCroissant ? <div className = 'increment__container'> 
+              cartText.Fresh_Mint ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.butterCroissant > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, butterCroissant: itemIncrementer.butterCroissant-1});                                                                          
+                                                                                    if(itemIncrementer.Fresh_Mint > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Fresh_Mint: itemIncrementer.Fresh_Mint-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.butterCroissant} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, butterCroissant: itemIncrementer.butterCroissant+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Fresh_Mint} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Fresh_Mint: itemIncrementer.Fresh_Mint+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -161,21 +161,21 @@ export default function Produce() {
         </div>
 
         <div className='item__container'>
-          <span className = 'company_name'>President's Choice</span>
-          <img src = { Garlic } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Superstore</span>
+          <img src = { Garlic } alt = 'Garlic' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Chocolate Mini Muffin</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Garlic</span>
+            <span className = 'price'>$2.59</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, chocolateMini: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Garlic: true});}}>
             {
-              cartText.chocolateMini ? <div className = 'increment__container'> 
+              cartText.Garlic ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.chocolateMini > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, chocolateMini: itemIncrementer.chocolateMini-1});                                                                          
+                                                                                    if(itemIncrementer.Garlic > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Garlic: itemIncrementer.Garlic-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.chocolateMini} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, chocolateMini: itemIncrementer.chocolateMini+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Garlic} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Garlic: itemIncrementer.Garlic+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -183,21 +183,21 @@ export default function Produce() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
-          <img src = { Great_Value_Fruit_Salad_With_Cherries } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Great Value</span>
+          <img src = { Great_Value_Fruit_Salad_With_Cherries } alt = 'Fruit Salad With Cherries' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Chocolate Chip Muffin</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Fruit Salad With Cherries</span>
+            <span className = 'price'>$5.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, chocChipMuffin: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Great_Value_Fruit_Salad_With_Cherries: true});}}>
             {
-              cartText.chocChipMuffin ? <div className = 'increment__container'> 
+              cartText.Great_Value_Fruit_Salad_With_Cherries ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.chocChipMuffin > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, chocChipMuffin: itemIncrementer.chocChipMuffin-1});                                                                          
+                                                                                    if(itemIncrementer.Great_Value_Fruit_Salad_With_Cherries > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Great_Value_Fruit_Salad_With_Cherries: itemIncrementer.Great_Value_Fruit_Salad_With_Cherries-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.chocChipMuffin} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, chocChipMuffin: itemIncrementer.chocChipMuffin+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Great_Value_Fruit_Salad_With_Cherries} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Great_Value_Fruit_Salad_With_Cherries: itemIncrementer.Great_Value_Fruit_Salad_With_Cherries+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -205,21 +205,21 @@ export default function Produce() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Country Harvest</span>
-          <img src = { Kale_Sweet_Salad } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Superstore</span>
+          <img src = { Kale_Sweet_Salad } alt = 'Kale_Sweet_Salad' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>cinnamon Raisin Bread</span>
-            <span className = 'price'>$3.21</span>  
+            <span className = 'product_name'>Kale Sweet Salad</span>
+            <span className = 'price'>$4.99</span>  
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, cinnamonBread: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Kale_Sweet_Salad: true});}}>
             {
-              cartText.cinnamonBread ? <div className = 'increment__container'> 
+              cartText.Kale_Sweet_Salad ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.cinnamonBread > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, cinnamonBread: itemIncrementer.cinnamonBread-1});                                                                          
+                                                                                    if(itemIncrementer.Kale_Sweet_Salad > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Kale_Sweet_Salad: itemIncrementer.Kale_Sweet_Salad-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.cinnamonBread} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, cinnamonBread: itemIncrementer.cinnamonBread+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Kale_Sweet_Salad} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Kale_Sweet_Salad: itemIncrementer.Kale_Sweet_Salad+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -227,21 +227,21 @@ export default function Produce() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
-          <img src = { Lemon } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Your Fresh Market</span>
+          <img src = { Lemon } alt = 'Lemon' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Double Chocolate Muffin</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Lemon</span>
+            <span className = 'price'>$5.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, doubleChoc: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Lemon: true});}}>
             {
-              cartText.doubleChoc ? <div className = 'increment__container'> 
+              cartText.Lemon ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.doubleChoc > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, doubleChoc: itemIncrementer.doubleChoc-1});                                                                          
+                                                                                    if(itemIncrementer.Lemon > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Lemon: itemIncrementer.Lemon-1});                                                                          
                                                                                     } }> -</button>
-                                      <span className = 'number'> {itemIncrementer.doubleChoc} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, doubleChoc: itemIncrementer.doubleChoc+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Lemon} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Lemon: itemIncrementer.Lemon+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -250,20 +250,20 @@ export default function Produce() {
         
         <div className='item__container'>
           <span className = 'company_name'>Superstore</span>
-          <img src = { Lettuce_Butter } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Lettuce_Butter } alt = 'Lettuce_Butter' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>French Bread</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Lettuce Butter</span>
+            <span className = 'price'>$4.49</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, frenchBread: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Lettuce_Butter: true});}}>
             {
-              cartText.frenchBread ? <div className = 'increment__container'> 
+              cartText.Lettuce_Butter ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.frenchBread > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, frenchBread: itemIncrementer.frenchBread-1});                                                                          
+                                                                                    if(itemIncrementer.Lettuce_Butter > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Lettuce_Butter: itemIncrementer.Lettuce_Butter-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.frenchBread} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, frenchBread: itemIncrementer.frenchBread+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Lettuce_Butter} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Lettuce_Butter: itemIncrementer.Lettuce_Butter+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -271,21 +271,21 @@ export default function Produce() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Casa Mendosa</span>
-          <img src = { Mango_Red } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Superstore</span>
+          <img src = { Mango_Red } alt = 'Mango_Red' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Large Original Tortillas</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Mango Red</span>
+            <span className = 'price'>$1.49</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, largeOriginal: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Mango_Red: true});}}>
             {
-              cartText.largeOriginal ? <div className = 'increment__container'> 
+              cartText.Mango_Red ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.largeOriginal > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, largeOriginal: itemIncrementer.largeOriginal-1});                                                                          
+                                                                                    if(itemIncrementer.Mango_Red > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Mango_Red: itemIncrementer.Mango_Red-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.largeOriginal} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, largeOriginal: itemIncrementer.largeOriginal+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Mango_Red} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Mango_Red: itemIncrementer.Mango_Red+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -294,20 +294,42 @@ export default function Produce() {
         
         <div className='item__container'>
           <span className = 'company_name'>President's Choice</span>
-          <img src = { Organic_Brown_Bell_Pepper } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Organic_Brown_Bell_Pepper } alt = 'Organic_Brown_Bell_Pepper' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Tortillas Original</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Organic Brown Bell Pepper</span>
+            <span className = 'price'>$1.49</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, PCtortillas: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Organic_Brown_Bell_Pepper: true});}}>
             {
-              cartText.PCtortillas ? <div className = 'increment__container'> 
+              cartText.Organic_Brown_Bell_Pepper ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.PCtortillas > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, PCtortillas: itemIncrementer.PCtortillas-1});                                                                          
+                                                                                    if(itemIncrementer.Organic_Brown_Bell_Pepper > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Organic_Brown_Bell_Pepper: itemIncrementer.Organic_Brown_Bell_Pepper-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.PCtortillas} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, PCtortillas: itemIncrementer.PCtortillas+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Organic_Brown_Bell_Pepper} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Organic_Brown_Bell_Pepper: itemIncrementer.Organic_Brown_Bell_Pepper+1}) }> + </button>                                    
+                                     </div> 
+                                     : <span className = 'add_to_cart__name'> Add to Cart </span>
+            }
+          </button>
+        </div>
+        
+        <div className='item__container'>
+          <span className = 'company_name'>President's Choice</span>
+          <img src = { Organic_Cauliflower } alt = 'Organic_Cauliflower' className = 'product_image' />
+          <div className = 'price_product__container'>
+            <span className = 'product_name'>Organic Cauliflower 6 Pack</span>
+            <span className = 'price'>$3.99</span> 
+          </div>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Organic_Cauliflower: true});}}>
+            {
+              cartText.Organic_Cauliflower ? <div className = 'increment__container'> 
+                                      <button className = 'minus' onClick = {() => {
+                                                                                    if(itemIncrementer.Organic_Cauliflower > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Organic_Cauliflower: itemIncrementer.Organic_Cauliflower-1});                                                                          
+                                                                                    } }> - </button>
+                                      <span className = 'number'> {itemIncrementer.Organic_Cauliflower} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Organic_Cauliflower: itemIncrementer.Organic_Cauliflower+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -316,20 +338,20 @@ export default function Produce() {
         
         <div className='item__container'>
           <span className = 'company_name'>Superstore</span>
-          <img src = { Organic_Cauliflower } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Parsnip } alt = 'Parsnip' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Rolls 6 Pack</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Parsnip</span>
+            <span className = 'price'>$1.49</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, rolls: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Parsnip: true});}}>
             {
-              cartText.rolls ? <div className = 'increment__container'> 
+              cartText.Parsnip ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.rolls > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, rolls: itemIncrementer.rolls-1});                                                                          
+                                                                                    if(itemIncrementer.Parsnip > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Parsnip: itemIncrementer.Parsnip-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.rolls} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, rolls: itemIncrementer.rolls+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Parsnip} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Parsnip: itemIncrementer.Parsnip+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -337,21 +359,21 @@ export default function Produce() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Superstore</span>
-          <img src = { Parsnip } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Your Fresh Market</span>
+          <img src = { Potatoes_Yellow } alt = 'Potatoes_Yellow' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Sourdough Loaf Sliced</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Potatoes Yellow</span>
+            <span className = 'price'>$5.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, sourdoughLoaf: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Potatoes_Yellow: true});}}>
             {
-              cartText.sourdoughLoaf ? <div className = 'increment__container'> 
+              cartText.Potatoes_Yellow ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.sourdoughLoaf > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, sourdoughLoaf: itemIncrementer.sourdoughLoaf-1});                                                                          
+                                                                                    if(itemIncrementer.Potatoes_Yellow > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Potatoes_Yellow: itemIncrementer.Potatoes_Yellow-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.sourdoughLoaf} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, sourdoughLoaf: itemIncrementer.sourdoughLoaf+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Potatoes_Yellow} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Potatoes_Yellow: itemIncrementer.Potatoes_Yellow+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -359,43 +381,21 @@ export default function Produce() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Counter Harvest</span>
-          <img src = { Potatoes_Yellow } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>President's Choice</span>
+          <img src = { Raspberries } alt = 'Raspberries' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Stone Milled With Roasted Wheat</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Raspberries Original</span>
+            <span className = 'price'>$3.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, roastedWheat: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Raspberries: true});}}>
             {
-              cartText.roastedWheat ? <div className = 'increment__container'> 
+              cartText.Raspberries ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.roastedWheat > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, roastedWheat: itemIncrementer.roastedWheat-1});                                                                          
+                                                                                    if(itemIncrementer.Raspberries > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Raspberries: itemIncrementer.Raspberries-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.roastedWheat} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, roastedWheat: itemIncrementer.roastedWheat+1}) }> + </button>                                    
-                                     </div> 
-                                     : <span className = 'add_to_cart__name'> Add to Cart </span>
-            }
-          </button>
-        </div>
-        
-        <div className='item__container'>
-          <span className = 'company_name'>Suraj</span>
-          <img src = { Raspberries } alt = 'Bread Picture' className = 'product_image' />
-          <div className = 'price_product__container'>
-            <span className = 'product_name'>Naan Original (5-Pack)</span>
-            <span className = 'price'>$3.21</span> 
-          </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, naan: true});}}>
-            {
-              cartText.naan ? <div className = 'increment__container'> 
-                                      <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.naan > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, naan: itemIncrementer.naan-1});                                                                          
-                                                                                    } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.naan} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, naan: itemIncrementer.naan+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Raspberries} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Raspberries: itemIncrementer.Raspberries+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
