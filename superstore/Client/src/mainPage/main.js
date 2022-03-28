@@ -5,6 +5,7 @@ import Search from '../images/search.png';
 import { useState } from 'react';
 import search from '../images/search.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLaptopHouse } from '@fortawesome/free-solid-svg-icons';
 
 //Importing all the departments.
 
@@ -14,13 +15,8 @@ var FontAwesome = require('react-fontawesome');
 function MainPage() {
   const [username, setSearch] = useState('')
   const showBoolean = false;    //when it is false, it means show that department
-  const [departmentName, setDepartmentNames] = useState({Bakery: false, Dairy: false, Meat: false, Equipment: false, Produce: false, Toys:false, Medical: false, Frozen: false})
-  const BakeryList = [
-    { id: '1', name: 'Bread' },
-    { id: '2', name: 'Doughnut' },
-    { id: '3', name: 'Brownie' },
-    { id: '4', name: 'Wraps' },
-];
+  const [departmentName, setDepartmentNames] = useState({Dairy: false, Bakery: false, Meat: false, Equipment: false, Produce: false, Toys:false, Medical: false, Frozen: false, Cosmetics: false, MenC: false, WomenC: false, KidsC: false, Household: false, Snacks_Candy: false})
+ 
   return (
     <>
     
@@ -69,14 +65,33 @@ function MainPage() {
         <button className="button">Filter by Age</button>
         <div className="dropdown-content">
           <a href="#" onClick= {() => {
-            setDepartmentNames({...departmentName, Bakery:true});
+            setDepartmentNames({...departmentName, MenC: true, WomenC: true, Household: true, Cosmetics: true, Equipment: true, Frozen: true, Meat: true, Medical: true, Produce: true, Dairy: true});
+
           }}>1 to 10 years</a>
-          <a href="#">11 to 25 years</a>
-          <a href="#">26 to 50 years</a>
-          <a href="#">50+ years</a>
+         
+
+
+          <a href="#" onClick= {() => {
+            setDepartmentNames({...departmentName, Toys: true, Snacks_Candy: true, KidsC: true});
+          
+          }}>11 to 25 years</a>
+         
+
+
+          <a href="#"onClick= {() => {
+            setDepartmentNames({...departmentName, Toys: true, Snacks_Candy: true, KidsC: true});
+          
+          }}>26 to 50 years</a>
+
+         
+          <a href="#"onClick= {() => {
+            setDepartmentNames({...departmentName, Toys: true, Snacks_Candy: true, KidsC: true});
+          
+          }}>50+ years</a>
         </div>
       </div>
     </div>
+    
 
       <div className='departments__container'>
         <span className='department__name'>DEPARTMENTS</span>
@@ -94,80 +109,171 @@ function MainPage() {
           </div>
 
           <div className='produce_container'>
-            <button className="favorite buttonStyle"
+            {
+              departmentName.Produce ? null :
+              <button className="favorite buttonStyle"
                   type="button"onClick={() => {
                     window.location.href = "http://localhost:3000/Departments/Produce";
                   }}>
                   PRODUCE
               </button>
+            }
           </div> 
 
           <div className='dairy_container'>
+            {
+            departmentName.Dairy ? null :
             <button className="favorite buttonStyle"
                   type="button"onClick={() => {
                     window.location.href = "http://localhost:3000/Departments/Dairy";
                   }}>
                   DAIRY/EGGS
-              </button>
+              </button> 
+            }
           </div> 
         </div>
 
         <div className='row2__container'>
           <div className='equipment_container'>
+            {
+            departmentName.Equipment? null :
             <button className="favorite buttonStyle"
                   type="button" onClick={() => {
                     window.location.href = "http://localhost:3000/Departments/Equipment";
                   }}>
                   EQUIPMENT
               </button>
+            }
           </div> 
 
 
           <div className='meat_container'>
+            {
+            departmentName.Meat ? null :
             <button className="favorite buttonStyle"
                   type="button" onClick={() => {
                     window.location.href = "http://localhost:3000/Departments/Meat";
                   }}>
                   MEAT/SEAFOOD
               </button>
+            }
           </div> 
 
           <div className='frozen_container'>
+            {
+            departmentName.Frozen ? null :
             <button className="favorite buttonStyle"
                   type="button" onClick={() => {
                     window.location.href = "http://localhost:3000/Departments/Frozen";
                   }}>
                   FROZEN
               </button>
+            }
           </div>
         </div>
 
         <div className='row3__container'>
-          <div className='toys__container'>
-            <button className="buttonStyle"
-                  type="button" onClick={() => {
-                    window.location.href = "http://localhost:3000/Departments/Toys";
-                  }}>
-                  TOYS
-            </button>
-          </div>
-
-          <div className='Cosmetics__container'>
-            <button className="buttonStyle"
-                  type="button">
-                  COSMETICS
-            </button>
-          </div>
-
-          <div className='Medical__container'>
+          <div className='Kids__C__container'>
+            {
+            departmentName.Snacks_Candy ? null :
             <button className="buttonStyle"
                   type="button" onClick={() => {
                     window.location.href = "http://localhost:3000/Departments/Medical";
                   }}>
-                  MEDICAL
+                  SNACKS/CANDY
             </button>
+          }
           </div>
-        </div>
+          
+
+          <div className='Cosmetics__container'>
+            {
+            departmentName.Cosmetics ? null :
+            <button className="buttonStyle"
+                 type="button" onClick={() => {
+                  window.location.href = "http://localhost:3000/Departments/Cosmetics";
+                }}>
+                  COSMETICS
+            </button>   
+          } 
+          </div>
+
+          <div className='Medical__container'>
+            {
+              departmentName.Medical ? null :
+              <button className="buttonStyle"
+                    type="button" onClick={() => {
+                      window.location.href = "http://localhost:3000/Departments/Medical";
+                    }}>
+                    MEDICAL
+              </button>
+            }
+          </div>
+          </div>
+          <div className='row4__container'>
+            <div className='Kids__C__container'>
+              {
+              departmentName.KidsC ? null :
+              <button className="buttonStyle"
+                    type="button" onClick={() => {
+                      window.location.href = "http://localhost:3000/Departments/Medical";
+                    }}>
+                    KIDS CLOTHES
+              </button>
+            }
+            </div>
+
+            <div className='Men__C__container'>
+              {
+              departmentName.MenC ? null :
+              <button className="buttonStyle"
+                    type="button" onClick={() => {
+                      window.location.href = "http://localhost:3000/Departments/Medical";
+                    }}>
+                    MEN CLOTHES
+              </button>
+              }
+            </div>
+
+            <div className='Women__C__container'>
+              {
+                departmentName.WomenC ? null :
+                <button className="buttonStyle"
+                      type="button" onClick={() => {
+                        window.location.href = "http://localhost:3000/Departments/Medical";
+                      }}>
+                      WOMEN CLOTHES
+                </button>
+              }
+            </div>
+          </div>
+          
+          <div className='row5__container'>
+
+            <div className='Household__container'>
+              {
+                departmentName.Household ? null :
+                <button className="buttonStyle"
+                      type="button" onClick={() => {
+                        window.location.href = "http://localhost:3000/Departments/Medical";
+                      }}>
+                      HOUSEHOLD
+                </button>
+              }
+              </div>
+            <div className='toys__container'>
+            {
+                departmentName.Toys ? null :
+              <button className="buttonStyle"
+                    type="button" onClick={() => {
+                      window.location.href = "http://localhost:3000/Departments/Toys";
+                    }}>
+                    TOYS
+              </button>
+            }
+            </div>
+
+          </div>
       </div>        
 
       <footer>
