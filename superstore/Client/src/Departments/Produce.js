@@ -1,4 +1,23 @@
 import React from 'react'
+import { useState } from 'react';
+import { BsFillArrowLeftCircleFill } from "react-icons/bs";
+import { GiMagnifyingGlass } from "react-icons/gi";
+import Coconut from "./images/Toys/Coconut"
+import Cranberries from "./images/Toys/Cranberries"
+import Dill from "./images/Toys/Dill"
+import Fresh_Mint from "./images/Toys/Fresh_Mint"
+import Garlic from "./images/Toys/Garlic"
+import Great_Value_Fruit_Salad_With_Cherries from "./images/Toys/Great_Value_Fruit_Salad_With_Cherries"
+import Kale_Sweet_Salad from "./images/Toys/Kale_Sweet_Salad"
+import Lemon from "./images/Toys/Lemon"
+import Lettuce_Butter from "./images/Toys/Lettuce_Butter"
+import Mango_Red from "./images/Toys/Mango_Red"
+import Organic_Brown_Bell_Pepper from "./images/Toys/Organic_Brown_Bell_Pepper"
+import Organic_Cauliflower from "./images/Toys/Organic_Cauliflower"
+import Parsnip from "./images/Toys/Parsnip"
+import Potatoes_Yellow from "./images/Toys/Potatoes_Yellow"
+import Raspberries from "./images/Toys/Raspberries"
+
 
 export default function Produce() {
   const initialBoolean = false;
@@ -53,7 +72,7 @@ export default function Produce() {
       <div className='bigProducts__container'>
         <div className='item__container'>
           <span className = 'company_name'>Country Harvest</span>
-          <img src = { grain_whole_wheat_bread } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Coconut } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>14 Grain Whole Wheat Bread</span>
             <span className = 'price'>$3.21</span> 
@@ -77,7 +96,7 @@ export default function Produce() {
 
         <div className='item__container'>
           <span className = 'company_name'>Farmer's Market</span>
-          <img src = { banana_chocolate_muffin } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Cranberries } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Banana Chocolate Muffin</span>
             <span className = 'price'>$3.21</span> 
@@ -99,7 +118,7 @@ export default function Produce() {
 
         <div className='item__container'>
           <span className = 'company_name'>Farmer's Market</span>
-          <img src = { banana_loaf_cake } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Dill } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Banana Loaf Cake</span>
             <span className = 'price'>$3.21</span> 
@@ -121,7 +140,7 @@ export default function Produce() {
          
         <div className='item__container'>
           <span className = 'company_name'>Farmer's Market</span>
-          <img src = { butter_croissant } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Fresh_Mint } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Butter Croissant</span>
             <span className = 'price'>$3.21</span> 
@@ -143,7 +162,7 @@ export default function Produce() {
 
         <div className='item__container'>
           <span className = 'company_name'>President's Choice</span>
-          <img src = { choc_mini_muffin } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Garlic } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Chocolate Mini Muffin</span>
             <span className = 'price'>$3.21</span> 
@@ -165,7 +184,7 @@ export default function Produce() {
         
         <div className='item__container'>
           <span className = 'company_name'>Farmer's Market</span>
-          <img src = { chocolate_chip_muffin } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Great_Value_Fruit_Salad_With_Cherries } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Chocolate Chip Muffin</span>
             <span className = 'price'>$3.21</span> 
@@ -187,7 +206,7 @@ export default function Produce() {
         
         <div className='item__container'>
           <span className = 'company_name'>Country Harvest</span>
-          <img src = { cinnamon_raisin_bread } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Kale_Sweet_Salad } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>cinnamon Raisin Bread</span>
             <span className = 'price'>$3.21</span>  
@@ -209,7 +228,7 @@ export default function Produce() {
         
         <div className='item__container'>
           <span className = 'company_name'>Farmer's Market</span>
-          <img src = { double_chocolate_muffin } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Lemon } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Double Chocolate Muffin</span>
             <span className = 'price'>$3.21</span> 
@@ -231,7 +250,7 @@ export default function Produce() {
         
         <div className='item__container'>
           <span className = 'company_name'>Superstore</span>
-          <img src = { french_bread } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Lettuce_Butter } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>French Bread</span>
             <span className = 'price'>$3.21</span> 
@@ -253,7 +272,7 @@ export default function Produce() {
         
         <div className='item__container'>
           <span className = 'company_name'>Casa Mendosa</span>
-          <img src = { large_original_tortillas } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Mango_Red } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Large Original Tortillas</span>
             <span className = 'price'>$3.21</span> 
@@ -275,7 +294,7 @@ export default function Produce() {
         
         <div className='item__container'>
           <span className = 'company_name'>President's Choice</span>
-          <img src = { PC_tortillas_original } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Organic_Brown_Bell_Pepper } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Tortillas Original</span>
             <span className = 'price'>$3.21</span> 
@@ -297,7 +316,7 @@ export default function Produce() {
         
         <div className='item__container'>
           <span className = 'company_name'>Superstore</span>
-          <img src = { rolls_6_pack } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Organic_Cauliflower } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Rolls 6 Pack</span>
             <span className = 'price'>$3.21</span> 
@@ -319,7 +338,7 @@ export default function Produce() {
         
         <div className='item__container'>
           <span className = 'company_name'>Superstore</span>
-          <img src = { sourdough_loaf_sliced } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Parsnip } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Sourdough Loaf Sliced</span>
             <span className = 'price'>$3.21</span> 
@@ -341,7 +360,7 @@ export default function Produce() {
         
         <div className='item__container'>
           <span className = 'company_name'>Counter Harvest</span>
-          <img src = { stone_milled_whole_wheat_bread } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Potatoes_Yellow } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Stone Milled With Roasted Wheat</span>
             <span className = 'price'>$3.21</span> 
@@ -363,7 +382,7 @@ export default function Produce() {
         
         <div className='item__container'>
           <span className = 'company_name'>Suraj</span>
-          <img src = { suraj_naan_original } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Raspberries } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Naan Original (5-Pack)</span>
             <span className = 'price'>$3.21</span> 

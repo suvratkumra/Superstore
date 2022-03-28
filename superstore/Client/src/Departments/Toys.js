@@ -1,4 +1,23 @@
 import React from 'react'
+import Kid_Connection_Music_Keyboard from "../images/Toys/Kid_Connection_Music_Keyboard.png"
+import Play_Doh_Drill_n_Fill_Dentist_Toy from "./images/Toys/Play_Doh_Drill_n_Fill_Dentist_Toy.png"
+import Mattel_Hot_Wheels_5_Car_Pack_Assortment from "./images/Toys/Mattel_Hot_Wheels_5_Car_Pack_Assortment.png"
+import Kid_Connection_Utility_Trucks_Toy from "./images/Toys/Kid_Connection_Utility_Trucks_Toy"
+import Mattel_Hot_Wheels_Vehicles from "./images/Toys/Mattel_Hot_Wheels_Vehicles"
+import Pressman_Shark_Bite_Game from "./images/Toys/Pressman_Shark_Bite_Game"
+import Regent_Soccerball from "./images/Toys/Regent_Soccerball"
+import Size_3T_Paw_Patrol from "./images/Toys/Size_3T_Paw_Patrol"
+import Spark_Wooden_Puzzle_Set from "./images/Toys/Spark_Wooden_Puzzle_Set"
+import Barbie_Pop_Star_Doll from "./images/Toys/Barbie_Pop_Star_Doll"
+import Munchkin_Duck_Dunk_Bath_Toy from "./images/Toys/Munchkin_Duck_Dunk_Bath_Toy"
+import Mattel_Kerplunk from "./images/Toys/Mattel_Kerplunk"
+import PlayMonster_Things from "./images/Toys/PlayMonster_Things"
+import Play_Day_Play_Balls from "./images/Toys/Play_Day_Play_Balls"
+import Playmobil_School_Bus_Playset from "./images/Toys/Playmobil_School_Bus_Playset"
+import { useState } from 'react';
+import { BsFillArrowLeftCircleFill } from "react-icons/bs";
+import { GiMagnifyingGlass } from "react-icons/gi";
+
 
 export default function Toys() {
   const initialBoolean = false;
@@ -53,7 +72,7 @@ export default function Toys() {
       <div className='bigProducts__container'>
         <div className='item__container'>
           <span className = 'company_name'>Country Harvest</span>
-          <img src = { grain_whole_wheat_bread } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Kid_Connection_Music_Keyboard } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>14 Grain Whole Wheat Bread</span>
             <span className = 'price'>$3.21</span> 
@@ -77,7 +96,7 @@ export default function Toys() {
 
         <div className='item__container'>
           <span className = 'company_name'>Farmer's Market</span>
-          <img src = { banana_chocolate_muffin } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Play_Doh_Drill_n_Fill_Dentist_Toy } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Banana Chocolate Muffin</span>
             <span className = 'price'>$3.21</span> 
@@ -99,7 +118,7 @@ export default function Toys() {
 
         <div className='item__container'>
           <span className = 'company_name'>Farmer's Market</span>
-          <img src = { banana_loaf_cake } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Mattel_Hot_Wheels_5_Car_Pack_Assortment } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Banana Loaf Cake</span>
             <span className = 'price'>$3.21</span> 
@@ -121,7 +140,7 @@ export default function Toys() {
          
         <div className='item__container'>
           <span className = 'company_name'>Farmer's Market</span>
-          <img src = { butter_croissant } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Kid_Connection_Utility_Trucks_Toy } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Butter Croissant</span>
             <span className = 'price'>$3.21</span> 
@@ -143,7 +162,7 @@ export default function Toys() {
 
         <div className='item__container'>
           <span className = 'company_name'>President's Choice</span>
-          <img src = { choc_mini_muffin } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Mattel_Hot_Wheels_Vehicles } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Chocolate Mini Muffin</span>
             <span className = 'price'>$3.21</span> 
@@ -165,7 +184,7 @@ export default function Toys() {
         
         <div className='item__container'>
           <span className = 'company_name'>Farmer's Market</span>
-          <img src = { chocolate_chip_muffin } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Pressman_Shark_Bite_Game } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Chocolate Chip Muffin</span>
             <span className = 'price'>$3.21</span> 
@@ -187,7 +206,7 @@ export default function Toys() {
         
         <div className='item__container'>
           <span className = 'company_name'>Country Harvest</span>
-          <img src = { cinnamon_raisin_bread } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Regent_Soccerball } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>cinnamon Raisin Bread</span>
             <span className = 'price'>$3.21</span>  
@@ -209,7 +228,7 @@ export default function Toys() {
         
         <div className='item__container'>
           <span className = 'company_name'>Farmer's Market</span>
-          <img src = { double_chocolate_muffin } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Size_3T_Paw_Patrol } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Double Chocolate Muffin</span>
             <span className = 'price'>$3.21</span> 
@@ -231,7 +250,7 @@ export default function Toys() {
         
         <div className='item__container'>
           <span className = 'company_name'>Superstore</span>
-          <img src = { french_bread } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Spark_Wooden_Puzzle_Set } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>French Bread</span>
             <span className = 'price'>$3.21</span> 
@@ -253,7 +272,7 @@ export default function Toys() {
         
         <div className='item__container'>
           <span className = 'company_name'>Casa Mendosa</span>
-          <img src = { large_original_tortillas } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Barbie_Pop_Star_Doll } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Large Original Tortillas</span>
             <span className = 'price'>$3.21</span> 
@@ -275,7 +294,7 @@ export default function Toys() {
         
         <div className='item__container'>
           <span className = 'company_name'>President's Choice</span>
-          <img src = { PC_tortillas_original } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Munchkin_Duck_Dunk_Bath_Toy } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Tortillas Original</span>
             <span className = 'price'>$3.21</span> 
@@ -297,7 +316,7 @@ export default function Toys() {
         
         <div className='item__container'>
           <span className = 'company_name'>Superstore</span>
-          <img src = { rolls_6_pack } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Mattel_Kerplunk } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Rolls 6 Pack</span>
             <span className = 'price'>$3.21</span> 
@@ -319,7 +338,7 @@ export default function Toys() {
         
         <div className='item__container'>
           <span className = 'company_name'>Superstore</span>
-          <img src = { sourdough_loaf_sliced } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { PlayMonster_Things } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Sourdough Loaf Sliced</span>
             <span className = 'price'>$3.21</span> 
@@ -341,7 +360,7 @@ export default function Toys() {
         
         <div className='item__container'>
           <span className = 'company_name'>Counter Harvest</span>
-          <img src = { stone_milled_whole_wheat_bread } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Play_Day_Play_Balls } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Stone Milled With Roasted Wheat</span>
             <span className = 'price'>$3.21</span> 
@@ -363,7 +382,7 @@ export default function Toys() {
         
         <div className='item__container'>
           <span className = 'company_name'>Suraj</span>
-          <img src = { suraj_naan_original } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Playmobil_School_Bus_Playset } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Naan Original (5-Pack)</span>
             <span className = 'price'>$3.21</span> 

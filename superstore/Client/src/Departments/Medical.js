@@ -1,4 +1,28 @@
 import React from 'react'
+import { useState } from 'react';
+import { BsFillArrowLeftCircleFill } from "react-icons/bs";
+import { GiMagnifyingGlass } from "react-icons/gi";
+
+import Band_Aid_Large_Gauze_Pads from "./images/Toys/Band_Aid_Large_Gauze_Pads"
+import Band_Aid_Wet_Flex_Bandages from "./images/Toys/Band_Aid_Wet_Flex_Bandages"
+import Blistex_Medicated_Berry_Lip_Balm from "./images/Toys/Blistex_Medicated_Berry_Lip_Balm"
+import Br45_Flex_Fab_Band from "./images/Toys/Br45_Flex_Fab_Band"
+import Drive_Medical_Foam_Ring_Cushion from "./images/Toys/Drive_Medical_Foam_Ring_Cushion"
+import Equate_Cot_Style_Finger_Splin from "./images/Toys/Equate_Cot_Style_Finger_Splin"
+import Equate_Oral_Medication_Dispenser from "./images/Toys/Equate_Oral_Medication_Dispenser"
+import Equate_Self_Adhering_Bandage from "./images/Toys/Equate_Self_Adhering_Bandage"
+import Equate_Small_Rolled_Gauze from "./images/Toys/Equate_Small_Rolled_Gauze"
+import Gold_Bond_Medicated_Anti_Itch_Cream from "./images/Toys/Gold_Bond_Medicated_Anti_Itch_Cream"
+import Gold_Bond_Medicated_Body_Powder from "./images/Toys/Gold_Bond_Medicated_Body_Powder"
+import Nexcare_Sensitive_Skin_Removable_Tape from "./images/Toys/Nexcare_Sensitive_Skin_Removable_Tape"
+import Penaten_Medicated_Cream from "./images/Toys/Penaten_Medicated_Cream"
+import Tylenol_500_Mg_Eztabs from "./images/Toys/Tylenol_500_Mg_Eztabs"
+import Vicks_Vaporub_Ointment from "./images/Toys/Vicks_Vaporub_Ointment"
+
+
+
+
+
 
 export default function Medical() {
   const initialBoolean = false;
@@ -53,7 +77,7 @@ export default function Medical() {
       <div className='bigProducts__container'>
         <div className='item__container'>
           <span className = 'company_name'>Country Harvest</span>
-          <img src = { grain_whole_wheat_bread } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Band_Aid_Large_Gauze_Pads } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>14 Grain Whole Wheat Bread</span>
             <span className = 'price'>$3.21</span> 
@@ -77,7 +101,7 @@ export default function Medical() {
 
         <div className='item__container'>
           <span className = 'company_name'>Farmer's Market</span>
-          <img src = { banana_chocolate_muffin } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Band_Aid_Wet_Flex_Bandages } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Banana Chocolate Muffin</span>
             <span className = 'price'>$3.21</span> 
@@ -99,7 +123,7 @@ export default function Medical() {
 
         <div className='item__container'>
           <span className = 'company_name'>Farmer's Market</span>
-          <img src = { banana_loaf_cake } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Blistex_Medicated_Berry_Lip_Balm } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Banana Loaf Cake</span>
             <span className = 'price'>$3.21</span> 
@@ -121,7 +145,7 @@ export default function Medical() {
          
         <div className='item__container'>
           <span className = 'company_name'>Farmer's Market</span>
-          <img src = { butter_croissant } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Br45_Flex_Fab_Band } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Butter Croissant</span>
             <span className = 'price'>$3.21</span> 
@@ -143,7 +167,7 @@ export default function Medical() {
 
         <div className='item__container'>
           <span className = 'company_name'>President's Choice</span>
-          <img src = { choc_mini_muffin } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Drive_Medical_Foam_Ring_Cushion } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Chocolate Mini Muffin</span>
             <span className = 'price'>$3.21</span> 
@@ -165,7 +189,7 @@ export default function Medical() {
         
         <div className='item__container'>
           <span className = 'company_name'>Farmer's Market</span>
-          <img src = { chocolate_chip_muffin } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Equate_Cot_Style_Finger_Splin } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Chocolate Chip Muffin</span>
             <span className = 'price'>$3.21</span> 
@@ -187,7 +211,7 @@ export default function Medical() {
         
         <div className='item__container'>
           <span className = 'company_name'>Country Harvest</span>
-          <img src = { cinnamon_raisin_bread } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Equate_Oral_Medication_Dispenser } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>cinnamon Raisin Bread</span>
             <span className = 'price'>$3.21</span>  
@@ -209,7 +233,7 @@ export default function Medical() {
         
         <div className='item__container'>
           <span className = 'company_name'>Farmer's Market</span>
-          <img src = { double_chocolate_muffin } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Equate_Self_Adhering_Bandage } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Double Chocolate Muffin</span>
             <span className = 'price'>$3.21</span> 
@@ -231,7 +255,7 @@ export default function Medical() {
         
         <div className='item__container'>
           <span className = 'company_name'>Superstore</span>
-          <img src = { french_bread } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Equate_Small_Rolled_Gauze } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>French Bread</span>
             <span className = 'price'>$3.21</span> 
@@ -253,7 +277,7 @@ export default function Medical() {
         
         <div className='item__container'>
           <span className = 'company_name'>Casa Mendosa</span>
-          <img src = { large_original_tortillas } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Gold_Bond_Medicated_Anti_Itch_Cream } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Large Original Tortillas</span>
             <span className = 'price'>$3.21</span> 
@@ -275,7 +299,7 @@ export default function Medical() {
         
         <div className='item__container'>
           <span className = 'company_name'>President's Choice</span>
-          <img src = { PC_tortillas_original } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Gold_Bond_Medicated_Body_Powder } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Tortillas Original</span>
             <span className = 'price'>$3.21</span> 
@@ -297,7 +321,7 @@ export default function Medical() {
         
         <div className='item__container'>
           <span className = 'company_name'>Superstore</span>
-          <img src = { rolls_6_pack } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Nexcare_Sensitive_Skin_Removable_Tape } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Rolls 6 Pack</span>
             <span className = 'price'>$3.21</span> 
@@ -319,7 +343,7 @@ export default function Medical() {
         
         <div className='item__container'>
           <span className = 'company_name'>Superstore</span>
-          <img src = { sourdough_loaf_sliced } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Penaten_Medicated_Cream } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Sourdough Loaf Sliced</span>
             <span className = 'price'>$3.21</span> 
@@ -341,7 +365,7 @@ export default function Medical() {
         
         <div className='item__container'>
           <span className = 'company_name'>Counter Harvest</span>
-          <img src = { stone_milled_whole_wheat_bread } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Tylenol_500_Mg_Eztabs } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Stone Milled With Roasted Wheat</span>
             <span className = 'price'>$3.21</span> 
@@ -363,7 +387,7 @@ export default function Medical() {
         
         <div className='item__container'>
           <span className = 'company_name'>Suraj</span>
-          <img src = { suraj_naan_original } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Vicks_Vaporub_Ointment } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Naan Original (5-Pack)</span>
             <span className = 'price'>$3.21</span> 
