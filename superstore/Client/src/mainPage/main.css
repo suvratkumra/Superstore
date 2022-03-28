@@ -154,6 +154,18 @@ img {
   flex-direction: row;
 }
 
+.row4__container {
+  display:flex;
+  justify-content: center;
+  flex-direction: row;
+}
+.row5__container {
+  display:flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+
 @media screen and (max-width:900px) {
 .buttonStyle {
     display: flex;
