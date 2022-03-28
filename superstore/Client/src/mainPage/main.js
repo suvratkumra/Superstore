@@ -82,8 +82,9 @@ function MainPage() {
             setDepartmentNames({...departmentName, Toys: true, Snacks_Candy: true, KidsC: true});
           
           }}>26 to 50 years</a>
-
-         
+          
+          
+          
           <a href="#"onClick= {() => {
             setDepartmentNames({...departmentName, Toys: true, Snacks_Candy: true, KidsC: true});
           
@@ -91,7 +92,6 @@ function MainPage() {
         </div>
       </div>
     </div>
-    
 
       <div className='departments__container'>
         <span className='department__name'>DEPARTMENTS</span>
@@ -216,7 +216,7 @@ function MainPage() {
               departmentName.KidsC ? null :
               <button className="buttonStyle"
                     type="button" onClick={() => {
-                      window.location.href = "http://localhost:3000/Departments/Medical";
+                      window.location.href = "http://localhost:3000/Departments/KidsClothes";
                     }}>
                     KIDS CLOTHES
               </button>
@@ -228,7 +228,7 @@ function MainPage() {
               departmentName.MenC ? null :
               <button className="buttonStyle"
                     type="button" onClick={() => {
-                      window.location.href = "http://localhost:3000/Departments/Medical";
+                      window.location.href = "http://localhost:3000/Departments/MenClothes";
                     }}>
                     MEN CLOTHES
               </button>
@@ -240,7 +240,7 @@ function MainPage() {
                 departmentName.WomenC ? null :
                 <button className="buttonStyle"
                       type="button" onClick={() => {
-                        window.location.href = "http://localhost:3000/Departments/Medical";
+                        window.location.href = "http://localhost:3000/Departments/WomenClothes";
                       }}>
                       WOMEN CLOTHES
                 </button>
@@ -255,7 +255,7 @@ function MainPage() {
                 departmentName.Household ? null :
                 <button className="buttonStyle"
                       type="button" onClick={() => {
-                        window.location.href = "http://localhost:3000/Departments/Medical";
+                        window.location.href = "http://localhost:3000/Departments/Household";
                       }}>
                       HOUSEHOLD
                 </button>
