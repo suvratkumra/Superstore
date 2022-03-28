@@ -13,6 +13,8 @@ var FontAwesome = require('react-fontawesome');
 
 function MainPage() {
   const [username, setSearch] = useState('')
+  const showBoolean = false;    //when it is false, it means show that department
+  const [departmentName, setDepartmentNames] = useState({Bakery: false, Dairy: false, Meat: false, Equipment: false, Produce: false, Toys:false, Medical: false, Frozen: false})
   const BakeryList = [
     { id: '1', name: 'Bread' },
     { id: '2', name: 'Doughnut' },
@@ -66,7 +68,9 @@ function MainPage() {
       <div className="dropdown">
         <button className="button">Filter by Age</button>
         <div className="dropdown-content">
-          <a href="#">1 to 10 years</a>
+          <a href="#" onClick= {() => {
+            setDepartmentNames({...departmentName, Bakery:true});
+          }}>1 to 10 years</a>
           <a href="#">11 to 25 years</a>
           <a href="#">26 to 50 years</a>
           <a href="#">50+ years</a>
@@ -78,12 +82,15 @@ function MainPage() {
         <span className='department__name'>DEPARTMENTS</span>
         <div className='row1__container'>
           <div className='Bakery'>
-            <button className="favorite buttonStyle"
+            {
+              departmentName.Bakery ? null : 
+                <button className="favorite buttonStyle"
                 type="button" onClick={() => {
                   window.location.href = "http://localhost:3000/Departments/Bakery";
                 }}>
-                BAKERY
-            </button>
+              BAKERY
+              </button>
+            }
           </div>
 
           <div className='produce_container'>
@@ -148,7 +155,7 @@ function MainPage() {
           <div className='Cosmetics__container'>
             <button className="buttonStyle"
                   type="button">
-                  CONTAINERS
+                  COSMETICS
             </button>
           </div>
 
