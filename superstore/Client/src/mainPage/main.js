@@ -14,8 +14,6 @@ var FontAwesome = require('react-fontawesome');
 
 function MainPage() {
   const [username, setSearch] = useState('')
-  const showBoolean = false;    //when it is false, it means show that department
-  const [departmentName, setDepartmentNames] = useState({Dairy: false, Bakery: false, Meat: false, Equipment: false, Produce: false, Toys:false, Medical: false, Frozen: false, Cosmetics: false, MenC: false, WomenC: false, KidsC: false, Household: false, Snacks_Candy: false})
   const [counter, setCounter] = useState(-1);
 
   return (
@@ -174,7 +172,7 @@ function MainPage() {
             (counter === 1 || counter === 2 || counter === 3) ? null :
             <button className="buttonStyle"
                   type="button" onClick={() => {
-                    window.location.href = "http://localhost:3000/Departments/Medical";
+                    window.location.href = "http://localhost:3000/Departments/Snacks";
                   }}>
                   SNACKS/CANDY
             </button> 
@@ -212,7 +210,7 @@ function MainPage() {
               (counter === 1 || counter === 2 || counter === 3) ? null :
               <button className="buttonStyle"
                     type="button" onClick={() => {
-                      window.location.href = "http://localhost:3000/Departments/Medical";
+                      window.location.href = "http://localhost:3000/Departments/Kid_Clothes";
                     }}>
                     KIDS CLOTHES
               </button> 

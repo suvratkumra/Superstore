@@ -12,6 +12,9 @@ import Meat from './Departments/Meat'
 import Frozen from './Departments/Frozen'
 import Toys from './Departments/Toys'
 import Medical from './Departments/Medical'
+import Cosmetics from './Departments/Cosmetics'
+import Snacks from './Departments/Snacks'
+import Kid_Clothes from './Departments/Kid_Clothes'
 import React, { useState } from 'react';
 import {Navigate} from 'react-router-dom';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -35,6 +38,9 @@ return(
       <Route path="/Departments/Frozen" element={<Frozen />} />
       <Route path="/Departments/Toys" element={<Toys />} />
       <Route path="/Departments/Medical" element={<Medical />} />
+      <Route path="/Departments/Cosmetics" element={<Cosmetics />} />
+      <Route path="/Departments/Snacks" element={<Snacks />} />
+      <Route path="/Departments/Kid_Clothes" element={<Kid_Clothes />} />
       <Route path="/ForgotPassword" element={<ForgotPassword />} />
       <Route path="*" element={<ErrorPage />} />
     </Routes>
