@@ -1,0 +1,155 @@
+
+.header__container {
+    background: #12c2e9;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #c471ed, #12c2e9);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #c471ed, #12c2e9); 
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+}
+
+.superstore__container {
+    font-weight: 600;
+    color: white;
+}
+
+.name1 {
+    font-size: 80px;
+    font-family: 'Libre Baskerville', serif;
+}
+
+.previous__container {
+    border-radius: 10px;
+    justify-content: space-around;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+ 
+    background-color: black;
+    color: white;
+    font-style: italic;
+    font-size: 30px;
+}
+
+.searchbar__departments {
+  width: 500px;
+  height: 30px;
+  margin-bottom: 10px;
+}
+
+.search__image {
+    margin-top:8px;
+}
+
+.products_name__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.departmentName {
+    font-size: 80px;
+    font-family: 'Libre Baskerville', serif;
+    margin-left: 90px;
+}
+
+.bigProducts__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    column-gap: 4px;
+    row-gap: 30px;
+    border-style: inset;
+    border-radius: 10px;
+}
+
+.item__container {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 40px;
+    /* border: 5px double darkgray; */
+    border-radius: 10px;
+}
+
+.product_image {
+    max-width: 200px;
+    max-height: 200px;
+    align-self: center;
+    size:25px;
+}
+
+.company_name {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: x-large;
+    color:grey;
+    font-weight: 900;
+    align-self: center;
+    opacity: 70%;
+}
+
+
+.product_name {
+    margin-top: 10px;
+    align-self: center;
+    font-size: 24px;
+    padding: 10px;
+}
+
+.add_to_cart__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: rgb(253, 228, 228);
+    border-radius: 5px;
+}
+
+.add_to_cart__container:hover {
+    background-color: grey;
+}
+
+.add_to_cart__name {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+
+.price_product__container {
+    display: flex;
+    flex-direction: row;
+}
+
+.price {
+    margin-top: 20px;
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+
+.increment__container {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 20px;
+    justify-content: space-between;
+}
+
+.minus, .plus {
+    background-color: white; /* Green */
+    border-radius: 10px;
+    color: black;
+    padding: 3px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 22px;
+}
+
+.number {
+    font-size: 2rem;
+}
+
+a{
+    color: white;
+}
