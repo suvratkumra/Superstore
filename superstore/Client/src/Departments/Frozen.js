@@ -72,11 +72,11 @@ export default function Frozen() {
 
       <div className='bigProducts__container'>
         <div className='item__container'>
-          <span className = 'company_name'>Country Harvest</span>
-          <img src = { mccain_frenchFriedPotatoes } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>McCain</span>
+          <img src = { mccain_frenchFriedPotatoes } alt = 'mccain_frenchFriedPotatoes' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>14 Grain Whole Wheat Bread</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>French Fried Potatoes</span>
+            <span className = 'price'>$4.99</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, mccain_frenchFriedPotatoes: true});}}>
             {
@@ -96,11 +96,11 @@ export default function Frozen() {
 
 
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
-          <img src = { michelina_macNCheese } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Michelina</span>
+          <img src = { michelina_macNCheese } alt = 'michelina_macNCheese' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Banana Chocolate Muffin</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Macarroni and Cheese</span>
+            <span className = 'price'>$5.99</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, michelina_macNCheese: true});}}>
             {
@@ -118,11 +118,11 @@ export default function Frozen() {
         </div>
 
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
-          <img src = { NN_chopped_spinach300g } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>No Name</span>
+          <img src = { NN_chopped_spinach300g } alt = 'NN_chopped_spinach300g' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Banana Loaf Cake</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Chopped Spinach (300g)</span>
+            <span className = 'price'>$3.49</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, NN_chopped_spinach300g: true});}}>
             {
@@ -140,11 +140,11 @@ export default function Frozen() {
         </div>
          
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
-          <img src = { NN_crinkleCut_FriedPotatoes } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>No Name</span>
+          <img src = { NN_crinkleCut_FriedPotatoes } alt = 'NN_crinkleCut_FriedPotatoes' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Butter Croissant</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Crinkle Cut Fried Potatoes</span>
+            <span className = 'price'>$5.49</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, NN_chopped_spinach300g: true});}}>
             {
@@ -162,11 +162,11 @@ export default function Frozen() {
         </div>
 
         <div className='item__container'>
-          <span className = 'company_name'>President's Choice</span>
-          <img src = { NN_friedPotatoes_Crispy_SkinOn } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>No Name</span>
+          <img src = { NN_friedPotatoes_Crispy_SkinOn } alt = 'NN_friedPotatoes_Crispy_SkinOn' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Chocolate Mini Muffin</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Fried Potatoes Crispy with Skin-On</span>
+            <span className = 'price'>$5.49</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, NN_friedPotatoes_Crispy_SkinOn: true});}}>
             {
@@ -184,11 +184,11 @@ export default function Frozen() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
-          <img src = { NN_green_peas750g } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>No Name</span>
+          <img src = { NN_green_peas750g } alt = 'NN_green_peas750g' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Chocolate Chip Muffin</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Green Peas (750g)</span>
+            <span className = 'price'>$3.99</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, NN_green_peas750g: true});}}>
             {
@@ -206,11 +206,11 @@ export default function Frozen() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Country Harvest</span>
-          <img src = { NN_mixed_vegatables750g } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>No Name</span>
+          <img src = { NN_mixed_vegatables750g } alt = 'NN_mixed_vegatables750g' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>cinnamon Raisin Bread</span>
-            <span className = 'price'>$3.21</span>  
+            <span className = 'product_name'>Mixed Vegetables (750g)</span>
+            <span className = 'price'>$3.99</span>  
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, NN_mixed_vegatables750g: true});}}>
             {
@@ -228,11 +228,11 @@ export default function Frozen() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
-          <img src = { NN_mixed_vegatables2000g } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>No Name</span>
+          <img src = { NN_mixed_vegatables2000g } alt = 'NN_mixed_vegatables2000g' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Double Chocolate Muffin</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Mixed Vegetables (2kg)</span>
+            <span className = 'price'>$3.99</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, NN_mixed_vegatables2000g: true});}}>
             {
@@ -250,11 +250,11 @@ export default function Frozen() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Superstore</span>
-          <img src = { NN_peas_carrots750g } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>No Name</span>
+          <img src = { NN_peas_carrots750g } alt = 'NN_peas_carrots750gPicture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>French Bread</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Peas And Carrots (750g)</span>
+            <span className = 'price'>$3.99</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, NN_peas_carrots750g: true});}}>
             {
@@ -272,11 +272,11 @@ export default function Frozen() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Casa Mendosa</span>
-          <img src = { NN_potato_patties20ea } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>No Name</span>
+          <img src = { NN_potato_patties20ea } alt = 'NN_potato_patties20ea' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Large Original Tortillas</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Potato Patties (20EA)</span>
+            <span className = 'price'>$16.99</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, NN_potato_patties20ea: true});}}>
             {
@@ -294,11 +294,11 @@ export default function Frozen() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>President's Choice</span>
-          <img src = { NN_whole_kernel_corns750g } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>No Name</span>
+          <img src = { NN_whole_kernel_corns750g } alt = 'NN_whole_kernel_corns750g' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Tortillas Original</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Whole Kernel Crons (750g)</span>
+            <span className = 'price'>$2.99</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, NN_whole_kernel_corns750g: true});}}>
             {
@@ -316,11 +316,11 @@ export default function Frozen() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Superstore</span>
-          <img src = { PC_broccoli_florets500g } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>President's Choice</span>
+          <img src = { PC_broccoli_florets500g } alt = 'PC_broccoli_florets500g' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>PC_broccoli_florets500g  6 Pack</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Brocolli Florets (500g)</span>
+            <span className = 'price'>$4.99</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, PC_broccoli_florets500g : true});}}>
             {
@@ -338,11 +338,11 @@ export default function Frozen() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Superstore</span>
-          <img src = { PC_mango_chunks600g } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>President's Choice</span>
+          <img src = { PC_mango_chunks600g } alt = 'PC_mango_chunks600g' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Sourdough Loaf Sliced</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Mango Chunks (600g)</span>
+            <span className = 'price'>$6.99</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, PC_mango_chunks600g: true});}}>
             {
@@ -360,11 +360,11 @@ export default function Frozen() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Counter Harvest</span>
-          <img src = { PC_pacific_white_shrimp_raw_peeled } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>President's Choice</span>
+          <img src = { PC_pacific_white_shrimp_raw_peeled } alt = 'PC_pacific_white_shrimp_raw_peeled' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Stone Milled With Roasted Wheat</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Pacific White Shrimp Raw Peeled</span>
+            <span className = 'price'>$15.99</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, PC_pacific_white_shrimp_raw_peeled: true});}}>
             {
@@ -382,11 +382,11 @@ export default function Frozen() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Suraj</span>
-          <img src = { PC_sliced_strawberries600g } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>President's Choice</span>
+          <img src = { PC_sliced_strawberries600g } alt = 'PC_sliced_strawberries600g' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Naan Original (5-Pack)</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'product_name'>Sliced Strawberries (600g)</span>
+            <span className = 'price'>$10.99</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, naan: true});}}>
             {
