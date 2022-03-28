@@ -2,21 +2,21 @@ import React from 'react'
 import { useState } from 'react';
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 import { GiMagnifyingGlass } from "react-icons/gi";
-import Coconut from "../images/Produce/Coconut"
-import Cranberries from "../images/Produce/Cranberries"
-import Dill from "../images/Produce/Dill"
-import Fresh_Mint from "../images/Produce/Fresh_Mint"
-import Garlic from "../images/Produce/Garlic"
-import Great_Value_Fruit_Salad_With_Cherries from "../images/Produce/Great_Value_Fruit_Salad_With_Cherries"
-import Kale_Sweet_Salad from "../images/Produce/Kale_Sweet_Salad"
-import Lemon from "../images/Produce/Lemon"
-import Lettuce_Butter from "../images/Produce/Lettuce_Butter"
-import Mango_Red from "../images/Produce/Mango_Red"
-import Organic_Brown_Bell_Pepper from "../images/Produce/Organic_Brown_Bell_Pepper"
-import Organic_Cauliflower from "../images/Produce/Organic_Cauliflower"
-import Parsnip from "../images/Produce/Parsnip"
-import Potatoes_Yellow from "../images/Produce/Potatoes_Yellow"
-import Raspberries from "../images/Produce/Raspberries"
+import Coconut from "../images/Produce/Coconut.png"
+import Cranberries from "../images/Produce/Cranberries.png"
+import Dill from "../images/Produce/Dill.png"
+import Fresh_Mint from "../images/Produce/Fresh_Mint.png"
+import Garlic from "../images/Produce/Garlic.png"
+import Great_Value_Fruit_Salad_With_Cherries from "../images/Produce/Great_Value_Fruit_Salad_With_Cherries.png"
+import Kale_Sweet_Salad from "../images/Produce/Kale_Sweet_Salad.png"
+import Lemon from "../images/Produce/Lemon.png"
+import Lettuce_Butter from "../images/Produce/Lettuce_Butter.png"
+import Mango_Red from "../images/Produce/Mango_Red.png"
+import Organic_Brown_Bell_Pepper from "../images/Produce/Organic_Brown_Bell_Pepper.png"
+import Organic_Cauliflower from "../images/Produce/Organic_Cauliflower.png"
+import Parsnip from "../images/Produce/Parsnip.png"
+import Potatoes_Yellow from "../images/Produce/Potatoes_Yellow.png"
+import Raspberries from "../images/Produce/Raspberries.png"
 
 
 export default function Produce() {
