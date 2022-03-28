@@ -2,21 +2,21 @@ import React from 'react'
 import { useState } from 'react';
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 import { GiMagnifyingGlass } from "react-icons/gi";
-import Coconut from "../images/Produce/Coconut.png"
-import Cranberries from "../images/Produce/Cranberries.png"
-import Dill from "../images/Produce/Dill.png"
-import Fresh_Mint from "../images/Produce/Fresh_Mint.png"
-import Garlic from "../images/Produce/Garlic.png"
-import Great_Value_Fruit_Salad_With_Cherries from "../images/Produce/Great_Value_Fruit_Salad_With_Cherries.png"
-import Kale_Sweet_Salad from "../images/Produce/Kale_Sweet_Salad.png"
-import Lemon from "../images/Produce/Lemon.png"
-import Lettuce_Butter from "../images/Produce/Lettuce_Butter.png"
-import Mango_Red from "../images/Produce/Mango_Red.png"
-import Organic_Brown_Bell_Pepper from "../images/Produce/Organic_Brown_Bell_Pepper.png"
-import Organic_Cauliflower from "../images/Produce/Organic_Cauliflower.png"
-import Parsnip from "../images/Produce/Parsnip.png"
-import Potatoes_Yellow from "../images/Produce/Potatoes_Yellow.png"
-import Raspberries from "../images/Produce/Raspberries.png"
+import Coconut from "../images/Produce/Coconut.webp"
+import Cranberries from "../images/Produce/Cranberries.webp"
+import Dill from "../images/Produce/Dill.webp"
+import Fresh_Mint from "../images/Produce/Fresh_Mint.webp"
+import Garlic from "../images/Produce/Garlic.webp"
+import Great_Value_Fruit_Salad_With_Cherries from "../images/Produce/Great_Value_Fruit_Salad_With_Cherries.webp"
+import Kale_Sweet_Salad from "../images/Produce/Kale_Sweet_Salad.webp"
+import Lemon from "../images/Produce/Lemon.webp"
+import Lettuce_Butter from "../images/Produce/Lettuce_Butter.webp"
+import Mango_Red from "../images/Produce/Mango_Red.webp"
+import Organic_Brown_Bell_Pepper from "../images/Produce/Organic_Brown_Bell_Pepper.webp"
+import Organic_Cauliflower from "../images/Produce/Organic_Cauliflower.webp"
+import Parsnip from "../images/Produce/Parsnip.webp"
+import Potatoes_Yellow from "../images/Produce/Potatoes_Yellow.webp"
+import Raspberries from "../images/Produce/Raspberries.webp"
 
 
 export default function Produce() {

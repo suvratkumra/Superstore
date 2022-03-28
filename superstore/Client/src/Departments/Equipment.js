@@ -1,4 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
+import '../css/Bakery.css'
+import { BsFillArrowLeftCircleFill } from "react-icons/bs";
+import { GiMagnifyingGlass } from "react-icons/gi";
+
+import asus_prime_H410M_E_LGA_1200_Intel_H410_SATA from "../images/Equipment/asus_prime_H410M-E_LGA_1200_Intel_H410_SATA.png"
+import canon_imageClass_D1650_monochrome_lazer from "../images/Equipment/canon_imageClass_D1650_monochrome_lazer.png"
+import cat5e_ethernet_cable from "../images/Equipment/cat5e_ethernet_cable.png"
+import cat6_green_ethernet_cable_10foot from "../images/Equipment/cat6_green_ethernet_cable_10foot.png"
+import decora_wall_plate_white_dual from "../images/Equipment/decora_wall_plate_white_dual.png"
+import energizer_batteries_alkaline_AA24 from "../images/Equipment/energizer_batteries_alkaline_AA24.png"
+import energizer_maxAA_batteries_8pack from "../images/Equipment/energizer_maxAA_batteries_8pack.png"
+import fiber_optic_cable_LC_Duplex from "../images/Equipment/fiber_optic_cable_LC_Duplex.png"
+import fiber_optic_cable_singlemodeDuplex from "../images/Equipment/fiber_optic_cable_singlemodeDuplex.png"
+import globe_electric_with_slim_plug from "../images/Equipment/globe_electric_with_slim_plug.png"
+import JVC_inear_headphones from "../images/Equipment/JVC_inear_headphones.png"
+import samsung_27_curved_FHD_VA_monitor from "../images/Equipment/samsung_27_curved_FHD_VA_monitor.png"
+import samsung_black_toner_cartridge from "../images/Equipment/samsung_black_toner_cartridge.png"
+import Xtrike_Me_HP_310_gaming_headset from "../images/Equipment/Xtrike_Me_HP-310_gaming_headset.png"
+import slim_cat6_ethernet_cable from "../images/Equipment/slim_cat6_ethernet_cable.png"
+
 
 export default function Equipment() {
   const initialBoolean = false;
@@ -45,7 +65,7 @@ export default function Equipment() {
 
     <div className='products_name__container'>
       <div className='departmentName'>
-        BAKERY
+        EQUIPMENT
       </div>
 
 
@@ -53,7 +73,7 @@ export default function Equipment() {
       <div className='bigProducts__container'>
         <div className='item__container'>
           <span className = 'company_name'>Country Harvest</span>
-          <img src = { grain_whole_wheat_bread } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { asus_prime_H410M_E_LGA_1200_Intel_H410_SATA } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>14 Grain Whole Wheat Bread</span>
             <span className = 'price'>$3.21</span> 
@@ -77,7 +97,7 @@ export default function Equipment() {
 
         <div className='item__container'>
           <span className = 'company_name'>Farmer's Market</span>
-          <img src = { banana_chocolate_muffin } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { canon_imageClass_D1650_monochrome_lazer } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Banana Chocolate Muffin</span>
             <span className = 'price'>$3.21</span> 
@@ -99,7 +119,7 @@ export default function Equipment() {
 
         <div className='item__container'>
           <span className = 'company_name'>Farmer's Market</span>
-          <img src = { banana_loaf_cake } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { cat5e_ethernet_cable } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Banana Loaf Cake</span>
             <span className = 'price'>$3.21</span> 
@@ -121,7 +141,7 @@ export default function Equipment() {
          
         <div className='item__container'>
           <span className = 'company_name'>Farmer's Market</span>
-          <img src = { butter_croissant } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { cat6_green_ethernet_cable_10foot } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Butter Croissant</span>
             <span className = 'price'>$3.21</span> 
@@ -143,7 +163,7 @@ export default function Equipment() {
 
         <div className='item__container'>
           <span className = 'company_name'>President's Choice</span>
-          <img src = { choc_mini_muffin } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { decora_wall_plate_white_dual } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Chocolate Mini Muffin</span>
             <span className = 'price'>$3.21</span> 
@@ -165,7 +185,7 @@ export default function Equipment() {
         
         <div className='item__container'>
           <span className = 'company_name'>Farmer's Market</span>
-          <img src = { chocolate_chip_muffin } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { energizer_batteries_alkaline_AA24 } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Chocolate Chip Muffin</span>
             <span className = 'price'>$3.21</span> 
@@ -187,7 +207,7 @@ export default function Equipment() {
         
         <div className='item__container'>
           <span className = 'company_name'>Country Harvest</span>
-          <img src = { cinnamon_raisin_bread } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { energizer_maxAA_batteries_8pack } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>cinnamon Raisin Bread</span>
             <span className = 'price'>$3.21</span>  
@@ -209,7 +229,7 @@ export default function Equipment() {
         
         <div className='item__container'>
           <span className = 'company_name'>Farmer's Market</span>
-          <img src = { double_chocolate_muffin } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { fiber_optic_cable_LC_Duplex } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Double Chocolate Muffin</span>
             <span className = 'price'>$3.21</span> 
@@ -231,7 +251,7 @@ export default function Equipment() {
         
         <div className='item__container'>
           <span className = 'company_name'>Superstore</span>
-          <img src = { french_bread } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { fiber_optic_cable_singlemodeDuplex } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>French Bread</span>
             <span className = 'price'>$3.21</span> 
@@ -253,7 +273,7 @@ export default function Equipment() {
         
         <div className='item__container'>
           <span className = 'company_name'>Casa Mendosa</span>
-          <img src = { large_original_tortillas } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { globe_electric_with_slim_plug } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Large Original Tortillas</span>
             <span className = 'price'>$3.21</span> 
@@ -275,7 +295,7 @@ export default function Equipment() {
         
         <div className='item__container'>
           <span className = 'company_name'>President's Choice</span>
-          <img src = { PC_tortillas_original } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { JVC_inear_headphones } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Tortillas Original</span>
             <span className = 'price'>$3.21</span> 
@@ -297,7 +317,7 @@ export default function Equipment() {
         
         <div className='item__container'>
           <span className = 'company_name'>Superstore</span>
-          <img src = { rolls_6_pack } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { samsung_27_curved_FHD_VA_monitor } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Rolls 6 Pack</span>
             <span className = 'price'>$3.21</span> 
@@ -319,7 +339,7 @@ export default function Equipment() {
         
         <div className='item__container'>
           <span className = 'company_name'>Superstore</span>
-          <img src = { sourdough_loaf_sliced } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { samsung_black_toner_cartridge } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Sourdough Loaf Sliced</span>
             <span className = 'price'>$3.21</span> 
@@ -341,7 +361,7 @@ export default function Equipment() {
         
         <div className='item__container'>
           <span className = 'company_name'>Counter Harvest</span>
-          <img src = { stone_milled_whole_wheat_bread } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { slim_cat6_ethernet_cable } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Stone Milled With Roasted Wheat</span>
             <span className = 'price'>$3.21</span> 
@@ -363,7 +383,7 @@ export default function Equipment() {
         
         <div className='item__container'>
           <span className = 'company_name'>Suraj</span>
-          <img src = { suraj_naan_original } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { Xtrike_Me_HP_310_gaming_headset } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Naan Original (5-Pack)</span>
             <span className = 'price'>$3.21</span> 

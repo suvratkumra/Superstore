@@ -3,6 +3,22 @@ import '../css/Bakery.css'
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 import { GiMagnifyingGlass } from "react-icons/gi";
 
+import astro_balkan_style_yogurt750g from "../images/Dairy/astro_balkan_style_yogurt750g.png"
+import beatrice_onePercent_milk from "../images/Dairy/beatrice_onePercent_milk.png"
+import beatrice_twoPercent_milk from "../images/Dairy/beatrice_twoPercent_milk.png"
+import beatrice_threePercent_milk from "../images/Dairy/beatrice_threePercent_milk.png"
+import becel_margarine_original907g from "../images/Dairy/becel_margarine_original907g.png"
+import lactantia_half_n_half_10percent from "../images/Dairy/lactantia_half_n_half_10percent.png"
+import lactantia_whipping_cream35percent from "../images/Dairy/lactantia_whipping_cream35percent.png"
+import large_eggs_12pack from "../images/Dairy/large_eggs_12pack.png"
+import NN_pasteurized_cream_cheese from "../images/Dairy/NN_pasteurized_cream_cheese.png"
+import NN_salted_butter from "../images/Dairy/NN_salted_butter.png"
+import NN_sourCream_14percent_500ml from "../images/Dairy/NN_sourCream_14percent_500ml.png"
+import NN_unsalted_butter454g from "../images/Dairy/NN_unsalted_butter454g.png"
+import PC_free_run_brown_egg_large from "../images/Dairy/PC_free_run_brown_egg_large.png"
+import saputo_mozzarellissima_500g from "../images/Dairy/saputo_mozzarellissima_500g.png"
+import xlarge_eggs_12pack from "../images/Dairy/xlarge_eggs_12pack.png"
+
 export default function Dairy() {
   const initialBoolean = false;
   const initializeValues = {grainBread:initialBoolean, bananaMuffin:initialBoolean, bananaCake:initialBoolean, butterCroissant:initialBoolean, chocolateMini:initialBoolean, chocChipMuffin:initialBoolean, cinnamonBread:initialBoolean, doubleChoc:initialBoolean, frenchBread:initialBoolean, largeOriginal:initialBoolean, PCtortillas:initialBoolean, rolls:initialBoolean, sourdoughLoaf:initialBoolean, roastedWheat:initialBoolean, naan:initialBoolean};
@@ -48,7 +64,7 @@ export default function Dairy() {
 
     <div className='products_name__container'>
       <div className='departmentName'>
-        BAKERY
+        Dairy
       </div>
 
 
@@ -56,7 +72,7 @@ export default function Dairy() {
       <div className='bigProducts__container'>
         <div className='item__container'>
           <span className = 'company_name'>Country Harvest</span>
-          <img src = { grain_whole_wheat_bread } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { astro_balkan_style_yogurt750g } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>14 Grain Whole Wheat Bread</span>
             <span className = 'price'>$3.21</span> 
@@ -80,7 +96,7 @@ export default function Dairy() {
 
         <div className='item__container'>
           <span className = 'company_name'>Farmer's Market</span>
-          <img src = { banana_chocolate_muffin } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { beatrice_onePercent_milk } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Banana Chocolate Muffin</span>
             <span className = 'price'>$3.21</span> 
@@ -102,7 +118,7 @@ export default function Dairy() {
 
         <div className='item__container'>
           <span className = 'company_name'>Farmer's Market</span>
-          <img src = { banana_loaf_cake } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { beatrice_twoPercent_milk } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Banana Loaf Cake</span>
             <span className = 'price'>$3.21</span> 
@@ -124,7 +140,7 @@ export default function Dairy() {
          
         <div className='item__container'>
           <span className = 'company_name'>Farmer's Market</span>
-          <img src = { butter_croissant } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { beatrice_threePercent_milk } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Butter Croissant</span>
             <span className = 'price'>$3.21</span> 
@@ -146,7 +162,7 @@ export default function Dairy() {
 
         <div className='item__container'>
           <span className = 'company_name'>President's Choice</span>
-          <img src = { choc_mini_muffin } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { becel_margarine_original907g } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Chocolate Mini Muffin</span>
             <span className = 'price'>$3.21</span> 
@@ -168,7 +184,7 @@ export default function Dairy() {
         
         <div className='item__container'>
           <span className = 'company_name'>Farmer's Market</span>
-          <img src = { chocolate_chip_muffin } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { lactantia_half_n_half_10percent } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Chocolate Chip Muffin</span>
             <span className = 'price'>$3.21</span> 
@@ -190,7 +206,7 @@ export default function Dairy() {
         
         <div className='item__container'>
           <span className = 'company_name'>Country Harvest</span>
-          <img src = { cinnamon_raisin_bread } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { lactantia_whipping_cream35percent } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>cinnamon Raisin Bread</span>
             <span className = 'price'>$3.21</span>  
@@ -212,7 +228,7 @@ export default function Dairy() {
         
         <div className='item__container'>
           <span className = 'company_name'>Farmer's Market</span>
-          <img src = { double_chocolate_muffin } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { large_eggs_12pack } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Double Chocolate Muffin</span>
             <span className = 'price'>$3.21</span> 
@@ -234,7 +250,7 @@ export default function Dairy() {
         
         <div className='item__container'>
           <span className = 'company_name'>Superstore</span>
-          <img src = { french_bread } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { NN_pasteurized_cream_cheese } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>French Bread</span>
             <span className = 'price'>$3.21</span> 
@@ -256,7 +272,7 @@ export default function Dairy() {
         
         <div className='item__container'>
           <span className = 'company_name'>Casa Mendosa</span>
-          <img src = { large_original_tortillas } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { NN_salted_butter } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Large Original Tortillas</span>
             <span className = 'price'>$3.21</span> 
@@ -278,7 +294,7 @@ export default function Dairy() {
         
         <div className='item__container'>
           <span className = 'company_name'>President's Choice</span>
-          <img src = { PC_tortillas_original } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { NN_sourCream_14percent_500ml } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Tortillas Original</span>
             <span className = 'price'>$3.21</span> 
@@ -300,7 +316,7 @@ export default function Dairy() {
         
         <div className='item__container'>
           <span className = 'company_name'>Superstore</span>
-          <img src = { rolls_6_pack } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { NN_unsalted_butter454g } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Rolls 6 Pack</span>
             <span className = 'price'>$3.21</span> 
@@ -322,7 +338,7 @@ export default function Dairy() {
         
         <div className='item__container'>
           <span className = 'company_name'>Superstore</span>
-          <img src = { sourdough_loaf_sliced } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { PC_free_run_brown_egg_large } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Sourdough Loaf Sliced</span>
             <span className = 'price'>$3.21</span> 
@@ -344,7 +360,7 @@ export default function Dairy() {
         
         <div className='item__container'>
           <span className = 'company_name'>Counter Harvest</span>
-          <img src = { stone_milled_whole_wheat_bread } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { saputo_mozzarellissima_500g } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Stone Milled With Roasted Wheat</span>
             <span className = 'price'>$3.21</span> 
@@ -366,7 +382,7 @@ export default function Dairy() {
         
         <div className='item__container'>
           <span className = 'company_name'>Suraj</span>
-          <img src = { suraj_naan_original } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { xlarge_eggs_12pack } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Naan Original (5-Pack)</span>
             <span className = 'price'>$3.21</span> 

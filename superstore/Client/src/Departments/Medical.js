@@ -3,21 +3,21 @@ import { useState } from 'react';
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 import { GiMagnifyingGlass } from "react-icons/gi";
 
-import Band_Aid_Large_Gauze_Pads from "../images/Medical/Band_Aid_Large_Gauze_Pads.png"
-import Band_Aid_Wet_Flex_Bandages from "../images/Medical/Band_Aid_Wet_Flex_Bandages.png"
-import Blistex_Medicated_Berry_Lip_Balm from "../images/Medical/Blistex_Medicated_Berry_Lip_Balm.png"
-import Br45_Flex_Fab_Band from "../images/Medical/Br45_Flex_Fab_Band.png"
-import Drive_Medical_Foam_Ring_Cushion from "../images/Medical/Drive_Medical_Foam_Ring_Cushion.png"
-import Equate_Cot_Style_Finger_Splin from "../images/Medical/Equate_Cot_Style_Finger_Splin.png"
-import Equate_Oral_Medication_Dispenser from "../images/Medical/Equate_Oral_Medication_Dispenser.png"
-import Equate_Self_Adhering_Bandage from "../images/Medical/Equate_Self_Adhering_Bandage.png"
-import Equate_Small_Rolled_Gauze from "../images/Medical/Equate_Small_Rolled_Gauze.png"
-import Gold_Bond_Medicated_Anti_Itch_Cream from "../images/Medical/Gold_Bond_Medicated_Anti_Itch_Cream.png"
-import Gold_Bond_Medicated_Body_Powder from "../images/Medical/Gold_Bond_Medicated_Body_Powder.png"
-import Nexcare_Sensitive_Skin_Removable_Tape from "../images/Medical/Nexcare_Sensitive_Skin_Removable_Tape.png"
-import Penaten_Medicated_Cream from "../images/Medical/Penaten_Medicated_Cream.png"
-import Tylenol_500_Mg_Eztabs from "../images/Medical/Tylenol_500_Mg_Eztabs.png"
-import Vicks_Vaporub_Ointment from "../images/Medical/Vicks_Vaporub_Ointment.png"
+import Band_Aid_Large_Gauze_Pads from "../images/Medical/Band_Aid_Large_Gauze_Pads.webp"
+import Band_Aid_Wet_Flex_Bandages from "../images/Medical/Band_Aid_Wet_Flex_Bandages.webp"
+import Blistex_Medicated_Berry_Lip_Balm from "../images/Medical/Blistex_Medicated_Berry_Lip_Balm.webp"
+import Br45_Flex_Fab_Band from "../images/Medical/Br45_Flex_Fab_Band.webp"
+import Drive_Medical_Foam_Ring_Cushion from "../images/Medical/Drive_Medical_Foam_Ring_Cushion.webp"
+import Equate_Cot_Style_Finger_Splin from "../images/Medical/Equate_Cot_Style_Finger_Splin.webp"
+import Equate_Oral_Medication_Dispenser from "../images/Medical/Equate_Oral_Medication_Dispenser.webp"
+import Equate_Self_Adhering_Bandage from "../images/Medical/Equate_Self_Adhering_Bandage.webp"
+import Equate_Small_Rolled_Gauze from "../images/Medical/Equate_Small_Rolled_Gauze.webp"
+import Gold_Bond_Medicated_Anti_Itch_Cream from "../images/Medical/Gold_Bond_Medicated_Anti_Itch_Cream.webp"
+import Gold_Bond_Medicated_Body_Powder from "../images/Medical/Gold_Bond_Medicated_Body_Powder.webp"
+import Nexcare_Sensitive_Skin_Removable_Tape from "../images/Medical/Nexcare_Sensitive_Skin_Removable_Tape.webp"
+import Penaten_Medicated_Cream from "../images/Medical/Penaten_Medicated_Cream.webp"
+import Tylenol_500_Mg_Eztabs from "../images/Medical/Tylenol_500_Mg_Eztabs.webp"
+import Vicks_Vaporub_Ointment from "../images/Medical/Vicks_Vaporub_Ointment.webp"
 
 
 

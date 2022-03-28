@@ -1,11 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
+import '../css/Bakery.css'
+import { BsFillArrowLeftCircleFill } from "react-icons/bs";
+import { GiMagnifyingGlass } from "react-icons/gi";
+
+import chicken_breast_clubPack from "../images/Meat/chicken_breast_clubPack.png"
+import chicken_leg_clubPack from "../images/Meat/chicken_leg_clubPack.png"
+import chicken_thigh_clubPack from "../images/Meat/chicken_thigh_clubPack.png"
+import extra_lean_ground_beef from "../images/Meat/extra_lean_ground_beef.png"
+import juicy_jumbo_all_beef_wieners from "../images/Meat/juicy_jumbo_all_beef_wieners.png"
+import lean_ground_beef from "../images/Meat/lean_ground_beef.png"
+import minced_turkey from "../images/Meat/minced_turkey.png"
+import mild_sugar_cured_bacon from "../images/Meat/mild_sugar_cured_bacon.png"
+import ML_natural_top_dogs from "../images/Meat/ML_natural_top_dogs.png"
+import nn_hotdogs from "../images/Meat/nn_hotdogs.png"
+import PC_boneless_chickenBreast from "../images/Meat/PC_boneless_chickenBreast.png"
+import PC_FF_mild_italian_pork from "../images/Meat/PC_FF_mild_italian_pork.png"
+import pork_tendelion_2pack from "../images/Meat/pork_tendelion_2pack.png"
+import smoked_classicCut_bacon from "../images/Meat/smoked_classicCut_bacon.png"
+import smokehouse_bacon from "../images/Meat/smokehouse_bacon.png"
 
 export default function Meat() {
   const initialBoolean = false;
-  const initializeValues = {grainBread:initialBoolean, bananaMuffin:initialBoolean, bananaCake:initialBoolean, butterCroissant:initialBoolean, chocolateMini:initialBoolean, chocChipMuffin:initialBoolean, cinnamonBread:initialBoolean, doubleChoc:initialBoolean, frenchBread:initialBoolean, largeOriginal:initialBoolean, PCtortillas:initialBoolean, rolls:initialBoolean, sourdoughLoaf:initialBoolean, roastedWheat:initialBoolean, naan:initialBoolean};
+  const initializeValues = {chicken_breast_clubPack:initialBoolean, chicken_leg_clubPack:initialBoolean, chicken_thigh_clubPack:initialBoolean, extra_lean_ground_beef:initialBoolean, juicy_jumbo_all_beef_wieners:initialBoolean, lean_ground_beef:initialBoolean, minced_turkey:initialBoolean, mild_sugar_cured_bacon:initialBoolean, ML_natural_top_dogs:initialBoolean, nn_hotdogs:initialBoolean, PC_boneless_chickenBreast:initialBoolean, PC_FF_mild_italian_pork:initialBoolean, pork_tendelion_2pack:initialBoolean, smoked_classicCut_bacon:initialBoolean, smokehouse_bacon:initialBoolean};
   const [cartText, setCartText] = useState(initializeValues);
-  const [showButton, setShowButton] = useState({showButton: false, showButton2: false});  
-  const initializeNumber = {grainBread:1, bananaMuffin:1, bananaCake:1, butterCroissant:1, chocolateMini:1, chocChipMuffin:1, cinnamonBread:1, doubleChoc:1, frenchBread:1, largeOriginal:1, PCtortillas:1, rolls:1, sourdoughLoaf:1, roastedWheat:1, naan:1};
+  const initializeNumber = {chicken_breast_clubPack:1, chicken_leg_clubPack:1, chicken_thigh_clubPack:1, extra_lean_ground_beef:1, juicy_jumbo_all_beef_wieners:1, lean_ground_beef:1, minced_turkey:1, mild_sugar_cured_bacon:1, ML_natural_top_dogs:1, nn_hotdogs:1, PC_boneless_chickenBreast:1, PC_FF_mild_italian_pork:1, pork_tendelion_2pack:1, smoked_classicCut_bacon:1, smokehouse_bacon:1};
   const [itemIncrementer, setItemIncrementer] = useState(initializeNumber);
 
 
@@ -45,7 +63,7 @@ export default function Meat() {
 
     <div className='products_name__container'>
       <div className='departmentName'>
-        BAKERY
+        MEAT
       </div>
 
 
@@ -53,7 +71,7 @@ export default function Meat() {
       <div className='bigProducts__container'>
         <div className='item__container'>
           <span className = 'company_name'>Country Harvest</span>
-          <img src = { grain_whole_wheat_bread } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { chicken_breast_clubPack } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>14 Grain Whole Wheat Bread</span>
             <span className = 'price'>$3.21</span> 
@@ -77,20 +95,20 @@ export default function Meat() {
 
         <div className='item__container'>
           <span className = 'company_name'>Farmer's Market</span>
-          <img src = { banana_chocolate_muffin } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { chicken_leg_clubPack } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Banana Chocolate Muffin</span>
             <span className = 'price'>$3.21</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, bananaMuffin: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, chicken_leg_clubPack: true});}}>
             {
-              cartText.bananaMuffin ? <div className = 'increment__container'> 
+              cartText.chicken_leg_clubPack ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.bananaMuffin > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, bananaMuffin: itemIncrementer.bananaMuffin-1});                                                                          
+                                                                                    if(itemIncrementer.chicken_leg_clubPack > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, chicken_leg_clubPack: itemIncrementer.chicken_leg_clubPack-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.bananaMuffin} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, bananaMuffin: itemIncrementer.bananaMuffin+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.chicken_leg_clubPack} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, chicken_leg_clubPack: itemIncrementer.chicken_leg_clubPack+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -99,20 +117,20 @@ export default function Meat() {
 
         <div className='item__container'>
           <span className = 'company_name'>Farmer's Market</span>
-          <img src = { banana_loaf_cake } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { chicken_thigh_clubPack } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Banana Loaf Cake</span>
             <span className = 'price'>$3.21</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, bananaCake: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, chicken_thigh_clubPack: true});}}>
             {
-              cartText.bananaCake ? <div className = 'increment__container'> 
+              cartText.chicken_thigh_clubPack ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.bananaCake > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, bananaCake: itemIncrementer.bananaCake-1});                                                                          
+                                                                                    if(itemIncrementer.chicken_thigh_clubPack > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, chicken_thigh_clubPack: itemIncrementer.chicken_thigh_clubPack-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.bananaCake} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, bananaCake: itemIncrementer.bananaCake+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.chicken_thigh_clubPack} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, chicken_thigh_clubPack: itemIncrementer.chicken_thigh_clubPack+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -121,20 +139,20 @@ export default function Meat() {
          
         <div className='item__container'>
           <span className = 'company_name'>Farmer's Market</span>
-          <img src = { butter_croissant } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { extra_lean_ground_beef } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Butter Croissant</span>
             <span className = 'price'>$3.21</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, butterCroissant: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, extra_lean_ground_beef: true});}}>
             {
-              cartText.butterCroissant ? <div className = 'increment__container'> 
+              cartText.extra_lean_ground_beef ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.butterCroissant > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, butterCroissant: itemIncrementer.butterCroissant-1});                                                                          
+                                                                                    if(itemIncrementer.extra_lean_ground_beef > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, extra_lean_ground_beef: itemIncrementer.extra_lean_ground_beef-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.butterCroissant} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, butterCroissant: itemIncrementer.butterCroissant+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.extra_lean_ground_beef} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, extra_lean_ground_beef: itemIncrementer.extra_lean_ground_beef+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -143,20 +161,20 @@ export default function Meat() {
 
         <div className='item__container'>
           <span className = 'company_name'>President's Choice</span>
-          <img src = { choc_mini_muffin } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { juicy_jumbo_all_beef_wieners } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Chocolate Mini Muffin</span>
             <span className = 'price'>$3.21</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, chocolateMini: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, juicy_jumbo_all_beef_wieners: true});}}>
             {
-              cartText.chocolateMini ? <div className = 'increment__container'> 
+              cartText.juicy_jumbo_all_beef_wieners ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.chocolateMini > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, chocolateMini: itemIncrementer.chocolateMini-1});                                                                          
+                                                                                    if(itemIncrementer.juicy_jumbo_all_beef_wieners > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, juicy_jumbo_all_beef_wieners: itemIncrementer.juicy_jumbo_all_beef_wieners-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.chocolateMini} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, chocolateMini: itemIncrementer.chocolateMini+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.juicy_jumbo_all_beef_wieners} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, juicy_jumbo_all_beef_wieners: itemIncrementer.juicy_jumbo_all_beef_wieners+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -165,20 +183,20 @@ export default function Meat() {
         
         <div className='item__container'>
           <span className = 'company_name'>Farmer's Market</span>
-          <img src = { chocolate_chip_muffin } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { lean_ground_beef } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Chocolate Chip Muffin</span>
             <span className = 'price'>$3.21</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, chocChipMuffin: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, lean_ground_beef: true});}}>
             {
-              cartText.chocChipMuffin ? <div className = 'increment__container'> 
+              cartText.lean_ground_beef ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.chocChipMuffin > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, chocChipMuffin: itemIncrementer.chocChipMuffin-1});                                                                          
+                                                                                    if(itemIncrementer.lean_ground_beef > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, lean_ground_beef: itemIncrementer.lean_ground_beef-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.chocChipMuffin} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, chocChipMuffin: itemIncrementer.chocChipMuffin+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.lean_ground_beef} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, lean_ground_beef: itemIncrementer.lean_ground_beef+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -187,20 +205,20 @@ export default function Meat() {
         
         <div className='item__container'>
           <span className = 'company_name'>Country Harvest</span>
-          <img src = { cinnamon_raisin_bread } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { mild_sugar_cured_bacon } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>cinnamon Raisin Bread</span>
             <span className = 'price'>$3.21</span>  
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, cinnamonBread: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, minced_turkey: true});}}>
             {
-              cartText.cinnamonBread ? <div className = 'increment__container'> 
+              cartText.minced_turkey ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.cinnamonBread > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, cinnamonBread: itemIncrementer.cinnamonBread-1});                                                                          
+                                                                                    if(itemIncrementer.minced_turkey > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, minced_turkey: itemIncrementer.minced_turkey-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.cinnamonBread} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, cinnamonBread: itemIncrementer.cinnamonBread+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.minced_turkey} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, minced_turkey: itemIncrementer.minced_turkey+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -209,20 +227,20 @@ export default function Meat() {
         
         <div className='item__container'>
           <span className = 'company_name'>Farmer's Market</span>
-          <img src = { double_chocolate_muffin } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { minced_turkey } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Double Chocolate Muffin</span>
             <span className = 'price'>$3.21</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, doubleChoc: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, mild_sugar_cured_bacon: true});}}>
             {
-              cartText.doubleChoc ? <div className = 'increment__container'> 
+              cartText.mild_sugar_cured_bacon ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.doubleChoc > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, doubleChoc: itemIncrementer.doubleChoc-1});                                                                          
+                                                                                    if(itemIncrementer.mild_sugar_cured_bacon > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, mild_sugar_cured_bacon: itemIncrementer.mild_sugar_cured_bacon-1});                                                                          
                                                                                     } }> -</button>
-                                      <span className = 'number'> {itemIncrementer.doubleChoc} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, doubleChoc: itemIncrementer.doubleChoc+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.mild_sugar_cured_bacon} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, mild_sugar_cured_bacon: itemIncrementer.mild_sugar_cured_bacon+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -231,20 +249,20 @@ export default function Meat() {
         
         <div className='item__container'>
           <span className = 'company_name'>Superstore</span>
-          <img src = { french_bread } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { ML_natural_top_dogs } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>French Bread</span>
             <span className = 'price'>$3.21</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, frenchBread: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, ML_natural_top_dogs: true});}}>
             {
-              cartText.frenchBread ? <div className = 'increment__container'> 
+              cartText.ML_natural_top_dogs ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.frenchBread > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, frenchBread: itemIncrementer.frenchBread-1});                                                                          
+                                                                                    if(itemIncrementer.ML_natural_top_dogs > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, ML_natural_top_dogs: itemIncrementer.ML_natural_top_dogs-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.frenchBread} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, frenchBread: itemIncrementer.frenchBread+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.ML_natural_top_dogs} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, ML_natural_top_dogs: itemIncrementer.ML_natural_top_dogs+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -253,20 +271,20 @@ export default function Meat() {
         
         <div className='item__container'>
           <span className = 'company_name'>Casa Mendosa</span>
-          <img src = { large_original_tortillas } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { nn_hotdogs } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Large Original Tortillas</span>
             <span className = 'price'>$3.21</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, largeOriginal: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, nn_hotdogs: true});}}>
             {
-              cartText.largeOriginal ? <div className = 'increment__container'> 
+              cartText.nn_hotdogs ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.largeOriginal > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, largeOriginal: itemIncrementer.largeOriginal-1});                                                                          
+                                                                                    if(itemIncrementer.nn_hotdogs > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, nn_hotdogs: itemIncrementer.nn_hotdogs-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.largeOriginal} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, largeOriginal: itemIncrementer.largeOriginal+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.nn_hotdogs} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, nn_hotdogs: itemIncrementer.nn_hotdogs+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -275,20 +293,20 @@ export default function Meat() {
         
         <div className='item__container'>
           <span className = 'company_name'>President's Choice</span>
-          <img src = { PC_tortillas_original } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { PC_boneless_chickenBreast } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Tortillas Original</span>
             <span className = 'price'>$3.21</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, PCtortillas: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, PC_boneless_chickenBreast: true});}}>
             {
-              cartText.PCtortillas ? <div className = 'increment__container'> 
+              cartText.PC_boneless_chickenBreast ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.PCtortillas > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, PCtortillas: itemIncrementer.PCtortillas-1});                                                                          
+                                                                                    if(itemIncrementer.PC_boneless_chickenBreast > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, PC_boneless_chickenBreast: itemIncrementer.PC_boneless_chickenBreast-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.PCtortillas} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, PCtortillas: itemIncrementer.PCtortillas+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.PC_boneless_chickenBreast} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, PC_boneless_chickenBreast: itemIncrementer.PC_boneless_chickenBreast+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -297,20 +315,20 @@ export default function Meat() {
         
         <div className='item__container'>
           <span className = 'company_name'>Superstore</span>
-          <img src = { rolls_6_pack } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { PC_FF_mild_italian_pork } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Rolls 6 Pack</span>
+            <span className = 'product_name'>PC_FF_mild_italian_pork 6 Pack</span>
             <span className = 'price'>$3.21</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, rolls: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, PC_FF_mild_italian_pork: true});}}>
             {
-              cartText.rolls ? <div className = 'increment__container'> 
+              cartText.PC_FF_mild_italian_pork ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.rolls > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, rolls: itemIncrementer.rolls-1});                                                                          
+                                                                                    if(itemIncrementer.PC_FF_mild_italian_pork > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, PC_FF_mild_italian_pork: itemIncrementer.PC_FF_mild_italian_pork-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.rolls} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, rolls: itemIncrementer.rolls+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.PC_FF_mild_italian_pork} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, PC_FF_mild_italian_pork: itemIncrementer.PC_FF_mild_italian_pork+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -319,20 +337,20 @@ export default function Meat() {
         
         <div className='item__container'>
           <span className = 'company_name'>Superstore</span>
-          <img src = { sourdough_loaf_sliced } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { pork_tendelion_2pack } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Sourdough Loaf Sliced</span>
             <span className = 'price'>$3.21</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, sourdoughLoaf: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, pork_tendelion_2pack: true});}}>
             {
-              cartText.sourdoughLoaf ? <div className = 'increment__container'> 
+              cartText.pork_tendelion_2pack ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.sourdoughLoaf > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, sourdoughLoaf: itemIncrementer.sourdoughLoaf-1});                                                                          
+                                                                                    if(itemIncrementer.pork_tendelion_2pack > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, pork_tendelion_2pack: itemIncrementer.pork_tendelion_2pack-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.sourdoughLoaf} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, sourdoughLoaf: itemIncrementer.sourdoughLoaf+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.pork_tendelion_2pack} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, pork_tendelion_2pack: itemIncrementer.pork_tendelion_2pack+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -341,20 +359,20 @@ export default function Meat() {
         
         <div className='item__container'>
           <span className = 'company_name'>Counter Harvest</span>
-          <img src = { stone_milled_whole_wheat_bread } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { smoked_classicCut_bacon } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Stone Milled With Roasted Wheat</span>
             <span className = 'price'>$3.21</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, roastedWheat: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, smoked_classicCut_bacon: true});}}>
             {
-              cartText.roastedWheat ? <div className = 'increment__container'> 
+              cartText.smoked_classicCut_bacon ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.roastedWheat > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, roastedWheat: itemIncrementer.roastedWheat-1});                                                                          
+                                                                                    if(itemIncrementer.smoked_classicCut_bacon > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, smoked_classicCut_bacon: itemIncrementer.smoked_classicCut_bacon-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.roastedWheat} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, roastedWheat: itemIncrementer.roastedWheat+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.smoked_classicCut_bacon} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, smoked_classicCut_bacon: itemIncrementer.smoked_classicCut_bacon+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -363,20 +381,20 @@ export default function Meat() {
         
         <div className='item__container'>
           <span className = 'company_name'>Suraj</span>
-          <img src = { suraj_naan_original } alt = 'Bread Picture' className = 'product_image' />
+          <img src = { smokehouse_bacon } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Naan Original (5-Pack)</span>
+            <span className = 'product_name'>smokehouse_bacon Original (5-Pack)</span>
             <span className = 'price'>$3.21</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, naan: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, smokehouse_bacon: true});}}>
             {
-              cartText.naan ? <div className = 'increment__container'> 
+              cartText.smokehouse_bacon ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.naan > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, naan: itemIncrementer.naan-1});                                                                          
+                                                                                    if(itemIncrementer.smokehouse_bacon > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, smokehouse_bacon: itemIncrementer.smokehouse_bacon-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.naan} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, naan: itemIncrementer.naan+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.smokehouse_bacon} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, smokehouse_bacon: itemIncrementer.smokehouse_bacon+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
