@@ -139,7 +139,7 @@ export default function Bakery() {
         </div>
          
         <div className='item__container'>
-          <span className = 'company_name'>Butter Croissant</span>
+          <span className = 'company_name'>Farmer's Market</span>
           <img src = { butter_croissant } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Butter Croissant</span>
