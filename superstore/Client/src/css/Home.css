@@ -1,24 +1,16 @@
 *{
-    
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-.body{
-    padding-top:10px;
-    padding-bottom:50px;
-    background-image: radial-gradient(circle, #ffffff, #f5ebfc, #f5d5f1, #fabddd, #ffa5c0, #ff92a9, #ff808e, #ff6f71, #ff5c5b, #ff4843, #ff2f29, #ff0000);
-}
 
 
-
-/* .name__container {
-    background-color: rgb(228, 88, 88);
+.name__container {
     margin: 20px;
     border: 3px solid rgb(245, 230, 230);
-    border-radius: 30px;
-} */
+    border-radius: 40%;
+}
 
 .superstore_name {
     display: flex;
@@ -26,17 +18,19 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 5rem;
     font-weight: 900;
-    color: rgb(255, 255, 255);
-    text-shadow: 1px 1px 2px white, 0 0 20px black, 0 0 5px rgb(35, 35, 48);
-    /* -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent; */
+    background-color: #ff8177;
+    background-image: linear-gradient(to left, #ffffff, #cfb9b9);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
 }
 
 .login__container {
     margin: 20px 250px;
     padding: 10px;
-    background-image: linear-gradient(to bottom, #ff8787, #ff8080, #ff787a, #ff7173, #ff696d, #ff696d, #ff686e, #ff686e, #fe7075, #fd777c, #fc7e83, #fb858a);
-    /* border: 2px solid black; */
+    border: 2px solid black;
     border-radius: 30px;
 }
 
@@ -91,12 +85,3 @@ p {
     justify-content: center;
     align-items: center;
 }
-
-.signup:hover {
-    background-color: red;
-}
-
-.forgotPassword__container:hover {
-    color: red;
-}
-
