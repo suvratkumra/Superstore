@@ -276,7 +276,7 @@ export default function Snacks() {
           <img src = { OhHenry_Snack_Size_Candy120g } alt = 'OhHenry_Snack_Size_Candy120g' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Snack Size Candy (120g)</span>
-            <span className = 'price'>$7.99</span> 
+            <span className = 'price'>$0.99</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, OhHenry_Snack_Size_Candy120g: true});}}>
             {

@@ -8,8 +8,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLaptopHouse } from '@fortawesome/free-solid-svg-icons';
 
 //Importing all the departments.
-
-
 var FontAwesome = require('react-fontawesome');
 
 function MainPage() {
@@ -19,14 +17,14 @@ function MainPage() {
   return (
     <>
     
-    <div className='header__container'>
+    <div className='header__container_in_main'>
       <div className='superstore__container'>
           <span class = "name1"><h1 className = 'superstore'> SUPERSTORE </h1>  </span>
       </div>  
       
 
       <div className= 'cart__container'>
-        <span className = "cartName"> CART</span>
+        <span className = "cartName">CART</span>
       </div>
 
       <div className="hamburger-menu">
@@ -125,9 +123,7 @@ function MainPage() {
               </button> 
             }
           </div> 
-        </div>
 
-        <div className='row2__container'>
           <div className='equipment_container'>
             {
             (counter === 0) ? null :
@@ -139,8 +135,9 @@ function MainPage() {
               </button>
             }
           </div> 
+        </div>
 
-
+        <div className='row2__container'>
           <div className='meat_container'>
             {
             (counter === 0) ? null :
@@ -164,9 +161,7 @@ function MainPage() {
               </button>
             }
           </div>
-        </div>
 
-        <div className='row3__container'>
           <div className='Kids__C__container'>
             {
             (counter === 1 || counter === 2 || counter === 3) ? null :
@@ -191,6 +186,10 @@ function MainPage() {
             </button>   
           } 
           </div>
+        </div>
+
+        <div className='row3__container'>
+          
 
           <div className='Medical__container'>
             {
@@ -203,9 +202,7 @@ function MainPage() {
               </button>
             }
           </div>
-          </div>
-          <div className='row4__container'>
-            <div className='Kids__C__container'>
+          <div className='Kids__C__container'>
               {
               (counter === 1 || counter === 2 || counter === 3) ? null :
               <button className="buttonStyle"
@@ -242,7 +239,7 @@ function MainPage() {
               }
             </div>
           </div>
-          
+      
           <div className='row5__container'>
 
             <div className='Household__container'>
