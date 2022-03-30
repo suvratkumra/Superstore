@@ -238,6 +238,7 @@ function MainPage() {
               }
             </div>
           </div>
+          </div>
       
           <div className='row5__container'>
 
@@ -265,8 +266,7 @@ function MainPage() {
             </div>
             
           </div>
-          
-      </div>        
+                 
 
       <footer>
         <div className='footer__container'>
