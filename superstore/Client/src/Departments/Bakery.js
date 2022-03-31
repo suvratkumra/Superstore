@@ -99,7 +99,7 @@ export default function Bakery() {
           <img src = { banana_chocolate_muffin } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Banana Chocolate Muffin</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'price'>$4.99</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, bananaMuffin: true});}}>
             {
@@ -121,7 +121,7 @@ export default function Bakery() {
           <img src = { banana_loaf_cake } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Banana Loaf Cake</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'price'>$4.49</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, bananaCake: true});}}>
             {
@@ -143,7 +143,7 @@ export default function Bakery() {
           <img src = { butter_croissant } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Butter Croissant</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'price'>$3.49</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, butterCroissant: true});}}>
             {
@@ -165,7 +165,7 @@ export default function Bakery() {
           <img src = { choc_mini_muffin } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Chocolate Mini Muffin</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'price'>$3.99</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, chocolateMini: true});}}>
             {
@@ -187,7 +187,7 @@ export default function Bakery() {
           <img src = { chocolate_chip_muffin } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Chocolate Chip Muffin</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'price'>$4.99</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, chocChipMuffin: true});}}>
             {
@@ -209,7 +209,7 @@ export default function Bakery() {
           <img src = { cinnamon_raisin_bread } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>cinnamon Raisin Bread</span>
-            <span className = 'price'>$3.21</span>  
+            <span className = 'price'>$2.99</span>  
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, cinnamonBread: true});}}>
             {
@@ -231,7 +231,7 @@ export default function Bakery() {
           <img src = { double_chocolate_muffin } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Double Chocolate Muffin</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'price'>$4.99</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, doubleChoc: true});}}>
             {
@@ -253,7 +253,7 @@ export default function Bakery() {
           <img src = { french_bread } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>French Bread</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'price'>$0.99</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, frenchBread: true});}}>
             {
@@ -275,7 +275,7 @@ export default function Bakery() {
           <img src = { large_original_tortillas } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Large Original Tortillas</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'price'>$5.99</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, largeOriginal: true});}}>
             {
@@ -297,7 +297,7 @@ export default function Bakery() {
           <img src = { PC_tortillas_original } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Tortillas Original</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'price'>$4.99</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, PCtortillas: true});}}>
             {
@@ -319,7 +319,7 @@ export default function Bakery() {
           <img src = { rolls_6_pack } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Rolls 6 Pack</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'price'>$2.49</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, rolls: true});}}>
             {
@@ -341,7 +341,7 @@ export default function Bakery() {
           <img src = { sourdough_loaf_sliced } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Sourdough Loaf Sliced</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'price'>$1.49</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, sourdoughLoaf: true});}}>
             {
@@ -363,7 +363,7 @@ export default function Bakery() {
           <img src = { stone_milled_whole_wheat_bread } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Stone Milled With Roasted Wheat</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'price'>$2.99</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, roastedWheat: true});}}>
             {
@@ -385,7 +385,7 @@ export default function Bakery() {
           <img src = { suraj_naan_original } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Naan Original (5-Pack)</span>
-            <span className = 'price'>$3.21</span> 
+            <span className = 'price'>$3.99</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, naan: true});}}>
             {
