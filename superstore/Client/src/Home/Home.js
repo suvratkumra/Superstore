@@ -4,13 +4,17 @@ import '../css/Home.css';     // two dots because you have to go to previous dir
 import MainPage from '../mainPage/main';
 import Axios from 'axios'
 
-export default function WelcomePage() {
+
+
+function WelcomePage() {
 
   const initialValues = {email:"", password:""};
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
   const [dataFetched, setDataFetched] = useState('');
+
+
 
   const handleChange = (e) => {
     const {name, value} = e.target;
@@ -22,7 +26,7 @@ export default function WelcomePage() {
     setFormErrors(validate(formValues));
     console.log(dataFetched);
     
-    if(dataFetched.length > 0){
+    if(dataFetched.length > 0){ 
       window.location.href = "http://localhost:3000/MainPage";
     }
   }
@@ -90,20 +94,27 @@ export default function WelcomePage() {
           <button className = 'LoginButton'> Login </button>
         </div>
         <div className='forgotPassword__container'>
-          <span className='forgotPassword'> <i> <a href = '/ForgotPassword'> Forgot your password? </a> </i> </span>
+          <span className='forgotPassword'> <i> <a href = '/ForgotPassword' id = "forgotPasswordLine"> Forgot your password? </a> </i> </span>
         </div>
         <br/>
         <div className='signup__container'>
-          <span> New user? </span>
-          <span className='signup'><a href = "/signup">Sign Up!</a></span>
+          <span id = "new_user"> New user? </span>
+          <span className='signup'><a href = "/signup" id='signup_line'>Sign Up!</a></span>
         </div>
+
+        <div className = 'footer__manager_guest'>
+          <span className = 'guest_continue'><a href="#" id='guest_continue_line'>Continue as a Guest</a></span>
+          <span className = 'manager_continue'><a href = "#" id='manager_continue_line'>Continue as a Manager</a></span>
+        </div>
+
       </form>
+
+      
     </div>
     
 
 
-
-
+    
     {/* <div className='buttons__container'>
        <button onClick = {event => window.location.href='/signup'}>signup</button>
     </div> */}
@@ -111,4 +122,7 @@ export default function WelcomePage() {
     
     
   )
+  
 }
+
+export default WelcomePage;

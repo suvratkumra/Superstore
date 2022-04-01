@@ -10,6 +10,8 @@ import { faLaptopHouse } from '@fortawesome/free-solid-svg-icons';
 //Importing all the departments.
 var FontAwesome = require('react-fontawesome');
 
+
+
 function MainPage() {
   const [username, setSearch] = useState('')
   const [counter, setCounter] = useState(-1);
@@ -22,6 +24,7 @@ function MainPage() {
           <span class = "name1"><h1 className = 'superstore'> SUPERSTORE </h1>  </span>
       </div>  
       
+    
 
       <div className= 'cart__container'>
         <span className = "cartName">CART</span>
@@ -124,17 +127,7 @@ function MainPage() {
             }
           </div> 
 
-          <div className='equipment_container'>
-            {
-            (counter === 0) ? null :
-            <button className="favorite buttonStyle"
-                  type="button" onClick={() => {
-                    window.location.href = "http://localhost:3000/Departments/Equipment";
-                  }}>
-                  EQUIPMENT
-              </button>
-            }
-          </div> 
+          
         </div>
 
         <div className='row2__container'>
@@ -219,7 +212,7 @@ function MainPage() {
               (counter === 0) ? null :
               <button className="buttonStyle"
                     type="button" onClick={() => {
-                      window.location.href = "http://localhost:3000/Departments/Medical";
+                      window.location.href = "http://localhost:3000/Departments/MenClothes";
                     }}>
                     MEN CLOTHES
               </button>
@@ -231,7 +224,7 @@ function MainPage() {
                 (counter === 0) ? null :
                 <button className="buttonStyle"
                       type="button" onClick={() => {
-                        window.location.href = "http://localhost:3000/Departments/Medical";
+                        window.location.href = "http://localhost:3000/Departments/WomenClothes";
                       }}>
                       WOMEN CLOTHES
                 </button>
@@ -247,7 +240,7 @@ function MainPage() {
                 (counter === 0) ? null :
                 <button className="buttonStyle"
                       type="button" onClick={() => {
-                        window.location.href = "http://localhost:3000/Departments/Medical";
+                        window.location.href = "http://localhost:3000/Departments/Household";
                       }}>
                       HOUSEHOLD
                 </button>

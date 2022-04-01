@@ -60,6 +60,7 @@
     font-size: large;
     background-color: rgb(250, 233, 233);
     border-radius: 5px;
+    
 }
 
 .LoginButton {
@@ -78,10 +79,39 @@ p {
     font-weight: bold;
 }
 
+#forgotPasswordLine:hover {   
+    text-decoration: none;
+}
+
+
 .signup__container {
+    
     font-size: 1.1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+#signup_line:hover {
+    text-decoration: none;
+}
+
+#guest_continue_line:hover {
+    text-decoration: none;
+}
+
+#manager_continue_line:hover {
+    text-decoration: none;
+}   
+
+.footer__manager_guest {
+    font-size: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#new_user {
+    font-size: 2rem;
 }
