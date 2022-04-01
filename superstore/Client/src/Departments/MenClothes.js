@@ -3,12 +3,12 @@ import '../css/Bakery.css'
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 import { GiMagnifyingGlass } from "react-icons/gi";
 
-import Reebok_Crew_Sock from "../images/MenClothes/Reebok_Crew_Sock.webp"
-import George_Men_Poplin_Pajama_Pant from "../images/MenClothes/George_Men_Poplin_Pajama_Pant.webp"
-import Hanes_4_Pack_Men_Comfort_Soft_Knit_Boxer from "../images/MenClothes/Hanes_4_Pack_Men_Comfort_Soft_Knit_Boxer.webp"
-import George_Men_Large_Stretch_VNeck_Tee from "../images/MenClothes/George_Men_Large_Stretch_VNeck_Tee.webp"
-import Athletic_Works_Men_Medium_Fleece_Crew_Neck from "../images/MenClothes/Athletic_Works_Men_Medium_Fleece_Crew_Neck.webp"
-import Hanes_Men_Medium_Sleep_Pants from "../images/MenClothes/Hanes_Men_Medium_Sleep_Pants.webp"
+import Crew_Sock from "../images/MenClothes/Crew_Sock.webp"
+import Men_Poplin_Pajama_Pant from "../images/MenClothes/Men_Poplin_Pajama_Pant.webp"
+import Pack_Men_Comfort_Soft_Knit_Boxer from "../images/MenClothes/Pack_Men_Comfort_Soft_Knit_Boxer.webp"
+import Men_Large_Stretch_VNeck_Tee from "../images/MenClothes/Men_Large_Stretch_VNeck_Tee.webp"
+import Men_Medium_Fleece_Crew_Neck from "../images/MenClothes/Men_Medium_Fleece_Crew_Neck.webp"
+import Men_Medium_Sleep_Pants from "../images/MenClothes/Men_Medium_Sleep_Pants.webp"
 
 import { useState } from 'react';
 
@@ -64,10 +64,10 @@ export default function MenClothes() {
 
       <div className='bigProducts__container'>
         <div className='item__container'>
-          <span className = 'company_name'>Country Harvest</span>
-          <img src = { Reebok_Crew_Sock } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Reebok</span>
+          <img src = { Crew_Sock } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Reebok Crew Sock</span>
+            <span className = 'product_name'>Crew Sock</span>
             <span className = 'price'>$12.99</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, grainBread: true});}}>
@@ -88,10 +88,10 @@ export default function MenClothes() {
 
 
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
-          <img src = { George_Men_Poplin_Pajama_Pant } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>George</span>
+          <img src = { Men_Poplin_Pajama_Pant } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>George Men's Poplin Pajama Pant</span>
+            <span className = 'product_name'>Men's Poplin Pajama Pant</span>
             <span className = 'price'>$11.99</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, bananaMuffin: true});}}>
@@ -110,10 +110,10 @@ export default function MenClothes() {
         </div>
 
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
-          <img src = { Hanes_4_Pack_Men_Comfort_Soft_Knit_Boxer } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Hanest</span>
+          <img src = { Pack_Men_Comfort_Soft_Knit_Boxer } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Hanes 4 Pack Men's Comfort Soft Knit Boxer</span>
+            <span className = 'product_name'>4 Pack Men's Comfort Soft Knit Boxer</span>
             <span className = 'price'>$23.50</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, bananaCake: true});}}>
@@ -132,10 +132,10 @@ export default function MenClothes() {
         </div>
          
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
-          <img src = { George_Men_Large_Stretch_VNeck_Tee } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>George</span>
+          <img src = { Men_Large_Stretch_VNeck_Tee } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>George Men's Large Stretch V-Neck Tee</span>
+            <span className = 'product_name'>Men's Large Stretch V-Neck Tee</span>
             <span className = 'price'>$9.99</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, butterCroissant: true});}}>
@@ -154,10 +154,10 @@ export default function MenClothes() {
         </div>
 
         <div className='item__container'>
-          <span className = 'company_name'>President's Choice</span>
-          <img src = { Athletic_Works_Men_Medium_Fleece_Crew_Neck } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Athletic Works</span>
+          <img src = { Men_Medium_Fleece_Crew_Neck } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Athletic Works Men's Medium Fleece Crew Neck</span>
+            <span className = 'product_name'>Men's Medium Fleece Crew Neck</span>
             <span className = 'price'>$15.99</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, chocolateMini: true});}}>
@@ -176,10 +176,10 @@ export default function MenClothes() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
-          <img src = { Hanes_Men_Medium_Sleep_Pants } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Hanes</span>
+          <img src = { Men_Medium_Sleep_Pants } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Hanes_Men_Medium_Sleep_Pants</span>
+            <span className = 'product_name'>Men_Medium_Sleep_Pants</span>
             <span className = 'price'>$7.00</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, chocChipMuffin: true});}}>

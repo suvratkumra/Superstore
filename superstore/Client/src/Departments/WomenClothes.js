@@ -3,12 +3,12 @@ import '../css/Bakery.css'
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 import { GiMagnifyingGlass } from "react-icons/gi";
 
-import Secret_610_Comfort_Cotton_Socks from "../images/WomenClothes/Secret_610_Comfort_Cotton_Socks.webp"
-import Reebok_Womens_No_Show_Liner_Socks from "../images/WomenClothes/Reebok_Womens_No_Show_Liner_Socks.webp"
-import George_Women_1X_Shapewear_Boyshorts from "../images/WomenClothes/George_Women_1X_Shapewear_Boyshorts.webp"
-import George_Large_Size_Womens_Cotton_Bikini_Briefs from "../images/WomenClothes/George_Large_Size_Womens_Cotton_Bikini_Briefs.webp"
-import George_Womens_1X_Full_Shapewear_Slip from "../images/WomenClothes/George_Womens_1X_Full_Shapewear_Slip.webp"
-import Athletic_Works_Womens_Seamless_Cross_Back_Sports_Bra from "../images/WomenClothes/Athletic_Works_Womens_Seamless_Cross_Back_Sports_Bra.webp"
+import Comfort_Cotton_Socks from "../images/WomenClothes/Comfort_Cotton_Socks.webp"
+import Womens_No_Show_Liner_Socks from "../images/WomenClothes/Womens_No_Show_Liner_Socks.webp"
+import Women_1X_Shapewear_Boyshorts from "../images/WomenClothes/Women_1X_Shapewear_Boyshorts.webp"
+import Large_Size_Womens_Cotton_Bikini_Briefs from "../images/WomenClothes/Large_Size_Womens_Cotton_Bikini_Briefs.webp"
+import Womens_1X_Full_Shapewear_Slip from "../images/WomenClothes/Womens_1X_Full_Shapewear_Slip.webp"
+import Womens_Seamless_Cross_Back_Sports_Bra from "../images/WomenClothes/Womens_Seamless_Cross_Back_Sports_Bra.webp"
 
 import { useState } from 'react';
 
@@ -64,10 +64,10 @@ export default function WomenClothes() {
 
       <div className='bigProducts__container'>
         <div className='item__container'>
-          <span className = 'company_name'>Country Harvest</span>
-          <img src = { Secret_610_Comfort_Cotton_Socks } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Secret 6 </span>
+          <img src = { Comfort_Cotton_Socks } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Secret 6-10 Comfort Cotton Socks</span>
+            <span className = 'product_name'>10 Comfort Cotton Socks</span>
             <span className = 'price'>$7.89</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, grainBread: true});}}>
@@ -88,10 +88,10 @@ export default function WomenClothes() {
 
 
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
-          <img src = { Reebok_Womens_No_Show_Liner_Socks } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Reebok</span>
+          <img src = {Womens_No_Show_Liner_Socks } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Reebok Women's No Show Liner Socks</span>
+            <span className = 'product_name'>Women's No Show Liner Socks</span>
             <span className = 'price'>$14.00</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, bananaMuffin: true});}}>
@@ -110,10 +110,10 @@ export default function WomenClothes() {
         </div>
 
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
-          <img src = { George_Women_1X_Shapewear_Boyshorts } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>George</span>
+          <img src = { Women_1X_Shapewear_Boyshorts } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>George Women's 1X Shapewear Boyshorts</span>
+            <span className = 'product_name'> Women's 1X Shapewear Boyshorts</span>
             <span className = 'price'>$16.50</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, bananaCake: true});}}>
@@ -132,10 +132,10 @@ export default function WomenClothes() {
         </div>
          
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
-          <img src = { George_Large_Size_Womens_Cotton_Bikini_Briefs } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>George</span>
+          <img src = { Large_Size_Womens_Cotton_Bikini_Briefs } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>George Large Size Women's Cotton Bikini Briefs</span>
+            <span className = 'product_name'> Large Size Women's Cotton Bikini Briefs</span>
             <span className = 'price'>$7.00</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, butterCroissant: true});}}>
@@ -154,10 +154,10 @@ export default function WomenClothes() {
         </div>
 
         <div className='item__container'>
-          <span className = 'company_name'>President's Choice</span>
-          <img src = { George_Womens_1X_Full_Shapewear_Slip } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>George</span>
+          <img src = { Womens_1X_Full_Shapewear_Slip } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>George Women's 1X Full Shapewear Slip</span>
+            <span className = 'product_name'>Women's 1X Full Shapewear Slip</span>
             <span className = 'price'>$25.99</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, chocolateMini: true});}}>
@@ -176,10 +176,10 @@ export default function WomenClothes() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
-          <img src = { Athletic_Works_Womens_Seamless_Cross_Back_Sports_Bra } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Athletic Works</span>
+          <img src = { Womens_Seamless_Cross_Back_Sports_Bra } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Athletic Works Women's Seamless Cross Back Sports Bra</span>
+            <span className = 'product_name'>Women's Seamless Cross Back Sports Bra</span>
             <span className = 'price'>$17.00</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, chocChipMuffin: true});}}>

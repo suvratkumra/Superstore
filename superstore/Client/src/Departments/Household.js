@@ -4,20 +4,20 @@ import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 import { GiMagnifyingGlass } from "react-icons/gi";
 
 import Air_Wick_Relax_Scented_Oil from "../images/Household/Air_Wick_Relax_Scented_Oil.webp"
-import Alcan_100_Foil_Wrap from "../images/Household/Alcan_100_Foil_Wrap.webp"
-import BiC_Bl5_Maxi_Lighter from "../images/Household/BiC_Bl5_Maxi_Lighter.webp"
-import Clorox_Toilet_Cleaner_Gel from "../images/Household/Clorox_Toilet_Cleaner_Gel.webp";
-import Downy_150_W_Ultra_Liquid_April_Fresh from "../images/Household/Downy_150_W_Ultra_Liquid_April_Fresh.webp"
-import Febreze_Air_Line_Sky from "../images/Household/Febreze_Air_Line_Sky.webp"
-import Great_Value_Aluminum_Foil from "../images/Household/Great_Value_Aluminum_Foil.webp"
-import Great_Value_Drain_Opener from "../images/Household/Great_Value_Drain_Opener.webp";
-import Great_Value_Fruit_Fly_Trap from "../images/Household/Great_Value_Fruit_Fly_Trap.webp"
-import Great_Value_Napkins from "../images/Household/Great_Value_Napkins.webp";
-import Palmolive_Lemon_Scent_Dish_Liquid from "../images/Household/Palmolive_Lemon_Scent_Dish_Liquid.webp"
-import Royale_Velour_Bathroom_Tissue from "../images/Household/Royale_Velour_Bathroom_Tissue.webp"
-import Swiffer_Liquid_Og from "../images/Household/Swiffer_Liquid_Og.webp"
-import Swiffer_Wet_Cloth_Febreze from "../images/Household/Swiffer_Wet_Cloth_Febreze.webp";
-import Tide_Liquid_Pods_Original from "../images/Household/Tide_Liquid_Pods_Original.webp";
+import Foil_Wrap from "../images/Household/Foil_Wrap.webp"
+import Bl5_Maxi_Lighter from "../images/Household/Bl5_Maxi_Lighter.webp"
+import Toilet_Cleaner_Gel from "../images/Household/Toilet_Cleaner_Gel.webp";
+import W_Ultra_Liquid_April_Fresh from "../images/Household/W_Ultra_Liquid_April_Fresh.webp"
+import Air_Line_Sky from "../images/Household/Air_Line_Sky.webp"
+import Aluminum_Foil from "../images/Household/Aluminum_Foil.webp"
+import Drain_Opener from "../images/Household/Drain_Opener.webp";
+import Fruit_Fly_Trap from "../images/Household/Fruit_Fly_Trap.webp"
+import Napkins from "../images/Household/Napkins.webp";
+import Lemon_Scent_Dish_Liquid from "../images/Household/Lemon_Scent_Dish_Liquid.webp"
+import Bathroom_Tissue from "../images/Household/Bathroom_Tissue.webp"
+import Liquid_Og from "../images/Household/Liquid_Og.webp"
+import Wet_Cloth_Febreze from "../images/Household/Wet_Cloth_Febreze.webp";
+import Liquid_Pods_Original from "../images/Household/Liquid_Pods_Original.webp";
 import { useState } from 'react';
 
 export default function Household() {
@@ -72,7 +72,7 @@ export default function Household() {
 
       <div className='bigProducts__container'>
         <div className='item__container'>
-          <span className = 'company_name'>Country Harvest</span>
+          <span className = 'company_name'>Reckitt</span>
           <img src = { Air_Wick_Relax_Scented_Oil } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Air Wick Relax Scented Oil</span>
@@ -96,10 +96,10 @@ export default function Household() {
 
 
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
-          <img src = { Alcan_100_Foil_Wrap } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Alcan</span>
+          <img src = { Foil_Wrap } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Alcan 100 Foil Wrap</span>
+            <span className = 'product_name'> 100 Foil Wrap</span>
             <span className = 'price'>$6.75</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, bananaMuffin: true});}}>
@@ -118,10 +118,10 @@ export default function Household() {
         </div>
 
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
-          <img src = { BiC_Bl5_Maxi_Lighter } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>BiC</span>
+          <img src = { Bl5_Maxi_Lighter } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>BiC Bl5 Maxi Lighter</span>
+            <span className = 'product_name'>Bl5 Maxi Lighter</span>
             <span className = 'price'>$4.50</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, bananaCake: true});}}>
@@ -140,10 +140,10 @@ export default function Household() {
         </div>
          
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
-          <img src = { Clorox_Toilet_Cleaner_Gel } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Clorox</span>
+          <img src = { Toilet_Cleaner_Gel } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Clorox Toilet Cleaner Gel</span>
+            <span className = 'product_name'>Toilet Cleaner Gel</span>
             <span className = 'price'>$2.99</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, butterCroissant: true});}}>
@@ -162,10 +162,10 @@ export default function Household() {
         </div>
 
         <div className='item__container'>
-          <span className = 'company_name'>President's Choice</span>
-          <img src = { Downy_150_W_Ultra_Liquid_April_Fresh } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Downy</span>
+          <img src = { W_Ultra_Liquid_April_Fresh } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Downy 150 W Ultra Liquid April Fresh</span>
+            <span className = 'product_name'> 150 W Ultra Liquid April Fresh</span>
             <span className = 'price'>$13.99</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, chocolateMini: true});}}>
@@ -184,10 +184,10 @@ export default function Household() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
-          <img src = { Febreze_Air_Line_Sky } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Febreze</span>
+          <img src = { Air_Line_Sky } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Febreze Air Line and Sky</span>
+            <span className = 'product_name'>Air Line and Sky</span>
             <span className = 'price'>$3.67</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, chocChipMuffin: true});}}>
@@ -206,10 +206,10 @@ export default function Household() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Country Harvest</span>
-          <img src = { Great_Value_Aluminum_Foil } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Great Value</span>
+          <img src = { Aluminum_Foil } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Great Value Aluminum Foil</span>
+            <span className = 'product_name'>Aluminum Foil</span>
             <span className = 'price'>$3.57</span>  
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, cinnamonBread: true});}}>
@@ -228,10 +228,10 @@ export default function Household() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Farmer's Market</span>
-          <img src = { Great_Value_Drain_Opener } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Great Value </span>
+          <img src = { Drain_Opener } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Double Chocolate Muffin</span>
+            <span className = 'product_name'>Drain_Opener</span>
             <span className = 'price'>$4.99</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, doubleChoc: true});}}>
@@ -250,10 +250,10 @@ export default function Household() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Superstore</span>
-          <img src = { Great_Value_Fruit_Fly_Trap } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Great Value</span>
+          <img src = { Fruit_Fly_Trap } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Great Value Fruit Fly Trap</span>
+            <span className = 'product_name'> Fruit Fly Trap</span>
             <span className = 'price'>$5.67</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, frenchBread: true});}}>
@@ -272,10 +272,10 @@ export default function Household() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Casa Mendosa</span>
-          <img src = { Great_Value_Napkins } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Great Value</span>
+          <img src = { Napkins } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Great Value Napkins</span>
+            <span className = 'product_name'> Napkins</span>
             <span className = 'price'>$3.29</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, largeOriginal: true});}}>
@@ -294,10 +294,10 @@ export default function Household() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>President's Choice</span>
-          <img src = { Palmolive_Lemon_Scent_Dish_Liquid } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Palmolive</span>
+          <img src = { Lemon_Scent_Dish_Liquid } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Palmolive Lemon Scent Dish Liquid</span>
+            <span className = 'product_name'> Lemon Scent Dish Liquid</span>
             <span className = 'price'>$2.45</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, PCtortillas: true});}}>
@@ -316,10 +316,10 @@ export default function Household() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Superstore</span>
-          <img src = { Royale_Velour_Bathroom_Tissue } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Royale Velour</span>
+          <img src = { Bathroom_Tissue } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Royale Velour Bathroom Tissue</span>
+            <span className = 'product_name'>Bathroom Tissue</span>
             <span className = 'price'>$5.55</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, rolls: true});}}>
@@ -338,10 +338,10 @@ export default function Household() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Superstore</span>
-          <img src = { Swiffer_Liquid_Og } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Swiffer</span>
+          <img src = { Liquid_Og } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Swiffer Liquid Og</span>
+            <span className = 'product_name'> Liquid Og</span>
             <span className = 'price'>$4.71</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, sourdoughLoaf: true});}}>
@@ -360,10 +360,10 @@ export default function Household() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Counter Harvest</span>
-          <img src = { Swiffer_Wet_Cloth_Febreze } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Swiffer</span>
+          <img src = { Wet_Cloth_Febreze } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Swiffer Wet Cloth Febreze</span>
+            <span className = 'product_name'> Wet Cloth Febreze</span>
             <span className = 'price'>$5.99</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, roastedWheat: true});}}>
@@ -382,10 +382,10 @@ export default function Household() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>Suraj</span>
-          <img src = { Tide_Liquid_Pods_Original } alt = 'Bread Picture' className = 'product_image' />
+          <span className = 'company_name'>Tide</span>
+          <img src = { Liquid_Pods_Original } alt = 'Bread Picture' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Tide Liquid Pods Original</span>
+            <span className = 'product_name'>Liquid Pods Original</span>
             <span className = 'price'>$6.77</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, naan: true});}}>
