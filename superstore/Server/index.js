@@ -47,6 +47,8 @@ app.post('/api/signup', (req, res) => {
     const username = req.body.username;
     const email = req.body.email;
     const password = req.body.password;
+    const hintQuestion = req.body.hintQuestion;
+    const hintAnswer = req.body.hintAnswer;
 
     const sqlCheck = "SELECT * FROM login_details WHERE Email_Id = ?";
     db.query(sqlCheck, [email], (err, result) => {
@@ -55,9 +57,9 @@ app.post('/api/signup', (req, res) => {
         }
     })
 
-    const sqlInsert = "INSERT INTO login_details (Username, Email_Id, Password) VALUES (?,?,?);";
+    const sqlInsert = "INSERT INTO login_details (Username, Email_Id, Password, Hint_Question, Hint_Answer) VALUES (?,?,?,?,?);";
     //console.log(sqlInsert, [username, email, password]);
-    db.query(sqlInsert, [username, email, password], (err, result) => {
+    db.query(sqlInsert, [username, email, password, hintQuestion, hintAnswer], (err, result) => {
       //  console.log(result);
     })
 })
@@ -69,7 +71,7 @@ app.post('/api/login', (req, res) => {
     const sqlCheck = "SELECT * FROM login_details WHERE Email_Id = ? AND Password = ?";
     db.query(sqlCheck, [email, password], (err, result) => {
         // console.log(result.length);
-        if(undefined !== result && result.length) {
+        if(result.length != 0) {
             return res.send("User Found, redirecting to the store page");
         }
     })

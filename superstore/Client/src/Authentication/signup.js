@@ -9,7 +9,7 @@ import MainPage from '../mainPage/main';
 
 function Signup() {
 
-  const initialValues = {email:"", password:"", username:"", confirmPassword:""};
+  const initialValues = {email:"", password:"", username:"", confirmPassword:"", hintQuestion:"", hintAnswer:""};
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
@@ -37,7 +37,9 @@ function Signup() {
       Axios.post("http://localhost:3001/api/signup", {
       username:formValues.username,
       email:formValues.email,
-      password:formValues.password
+      password:formValues.password,
+      hintQuestion: formValues.hintQuestion,
+      hintAnswer: formValues.hintAnswer
       }).then((res) => {
         console.log(res.data);
         setDataFetched(res.data);
@@ -64,6 +66,12 @@ function Signup() {
     }
     if(!values.confirmPassword){
       errors.confirmPassword = "Please enter the password again";
+    }
+    if(!values.hintQuestion){
+      errors.hintQuestion = "Please enter a valid question";
+    }
+    if(!values.hintAnswer){
+      errors.hintAnswer = "Please enter the password";
     }
     return errors;
   };
@@ -107,6 +115,25 @@ function Signup() {
           value = { formValues.confirmPassword }
           onChange= {handleChange} />
       <p>{ formErrors.confirmPassword }</p>
+      <br/>
+
+      <label for = "hintQuestion">Hint Question*: </label>
+      <input type = "text" 
+        name = "hintQuestion" 
+        placeholder='Hint Question'
+        value = { formValues.hintQuestion }
+        onChange={handleChange} />
+      <p>{ formErrors.hintQuestion }</p>
+     <br/> <br/>
+
+      <label for = "hintAnswer">Hint Answer*: </label>
+      <input type = "text" 
+        name = "hintAnswer" 
+        placeholder='Hint Question'
+        value = { formValues.hintAnswer }
+        onChange={handleChange} />
+      <p>{ formErrors.hintAnswer }</p>
+      <br/> <br/>
       <button className = 'make_btn'>Make my Account!</button>
     </form>
 
