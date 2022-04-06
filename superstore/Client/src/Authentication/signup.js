@@ -14,7 +14,6 @@ function Signup() {
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
   const [dataFetched, setDataFetched] = useState('');
-  const [booleanForExists, setBooleanForExists] = useState(false);
 
   const handleChange = (e) => {
     const {name, value} = e.target;
@@ -24,7 +23,8 @@ function Signup() {
   const handleSubmit = (e) => {
     e.preventDefault();       // so that page doesnt refresh on submit
     setFormErrors(validate(formValues));
-    if(!booleanForExists && formValues.username.length !== 0 && formValues.email.length !== 0 && formValues.password.length !== 0)
+    
+    if(formValues.username.length !== 0 && formValues.email.length !== 0 && formValues.password.length !== 0)
       setIsSubmit(true);  
     console.log(isSubmit);
     if(isSubmit){
@@ -40,21 +40,16 @@ function Signup() {
       password:formValues.password
       }).then((res) => {
         console.log(res.data);
-        if(res.data === "User already registered with this Email") {
-          setBooleanForExists(true);
-          console.log(booleanForExists);
-        }
         setDataFetched(res.data);
       })    
     }
     setDataFetched('');
-    if(!booleanForExists && dataFetched.length === 0 && formValues.username.length !== 0 && formValues.email.length !== 0 && formValues.password.length !== 0)
+    if(dataFetched.length === 0 && formValues.username.length !== 0 && formValues.email.length !== 0 && formValues.password.length !== 0)
      setIsSubmit(true);
   },[formErrors]);
 
   const validate = (values) => {
     const errors = {};
-    setBooleanForExists(false);
     if(!values.email) {
       errors.email = "Email is required!";
     }
