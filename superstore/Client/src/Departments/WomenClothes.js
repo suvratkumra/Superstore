@@ -202,12 +202,6 @@ export default function WomenClothes() {
       </div>
     </div>
 
-  
-      
-
-    
-      
-
     </>
   )
 }

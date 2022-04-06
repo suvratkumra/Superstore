@@ -23,8 +23,6 @@ function MainPage() {
       <div className='superstore__container'>
           <span class = "name1"><h1 className = 'superstore'> SUPERSTORE </h1>  </span>
       </div>  
-      
-    
 
       <div className= 'cart__container'>
         <span className = "cartName">CART</span>

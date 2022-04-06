@@ -10,7 +10,6 @@
   flex-direction: row;
   justify-content: space-around;
   border: 10px 20px;
-  left: 10px;
   align-items: center;
   border: 3px solid white;
   border-radius: 10px;
@@ -32,7 +31,7 @@
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
-  font-size: 110px;
+  font-size: 140%;
   margin-left: auto;
 }
 
