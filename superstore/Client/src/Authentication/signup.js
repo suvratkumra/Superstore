@@ -67,7 +67,7 @@ function Signup() {
     if(!values.confirmPassword){
       errors.confirmPassword = "Please enter the password again";
     }
-    if(!values.hintQuestion){
+    if(values.hintQuestion === ""){
       errors.hintQuestion = "Please enter a valid question";
     }
     if(!values.hintAnswer){
@@ -117,12 +117,21 @@ function Signup() {
       <p>{ formErrors.confirmPassword }</p>
       <br/>
 
-      <label for = "hintQuestion">Hint Question*: </label>
+      {/* <label for = "hintQuestion">Hint Question*: </label>
       <input type = "text" 
         name = "hintQuestion" 
         placeholder='Hint Question'
         value = { formValues.hintQuestion }
-        onChange={handleChange} />
+        onChange={handleChange} /> */}
+
+      <label for = "hintQuestion">Security Question*: </label>
+        <select id="hintQuestion" name="hintQuestion" value = {formValues.hintQuestion} onChange = {handleChange}>
+          <option value="none">Select a question</option>
+          <option value="What is your mother's maiden name?">What is your mother's maiden name?</option>
+          <option value="Who is your childhood hero?">Who is your childhood hero?</option>
+          <option value="What was the first car you bought?">What was the first car you bought?</option>
+          <option value="What is your favorite movie?">What is your favorite movie?</option>
+        </select>
       <p>{ formErrors.hintQuestion }</p>
      <br/> <br/>
 
