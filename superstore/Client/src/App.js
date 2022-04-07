@@ -22,6 +22,7 @@ import WomenClothes from "./Departments/WomenClothes";
 import MenClothes from "./Departments/MenClothes";
 import Household from "./Departments/Household";
 import Manager from "./Manager_Warehouse/Manager";
+import Warehouse from "./Manager_Warehouse/Warehouse"
 
 function App() {
 
@@ -50,6 +51,7 @@ return(
       <Route path="/Departments/Kid_Clothes" element={<Kid_Clothes />} />
       <Route path="/ForgotPassword" element={<ForgotPassword />} />
       <Route path="/Manager" element={<Manager />} />
+      <Route path="/Warehouse" element={<Warehouse />} />
       <Route path="*" element={<ErrorPage />} />
     </Routes>
   </Router>

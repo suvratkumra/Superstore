@@ -49,15 +49,7 @@ app.post('/api/reset_password', (req, res) => {
                 res.send(result2);
             })
         }
-        
-        // console.log(Object.values(result[0])[0]);
-        // console.log(hintAnswer)
     })
-
-    // const sqlExtract = "SELECT Password FROM login_details WHERE Email_Id = ?";
-    // db.query(sqlExtract, [email], (err, result) => {
-    //     res.send(result);
-    // })
 })
 
 app.post('/api/forgot_password', (req, res) => {
@@ -113,11 +105,28 @@ app.post('/api/login', (req, res) => {
 
     const sqlCheck = "SELECT * FROM login_details WHERE Email_Id = ? AND Password = ?";
     db.query(sqlCheck, [email, password], (err, result) => {
-        // console.log(result.length);
         if(result.length != 0) {
             return res.send("User Found, redirecting to the store page");
         }
     })
+})
+
+
+app.post('/api/manager_login', (req, res) => {
+    const email = req.body.email;
+    const password = req.body.password;
+
+    const sqlSearchManager = "SELECT Email_Id, Password FROM manager_details WHERE Email_Id = ? AND Password = ?";
+    db.query(sqlSearchManager, [email, password], (err, result) => {
+        // now we are checking if the email and the password entered by the user and passed to the database were correct or not
+        if(result.length > 0 && email === Object.values(result[0]).at(0) && password === Object.values(result[0]).at(1))
+            res.send("Manager Login found. Logging in...");
+        else {
+            res.send("Manager Login not found");
+        }
+    })
+
+
 })
 
 

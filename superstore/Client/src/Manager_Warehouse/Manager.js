@@ -21,28 +21,30 @@ export default function Manager() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormErrors(validate(formValues));
-    console.log(dataFetched);
-    
-    if(dataFetched.length > 0){ 
-      window.location.href = "http://localhost:3000/MainPage";
+    console.log(formErrors);
+
+    if(Object.keys(formErrors).length === 0) {
+        Axios.post("http://localhost:3001/api/manager_login", {
+            email:formValues.email,
+            password:formValues.password
+        }).then((res) => {
+            if(res.data === "Manager Login found. Logging in...") {
+                setIsSubmit(true);
+                console.log(res.data);
+            }
+            else {
+                setFormErrors({"wrongCredentials": "The Email or password is/are wrong"})
+                setIsSubmit(false);
+            }
+        })
     }
+
+    if(isSubmit) {
+        window.location.href = "http://localhost:3000/Warehouse";
+    }
+
   }
 
-  useEffect(() => {
-    if(Object.keys(formErrors).length === 0) {
-      Axios.post("http://localhost:3001/api/login", {
-      email:formValues.email,
-      password:formValues.password
-      }).then((res) => {
-        setDataFetched(res.data);
-        //console.log(dataFetched);
-      }) 
-      setDataFetched('')
-      if(dataFetched > 0){
-        setIsSubmit(true);
-      }
-    }
-  },[formErrors]);
 
   const validate = (values) => {
     const errors = {};
@@ -59,7 +61,7 @@ export default function Manager() {
         <>
     <div className='body'>
       <div className='name__container'>
-          <span class = "superstore_name">MANAGER </span>
+          <span class = "superstore_name"> MANAGER </span>
           <span class = "superstore_name"> LOGIN </span>
       </div>
 
@@ -67,13 +69,13 @@ export default function Manager() {
       {/* Now making the login page */}
       <form className = 'login__container' onSubmit={handleSubmit}>
         <div className='login__credentials'>
-          
+          <span>{formErrors.wrongCredentials}</span>
           <label for = "Email_Id">Email ID*: </label>
           <input type = "email" 
             name = "email" 
             placeholder='Email'
             value = { formValues.email } 
-            onChange= {handleChange} />
+            onChange= { handleChange } />
             <p>{ formErrors.email }</p>
             
           <label for = "password">Password*: </label>
@@ -81,7 +83,7 @@ export default function Manager() {
             name = "password"
             placeholder='password' 
             value = { formValues.password }
-            onChange= {handleChange} />
+            onChange= { handleChange } />
             <p>{ formErrors.password }</p>
           <button className = 'LoginButton'> Login </button>
         </div>

@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.28, for Win64 (x86_64)
 --
--- Host: localhost    Database: superstore_database
+-- Host: 127.0.0.1    Database: superstore_database
 -- ------------------------------------------------------
 -- Server version	8.0.28
 
@@ -126,6 +126,31 @@ INSERT INTO `login_details` VALUES (1,'sdf','suvratkumra2018@gmail.com','12','sa
 UNLOCK TABLES;
 
 --
+-- Table structure for table `manager_details`
+--
+
+DROP TABLE IF EXISTS `manager_details`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `manager_details` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `Email_Id` varchar(50) NOT NULL,
+  `Password` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `manager_details`
+--
+
+LOCK TABLES `manager_details` WRITE;
+/*!40000 ALTER TABLE `manager_details` DISABLE KEYS */;
+INSERT INTO `manager_details` VALUES (1,'suvratkumra2018@gmail.com','123'),(2,'shreya.patel1@ucalgary.ca','123');
+/*!40000 ALTER TABLE `manager_details` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `product_details`
 --
 
@@ -164,4 +189,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-07  2:22:57
+-- Dump completed on 2022-04-07 15:31:22
