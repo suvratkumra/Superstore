@@ -21,6 +21,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import WomenClothes from "./Departments/WomenClothes";
 import MenClothes from "./Departments/MenClothes";
 import Household from "./Departments/Household";
+import Manager from "./Manager_Warehouse/Manager";
 
 function App() {
 
@@ -48,6 +49,7 @@ return(
       <Route path="/Departments/Household" element={<Household />} />
       <Route path="/Departments/Kid_Clothes" element={<Kid_Clothes />} />
       <Route path="/ForgotPassword" element={<ForgotPassword />} />
+      <Route path="/Manager" element={<Manager />} />
       <Route path="*" element={<ErrorPage />} />
     </Routes>
   </Router>

@@ -12,7 +12,7 @@ var FontAwesome = require('react-fontawesome');
 
 
 
-function MainPage() {
+function MainPage(props) {
   const [username, setSearch] = useState('')
   const [counter, setCounter] = useState(-1);
 

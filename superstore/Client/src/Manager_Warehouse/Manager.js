@@ -1,19 +1,16 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
-import '../css/Home.css';     // two dots because you have to go to previous directory first
-import MainPage from '../mainPage/main';
-import Axios from 'axios'
+import React from 'react'
+import './Manager.js.css';
+import {useState, useEffect} from 'react';
+import Axios from 'axios';
+import * as ReactDOM from 'react-dom';
 
-
-
-function WelcomePage() {
-
-  const initialValues = {email:"", password:""};
-  const [formValues, setFormValues] = useState(initialValues);
-  const [formErrors, setFormErrors] = useState({});
-  const [isSubmit, setIsSubmit] = useState(false);
-  const [dataFetched, setDataFetched] = useState('');
-
+export default function Manager() {
+    const initialValues = {email:"", password:""};
+    const [formValues, setFormValues] = useState(initialValues);
+    const [formErrors, setFormErrors] = useState({});
+    const [isSubmit, setIsSubmit] = useState(false);
+    const [dataFetched, setDataFetched] = useState('');
+    const [managerPasswordReset, setManagerPasswordReset] = useState(false);
 
 
   const handleChange = (e) => {
@@ -47,7 +44,6 @@ function WelcomePage() {
     }
   },[formErrors]);
 
-
   const validate = (values) => {
     const errors = {};
     if(!values.email) {
@@ -58,22 +54,18 @@ function WelcomePage() {
     }
     return errors;
   };
+    return(
 
-  return (
-    <>
+        <>
     <div className='body'>
       <div className='name__container'>
-          <span class = "superstore_name">WELCOME </span>
-          <span class = "superstore_name"> TO </span>
-          <span class = "superstore_name">SUPERSTORE</span>
+          <span class = "superstore_name">MANAGER </span>
+          <span class = "superstore_name"> LOGIN </span>
       </div>
 
 
       {/* Now making the login page */}
       <form className = 'login__container' onSubmit={handleSubmit}>
-        <div className='login__containerHeader'>
-          A registered user? Login below...
-        </div>
         <div className='login__credentials'>
           
           <label for = "Email_Id">Email ID*: </label>
@@ -94,27 +86,20 @@ function WelcomePage() {
           <button className = 'LoginButton'> Login </button>
         </div>
         <div className='forgotPassword__container'>
-          <span className='forgotPassword'> <i> <a href = '/ForgotPassword' id = "forgotPasswordLine"> Forgot your password? </a> </i> </span>
-        </div>
+            <span className='forgotPassword'> <i> <a href = '#' id = "forgotPasswordLine" onClick = { (() => setManagerPasswordReset(true)) }> Forgot your password? </a> </i> </span>
+            {managerPasswordReset && <div>
+                <br/><br/>
+                <span id = "displayPassword__text"> Contact the higher authority to reset your password. </span>       
+            </div>
+            
+            }
+            </div>
         <br/>
-        <div className='signup__container'>
-          <span id = "new_user"> New user? </span>
-          <span className='signup'><a href = "/signup" id='signup_line'>Sign Up!</a></span>
-        </div>
-
-        <div className = 'footer__manager_guest'>
-          {/* <span className = 'guest_continue'><a href="#" id='guest_continue_line'>Continue as a Guest</a></span> */}
-          <span className = 'manager_continue'><a href = "./Manager" id='manager_continue_line'>Continue as a Manager</a></span>
-        </div>
+       
 
       </form>
     </div>
 
     </>
-    
-    
-  )
-  
+    )
 }
-
-export default WelcomePage;
