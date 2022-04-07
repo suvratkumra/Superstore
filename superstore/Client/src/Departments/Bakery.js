@@ -409,9 +409,6 @@ export default function Bakery() {
   
       
 
-    
-      
-
     </>
   )
 }

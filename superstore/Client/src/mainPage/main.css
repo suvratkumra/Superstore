@@ -341,14 +341,19 @@ a {
 .menu__item a:hover {
   background-color: #CFD8DC;
 }
+
 .menu__item a {
+
   display: block;
-  padding: 20px;
+  margin-top: 60px;
+  margin-left: 5
+  x;
   color: #333;
   font-family:'Times New Roman', Times, serif;
   font-size: 20px;
 
 }
+
 
 .menu__box {
   display: block;
