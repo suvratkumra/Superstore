@@ -108,6 +108,7 @@ app.post('/api/login', (req, res) => {
         if(result.length != 0) {
             return res.send("User Found, redirecting to the store page");
         }
+       
     })
 })
 

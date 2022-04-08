@@ -227,7 +227,7 @@ export default function Cosmetics() {
         </div>
         
         <div className='item__container'>
-          <span className = 'company_name'>LOreal Paris</span>
+          <span className = 'company_name'>Loreal Paris</span>
           <img src = { LOreal_Paris_Infallible_24H_FreshWear_In_a_Powder } alt = 'LOreal_Paris_Infallible_24H_FreshWear_In_a_Powder' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Infallible 24H Fresh Wear In a Powder</span>

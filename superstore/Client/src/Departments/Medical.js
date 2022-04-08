@@ -71,7 +71,7 @@ export default function Medical() {
           <span className = 'company_name'>Johnson-Johnson</span>
           <img src = { Band_Aid_Large_Gauze_Pads } alt = 'Band_Aid_Large_Gauze_Pads' className = 'product_image' />
           <div className = 'price_product__container'>
-            <span className = 'product_name'>Band Aid Wet Flex Bandages</span>
+            <span className = 'product_name'>Band Aid Large Gauze Pads</span>
             <span className = 'price'>$5.99</span> 
           </div>
           <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Band_Aid_Large_Gauze_Pads: true});}}>
