@@ -38,13 +38,13 @@ export default function Manager() {
             }
         })
     }
+  }
 
+  useEffect((values) => {
     if(isSubmit) {
         window.location.href = "http://localhost:3000/Warehouse";
     }
-
-  }
-
+  })
 
   const validate = (values) => {
     const errors = {};
@@ -57,7 +57,6 @@ export default function Manager() {
     return errors;
   };
     return(
-
         <>
     <div className='body'>
       <div className='name__container'>

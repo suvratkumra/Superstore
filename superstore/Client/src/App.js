@@ -22,7 +22,7 @@ import WomenClothes from "./Departments/WomenClothes";
 import MenClothes from "./Departments/MenClothes";
 import Household from "./Departments/Household";
 import Manager from "./Manager_Warehouse/Manager";
-import Warehouse from "./Manager_Warehouse/Warehouse"
+import Warehouse from "./Manager_Warehouse/Warehouse";
 
 function App() {
 
