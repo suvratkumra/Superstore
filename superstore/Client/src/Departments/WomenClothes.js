@@ -14,10 +14,10 @@ import { useState } from 'react';
 
 export default function WomenClothes() {
   const initialBoolean = false;
-  const initializeValues = {grainBread:initialBoolean, bananaMuffin:initialBoolean, bananaCake:initialBoolean, butterCroissant:initialBoolean, chocolateMini:initialBoolean, chocChipMuffin:initialBoolean, cinnamonBread:initialBoolean, doubleChoc:initialBoolean, frenchBread:initialBoolean, largeOriginal:initialBoolean, PCtortillas:initialBoolean, rolls:initialBoolean, sourdoughLoaf:initialBoolean, roastedWheat:initialBoolean, naan:initialBoolean};
+  const initializeValues = {Comfort_Cotton_Socks:initialBoolean, Womens_No_Show_Liner_Socks:initialBoolean, Women_1X_Shapewear_Boyshorts:initialBoolean, Large_Size_Womens_Cotton_Bikini_Briefs:initialBoolean, Womens_1X_Full_Shapewear_Slip:initialBoolean, Womens_Seamless_Cross_Back_Sports_Bra:initialBoolean, cinnamonBread:initialBoolean};
   const [cartText, setCartText] = useState(initializeValues);
   const [showButton, setShowButton] = useState({showButton: false, showButton2: false});  
-  const initializeNumber = {grainBread:1, bananaMuffin:1, bananaCake:1, butterCroissant:1, chocolateMini:1, chocChipMuffin:1, cinnamonBread:1, doubleChoc:1, frenchBread:1, largeOriginal:1, PCtortillas:1, rolls:1, sourdoughLoaf:1, roastedWheat:1, naan:1};
+  const initializeNumber = {Comfort_Cotton_Socks:1, Womens_No_Show_Liner_Socks:1, Women_1X_Shapewear_Boyshorts:1, Large_Size_Womens_Cotton_Bikini_Briefs:1, Womens_1X_Full_Shapewear_Slip:1, Womens_Seamless_Cross_Back_Sports_Bra:1};
   const [itemIncrementer, setItemIncrementer] = useState(initializeNumber);
 
 
@@ -70,15 +70,15 @@ export default function WomenClothes() {
             <span className = 'product_name'>10 Comfort Cotton Socks</span>
             <span className = 'price'>$7.89</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, grainBread: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Comfort_Cotton_Socks: true});}}>
             {
-              cartText.grainBread ? <div className = 'increment__container'> 
+              cartText.Comfort_Cotton_Socks ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.grainBread > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, grainBread: itemIncrementer.grainBread-1});                                                                          
+                                                                                    if(itemIncrementer.Comfort_Cotton_Socks > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Comfort_Cotton_Socks: itemIncrementer.Comfort_Cotton_Socks-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.grainBread} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, grainBread: itemIncrementer.grainBread+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Comfort_Cotton_Socks} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Comfort_Cotton_Socks: itemIncrementer.Comfort_Cotton_Socks+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -94,15 +94,15 @@ export default function WomenClothes() {
             <span className = 'product_name'>Women's No Show Liner Socks</span>
             <span className = 'price'>$14.00</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, bananaMuffin: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Womens_No_Show_Liner_Socks: true});}}>
             {
-              cartText.bananaMuffin ? <div className = 'increment__container'> 
+              cartText.Womens_No_Show_Liner_Socks ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.bananaMuffin > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, bananaMuffin: itemIncrementer.bananaMuffin-1});                                                                          
+                                                                                    if(itemIncrementer.Womens_No_Show_Liner_Socks > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Womens_No_Show_Liner_Socks: itemIncrementer.Womens_No_Show_Liner_Socks-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.bananaMuffin} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, bananaMuffin: itemIncrementer.bananaMuffin+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Womens_No_Show_Liner_Socks} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Womens_No_Show_Liner_Socks: itemIncrementer.Womens_No_Show_Liner_Socks+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -116,15 +116,15 @@ export default function WomenClothes() {
             <span className = 'product_name'> Women's 1X Shapewear Boyshorts</span>
             <span className = 'price'>$16.50</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, bananaCake: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Women_1X_Shapewear_Boyshorts: true});}}>
             {
-              cartText.bananaCake ? <div className = 'increment__container'> 
+              cartText.Women_1X_Shapewear_Boyshorts ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.bananaCake > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, bananaCake: itemIncrementer.bananaCake-1});                                                                          
+                                                                                    if(itemIncrementer.Women_1X_Shapewear_Boyshorts > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Women_1X_Shapewear_Boyshorts: itemIncrementer.Women_1X_Shapewear_Boyshorts-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.bananaCake} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, bananaCake: itemIncrementer.bananaCake+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Women_1X_Shapewear_Boyshorts} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Women_1X_Shapewear_Boyshorts: itemIncrementer.Women_1X_Shapewear_Boyshorts+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -138,15 +138,15 @@ export default function WomenClothes() {
             <span className = 'product_name'> Large Size Women's Cotton Bikini Briefs</span>
             <span className = 'price'>$7.00</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, butterCroissant: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Large_Size_Womens_Cotton_Bikini_Briefs: true});}}>
             {
-              cartText.butterCroissant ? <div className = 'increment__container'> 
+              cartText.Large_Size_Womens_Cotton_Bikini_Briefs ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.butterCroissant > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, butterCroissant: itemIncrementer.butterCroissant-1});                                                                          
+                                                                                    if(itemIncrementer.Large_Size_Womens_Cotton_Bikini_Briefs > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Large_Size_Womens_Cotton_Bikini_Briefs: itemIncrementer.Large_Size_Womens_Cotton_Bikini_Briefs-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.butterCroissant} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, butterCroissant: itemIncrementer.butterCroissant+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Large_Size_Womens_Cotton_Bikini_Briefs} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Large_Size_Womens_Cotton_Bikini_Briefs: itemIncrementer.Large_Size_Womens_Cotton_Bikini_Briefs+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -160,15 +160,15 @@ export default function WomenClothes() {
             <span className = 'product_name'>Women's 1X Full Shapewear Slip</span>
             <span className = 'price'>$25.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, chocolateMini: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Womens_1X_Full_Shapewear_Slip: true});}}>
             {
-              cartText.chocolateMini ? <div className = 'increment__container'> 
+              cartText.Womens_1X_Full_Shapewear_Slip ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.chocolateMini > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, chocolateMini: itemIncrementer.chocolateMini-1});                                                                          
+                                                                                    if(itemIncrementer.Womens_1X_Full_Shapewear_Slip > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Womens_1X_Full_Shapewear_Slip: itemIncrementer.Womens_1X_Full_Shapewear_Slip-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.chocolateMini} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, chocolateMini: itemIncrementer.chocolateMini+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Womens_1X_Full_Shapewear_Slip} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Womens_1X_Full_Shapewear_Slip: itemIncrementer.Womens_1X_Full_Shapewear_Slip+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -182,15 +182,15 @@ export default function WomenClothes() {
             <span className = 'product_name'>Women's Seamless Cross Back Sports Bra</span>
             <span className = 'price'>$17.00</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, chocChipMuffin: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Womens_Seamless_Cross_Back_Sports_Bra: true});}}>
             {
-              cartText.chocChipMuffin ? <div className = 'increment__container'> 
+              cartText.Womens_Seamless_Cross_Back_Sports_Bra ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.chocChipMuffin > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, chocChipMuffin: itemIncrementer.chocChipMuffin-1});                                                                          
+                                                                                    if(itemIncrementer.Womens_Seamless_Cross_Back_Sports_Bra > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Womens_Seamless_Cross_Back_Sports_Bra: itemIncrementer.Womens_Seamless_Cross_Back_Sports_Bra-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.chocChipMuffin} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, chocChipMuffin: itemIncrementer.chocChipMuffin+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Womens_Seamless_Cross_Back_Sports_Bra} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Womens_Seamless_Cross_Back_Sports_Bra: itemIncrementer.Womens_Seamless_Cross_Back_Sports_Bra+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }

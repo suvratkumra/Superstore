@@ -108,7 +108,6 @@ app.post('/api/login', (req, res) => {
         if(result.length != 0) {
             return res.send("User Found, redirecting to the store page");
         }
-       
     })
 })
 
@@ -126,9 +125,57 @@ app.post('/api/manager_login', (req, res) => {
             res.send("Manager Login not found");
         }
     })
-
-
 })
+
+app.post('/api/warehouse/get_products', (req, res) => {
+
+    var sendBack = {};            // the array we will send back
+
+    const departmentValue = req.body.departmentNo;
+    //console.log(departmentValue);
+    const sqlQuery = "SELECT PName FROM product_details WHERE dept_id = ?;";
+    db.query(sqlQuery, [departmentValue], (err, result) => {
+        res.send(result);
+        // result.forEach(element => {
+        //     for(let key in element) {
+                
+        //         sendBack[key] = element[key];
+        //         //console.log(`${element[key]}`);
+        //     } 
+        // });
+    })
+    
+}) 
+
+app.post('/api/warehouse/update_products', (req, res) => {
+
+    const departmentValue = req.body.departmentName;
+    const itemIncrementer = req.body.arraySending;
+
+    for (const property in itemIncrementer) {
+        //console.log(`${property}: ${itemIncrementerBakery[property]}`);
+    
+        if(itemIncrementer[property] === 0)         // as then  nothing to update.
+            continue;
+
+        /*first finding the quantity right now*/
+        const sqlQuery = "SELECT quantity FROM product_details WHERE PName = ?;";
+        db.query(sqlQuery, [property], (err, result) => {
+            // now we will increment the quantity with what is parsed in teh object above
+            
+            // console.log(Object.values(result[0])[0]);
+
+            var updatedQuantity = Object.values(result[0])[0] + itemIncrementer[property];      
+            //console.log(updatedQuantity);
+            const updateQuery = "UPDATE product_details SET quantity = ? WHERE PName = ?";
+            db.query(updateQuery, [updatedQuantity, property], (err2, result2) => {
+                // console.log(result2);
+            })
+            db.query()
+        })
+    
+    }
+}) 
 
 
 // to listen
