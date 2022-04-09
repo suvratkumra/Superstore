@@ -22,10 +22,10 @@ import { useState } from 'react';
 
 export default function Household() {
   const initialBoolean = false;
-  const initializeValues = {grainBread:initialBoolean, bananaMuffin:initialBoolean, bananaCake:initialBoolean, butterCroissant:initialBoolean, chocolateMini:initialBoolean, chocChipMuffin:initialBoolean, cinnamonBread:initialBoolean, doubleChoc:initialBoolean, frenchBread:initialBoolean, largeOriginal:initialBoolean, PCtortillas:initialBoolean, rolls:initialBoolean, sourdoughLoaf:initialBoolean, roastedWheat:initialBoolean, naan:initialBoolean};
+  const initializeValues = {Air_Wick_Relax_Scented_Oil:initialBoolean, Foil_Wrap:initialBoolean, Bl5_Maxi_Lighter:initialBoolean, Toilet_Cleaner_Gel:initialBoolean, W_Ultra_Liquid_April_Fresh:initialBoolean, Air_Line_Sky:initialBoolean, Aluminum_Foil:initialBoolean, Drain_Opener:initialBoolean, Fruit_Fly_Trap:initialBoolean, Napkins:initialBoolean, Lemon_Scent_Dish_Liquid:initialBoolean, Bathroom_Tissue:initialBoolean, Liquid_Og:initialBoolean, Wet_Cloth_Febreze:initialBoolean, Liquid_Pods_Original:initialBoolean};
   const [cartText, setCartText] = useState(initializeValues);
   const [showButton, setShowButton] = useState({showButton: false, showButton2: false});  
-  const initializeNumber = {grainBread:1, bananaMuffin:1, bananaCake:1, butterCroissant:1, chocolateMini:1, chocChipMuffin:1, cinnamonBread:1, doubleChoc:1, frenchBread:1, largeOriginal:1, PCtortillas:1, rolls:1, sourdoughLoaf:1, roastedWheat:1, naan:1};
+  const initializeNumber = {Air_Wick_Relax_Scented_Oil:1, Foil_Wrap:1, Bl5_Maxi_Lighter:1, Toilet_Cleaner_Gel:1, W_Ultra_Liquid_April_Fresh:1, Air_Line_Sky:1, Aluminum_Foil:1, Drain_Opener:1, Fruit_Fly_Trap:1, Napkins:1, Lemon_Scent_Dish_Liquid:1, Bathroom_Tissue:1, Liquid_Og:1, Wet_Cloth_Febreze:1, Liquid_Pods_Original:1};
   const [itemIncrementer, setItemIncrementer] = useState(initializeNumber);
 
 
@@ -78,15 +78,15 @@ export default function Household() {
             <span className = 'product_name'>Air Wick Relax Scented Oil</span>
             <span className = 'price'>$12.49</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, grainBread: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Air_Wick_Relax_Scented_Oil: true});}}>
             {
-              cartText.grainBread ? <div className = 'increment__container'> 
+              cartText.Air_Wick_Relax_Scented_Oil ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.grainBread > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, grainBread: itemIncrementer.grainBread-1});                                                                          
+                                                                                    if(itemIncrementer.Air_Wick_Relax_Scented_Oil > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Air_Wick_Relax_Scented_Oil: itemIncrementer.Air_Wick_Relax_Scented_Oil-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.grainBread} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, grainBread: itemIncrementer.grainBread+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Air_Wick_Relax_Scented_Oil} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Air_Wick_Relax_Scented_Oil: itemIncrementer.Air_Wick_Relax_Scented_Oil+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -102,15 +102,15 @@ export default function Household() {
             <span className = 'product_name'> 100 Foil Wrap</span>
             <span className = 'price'>$6.75</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, bananaMuffin: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Foil_Wrap: true});}}>
             {
-              cartText.bananaMuffin ? <div className = 'increment__container'> 
+              cartText.Foil_Wrap ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.bananaMuffin > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, bananaMuffin: itemIncrementer.bananaMuffin-1});                                                                          
+                                                                                    if(itemIncrementer.Foil_Wrap > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Foil_Wrap: itemIncrementer.Foil_Wrap-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.bananaMuffin} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, bananaMuffin: itemIncrementer.bananaMuffin+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Foil_Wrap} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Foil_Wrap: itemIncrementer.Foil_Wrap+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -124,15 +124,15 @@ export default function Household() {
             <span className = 'product_name'>Bl5 Maxi Lighter</span>
             <span className = 'price'>$4.50</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, bananaCake: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Bl5_Maxi_Lighter: true});}}>
             {
-              cartText.bananaCake ? <div className = 'increment__container'> 
+              cartText.Bl5_Maxi_Lighter ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.bananaCake > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, bananaCake: itemIncrementer.bananaCake-1});                                                                          
+                                                                                    if(itemIncrementer.Bl5_Maxi_Lighter > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Bl5_Maxi_Lighter: itemIncrementer.Bl5_Maxi_Lighter-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.bananaCake} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, bananaCake: itemIncrementer.bananaCake+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Bl5_Maxi_Lighter} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Bl5_Maxi_Lighter: itemIncrementer.Bl5_Maxi_Lighter+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -146,15 +146,15 @@ export default function Household() {
             <span className = 'product_name'>Toilet Cleaner Gel</span>
             <span className = 'price'>$2.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, butterCroissant: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Toilet_Cleaner_Gel: true});}}>
             {
-              cartText.butterCroissant ? <div className = 'increment__container'> 
+              cartText.Toilet_Cleaner_Gel ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.butterCroissant > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, butterCroissant: itemIncrementer.butterCroissant-1});                                                                          
+                                                                                    if(itemIncrementer.Toilet_Cleaner_Gel > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Toilet_Cleaner_Gel: itemIncrementer.Toilet_Cleaner_Gel-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.butterCroissant} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, butterCroissant: itemIncrementer.butterCroissant+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Toilet_Cleaner_Gel} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Toilet_Cleaner_Gel: itemIncrementer.Toilet_Cleaner_Gel+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -168,15 +168,15 @@ export default function Household() {
             <span className = 'product_name'> 150 W Ultra Liquid April Fresh</span>
             <span className = 'price'>$13.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, chocolateMini: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, W_Ultra_Liquid_April_Fresh: true});}}>
             {
-              cartText.chocolateMini ? <div className = 'increment__container'> 
+              cartText.W_Ultra_Liquid_April_Fresh ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.chocolateMini > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, chocolateMini: itemIncrementer.chocolateMini-1});                                                                          
+                                                                                    if(itemIncrementer.W_Ultra_Liquid_April_Fresh > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, W_Ultra_Liquid_April_Fresh: itemIncrementer.W_Ultra_Liquid_April_Fresh-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.chocolateMini} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, chocolateMini: itemIncrementer.chocolateMini+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.W_Ultra_Liquid_April_Fresh} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, W_Ultra_Liquid_April_Fresh: itemIncrementer.W_Ultra_Liquid_April_Fresh+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -190,15 +190,15 @@ export default function Household() {
             <span className = 'product_name'>Air Line and Sky</span>
             <span className = 'price'>$3.67</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, chocChipMuffin: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Air_Line_Sky: true});}}>
             {
-              cartText.chocChipMuffin ? <div className = 'increment__container'> 
+              cartText.Air_Line_Sky ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.chocChipMuffin > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, chocChipMuffin: itemIncrementer.chocChipMuffin-1});                                                                          
+                                                                                    if(itemIncrementer.Air_Line_Sky > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Air_Line_Sky: itemIncrementer.Air_Line_Sky-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.chocChipMuffin} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, chocChipMuffin: itemIncrementer.chocChipMuffin+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Air_Line_Sky} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Air_Line_Sky: itemIncrementer.Air_Line_Sky+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -212,15 +212,15 @@ export default function Household() {
             <span className = 'product_name'>Aluminum Foil</span>
             <span className = 'price'>$3.57</span>  
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, cinnamonBread: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Aluminum_Foil: true});}}>
             {
-              cartText.cinnamonBread ? <div className = 'increment__container'> 
+              cartText.Aluminum_Foil ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.cinnamonBread > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, cinnamonBread: itemIncrementer.cinnamonBread-1});                                                                          
+                                                                                    if(itemIncrementer.Aluminum_Foil > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Aluminum_Foil: itemIncrementer.Aluminum_Foil-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.cinnamonBread} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, cinnamonBread: itemIncrementer.cinnamonBread+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Aluminum_Foil} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Aluminum_Foil: itemIncrementer.Aluminum_Foil+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -234,15 +234,15 @@ export default function Household() {
             <span className = 'product_name'>Drain_Opener</span>
             <span className = 'price'>$4.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, doubleChoc: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Drain_Opener: true});}}>
             {
-              cartText.doubleChoc ? <div className = 'increment__container'> 
+              cartText.Drain_Opener ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.doubleChoc > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, doubleChoc: itemIncrementer.doubleChoc-1});                                                                          
+                                                                                    if(itemIncrementer.Drain_Opener > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Drain_Opener: itemIncrementer.Drain_Opener-1});                                                                          
                                                                                     } }> -</button>
-                                      <span className = 'number'> {itemIncrementer.doubleChoc} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, doubleChoc: itemIncrementer.doubleChoc+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Drain_Opener} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Drain_Opener: itemIncrementer.Drain_Opener+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -256,15 +256,15 @@ export default function Household() {
             <span className = 'product_name'> Fruit Fly Trap</span>
             <span className = 'price'>$5.67</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, frenchBread: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Fruit_Fly_Trap: true});}}>
             {
-              cartText.frenchBread ? <div className = 'increment__container'> 
+              cartText.Fruit_Fly_Trap ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.frenchBread > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, frenchBread: itemIncrementer.frenchBread-1});                                                                          
+                                                                                    if(itemIncrementer.Fruit_Fly_Trap > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Fruit_Fly_Trap: itemIncrementer.Fruit_Fly_Trap-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.frenchBread} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, frenchBread: itemIncrementer.frenchBread+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Fruit_Fly_Trap} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Fruit_Fly_Trap: itemIncrementer.Fruit_Fly_Trap+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -278,15 +278,15 @@ export default function Household() {
             <span className = 'product_name'> Napkins</span>
             <span className = 'price'>$3.29</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, largeOriginal: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Napkins: true});}}>
             {
-              cartText.largeOriginal ? <div className = 'increment__container'> 
+              cartText.Napkins ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.largeOriginal > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, largeOriginal: itemIncrementer.largeOriginal-1});                                                                          
+                                                                                    if(itemIncrementer.Napkins > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Napkins: itemIncrementer.Napkins-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.largeOriginal} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, largeOriginal: itemIncrementer.largeOriginal+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Napkins} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Napkins: itemIncrementer.Napkins+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -300,15 +300,15 @@ export default function Household() {
             <span className = 'product_name'> Lemon Scent Dish Liquid</span>
             <span className = 'price'>$2.45</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, PCtortillas: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Lemon_Scent_Dish_Liquid: true});}}>
             {
-              cartText.PCtortillas ? <div className = 'increment__container'> 
+              cartText.Lemon_Scent_Dish_Liquid ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.PCtortillas > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, PCtortillas: itemIncrementer.PCtortillas-1});                                                                          
+                                                                                    if(itemIncrementer.Lemon_Scent_Dish_Liquid > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Lemon_Scent_Dish_Liquid: itemIncrementer.Lemon_Scent_Dish_Liquid-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.PCtortillas} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, PCtortillas: itemIncrementer.PCtortillas+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Lemon_Scent_Dish_Liquid} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Lemon_Scent_Dish_Liquid: itemIncrementer.Lemon_Scent_Dish_Liquid+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -322,15 +322,15 @@ export default function Household() {
             <span className = 'product_name'>Bathroom Tissue</span>
             <span className = 'price'>$5.55</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, rolls: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Bathroom_Tissue: true});}}>
             {
-              cartText.rolls ? <div className = 'increment__container'> 
+              cartText.Bathroom_Tissue ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.rolls > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, rolls: itemIncrementer.rolls-1});                                                                          
+                                                                                    if(itemIncrementer.Bathroom_Tissue > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Bathroom_Tissue: itemIncrementer.Bathroom_Tissue-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.rolls} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, rolls: itemIncrementer.rolls+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Bathroom_Tissue} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Bathroom_Tissue: itemIncrementer.Bathroom_Tissue+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -344,15 +344,15 @@ export default function Household() {
             <span className = 'product_name'> Liquid Og</span>
             <span className = 'price'>$4.71</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, sourdoughLoaf: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Liquid_Og: true});}}>
             {
-              cartText.sourdoughLoaf ? <div className = 'increment__container'> 
+              cartText.Liquid_Og ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.sourdoughLoaf > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, sourdoughLoaf: itemIncrementer.sourdoughLoaf-1});                                                                          
+                                                                                    if(itemIncrementer.Liquid_Og > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Liquid_Og: itemIncrementer.Liquid_Og-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.sourdoughLoaf} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, sourdoughLoaf: itemIncrementer.sourdoughLoaf+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Liquid_Og} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Liquid_Og: itemIncrementer.Liquid_Og+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -366,15 +366,15 @@ export default function Household() {
             <span className = 'product_name'> Wet Cloth Febreze</span>
             <span className = 'price'>$5.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, roastedWheat: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Wet_Cloth_Febreze: true});}}>
             {
-              cartText.roastedWheat ? <div className = 'increment__container'> 
+              cartText.Wet_Cloth_Febreze ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.roastedWheat > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, roastedWheat: itemIncrementer.roastedWheat-1});                                                                          
+                                                                                    if(itemIncrementer.Wet_Cloth_Febreze > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Wet_Cloth_Febreze: itemIncrementer.Wet_Cloth_Febreze-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.roastedWheat} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, roastedWheat: itemIncrementer.roastedWheat+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Wet_Cloth_Febreze} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Wet_Cloth_Febreze: itemIncrementer.Wet_Cloth_Febreze+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -388,15 +388,15 @@ export default function Household() {
             <span className = 'product_name'>Liquid Pods Original</span>
             <span className = 'price'>$6.77</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, naan: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Wet_Cloth_Febreze: true});}}>
             {
-              cartText.naan ? <div className = 'increment__container'> 
+              cartText.Liquid_Pods_Original ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.naan > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, naan: itemIncrementer.naan-1});                                                                          
+                                                                                    if(itemIncrementer.Liquid_Pods_Original > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Liquid_Pods_Original: itemIncrementer.Liquid_Pods_Original-1});                                                                          
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.naan} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, naan: itemIncrementer.naan+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.Liquid_Pods_Original} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Liquid_Pods_Original: itemIncrementer.Liquid_Pods_Original+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
