@@ -14,6 +14,7 @@ var expressValidator = require('express-validator');
 const mysql = require('mysql');      // to get the mysql dependency
 const { restart } = require('nodemon');
 const e = require('express');
+const { application } = require('express');
 
 const db = mysql.createPool({
     host: 'localhost',                      // host name
@@ -176,6 +177,16 @@ app.post('/api/warehouse/update_products', (req, res) => {
     
     }
 }) 
+
+app.post("/api/search_bar", (req, res) => {
+    const val = req.body.textValue;
+    console.log(val);
+
+    const sqlQuery = "SELECT PName FROM product_details WHERE PName LIKE '%" + val + "%'" 
+    db.query(sqlQuery, [val], (err, result) => {
+        res.send(result);
+    })
+})
 
 
 // to listen
