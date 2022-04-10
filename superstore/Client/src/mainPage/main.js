@@ -4,6 +4,7 @@ import "./main.css";
 import Search from '../images/search.png';
 import { useState } from 'react';
 import search from '../images/search.png';
+import Axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLaptopHouse } from '@fortawesome/free-solid-svg-icons';
 
@@ -16,6 +17,128 @@ function MainPage(props) {
   const [username, setSearch] = useState('')
   const [counter, setCounter] = useState(-1);
 
+  const [searchInput, setSearchInput] = useState("");
+  const [bakeryItems, setBakeryItems] = useState([])          // all the values will be appended to this
+  const [produceItems, setProduceItems] = useState([])          // all the values will be appended to this
+  const [CosmeticItems, setCosmeticItems] = useState([])          // all the values will be appended to this
+  const [equipmentItems, setEquipmentItems] = useState([])          // all the values will be appended to this
+  const [frozenItems, setFrozenItems] = useState([])          // all the values will be appended to this
+  const [dairyItems, setDairyItems] = useState([])          // all the values will be appended to this
+  const [householdItems, setHouseholdItems] = useState([])          // all the values will be appended to this
+  const [kidItems, setKidItems] = useState([])          // all the values will be appended to this
+  const [meatItems, setMeatItems] = useState([])          // all the values will be appended to this
+  const [medicalItems, setMedicalItems] = useState([])          // all the values will be appended to this
+  const [snackItems, setSnackItems] = useState([])          // all the values will be appended to this
+  const [toyItems, setToyItems] = useState([])          // all the values will be appended to this
+  const [menItems, setMenItems] = useState([])          // all the values will be appended to this
+  const [womenItems, setWomenItems] = useState([])          // all the values will be appended to this
+
+
+  function getProducts(value) {
+        
+    Axios.post("http://localhost:3001/api/product_list", {
+        departmentNo: value
+    }).then((res) => {
+        if(value === 2) {
+            res.data.forEach(element => {
+                for(let key in element) {
+                    setBakeryItems(bakeryItems => [...bakeryItems, element[key]]);
+                }
+            })
+        }
+        else if(value === 1) {
+            res.data.forEach(element => {
+                for(let key in element) {
+                    setWomenItems(womenItems => [...womenItems, element[key]]);
+                }
+            })
+        }
+        else if(value === 3) {
+            res.data.forEach(element => {
+                for(let key in element) {
+                    setProduceItems(produceItems => [...produceItems, element[key]]);
+                }
+            })
+        }
+        else if(value === 4) {
+            res.data.forEach(element => {
+                for(let key in element) {
+                    setMeatItems(meatItems => [...meatItems, element[key]]);
+                }
+            })
+        }
+        else if(value === 5) {
+            res.data.forEach(element => {
+                for(let key in element) {
+                    setDairyItems(dairyItems => [...dairyItems, element[key]]);
+                }
+            })
+        }
+        else if(value === 6) {
+            res.data.forEach(element => {
+                for(let key in element) {
+                    setCosmeticItems(CosmeticItems => [...CosmeticItems, element[key]]);
+                }
+            })
+        }
+        else if(value === 7) {
+            res.data.forEach(element => {
+                for(let key in element) {
+                    setEquipmentItems(equipmentItems => [...equipmentItems, element[key]]);
+                }
+            })
+        }
+        else if(value === 8) {
+            res.data.forEach(element => {
+                for(let key in element) {
+                    setFrozenItems(frozenItems => [...frozenItems, element[key]]);
+                }
+            })
+        }
+        else if(value === 9) {
+            res.data.forEach(element => {
+                for(let key in element) {
+                    setHouseholdItems(householdItems => [...householdItems, element[key]]);
+                }
+            })
+        }
+        else if(value === 10) {
+            res.data.forEach(element => {
+                for(let key in element) {
+                    setKidItems(kidItems => [...kidItems, element[key]]);
+                }
+            })
+        }
+        else if(value === 11) {
+            res.data.forEach(element => {
+                for(let key in element) {
+                    setMedicalItems(medicalItems => [...medicalItems, element[key]]);
+                }
+            })
+        }
+        else if(value === 12) {
+            res.data.forEach(element => {
+                for(let key in element) {
+                    setMenItems(menItems => [...menItems, element[key]]);
+                }
+            })
+        }
+        else if(value === 13) {
+            res.data.forEach(element => {
+                for(let key in element) {
+                    setSnackItems(snackItems => [...snackItems, element[key]]);
+                }
+            })
+        }
+        else if(value === 14) {
+            res.data.forEach(element => {
+                for(let key in element) {
+                    setToyItems(toyItems => [...toyItems, element[key]]);
+                }
+            })
+        }            
+    })
+}
   return (
     <>
     
@@ -51,8 +174,16 @@ function MainPage(props) {
           <input className = 'searchbar' 
             type = "text" 
             name = "search" 
-            placeholder='Search'
+            placeholder='Search....'
+            value={searchInput}
+            // getProducts(value)
+
+            onChange={(e) => setSearchInput(e.target.value)}
+            
           />
+          {/* once you hit Go, it will filter the items */}
+          <button type="submit">Go</button>
+
         </div>
         <div className='search__image'>
           <img src= {search} alt="Logo"/>
