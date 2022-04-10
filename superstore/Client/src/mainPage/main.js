@@ -8,7 +8,7 @@ import Axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLaptopHouse } from '@fortawesome/free-solid-svg-icons';
 import { text } from '@fortawesome/fontawesome-svg-core';
-
+import { Grid } from 'gridjs-react';
 //Importing all the departments.
 var FontAwesome = require('react-fontawesome');
 
@@ -23,7 +23,16 @@ function MainPage(props) {
 
   const [cartText, setCartText] = useState("");
   const [itemIncrementer, setItemIncrementer] = useState("");
-
+  
+  const ColoredLine = ({ color }) => (
+    <hr
+        style={{
+            color: color,
+            backgroundColor: color,
+            height: 5
+        }}
+    />
+);
   const onChangeHandler = (e) => {
   
     setTextValue({val: e.target.value});
@@ -87,43 +96,46 @@ function MainPage(props) {
             
           />
           
-          { Object.values(dataRetrieved).map((item, value) => {
-            return <div id = "searchBarListing__container">
-              {/* <a href="#">{item} */}
-                  <button className="favorite buttonStyle2"
-                  type="button" onClick={() => {
+          <div>
+      
+            { Object.values(dataRetrieved).map((item, value) => {
+              return <div id = "searchBarListing__container">
+                <a href="#">{item}  
+                <button className="option_search"
+                type="button" onClick={() => {
+                  
+                }}>
+              Add to Cart
+              <button className="option_search2"
+                type="button" onClick={() => {
+                  
+                }}>
+                -
+              </button>
 
-                    // if any of the option is clicked from the search bar, then print the same 
-                    // same item on the screen with its price and option to add to cart 
-                    // CAN YOU CHECK WHY THIS IS NOT GETTING DISPLAYED WHEN I SELECT ANY OPTION FROM THE SEARCH BAR
-                    
-                    <div className='item__container'>
-                  <div className = 'price_product__container'>
-                    <span className = 'product_name'>{item}</span>
-                    {/* <span className = 'price'>$3.21</span>  */}
-                  </div>
-                  <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, item: true});}}>
-                    {
-                      cartText.grainBread ? <div className = 'increment__container'> 
-                        <button className = 'minus' onClick = {() => {
-                                if(itemIncrementer.item > 0)
-                                  setItemIncrementer({...itemIncrementer, grainBread: itemIncrementer.item-1});                                                                          
-                                } }> - </button>
-                        <span className = 'number'> {itemIncrementer.item} </span>
-                        <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, item: itemIncrementer.item+1}) }> + </button>                                    
-                        </div> 
-                        : <span className = 'add_to_cart__name'> Add to Cart </span>
-                        }
-                    </button>
-                    </div>
-                    }}>
-                  {item}
-                  </button>
-              {/* </a> */}
+              <button className="option_search3"
+                type="button" onClick={() => {
+                  
+                }}>
+              +
+              </button>
               
+              </button>
+
+              <ColoredLine color="black" />
               
-            </div>
-          }) }
+                </a>
+
+                
+                
+              </div>
+              
+            }) }
+
+          </div>
+          
+    
+
     
           
 
