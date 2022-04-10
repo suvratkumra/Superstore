@@ -7,6 +7,7 @@ import search from '../images/search.png';
 import Axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLaptopHouse } from '@fortawesome/free-solid-svg-icons';
+import { text } from '@fortawesome/fontawesome-svg-core';
 
 //Importing all the departments.
 var FontAwesome = require('react-fontawesome');
@@ -18,6 +19,8 @@ function MainPage(props) {
   const [counter, setCounter] = useState(-1);
   const [textValue, setTextValue] = useState({val: ""});
   const [dataRetrieved, setDataRetrieved] = useState({akshar: ""});
+  const [isPressed, setIsPressed] = useState(false);
+
 
   const onChangeHandler = (e) => {
   
@@ -34,6 +37,7 @@ function MainPage(props) {
     })
 
   }
+
 
   return (
     <>
@@ -71,13 +75,22 @@ function MainPage(props) {
             type = "text" 
             placeholder='Search....'
             value={textValue.val}
-            // getProducts(value)
-
             onChange={onChangeHandler}
             
           />
           {/* once you hit Go, it will filter the items */}
-          <button type="submit">Go</button>
+
+
+          <button class="button1" onClick= {() => {
+            <div class = "product_container">
+                dataRetrieved.map(item, value) 
+
+            
+          
+          </div>
+          }}
+          >GO</button>
+    
 
         </div>
         <div className='search__image'>

@@ -40,6 +40,13 @@
   font-size: 2rem;
 }
 
+.product_container{
+  border: 4px black solid;
+  border-radius: 20px;
+  padding:4%;
+}
+
+
 .search__container {
   margin-top: 10px;
   display: flex;
