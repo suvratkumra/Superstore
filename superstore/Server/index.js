@@ -188,6 +188,15 @@ app.post("/api/search_bar", (req, res) => {
     })
 })
 
+app.post("/api/cart", (req, res) => {
+    const val = req.body.CartProduct;
+    console.log(val);
+
+    const sqlQuery = "SELECT added_products FROM cart_details ADD added_products = ? SET quantity = ?" 
+    db.query(sqlQuery, [val], (err, result) => {
+        res.send(result);
+    })
+})
 
 // to listen
 app.listen(3001, () => {

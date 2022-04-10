@@ -8,7 +8,6 @@ import Axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLaptopHouse } from '@fortawesome/free-solid-svg-icons';
 import { text } from '@fortawesome/fontawesome-svg-core';
-import { Grid } from 'gridjs-react';
 //Importing all the departments.
 var FontAwesome = require('react-fontawesome');
 
@@ -19,11 +18,16 @@ function MainPage(props) {
   const [counter, setCounter] = useState(-1);
   const [textValue, setTextValue] = useState({val: ""});
   const [dataRetrieved, setDataRetrieved] = useState([]);
+  const [dataRetrievedCart, setDataRetrievedCart] = useState([]);
+  const [CartProduct, setCartProduct] = useState({val: ""});
+
   const [isPressed, setIsPressed] = useState(false);
 
   const [cartText, setCartText] = useState("");
-  const [itemIncrementer, setItemIncrementer] = useState("");
-  
+  const initializeNumber = {grainBread:1, bananaMuffin:1, bananaCake:1, butterCroissant:1, chocolateMini:1, chocChipMuffin:1, cinnamonBread:1, doubleChoc:1, frenchBread:1, largeOriginal:1, PCtortillas:1, rolls:1, sourdoughLoaf:1, roastedWheat:1, naan:1};
+  const [itemIncrementer, setItemIncrementer] = useState(initializeNumber);
+
+
   const ColoredLine = ({ color }) => (
     <hr
         style={{
@@ -106,24 +110,29 @@ function MainPage(props) {
                   
                 }}>
               Add to Cart
-              <button className="option_search2"
-                type="button" onClick={() => {
-                  
-                }}>
-                -
-              </button>
+              <button className="option_search2" onClick = {() => {
+                                                if(itemIncrementer.item > 0)
+                                                  setItemIncrementer({...itemIncrementer, item: itemIncrementer.item-1});} }> - </button>                                  
+              <span className = 'number'> {itemIncrementer.item} </span>
 
-              <button className="option_search3"
-                type="button" onClick={() => {
-                  
-                }}>
-              +
-              </button>
+            <button className="option_search3" onClick = {() => Axios.post("http://localhost:3001/api/cart", {
+                  CartProduct: CartProduct.val
+                }).then((res) => {
+                  setDataRetrievedCart([]);       // resetting
+                  // res.data.forEach(element => {
+                  //   for(let key in element) {
+                  //     setDataRetrievedCart(dataRetrievedCart => [...dataRetrievedCart, element[key]]);
+                  //   }
+                  // })
+                  console.log(dataRetrievedCart);
               
+            }) }> + </button>                                    
+
+               
               </button>
 
               <ColoredLine color="black" />
-              
+
                 </a>
 
                 
