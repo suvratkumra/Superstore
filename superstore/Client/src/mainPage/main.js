@@ -18,7 +18,7 @@ function MainPage(props) {
   const [username, setSearch] = useState('')
   const [counter, setCounter] = useState(-1);
   const [textValue, setTextValue] = useState({val: ""});
-  const [dataRetrieved, setDataRetrieved] = useState({akshar: ""});
+  const [dataRetrieved, setDataRetrieved] = useState([]);
   const [isPressed, setIsPressed] = useState(false);
 
 
@@ -32,8 +32,14 @@ function MainPage(props) {
     Axios.post("http://localhost:3001/api/search_bar", {
       textValue: textValue.val
     }).then((res) => {
-      setDataRetrieved({akshar: res.data});
-      console.log(dataRetrieved.akshar);
+      setDataRetrieved([]);       // resetting
+      res.data.forEach(element => {
+        for(let key in element) {
+          setDataRetrieved(dataRetrieved => [...dataRetrieved, element[key]]);
+        }
+      })
+      console.log(dataRetrieved);
+      
     })
 
   }
@@ -78,18 +84,12 @@ function MainPage(props) {
             onChange={onChangeHandler}
             
           />
-          {/* once you hit Go, it will filter the items */}
-
-
-          <button class="button1" onClick= {() => {
-            <div class = "product_container">
-                dataRetrieved.map(item, value) 
-
-            
           
-          </div>
-          }}
-          >GO</button>
+          { Object.values(dataRetrieved).map((item, value) => {
+            return <div id = "searchBarListing__container">
+                        <span>{item}</span>
+                    </div>
+          }) }
     
 
         </div>

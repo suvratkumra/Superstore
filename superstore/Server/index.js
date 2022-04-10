@@ -184,7 +184,7 @@ app.post("/api/search_bar", (req, res) => {
 
     const sqlQuery = "SELECT PName FROM product_details WHERE PName LIKE '%" + val + "%'" 
     db.query(sqlQuery, [val], (err, result) => {
-        res.send(result);
+        res.send();
     })
 })
 

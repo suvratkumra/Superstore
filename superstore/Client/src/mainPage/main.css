@@ -20,6 +20,14 @@
   
 }
 
+#searchBarListing__container {
+  display: flex;
+  scroll-behavior: smooth;
+  max-height: 200px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .cart__container {
   margin-left: 800px;
 }
