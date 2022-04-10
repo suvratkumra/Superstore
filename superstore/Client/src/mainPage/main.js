@@ -67,6 +67,7 @@ function MainPage(props) {
                 }
             })
         }
+        
         else if(value === 5) {
             res.data.forEach(element => {
                 for(let key in element) {
