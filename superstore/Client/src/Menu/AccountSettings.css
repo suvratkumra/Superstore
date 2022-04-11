@@ -1,0 +1,23 @@
+.formCategory1 {
+    display:flex;
+    position: center;
+
+    margin-left: 500px;
+    padding-bottom: 50;
+  }
+
+.formCategory2 {
+    display:flex;
+    justify-content: right;
+    flex-direction: row;
+    margin-left: 500px;
+
+    padding-bottom: 50;
+}
+
+.ProfilePic
+{
+    display: flex;
+    margin-left: 50px;
+    width: 500;
+}

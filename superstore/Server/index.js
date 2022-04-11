@@ -146,6 +146,9 @@ app.post('/api/warehouse/get_products', (req, res) => {
     })
     
 }) 
+app.post('/api/Menu/AccountSettings', (req, res) => {
+
+})
 
 app.post('/api/warehouse/update_products', (req, res) => {
 

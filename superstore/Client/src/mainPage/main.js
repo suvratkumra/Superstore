@@ -36,8 +36,12 @@ function MainPage(props) {
 
         <div className="menu__box">
           <div className="menu__item">
-            <a href ="#">View History</a>
-            <a href="#">Account Settings</a>
+            <a href ="#" onClick={() => {
+               window.location.href = "http://localhost:3000/Menu/ViewHistory"
+            }}>View History</a>
+            <a href="#" onClick={() => {
+               window.location.href = "http://localhost:3000/Menu/AccountSettings"
+              }}>Account Settings</a>
           </div>
           
         </div>
