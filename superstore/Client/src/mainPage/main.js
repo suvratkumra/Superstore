@@ -352,6 +352,17 @@ function MainPage(props) {
               </button> 
             }
             </div>
+            <div className='equipment__container'>
+            {
+              (counter === 1 || counter === 2 || counter === 3) ? null :
+              <button className="buttonStyle"
+                    type="button" onClick={() => {
+                      window.location.href = "http://localhost:3000/Departments/Equipment";
+                    }}>
+                    EQUIPMENT
+              </button> 
+            }
+            </div>
             
           </div>
                  
