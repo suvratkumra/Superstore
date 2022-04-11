@@ -10,7 +10,7 @@ import Deluxe_Unicorn_Cosmetic_Set from "../images/Cosmetics/Deluxe_Unicorn_Cosm
 import Flower_Serum_Foundation_Warm_Beige from "../images/Cosmetics/Flower_Serum_Foundation_Warm_Beige.png"
 import GirlOnTheGo_Cosmetic_Compact from "../images/Cosmetics/GirlOnTheGo_Cosmetic_Compact.png"
 import Lomi_Rejuvenating_Foot_Spa_Bath from "../images/Cosmetics/Lomi_Rejuvenating_Foot_Spa_Bath.png"
-import Loreal_Paris_Infallible_24H_FreshWear_In_a_Powder from "../images/Cosmetics/Loreal_Paris_Infallible_24H_FreshWear_In_a_Powder.png"
+import Loreal_Paris_Infallible_24H_FreshWear_In_a_Powder from "../images/Cosmetics/LOreal_Paris_Infallible_24H_FreshWear_In_a_Powder.png"
 import LUG_Trolley_Cosmetic_Case from "../images/Cosmetics/LUG_Trolley_Cosmetic_Case.png"
 import LUG_Trolley_Cosmetic_Case_Blue from "../images/Cosmetics/LUG_Trolley_Cosmetic_Case_Blue.png"
 import QuoBeauty_Cheek_Lip_Multistick_Sunrise from "../images/Cosmetics/QuoBeauty_Cheek_Lip_Multistick_Sunrise.png"

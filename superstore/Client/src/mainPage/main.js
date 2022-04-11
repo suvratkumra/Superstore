@@ -22,14 +22,7 @@ function MainPage(props) {
   const [counter, setCounter] = useState(-1);
   const [textValue, setTextValue] = useState({val: ""});
   const [dataRetrieved, setDataRetrieved] = useState([]);
-  const [dataRetrievedCart, setDataRetrievedCart] = useState([]);
-  const [CartProduct, setCartProduct] = useState({val: ""});
-
-  const [isPressed, setIsPressed] = useState(false);
-
-  const [cartText, setCartText] = useState("");
-  const initializeNumber = {grainBread:1, bananaMuffin:1, bananaCake:1, butterCroissant:1, chocolateMini:1, chocChipMuffin:1, cinnamonBread:1, doubleChoc:1, frenchBread:1, largeOriginal:1, PCtortillas:1, rolls:1, sourdoughLoaf:1, roastedWheat:1, naan:1};
-  const [itemIncrementer, setItemIncrementer] = useState(initializeNumber);
+  var [quantity, setQuantity] = useState({});      // initially the quantity will be 0
 
 
   const ColoredLine = ({ color }) => (
@@ -55,12 +48,30 @@ function MainPage(props) {
       res.data.forEach(element => {
         for(let key in element) {
           setDataRetrieved(dataRetrieved => [...dataRetrieved, element[key]]);
+          setQuantity({...quantity, [element[key]]: 0})
         }
       })
-      console.log(dataRetrieved);
+      console.log(quantity);
       
     })
+  }
 
+  const incrementHandler = (itemName, identifier) => {
+    // console.log(setQuantity({[itemName]: 10}));
+    if(identifier === "positive") {
+      setQuantity({...quantity, [itemName]: quantity[itemName]+1});
+    }
+    else if(identifier === "negative" && quantity[itemName] > 0)
+      setQuantity({...quantity, [itemName]: quantity[itemName]-1})
+
+
+    // now we will update our sql.
+    Axios.post("http://localhost:3001/api/cart", {
+      quantity: quantity[itemName],
+      name: itemName
+    }).then((res) => console.log(res.data));
+
+    console.log(itemName);
   }
 
 
@@ -109,48 +120,21 @@ function MainPage(props) {
             
           />
           
-          <div>
+  
       
-            { Object.values(dataRetrieved).map((item, value) => {
-              return <div id = "searchBarListing__container">
-                <a href="#">{item}  
-                <button className="option_search"
-                type="button" onClick={() => {
-                  
-                }}>
-              Add to Cart
-              <button className="option_search2" onClick = {() => {
-                                                if(itemIncrementer.item > 0)
-                                                  setItemIncrementer({...itemIncrementer, item: itemIncrementer.item-1});} }> - </button>                                  
-              <span className = 'number'> {itemIncrementer.item} </span>
+          { Object.values(dataRetrieved).map((item, value) => {
+            return  <div id = "searchBarListing__container">
+                      <span id = "itemName__name">{item}</span>
+                      <div id = "buttonsForAddToCart">
+                        <button className= "minus" onClick = {() => {incrementHandler(item, "negative")}}>-</button>
+                        <span>{(quantity[item])}</span>
+                        <button className="plus" onClick = {() => {incrementHandler(item, "positive")}}>+</button>
+                      </div>
+                    </div>
+            
+          }) }
 
-            <button className="option_search3" onClick = {() => Axios.post("http://localhost:3001/api/cart", {
-                  CartProduct: CartProduct.val
-                }).then((res) => {
-                  setDataRetrievedCart([]);       // resetting
-                  // res.data.forEach(element => {
-                  //   for(let key in element) {
-                  //     setDataRetrievedCart(dataRetrievedCart => [...dataRetrievedCart, element[key]]);
-                  //   }
-                  // })
-                  console.log(dataRetrievedCart);
-              
-            }) }> + </button>                                    
 
-               
-              </button>
-
-              <ColoredLine color="black" />
-
-                </a>
-
-                
-                
-              </div>
-              
-            }) }
-
-          </div>
           
     
 

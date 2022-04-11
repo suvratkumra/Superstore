@@ -31,13 +31,22 @@
 
 } */
 
+#buttonsForAddToCart {
+  font-size: xx-large;
+}
+
 #searchBarListing__container {
+  border: 1px black dotted;
   display: block;
-  height: 66px;
-  width: 200;
+  height: 0px;
+  width: 100%;      
+  overflow: hidden;
   padding-top: 2em;
   padding-bottom: 4em;
+}
 
+#itemName__name { 
+  font-size: large;
 }
 
 .item__container {
