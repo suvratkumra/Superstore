@@ -9,7 +9,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLaptopHouse } from '@fortawesome/free-solid-svg-icons';
 import { text } from '@fortawesome/fontawesome-svg-core';
 
-import UserProfile from '../mainPage/UserProfile';
 
 
 //Importing all the departments.
