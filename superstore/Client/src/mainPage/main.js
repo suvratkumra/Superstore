@@ -8,6 +8,10 @@ import Axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLaptopHouse } from '@fortawesome/free-solid-svg-icons';
 import { text } from '@fortawesome/fontawesome-svg-core';
+
+import UserProfile from '../mainPage/UserProfile';
+
+
 //Importing all the departments.
 var FontAwesome = require('react-fontawesome');
 
@@ -80,8 +84,13 @@ function MainPage(props) {
 
         <div className="menu__box">
           <div className="menu__item">
-            <a href ="#">View History</a>
-            <a href="#">Account Settings</a>
+            <a href ="#" onClick={() => {
+               window.location.href = "http://localhost:3000/Menu/ViewHistory";
+              }}>
+              View History</a>
+            <a href="#" onClick={() => {
+               window.location.href = "http://localhost:3000/Menu/AccountSettings";
+              }}>Account Settings</a>
           </div>
           
         </div>
@@ -354,7 +363,7 @@ function MainPage(props) {
             </div>
             <div className='equipment__container'>
             {
-              (counter === 1 || counter === 2 || counter === 3) ? null :
+              (counter === 0) ? null :
               <button className="buttonStyle"
                     type="button" onClick={() => {
                       window.location.href = "http://localhost:3000/Departments/Equipment";

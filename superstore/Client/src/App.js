@@ -23,6 +23,9 @@ import MenClothes from "./Departments/MenClothes";
 import Household from "./Departments/Household";
 import Manager from "./Manager_Warehouse/Manager";
 import Warehouse from "./Manager_Warehouse/Warehouse";
+// import UserProfile from "./mainPage/UserProfile";
+import AccountSettings from './Menu/AccountSettings'
+import ViewHistory from './Menu/ViewHistory'
 
 function App() {
 
@@ -52,6 +55,9 @@ return(
       <Route path="/ForgotPassword" element={<ForgotPassword />} />
       <Route path="/Manager" element={<Manager />} />
       <Route path="/Warehouse" element={<Warehouse />} />
+      {/* <Route path="/UserProfile" element={<UserProfile />} /> */}
+      <Route path="/Menu/ViewHistory" element={<ViewHistory />} />
+      <Route path="/Menu/AccountSettings" element={<AccountSettings />} />
       <Route path="*" element={<ErrorPage />} />
     </Routes>
   </Router>
