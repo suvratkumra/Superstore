@@ -10,7 +10,7 @@ import Deluxe_Unicorn_Cosmetic_Set from "../images/Cosmetics/Deluxe_Unicorn_Cosm
 import Flower_Serum_Foundation_Warm_Beige from "../images/Cosmetics/Flower_Serum_Foundation_Warm_Beige.png"
 import GirlOnTheGo_Cosmetic_Compact from "../images/Cosmetics/GirlOnTheGo_Cosmetic_Compact.png"
 import Lomi_Rejuvenating_Foot_Spa_Bath from "../images/Cosmetics/Lomi_Rejuvenating_Foot_Spa_Bath.png"
-import LOreal_Paris_Infallible_24H_FreshWear_In_a_Powder from "../images/Cosmetics/LOreal_Paris_Infallible_24H_FreshWear_In_a_Powder.png"
+import Loreal_Paris_Infallible_24H_FreshWear_In_a_Powder from "../images/Cosmetics/Loreal_Paris_Infallible_24H_FreshWear_In_a_Powder.png"
 import LUG_Trolley_Cosmetic_Case from "../images/Cosmetics/LUG_Trolley_Cosmetic_Case.png"
 import LUG_Trolley_Cosmetic_Case_Blue from "../images/Cosmetics/LUG_Trolley_Cosmetic_Case_Blue.png"
 import QuoBeauty_Cheek_Lip_Multistick_Sunrise from "../images/Cosmetics/QuoBeauty_Cheek_Lip_Multistick_Sunrise.png"
@@ -228,20 +228,20 @@ export default function Cosmetics() {
         
         <div className='item__container'>
           <span className = 'company_name'>Loreal Paris</span>
-          <img src = { LOreal_Paris_Infallible_24H_FreshWear_In_a_Powder } alt = 'LOreal_Paris_Infallible_24H_FreshWear_In_a_Powder' className = 'product_image' />
+          <img src = { Loreal_Paris_Infallible_24H_FreshWear_In_a_Powder } alt = 'Loreal_Paris_Infallible_24H_FreshWear_In_a_Powder' className = 'product_image' />
           <div className = 'price_product__container'>
             <span className = 'product_name'>Infallible 24H Fresh Wear In a Powder</span>
             <span className = 'price'>$17.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, LOreal_Paris_Infallible_24H_FreshWear_In_a_Powder: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, Loreal_Paris_Infallible_24H_FreshWear_In_a_Powder: true});}}>
             {
-              cartText.LOreal_Paris_Infallible_24H_FreshWear_In_a_Powder ? <div className = 'increment__container'> 
+              cartText.Loreal_Paris_Infallible_24H_FreshWear_In_a_Powder ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.LOreal_Paris_Infallible_24H_FreshWear_In_a_Powder > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, LOreal_Paris_Infallible_24H_FreshWear_In_a_Powder: itemIncrementer.LOreal_Paris_Infallible_24H_FreshWear_In_a_Powder-1});                                                                          
+                                                                                    if(itemIncrementer.Loreal_Paris_Infallible_24H_FreshWear_In_a_Powder > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, Loreal_Paris_Infallible_24H_FreshWear_In_a_Powder: itemIncrementer.Loreal_Paris_Infallible_24H_FreshWear_In_a_Powder-1});                                                                          
                                                                                     } }> -</button>
                                       <span className = 'number'> {itemIncrementer.LOreal_Paris_Infallible_24H_FreshWear_In_a_Powder} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, LOreal_Paris_Infallible_24H_FreshWear_In_a_Powder: itemIncrementer.LOreal_Paris_Infallible_24H_FreshWear_In_a_Powder+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Loreal_Paris_Infallible_24H_FreshWear_In_a_Powder: itemIncrementer.Loreal_Paris_Infallible_24H_FreshWear_In_a_Powder+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }

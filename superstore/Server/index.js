@@ -147,6 +147,7 @@ app.post('/api/warehouse/get_products', (req, res) => {
     
 }) 
 
+
 app.post('/api/warehouse/update_products', (req, res) => {
 
     const departmentValue = req.body.departmentName;
