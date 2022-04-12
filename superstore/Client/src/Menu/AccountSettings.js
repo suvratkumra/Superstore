@@ -2,7 +2,6 @@ import React from 'react';
 import "./AccountSettings.css";
 import { Container,Row,Col,Form ,Button} from 'react-bootstrap';
 import {connect} from 'react-redux';
-import DefaultUserPic from "../images/pic.png";
 const axios = require('axios');
 
 
@@ -67,21 +66,14 @@ render(){
         var imagestr=this.state.profileImage;
         imagestr = imagestr.replace("public/", "");
         var profilePic="http://localhost:3000/"+imagestr;
-    }else{
-         profilePic=DefaultUserPic;
     }
 
     return (
       
-        <div>
-       
-
-        <div className="ProfilePic"> 
-            <img id = "profile__container" src={profilePic} alt="profils pic"/>
-        </div>
+        <div className='overall'>
 
        <div className="profile">
-        <span>User Profile</span> 
+       <span class = "profile_name">USER PROFILE </span>
 
         </div>
 
@@ -112,14 +104,17 @@ render(){
                <br/>
          
             <div>
-            <span>Profile Image</span>
+            <span>Profile Image </span>
                 <Form.Control type="file" name="profileImage" onChange={this.changeProfileImage}/>
             </div>
             <br/>
             
+            <div className="button">
             <Button variant="primary" onClick={this.UpdateProfileHandler}>Update Profile</Button>
 
-                </div>
+            </div>
+
+         </div>
                 
 
             
