@@ -240,7 +240,9 @@ export default function Cosmetics() {
                                                                                     if(itemIncrementer.Loreal_Paris_Infallible_24H_FreshWear_In_a_Powder > 0)
                                                                                       setItemIncrementer({...itemIncrementer, Loreal_Paris_Infallible_24H_FreshWear_In_a_Powder: itemIncrementer.Loreal_Paris_Infallible_24H_FreshWear_In_a_Powder-1});                                                                          
                                                                                     } }> -</button>
+
                                       <span className = 'number'> {itemIncrementer.Loreal_Paris_Infallible_24H_FreshWear_In_a_Powder} </span>
+
                                       <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Loreal_Paris_Infallible_24H_FreshWear_In_a_Powder: itemIncrementer.Loreal_Paris_Infallible_24H_FreshWear_In_a_Powder+1}) }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
