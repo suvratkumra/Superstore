@@ -77,8 +77,8 @@ render(){
         <div>
        
 
-        <div className="ProfilePic"> 
-       <img src={profilePic} alt="profils pic" />
+        <div id="ProfilePic"> 
+       <img src={profilePic} alt="profils pic"/>
         </div>
 
        <div className="profile">
@@ -87,7 +87,7 @@ render(){
         </div>
 
                
-        <div className="formCategory1" width='600'>
+        <div className="formCategory1" >
                 <span>Username</span>
                 <input className = 'username' 
                     type = "text" 
