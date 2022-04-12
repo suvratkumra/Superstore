@@ -43,8 +43,10 @@ export default function WomenClothes() {
       { getEmail() }
     </div>
 
-    {!continuing && <div>
-        <button onClick = {(()=>{window.location.href = "http://localhost:3000/WelcomePage"})}>Click here to go sign in and access this page</button>
+    {!continuing && <div id = "errorPage__container">
+        <span id = "textError__text">ERROR! <br/> You need to log in first before accessing this page</span>
+        <br/><br/>
+        <button className= "button-29" onClick = {(()=>{window.location.href = "http://localhost:3000/WelcomePage"})}>Click here to go sign in.</button>
       </div>}
     {continuing && <div>
       <div className='header__container'>

@@ -220,7 +220,7 @@ app.post("/api/cart", (req, res) => {
 })
 
 app.post("/api/getEmail", (req, res) => {
-    console.log(emailConstant);
+  //  console.log(emailConstant);
     res.send(emailConstant);
 })
 
