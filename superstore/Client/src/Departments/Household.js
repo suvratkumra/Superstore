@@ -19,6 +19,12 @@ import Liquid_Og from "../images/Household/Liquid_Og.webp"
 import Wet_Cloth_Febreze from "../images/Household/Wet_Cloth_Febreze.webp";
 import Liquid_Pods_Original from "../images/Household/Liquid_Pods_Original.webp";
 import { useState } from 'react';
+import Axios from 'axios';
+
+function getEmail(){
+  Axios.post("http://localhost:3001/api/getEmail"
+  ).then((res) => console.log(res.data) )
+}
 
 export default function Household() {
   const initialBoolean = false;
@@ -28,10 +34,13 @@ export default function Household() {
   const initializeNumber = {Air_Wick_Relax_Scented_Oil:1, Foil_Wrap:1, Bl5_Maxi_Lighter:1, Toilet_Cleaner_Gel:1, W_Ultra_Liquid_April_Fresh:1, Air_Line_Sky:1, Aluminum_Foil:1, Drain_Opener:1, Fruit_Fly_Trap:1, Napkins:1, Lemon_Scent_Dish_Liquid:1, Bathroom_Tissue:1, Liquid_Og:1, Wet_Cloth_Febreze:1, Liquid_Pods_Original:1};
   const [itemIncrementer, setItemIncrementer] = useState(initializeNumber);
 
+  const [email, setEmail] = useState("");
 
   return (
     <>
-    
+       <div>
+      { getEmail() }
+    </div>
     <div className='header__container'>
       <div className='superstore__container'>
           <span class = "name1">  SUPERSTORE  </span>
@@ -44,18 +53,7 @@ export default function Household() {
         <span class='goto_previous'>  View all departments</span>
       </div>
       
-    <div className = 'search__container'>
-      <div>
-        <input className = 'searchbar__departments' 
-            type = "text" 
-            name = "search" 
-            placeholder='Search'
-          />
-      </div>
-  
-      
-      <span class = 'search__image'> <GiMagnifyingGlass/> </span>
-    </div>
+   
     </div>
     {/* <div>
       {console.log(showButton)}

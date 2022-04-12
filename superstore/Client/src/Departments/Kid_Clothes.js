@@ -9,6 +9,12 @@ import GetReady_Mtb1301_Doll_Clothes_setof3 from "../images/Kid_Clothes/GetReady
 import JoeFresh_Kid_Boys_Double_Cloth_Shirt from "../images/Kid_Clothes/JoeFresh_Kid_Boys_Double_Cloth_Shirt.png"
 import LifeAtHome_Flocked_Kids_Hangers from "../images/Kid_Clothes/LifeAtHome_Flocked_Kids_Hangers.png"
 import Solid_Wood_Kids_Wooden_Hangers_setof20 from "../images/Kid_Clothes/Solid_Wood_Kids_Wooden_Hangers_setof20.png"
+import Axios from 'axios';
+
+function getEmail(){
+  Axios.post("http://localhost:3001/api/getEmail"
+  ).then((res) => console.log(res.data) )
+}
 
 export default function Kid_Clothes() {
   const initialBoolean = false;
@@ -17,11 +23,14 @@ export default function Kid_Clothes() {
   const [showButton, setShowButton] = useState({showButton: false, showButton2: false});  
   const initializeNumber = {GetReady_1320_Sports_Doll_Clothes:1, GetReady_1322_Kids_Doll_Clothes_2_Princess_Dresses:1, GetReady_Mtb1301_Doll_Clothes_setof3:1, JoeFresh_Kid_Boys_Double_Cloth_Shirt:1, LifeAtHome_Flocked_Kids_Hangers:1, Solid_Wood_Kids_Wooden_Hangers_setof20:1, Lomi_Rejuvenating_Foot_Spa_Bath:1, LOreal_Paris_Infallible_24H_FreshWear_In_a_Powder:1, LUG_Trolley_Cosmetic_Case:1, LUG_Trolley_Cosmetic_Case_Blue:1, QuoBeauty_Cheek_Lip_Multistick_Sunrise:1, QuoBeauty_CoolPowder_Bronzer:1, QuoBeauty_Cosmetic_Wedges:1, Refectocil_Soft_Cosmetic_Brush:1, Friends_Cosmetic_Case_Set_packof3:1};
   const [itemIncrementer, setItemIncrementer] = useState(initializeNumber);
+  const [email, setEmail] = useState("");
 
 
   return (
     <>
-    
+    <div>
+      { getEmail() }
+    </div>
     <div className='header__container'>
       <div className='superstore__container'>
           <span class = "name1">  SUPERSTORE  </span>

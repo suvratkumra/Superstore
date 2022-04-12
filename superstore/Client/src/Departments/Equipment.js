@@ -18,6 +18,12 @@ import samsung_27_curved_FHD_VA_monitor from "../images/Equipment/samsung_27_cur
 import samsung_black_toner_cartridge from "../images/Equipment/samsung_black_toner_cartridge.png"
 import Xtrike_Me_HP_310_gaming_headset from "../images/Equipment/Xtrike_Me_HP-310_gaming_headset.png"
 import slim_cat6_ethernet_cable from "../images/Equipment/slim_cat6_ethernet_cable.png"
+import Axios from 'axios';
+
+function getEmail(){
+  Axios.post("http://localhost:3001/api/getEmail"
+  ).then((res) => console.log(res.data) )
+}
 
 
 export default function Equipment() {
@@ -28,10 +34,13 @@ export default function Equipment() {
   const initializeNumber = {asus_prime_H410M_E_LGA_1200_Intel_H410_SATA:1, canon_imageClass_D1650_monochrome_lazer:1, cat5e_ethernet_cable:1, cat6_green_ethernet_cable_10foot:1, decora_wall_plate_white_dual:1, energizer_batteries_alkaline_AA24:1, energizer_maxAA_batteries_8pack:1, fiber_optic_cable_LC_Duplex:1, fiber_optic_cable_singlemodeDuplex:1, globe_electric_with_slim_plug:1, JVC_inear_headphones:1, samsung_27_curved_FHD_VA_monitor:1, samsung_black_toner_cartridge:1, Xtrike_Me_HP_310_gaming_headset:1, slim_cat6_ethernet_cable:1};
   const [itemIncrementer, setItemIncrementer] = useState(initializeNumber);
 
+  const [email, setEmail] = useState("");
 
   return (
     <>
-    
+    <div>
+      { getEmail() }
+    </div>
     <div className='header__container'>
       <div className='superstore__container'>
           <span class = "name1">  SUPERSTORE  </span>
@@ -44,18 +53,7 @@ export default function Equipment() {
         <span class='goto_previous'>  View all departments</span>
       </div>
       
-    <div className = 'search__container'>
-      <div>
-        <input className = 'searchbar__departments' 
-            type = "text" 
-            name = "search" 
-            placeholder='Search'
-          />
-      </div>
-  
-      
-      <span class = 'search__image'> <GiMagnifyingGlass/> </span>
-    </div>
+    
     </div>
 
     <div className='products_name__container'>

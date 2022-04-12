@@ -18,6 +18,12 @@ import PC_FF_mild_italian_pork from "../images/Meat/PC_FF_mild_italian_pork.png"
 import pork_tendelion_2pack from "../images/Meat/pork_tendelion_2pack.png"
 import smoked_classicCut_bacon from "../images/Meat/smoked_classicCut_bacon.png"
 import smokehouse_bacon from "../images/Meat/smokehouse_bacon.png"
+import Axios from 'axios';
+
+function getEmail(){
+  Axios.post("http://localhost:3001/api/getEmail"
+  ).then((res) => console.log(res.data) )
+}
 
 export default function Meat() {
   const initialBoolean = false;
@@ -25,11 +31,14 @@ export default function Meat() {
   const [cartText, setCartText] = useState(initializeValues);
   const initializeNumber = {chicken_breast_clubPack:1, chicken_leg_clubPack:1, chicken_thigh_clubPack:1, extra_lean_ground_beef:1, juicy_jumbo_all_beef_wieners:1, lean_ground_beef:1, minced_turkey:1, mild_sugar_cured_bacon:1, ML_natural_top_dogs:1, nn_hotdogs:1, PC_boneless_chickenBreast:1, PC_FF_mild_italian_pork:1, pork_tendelion_2pack:1, smoked_classicCut_bacon:1, smokehouse_bacon:1};
   const [itemIncrementer, setItemIncrementer] = useState(initializeNumber);
+  const [email, setEmail] = useState("");
 
 
   return (
     <>
-    
+    <div>
+      { getEmail() }
+    </div>
     <div className='header__container'>
       <div className='superstore__container'>
           <span class = "name1">  SUPERSTORE  </span>
@@ -41,19 +50,7 @@ export default function Meat() {
          <a href = '../MainPage' ><span class = "back_icon"><BsFillArrowLeftCircleFill /></span></a>
         <span class='goto_previous'>  View all departments</span>
       </div>
-      
-    <div className = 'search__container'>
-      <div>
-        <input className = 'searchbar__departments' 
-            type = "text" 
-            name = "search" 
-            placeholder='Search'
-          />
-      </div>
-  
-      
-      <span class = 'search__image'> <GiMagnifyingGlass/> </span>
-    </div>
+   
     </div>
     {/* <div>
       {console.log(showButton)}

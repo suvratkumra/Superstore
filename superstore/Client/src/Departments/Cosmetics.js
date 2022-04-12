@@ -18,6 +18,12 @@ import QuoBeauty_CoolPowder_Bronzer from "../images/Cosmetics/QuoBeauty_CoolPowd
 import QuoBeauty_Cosmetic_Wedges from "../images/Cosmetics/QuoBeauty_Cosmetic_Wedges.png"
 import Refectocil_Soft_Cosmetic_Brush from "../images/Cosmetics/Refectocil_Soft_Cosmetic_Brush.png"
 import Friends_Cosmetic_Case_Set_packof3 from "../images/Cosmetics/Friends_Cosmetic_Case_Set_packof3.png"
+import Axios from 'axios';
+
+function getEmail(){
+  Axios.post("http://localhost:3001/api/getEmail"
+  ).then((res) => console.log(res.data) )
+}
 
 export default function Cosmetics() {
   const initialBoolean = false;
@@ -27,10 +33,13 @@ export default function Cosmetics() {
   const initializeNumber = {Annabelle_Perfect_Bronze_Pressed_Powder:1, Annabelle_Perfect_Glow_Topaz8point2g:1, BV_Dark_Spot_Corrector_Cream:1, Deluxe_Unicorn_Cosmetic_Set:1, Flower_Serum_Foundation_Warm_Beige:1, GirlOnTheGo_Cosmetic_Compact:1, Lomi_Rejuvenating_Foot_Spa_Bath:1, LOreal_Paris_Infallible_24H_FreshWear_In_a_Powder:1, LUG_Trolley_Cosmetic_Case:1, LUG_Trolley_Cosmetic_Case_Blue:1, QuoBeauty_Cheek_Lip_Multistick_Sunrise:1, QuoBeauty_CoolPowder_Bronzer:1, QuoBeauty_Cosmetic_Wedges:1, Refectocil_Soft_Cosmetic_Brush:1, Friends_Cosmetic_Case_Set_packof3:1};
   const [itemIncrementer, setItemIncrementer] = useState(initializeNumber);
 
+  const [email, setEmail] = useState("");
 
   return (
     <>
-    
+    <div>
+      { getEmail() }
+    </div>
     <div className='header__container'>
       <div className='superstore__container'>
           <span class = "name1">  SUPERSTORE  </span>
@@ -43,18 +52,7 @@ export default function Cosmetics() {
         <span class='goto_previous'>  View all departments</span>
       </div>
       
-    <div className = 'search__container'>
-      <div>
-        <input className = 'searchbar__departments' 
-            type = "text" 
-            name = "search" 
-            placeholder='Search'
-          />
-      </div>
-  
-      
-      <span class = 'search__image'> <GiMagnifyingGlass/> </span>
-    </div>
+    
     </div>
     {/* <div>
       {console.log(showButton)}

@@ -19,6 +19,13 @@ import PC_free_run_brown_egg_large from "../images/Dairy/PC_free_run_brown_egg_l
 import saputo_mozzarellissima_500g from "../images/Dairy/saputo_mozzarellissima_500g.png"
 import xlarge_eggs_12pack from "../images/Dairy/xlarge_eggs_12pack.png"
 
+import Axios from 'axios';
+
+function getEmail(){
+  Axios.post("http://localhost:3001/api/getEmail"
+  ).then((res) => console.log(res.data) )
+}
+
 export default function Dairy() {
   const initialBoolean = false;
   const initializeValues = {astro_balkan_style_yogurt750g:initialBoolean, beatrice_onePercent_milk:initialBoolean, beatrice_twoPercent_milk:initialBoolean, beatrice_threePercent_milk:initialBoolean, becel_margarine_original907g:initialBoolean, lactantia_half_n_half_10percent:initialBoolean, lactantia_whipping_cream35percent:initialBoolean, large_eggs_12pack:initialBoolean, NN_pasteurized_cream_cheese:initialBoolean, NN_salted_butter:initialBoolean, NN_sourCream_14percent_500ml:initialBoolean, NN_unsalted_butter454g:initialBoolean, PC_free_run_brown_egg_large:initialBoolean, saputo_mozzarellissima_500g:initialBoolean, xlarge_eggs_12pack:initialBoolean};
@@ -27,10 +34,13 @@ export default function Dairy() {
   const initializeNumber = {astro_balkan_style_yogurt750g:1, beatrice_onePercent_milk:1, beatrice_twoPercent_milk:1, beatrice_threePercent_milk:1, becel_margarine_original907g:1, lactantia_half_n_half_10percent:1, lactantia_whipping_cream35percent:1, large_eggs_12pack:1, NN_pasteurized_cream_cheese:1, NN_salted_butter:1, NN_sourCream_14percent_500ml:1, NN_unsalted_butter454g:1, PC_free_run_brown_egg_large:1, saputo_mozzarellissima_500g:1, xlarge_eggs_12pack:1};
   const [itemIncrementer, setItemIncrementer] = useState(initializeNumber);
 
+  const [email, setEmail] = useState("");
 
   return (
     <>
-    
+    <div>
+      { getEmail() }
+    </div>
     <div className='header__container'>
       <div className='superstore__container'>
           <span class = "name1">  SUPERSTORE  </span>
@@ -43,18 +53,7 @@ export default function Dairy() {
         <span class='goto_previous'>  View all departments</span>
       </div>
       
-    <div className = 'search__container'>
-      <div>
-        <input className = 'searchbar__departments' 
-            type = "text" 
-            name = "search" 
-            placeholder='Search'
-          />
-      </div>
-  
-      
-      <span class = 'search__image'> <GiMagnifyingGlass/> </span>
-    </div>
+    
     </div>
     {/* <div>
       {console.log(showButton)}

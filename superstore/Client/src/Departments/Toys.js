@@ -17,6 +17,12 @@ import Playmobil_School_Bus_Playset from "../images/Toys/Playmobil_School_Bus_Pl
 import { useState } from 'react';
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 import { GiMagnifyingGlass } from "react-icons/gi";
+import Axios from 'axios';
+
+function getEmail(){
+  Axios.post("http://localhost:3001/api/getEmail"
+  ).then((res) => console.log(res.data) )
+}
 
 
 export default function Toys() {
@@ -27,10 +33,13 @@ export default function Toys() {
   const initializeNumber = {Kid_Connection_Music_Keyboard:1, Play_Doh_Drill_n_Fill_Dentist_Toy:1, Mattel_Hot_Wheels_5_Car_Pack_Assortment:1, Kid_Connection_Utility_Trucks_Toy:1, Mattel_Hot_Wheels_Vehicles:1, Pressman_Shark_Bite_Game:1, Regent_Soccerball:1, Size_3T_Paw_Patrol:1, Spark_Wooden_Puzzle_Set:1, Barbie_Pop_Star_Doll:1, Munchkin_Duck_Dunk_Bath_Toy:1, Mattel_Kerplunk:1, PlayMonster_Things:1, Play_Day_Play_Balls:1, Playmobil_School_Bus_Playset:1};
   const [itemIncrementer, setItemIncrementer] = useState(initializeNumber);
 
+  const [email, setEmail] = useState("");
 
   return (
     <>
-    
+    <div>
+      { getEmail() }
+    </div>
     <div className='header__container'>
       <div className='superstore__container'>
           <span class = "name1">  SUPERSTORE  </span>
@@ -42,19 +51,7 @@ export default function Toys() {
          <a href = '../MainPage' ><span class = "back_icon"><BsFillArrowLeftCircleFill /></span></a>
         <span class='goto_previous'>  View all departments</span>
       </div>
-      
-    <div className = 'search__container'>
-      <div>
-        <input className = 'searchbar__departments' 
-            type = "text" 
-            name = "search" 
-            placeholder='Search'
-          />
-      </div>
   
-      
-      <span class = 'search__image'> <GiMagnifyingGlass/> </span>
-    </div>
     </div>
     {/* <div>
       {console.log(showButton)}

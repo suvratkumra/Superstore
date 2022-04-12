@@ -9,8 +9,13 @@ import Women_1X_Shapewear_Boyshorts from "../images/WomenClothes/Women_1X_Shapew
 import Large_Size_Womens_Cotton_Bikini_Briefs from "../images/WomenClothes/Large_Size_Womens_Cotton_Bikini_Briefs.webp"
 import Womens_1X_Full_Shapewear_Slip from "../images/WomenClothes/Womens_1X_Full_Shapewear_Slip.webp"
 import Womens_Seamless_Cross_Back_Sports_Bra from "../images/WomenClothes/Womens_Seamless_Cross_Back_Sports_Bra.webp"
-
 import { useState } from 'react';
+import Axios from 'axios';
+
+function getEmail(){
+  Axios.post("http://localhost:3001/api/getEmail"
+  ).then((res) => console.log(res.data) )
+}
 
 export default function WomenClothes() {
   const initialBoolean = false;
@@ -19,11 +24,14 @@ export default function WomenClothes() {
   const [showButton, setShowButton] = useState({showButton: false, showButton2: false});  
   const initializeNumber = {Comfort_Cotton_Socks:1, Womens_No_Show_Liner_Socks:1, Women_1X_Shapewear_Boyshorts:1, Large_Size_Womens_Cotton_Bikini_Briefs:1, Womens_1X_Full_Shapewear_Slip:1, Womens_Seamless_Cross_Back_Sports_Bra:1};
   const [itemIncrementer, setItemIncrementer] = useState(initializeNumber);
+  const [email, setEmail] = useState("");
 
 
   return (
     <>
-    
+    <div>
+      { getEmail() }
+    </div>
     <div className='header__container'>
       <div className='superstore__container'>
           <span class = "name1">  SUPERSTORE  </span>
@@ -36,18 +44,7 @@ export default function WomenClothes() {
         <span class='goto_previous'>  View all departments</span>
       </div>
       
-    <div className = 'search__container'>
-      <div>
-        <input className = 'searchbar__departments' 
-            type = "text" 
-            name = "search" 
-            placeholder='Search'
-          />
-      </div>
-  
-      
-      <span class = 'search__image'> <GiMagnifyingGlass/> </span>
-    </div>
+
     </div>
     {/* <div>
       {console.log(showButton)}

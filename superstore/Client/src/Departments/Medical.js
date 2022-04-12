@@ -19,6 +19,12 @@ import Penaten_Medicated_Cream from "../images/Medical/Penaten_Medicated_Cream.w
 import Tylenol_500_Mg_Eztabs from "../images/Medical/Tylenol_500_Mg_Eztabs.webp"
 import Vicks_Vaporub_Ointment from "../images/Medical/Vicks_Vaporub_Ointment.webp"
 
+import Axios from 'axios';
+
+function getEmail(){
+  Axios.post("http://localhost:3001/api/getEmail"
+  ).then((res) => console.log(res.data) )
+}
 
 export default function Medical() {
   const initialBoolean = false;
@@ -27,11 +33,14 @@ export default function Medical() {
   const [showButton, setShowButton] = useState({showButton: false, showButton2: false});  
   const initializeNumber = {Band_Aid_Large_Gauze_Pads:1, Band_Aid_Wet_Flex_Bandages:1, Blistex_Medicated_Berry_Lip_Balm:1, Br45_Flex_Fab_Band:1, Drive_Medical_Foam_Ring_Cushion:1, Equate_Cot_Style_Finger_Splin:1, Equate_Oral_Medication_Dispenser:1, Equate_Self_Adhering_Bandage:1, Equate_Small_Rolled_Gauze:1, Gold_Bond_Medicated_Anti_Itch_Cream:1, Gold_Bond_Medicated_Body_Powder:1, Nexcare_Sensitive_Skin_Removable_Tape:1, Penaten_Medicated_Cream:1, Tylenol_500_Mg_Eztabs:1, Vicks_Vaporub_Ointment:1};
   const [itemIncrementer, setItemIncrementer] = useState(initializeNumber);
+  const [email, setEmail] = useState("");
 
 
   return (
     <>
-    
+    <div>
+      { getEmail() }
+    </div>
     <div className='header__container'>
       <div className='superstore__container'>
           <span class = "name1">  SUPERSTORE  </span>
@@ -44,18 +53,7 @@ export default function Medical() {
         <span class='goto_previous'>  View all departments</span>
       </div>
       
-    <div className = 'search__container'>
-      <div>
-        <input className = 'searchbar__departments' 
-            type = "text" 
-            name = "search" 
-            placeholder='Search'
-          />
-      </div>
-  
-      
-      <span class = 'search__image'> <GiMagnifyingGlass/> </span>
-    </div>
+   
     </div>
     
 

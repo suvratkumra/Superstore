@@ -19,6 +19,12 @@ import PC_mango_chunks600g from "../images/Frozen/PC_mango_chunks600g.png"
 import PC_pacific_white_shrimp_raw_peeled from "../images/Frozen/PC_pacific_white_shrimp_raw_peeled.png"
 import PC_sliced_strawberries600g from "../images/Frozen/PC_sliced_strawberries600g.png"
 
+import Axios from 'axios';
+
+function getEmail(){
+  Axios.post("http://localhost:3001/api/getEmail"
+  ).then((res) => console.log(res.data) )
+}
 
 export default function Frozen() {
   const initialBoolean = false;
@@ -28,10 +34,13 @@ export default function Frozen() {
   const initializeNumber = {mccain_frenchFriedPotatoes:1, michelina_macNCheese:1, NN_chopped_spinach300g:1, NN_chopped_spinach300g:1, NN_friedPotatoes_Crispy_SkinOn:1, NN_green_peas750g:1, NN_mixed_vegatables750g:1, NN_mixed_vegatables2000g:1, NN_peas_carrots750g:1, NN_potato_patties20ea:1, NN_whole_kernel_corns750g:1, PC_broccoli_florets500g :1, PC_mango_chunks600g:1, PC_pacific_white_shrimp_raw_peeled:1, PC_sliced_strawberries600g:1};
   const [itemIncrementer, setItemIncrementer] = useState(initializeNumber);
 
+  const [email, setEmail] = useState("");
 
   return (
     <>
-    
+    <div>
+      { getEmail() }
+    </div>
     <div className='header__container'>
       <div className='superstore__container'>
           <span class = "name1">  SUPERSTORE  </span>
@@ -44,18 +53,7 @@ export default function Frozen() {
         <span class='goto_previous'>  View all departments</span>
       </div>
       
-    <div className = 'search__container'>
-      <div>
-        <input className = 'searchbar__departments' 
-            type = "text" 
-            name = "search" 
-            placeholder='Search'
-          />
-      </div>
-  
-      
-      <span class = 'search__image'> <GiMagnifyingGlass/> </span>
-    </div>
+   
     </div>
     {/* <div>
       {console.log(showButton)}
