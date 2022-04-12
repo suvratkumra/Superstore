@@ -79,7 +79,7 @@ function MainPage(props) {
     
     <div className='header__container_in_main'>
       <div className='superstore__container'>
-          <span class = "name1"><h1 className = 'superstore'> SUPERSTORE </h1>  </span>
+          <span className = "name1"><h1 className = 'superstore'> SUPERSTORE </h1>  </span>
       </div>  
 
       <div className= 'cart__container'>

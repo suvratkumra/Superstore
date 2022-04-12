@@ -63,9 +63,9 @@ function WelcomePage() {
     <>
     <div className='body'>
       <div className='name__container'>
-          <span class = "superstore_name">WELCOME </span>
-          <span class = "superstore_name"> TO </span>
-          <span class = "superstore_name">SUPERSTORE</span>
+          <span className = "superstore_name">WELCOME </span>
+          <span className = "superstore_name"> TO </span>
+          <span className = "superstore_name">SUPERSTORE</span>
       </div>
 
 

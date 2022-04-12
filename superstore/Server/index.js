@@ -16,6 +16,9 @@ const { restart } = require('nodemon');
 const e = require('express');
 const { application } = require('express');
 
+
+var emailConstant = "";
+
 const db = mysql.createPool({
     host: 'localhost',                      // host name
     user: 'root',                           // username
@@ -86,6 +89,8 @@ app.post('/api/signup', (req, res) => {
     const hintQuestion = req.body.hintQuestion;
     const hintAnswer = req.body.hintAnswer;
 
+    
+
     const sqlCheck = "SELECT * FROM login_details WHERE Email_Id = ?";
     db.query(sqlCheck, [email], (err, result) => {
         if(result.length > 0) {
@@ -103,6 +108,8 @@ app.post('/api/signup', (req, res) => {
 app.post('/api/login', (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
+
+    emailConstant = email;
 
     const sqlCheck = "SELECT * FROM login_details WHERE Email_Id = ? AND Password = ?";
     db.query(sqlCheck, [email, password], (err, result) => {
@@ -222,6 +229,11 @@ app.post("/api/cart", (req, res) => {
     // db.query(sqlQuery, [product_name, quantity], (err, result) => {
     //     console.log(result);
     // })
+})
+
+app.post("/api/getEmail", (req, res) => {
+    console.log(emailConstant);
+    res.send(emailConstant);
 })
 
 // to listen
