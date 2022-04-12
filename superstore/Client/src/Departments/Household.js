@@ -21,11 +21,6 @@ import Liquid_Pods_Original from "../images/Household/Liquid_Pods_Original.webp"
 import { useState } from 'react';
 import Axios from 'axios';
 
-function getEmail(){
-  Axios.post("http://localhost:3001/api/getEmail"
-  ).then((res) => console.log(res.data) )
-}
-
 export default function Household() {
   const initialBoolean = false;
   const initializeValues = {Air_Wick_Relax_Scented_Oil:initialBoolean, Foil_Wrap:initialBoolean, Bl5_Maxi_Lighter:initialBoolean, Toilet_Cleaner_Gel:initialBoolean, W_Ultra_Liquid_April_Fresh:initialBoolean, Air_Line_Sky:initialBoolean, Aluminum_Foil:initialBoolean, Drain_Opener:initialBoolean, Fruit_Fly_Trap:initialBoolean, Napkins:initialBoolean, Lemon_Scent_Dish_Liquid:initialBoolean, Bathroom_Tissue:initialBoolean, Liquid_Og:initialBoolean, Wet_Cloth_Febreze:initialBoolean, Liquid_Pods_Original:initialBoolean};
@@ -34,13 +29,36 @@ export default function Household() {
   const initializeNumber = {Air_Wick_Relax_Scented_Oil:1, Foil_Wrap:1, Bl5_Maxi_Lighter:1, Toilet_Cleaner_Gel:1, W_Ultra_Liquid_April_Fresh:1, Air_Line_Sky:1, Aluminum_Foil:1, Drain_Opener:1, Fruit_Fly_Trap:1, Napkins:1, Lemon_Scent_Dish_Liquid:1, Bathroom_Tissue:1, Liquid_Og:1, Wet_Cloth_Febreze:1, Liquid_Pods_Original:1};
   const [itemIncrementer, setItemIncrementer] = useState(initializeNumber);
 
+  const [continuing, setContinuing] = useState(false);
   const [email, setEmail] = useState("");
+
+  function getEmail(){
+    Axios.post("http://localhost:3001/api/getEmail"
+    ).then((res) => {
+      console.log(res.data);
+      setEmail(res.data)
+      console.log(email.length);
+      if(email.length === 0) {
+        setContinuing(false);
+      }else {
+        setContinuing(true);
+      }
+    }
+    )
+  }
 
   return (
     <>
        <div>
       { getEmail() }
     </div>
+
+    {!continuing && <div>
+        <button onClick = {(()=>{window.location.href = "http://localhost:3000/WelcomePage"})}>Click here to go sign in and access this page</button>
+      </div>}
+    {continuing && <div>
+
+    
     <div className='header__container'>
       <div className='superstore__container'>
           <span class = "name1">  SUPERSTORE  </span>
@@ -406,7 +424,7 @@ export default function Household() {
     </div>
 
   
-      
+    </div>}
 
     
       

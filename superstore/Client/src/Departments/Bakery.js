@@ -20,10 +20,6 @@ import suraj_naan_original from "../images/Bakery/suraj_naan_original_5.png";
 import { useState } from 'react';
 import Axios from 'axios';
 
-function getEmail(){
-  Axios.post("http://localhost:3001/api/getEmail"
-  ).then((res) => console.log(res.data) )
-}
 
 export default function Bakery() {
   const initialBoolean = false;
@@ -33,7 +29,22 @@ export default function Bakery() {
   const initializeNumber = {grainBread:1, bananaMuffin:1, bananaCake:1, butterCroissant:1, chocolateMini:1, chocChipMuffin:1, cinnamonBread:1, doubleChoc:1, frenchBread:1, largeOriginal:1, PCtortillas:1, rolls:1, sourdoughLoaf:1, roastedWheat:1, naan:1};
   const [itemIncrementer, setItemIncrementer] = useState(initializeNumber);
 
+  const [continuing, setContinuing] = useState(false);
   const [email, setEmail] = useState("");
+
+  function getEmail(){
+    Axios.post("http://localhost:3001/api/getEmail"
+    ).then((res) => {
+      console.log(res.data);
+      setEmail(res.data)
+      console.log(email.length);
+      if(email.length === 0) {
+        setContinuing(false);
+      }else {
+        setContinuing(true);
+      }
+    })
+  }
 
   
 
@@ -42,6 +53,14 @@ export default function Bakery() {
     <div>
       { getEmail() }
     </div>
+
+    {!continuing && <div>
+        <button onClick = {(()=>{window.location.href = "http://localhost:3000/WelcomePage"})}>Click here to go sign in and access this page</button>
+      </div>}
+    {continuing && <div>
+
+    
+
     <div className='header__container'>
       <div className='superstore__container'>
           <span class = "name1">  SUPERSTORE </span>
@@ -407,7 +426,7 @@ export default function Bakery() {
     </div>
 
   
-      
+    </div>}
 
     </>
   )

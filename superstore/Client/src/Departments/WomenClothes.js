@@ -12,11 +12,6 @@ import Womens_Seamless_Cross_Back_Sports_Bra from "../images/WomenClothes/Womens
 import { useState } from 'react';
 import Axios from 'axios';
 
-function getEmail(){
-  Axios.post("http://localhost:3001/api/getEmail"
-  ).then((res) => console.log(res.data) )
-}
-
 export default function WomenClothes() {
   const initialBoolean = false;
   const initializeValues = {Comfort_Cotton_Socks:initialBoolean, Womens_No_Show_Liner_Socks:initialBoolean, Women_1X_Shapewear_Boyshorts:initialBoolean, Large_Size_Womens_Cotton_Bikini_Briefs:initialBoolean, Womens_1X_Full_Shapewear_Slip:initialBoolean, Womens_Seamless_Cross_Back_Sports_Bra:initialBoolean, cinnamonBread:initialBoolean};
@@ -24,15 +19,35 @@ export default function WomenClothes() {
   const [showButton, setShowButton] = useState({showButton: false, showButton2: false});  
   const initializeNumber = {Comfort_Cotton_Socks:1, Womens_No_Show_Liner_Socks:1, Women_1X_Shapewear_Boyshorts:1, Large_Size_Womens_Cotton_Bikini_Briefs:1, Womens_1X_Full_Shapewear_Slip:1, Womens_Seamless_Cross_Back_Sports_Bra:1};
   const [itemIncrementer, setItemIncrementer] = useState(initializeNumber);
+  const [continuing, setContinuing] = useState(false);
   const [email, setEmail] = useState("");
 
+  function getEmail(){
+    Axios.post("http://localhost:3001/api/getEmail"
+    ).then((res) => {
+      console.log(res.data);
+      setEmail(res.data)
+      console.log(email.length);
+      if(email.length === 0) {
+        setContinuing(false);
+      }else {
+        setContinuing(true);
+      }
+    }
+    )
+  }
 
   return (
     <>
     <div>
       { getEmail() }
     </div>
-    <div className='header__container'>
+
+    {!continuing && <div>
+        <button onClick = {(()=>{window.location.href = "http://localhost:3000/WelcomePage"})}>Click here to go sign in and access this page</button>
+      </div>}
+    {continuing && <div>
+      <div className='header__container'>
       <div className='superstore__container'>
           <span class = "name1">  SUPERSTORE  </span>
       </div>  
@@ -198,6 +213,9 @@ export default function WomenClothes() {
         
       </div>
     </div>
+    </div>}
+
+    
 
     </>
   )

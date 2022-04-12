@@ -20,12 +20,6 @@ import Xtrike_Me_HP_310_gaming_headset from "../images/Equipment/Xtrike_Me_HP-31
 import slim_cat6_ethernet_cable from "../images/Equipment/slim_cat6_ethernet_cable.png"
 import Axios from 'axios';
 
-function getEmail(){
-  Axios.post("http://localhost:3001/api/getEmail"
-  ).then((res) => console.log(res.data) )
-}
-
-
 export default function Equipment() {
   const initialBoolean = false;
   const initializeValues = {asus_prime_H410M_E_LGA_1200_Intel_H410_SATA:initialBoolean, canon_imageClass_D1650_monochrome_lazer:initialBoolean, cat5e_ethernet_cable:initialBoolean, cat6_green_ethernet_cable_10foot:initialBoolean, decora_wall_plate_white_dual:initialBoolean, energizer_batteries_alkaline_AA24:initialBoolean, energizer_maxAA_batteries_8pack:initialBoolean, fiber_optic_cable_LC_Duplex:initialBoolean, fiber_optic_cable_singlemodeDuplex:initialBoolean, globe_electric_with_slim_plug:initialBoolean, JVC_inear_headphones:initialBoolean, samsung_27_curved_FHD_VA_monitor:initialBoolean, samsung_black_toner_cartridge:initialBoolean, Xtrike_Me_HP_310_gaming_headset:initialBoolean, slim_cat6_ethernet_cable:initialBoolean};
@@ -34,13 +28,36 @@ export default function Equipment() {
   const initializeNumber = {asus_prime_H410M_E_LGA_1200_Intel_H410_SATA:1, canon_imageClass_D1650_monochrome_lazer:1, cat5e_ethernet_cable:1, cat6_green_ethernet_cable_10foot:1, decora_wall_plate_white_dual:1, energizer_batteries_alkaline_AA24:1, energizer_maxAA_batteries_8pack:1, fiber_optic_cable_LC_Duplex:1, fiber_optic_cable_singlemodeDuplex:1, globe_electric_with_slim_plug:1, JVC_inear_headphones:1, samsung_27_curved_FHD_VA_monitor:1, samsung_black_toner_cartridge:1, Xtrike_Me_HP_310_gaming_headset:1, slim_cat6_ethernet_cable:1};
   const [itemIncrementer, setItemIncrementer] = useState(initializeNumber);
 
+  const [continuing, setContinuing] = useState(false);
   const [email, setEmail] = useState("");
+
+  function getEmail(){
+    Axios.post("http://localhost:3001/api/getEmail"
+    ).then((res) => {
+      console.log(res.data);
+      setEmail(res.data)
+      console.log(email.length);
+      if(email.length === 0) {
+        setContinuing(false);
+      }else {
+        setContinuing(true);
+      }
+    }
+    )
+  }
 
   return (
     <>
     <div>
       { getEmail() }
     </div>
+
+    {!continuing && <div>
+        <button onClick = {(()=>{window.location.href = "http://localhost:3000/WelcomePage"})}>Click here to go sign in and access this page</button>
+      </div>}
+    {continuing && <div>
+
+    
     <div className='header__container'>
       <div className='superstore__container'>
           <span class = "name1">  SUPERSTORE  </span>
@@ -405,7 +422,7 @@ export default function Equipment() {
 
     
       
-
+    </div>}
     </>
   )
 }

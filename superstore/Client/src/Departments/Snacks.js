@@ -19,10 +19,7 @@ import Sunmaid_Yogurt_Raisins_Vanilla from "../images/Snacks/Sunmaid_Yogurt_Rais
 import TheSnackFactory_Pretzel_Crisps_Original from "../images/Snacks/TheSnackFactory_Pretzel_Crisps_Original.png"
 import Axios from 'axios';
 
-function getEmail(){
-  Axios.post("http://localhost:3001/api/getEmail"
-  ).then((res) => console.log(res.data) )
-}
+
 
 export default function Snacks() {
   const initialBoolean = false;
@@ -32,13 +29,36 @@ export default function Snacks() {
   const initializeNumber = {Annies_Organic_Berry_Fruit_Snacks:1, BettyCrocker_Fruit_By_The_Foot:1, Christie_Chips_Ahoy_Mini:1, Christie_Oreo_Mini_Snack_Pack:1, Crispers_Original_Snacks:1, Hersheys_CookiesNCreme_Snack_Size_Candy:1, Kelloggs_MultiGrain_Cereal_Bars_Apple:1, Nestle_KitKat_Hide_Me_Eggs:1, NN_Pretzel_Sticks:1, OhHenry_Snack_Size_Candy120g:1, PC_Peanut_Butter_Filled_Pretzels:1, Starburst_Original_Minis191g:1, Sunmaid_Yogurt_Raisins_Vanilla:1, TheSnackFactory_Pretzel_Crisps_Original:1};
   const [itemIncrementer, setItemIncrementer] = useState(initializeNumber);
 
+  const [continuing, setContinuing] = useState(false);
   const [email, setEmail] = useState("");
 
+  function getEmail(){
+    Axios.post("http://localhost:3001/api/getEmail"
+    ).then((res) => {
+      console.log(res.data);
+      setEmail(res.data)
+      console.log(email.length);
+      if(email.length === 0) {
+        setContinuing(false);
+      }else {
+        setContinuing(true);
+      }
+    }
+    )
+  }
   return (
     <>
     <div>
       { getEmail() }
     </div>
+
+    {!continuing && <div>
+        <button onClick = {(()=>{window.location.href = "http://localhost:3000/WelcomePage"})}>Click here to go sign in and access this page</button>
+      </div>}
+    {continuing && <div>
+
+    
+
     <div className='header__container'>
       <div className='superstore__container'>
           <span class = "name1">  SUPERSTORE  </span>
@@ -383,7 +403,7 @@ export default function Snacks() {
       </div>
     </div>
 
-  
+    </div>}
       
 
     

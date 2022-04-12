@@ -21,11 +21,6 @@ import PC_sliced_strawberries600g from "../images/Frozen/PC_sliced_strawberries6
 
 import Axios from 'axios';
 
-function getEmail(){
-  Axios.post("http://localhost:3001/api/getEmail"
-  ).then((res) => console.log(res.data) )
-}
-
 export default function Frozen() {
   const initialBoolean = false;
   const initializeValues = {mccain_frenchFriedPotatoes:initialBoolean, michelina_macNCheese:initialBoolean, NN_chopped_spinach300g:initialBoolean, NN_chopped_spinach300g:initialBoolean, NN_friedPotatoes_Crispy_SkinOn:initialBoolean, NN_green_peas750g:initialBoolean, NN_mixed_vegatables750g:initialBoolean, NN_mixed_vegatables2000g:initialBoolean, NN_peas_carrots750g:initialBoolean, NN_potato_patties20ea:initialBoolean, NN_whole_kernel_corns750g:initialBoolean, PC_broccoli_florets500g :initialBoolean, PC_mango_chunks600g:initialBoolean, PC_pacific_white_shrimp_raw_peeled:initialBoolean, naan:initialBoolean};
@@ -34,13 +29,36 @@ export default function Frozen() {
   const initializeNumber = {mccain_frenchFriedPotatoes:1, michelina_macNCheese:1, NN_chopped_spinach300g:1, NN_chopped_spinach300g:1, NN_friedPotatoes_Crispy_SkinOn:1, NN_green_peas750g:1, NN_mixed_vegatables750g:1, NN_mixed_vegatables2000g:1, NN_peas_carrots750g:1, NN_potato_patties20ea:1, NN_whole_kernel_corns750g:1, PC_broccoli_florets500g :1, PC_mango_chunks600g:1, PC_pacific_white_shrimp_raw_peeled:1, PC_sliced_strawberries600g:1};
   const [itemIncrementer, setItemIncrementer] = useState(initializeNumber);
 
+  const [continuing, setContinuing] = useState(false);
   const [email, setEmail] = useState("");
+
+  function getEmail(){
+    Axios.post("http://localhost:3001/api/getEmail"
+    ).then((res) => {
+      console.log(res.data);
+      setEmail(res.data)
+      console.log(email.length);
+      if(email.length === 0) {
+        setContinuing(false);
+      }else {
+        setContinuing(true);
+      }
+    }
+    )
+  }
 
   return (
     <>
     <div>
       { getEmail() }
     </div>
+
+    {!continuing && <div>
+        <button onClick = {(()=>{window.location.href = "http://localhost:3000/WelcomePage"})}>Click here to go sign in and access this page</button>
+      </div>}
+    {continuing && <div>
+
+    
     <div className='header__container'>
       <div className='superstore__container'>
           <span class = "name1">  SUPERSTORE  </span>
@@ -406,7 +424,7 @@ export default function Frozen() {
     </div>
 
   
-      
+    </div>}
 
     
       

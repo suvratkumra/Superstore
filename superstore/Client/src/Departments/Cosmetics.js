@@ -20,11 +20,6 @@ import Refectocil_Soft_Cosmetic_Brush from "../images/Cosmetics/Refectocil_Soft_
 import Friends_Cosmetic_Case_Set_packof3 from "../images/Cosmetics/Friends_Cosmetic_Case_Set_packof3.png"
 import Axios from 'axios';
 
-function getEmail(){
-  Axios.post("http://localhost:3001/api/getEmail"
-  ).then((res) => console.log(res.data) )
-}
-
 export default function Cosmetics() {
   const initialBoolean = false;
   const initializeValues = {Annabelle_Perfect_Bronze_Pressed_Powder:initialBoolean, Annabelle_Perfect_Glow_Topaz8point2g:initialBoolean, BV_Dark_Spot_Corrector_Cream:initialBoolean, Deluxe_Unicorn_Cosmetic_Set:initialBoolean, Flower_Serum_Foundation_Warm_Beige:initialBoolean, GirlOnTheGo_Cosmetic_Compact:initialBoolean, Lomi_Rejuvenating_Foot_Spa_Bath:initialBoolean, LOreal_Paris_Infallible_24H_FreshWear_In_a_Powder:initialBoolean, LUG_Trolley_Cosmetic_Case:initialBoolean, LUG_Trolley_Cosmetic_Case_Blue:initialBoolean, QuoBeauty_Cheek_Lip_Multistick_Sunrise:initialBoolean, QuoBeauty_CoolPowder_Bronzer:initialBoolean, QuoBeauty_Cosmetic_Wedges:initialBoolean, Refectocil_Soft_Cosmetic_Brush:initialBoolean, Friends_Cosmetic_Case_Set_packof3:initialBoolean};
@@ -33,13 +28,36 @@ export default function Cosmetics() {
   const initializeNumber = {Annabelle_Perfect_Bronze_Pressed_Powder:1, Annabelle_Perfect_Glow_Topaz8point2g:1, BV_Dark_Spot_Corrector_Cream:1, Deluxe_Unicorn_Cosmetic_Set:1, Flower_Serum_Foundation_Warm_Beige:1, GirlOnTheGo_Cosmetic_Compact:1, Lomi_Rejuvenating_Foot_Spa_Bath:1, LOreal_Paris_Infallible_24H_FreshWear_In_a_Powder:1, LUG_Trolley_Cosmetic_Case:1, LUG_Trolley_Cosmetic_Case_Blue:1, QuoBeauty_Cheek_Lip_Multistick_Sunrise:1, QuoBeauty_CoolPowder_Bronzer:1, QuoBeauty_Cosmetic_Wedges:1, Refectocil_Soft_Cosmetic_Brush:1, Friends_Cosmetic_Case_Set_packof3:1};
   const [itemIncrementer, setItemIncrementer] = useState(initializeNumber);
 
+  const [continuing, setContinuing] = useState(false);
   const [email, setEmail] = useState("");
+
+  function getEmail(){
+    Axios.post("http://localhost:3001/api/getEmail"
+    ).then((res) => {
+      console.log(res.data);
+      setEmail(res.data)
+      console.log(email.length);
+      if(email.length === 0) {
+        setContinuing(false);
+      }else {
+        setContinuing(true);
+      }
+    }
+    )
+  }
 
   return (
     <>
     <div>
       { getEmail() }
     </div>
+
+    {!continuing && <div>
+        <button onClick = {(()=>{window.location.href = "http://localhost:3000/WelcomePage"})}>Click here to go sign in and access this page</button>
+      </div>}
+    {continuing && <div>
+
+    
     <div className='header__container'>
       <div className='superstore__container'>
           <span class = "name1">  SUPERSTORE  </span>
@@ -409,7 +427,7 @@ export default function Cosmetics() {
   
       
 
-    
+    </div>}
       
 
     </>

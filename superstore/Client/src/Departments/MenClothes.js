@@ -12,10 +12,6 @@ import Men_Medium_Sleep_Pants from "../images/MenClothes/Men_Medium_Sleep_Pants.
 import { useState } from 'react';
 import Axios from 'axios';
 
-function getEmail(){
-  Axios.post("http://localhost:3001/api/getEmail"
-  ).then((res) => console.log(res.data) )
-}
 
 export default function MenClothes() {
   const initialBoolean = false;
@@ -24,14 +20,37 @@ export default function MenClothes() {
   const [showButton, setShowButton] = useState({showButton: false, showButton2: false});  
   const initializeNumber = {Crew_Sock:1, Men_Poplin_Pajama_Pant:1, Pack_Men_Comfort_Soft_Knit_Boxer:1, Men_Large_Stretch_VNeck_Tee:1, Men_Medium_Fleece_Crew_Neck:1, Men_Medium_Sleep_Pants:1};
   const [itemIncrementer, setItemIncrementer] = useState(initializeNumber);
+  const [continuing, setContinuing] = useState(false);
   const [email, setEmail] = useState("");
 
+  function getEmail(){
+    Axios.post("http://localhost:3001/api/getEmail"
+    ).then((res) => {
+      console.log(res.data);
+      setEmail(res.data)
+      console.log(email.length);
+      if(email.length === 0) {
+        setContinuing(false);
+      }else {
+        setContinuing(true);
+      }
+    }
+    )
+  }
 
   return (
     <>
       <div>
       { getEmail() }
     </div>
+
+    {!continuing && <div>
+        <button onClick = {(()=>{window.location.href = "http://localhost:3000/WelcomePage"})}>Click here to go sign in and access this page</button>
+      </div>}
+    {continuing && <div>
+
+   
+
     <div className='header__container'>
       <div className='superstore__container'>
           <span class = "name1">  SUPERSTORE  </span>
@@ -202,7 +221,7 @@ export default function MenClothes() {
   
       
 
-    
+    </div>}
       
 
     </>

@@ -19,11 +19,6 @@ import Potatoes_Yellow from "../images/Produce/Potatoes_Yellow.webp"
 import Raspberries from "../images/Produce/Raspberries.webp"
 import Axios from 'axios';
 
-function getEmail(){
-  Axios.post("http://localhost:3001/api/getEmail"
-  ).then((res) => console.log(res.data) )
-}
-
 
 export default function Produce() {
   const initialBoolean = false;
@@ -33,13 +28,37 @@ export default function Produce() {
   const initializeNumber = {Coconut:1, Cranberries:1, Dill:1, Fresh_Mint:1, Garlic:1, Great_Value_Fruit_Salad_With_Cherries:1, Kale_Sweet_Salad:1, Lemon:1, Lettuce_Butter:1, Mango_Red:1, Organic_Brown_Bell_Pepper:1, Organic_Cauliflower:1, Parsnip:1, Potatoes_Yellow:1, Raspberries:1};
   const [itemIncrementer, setItemIncrementer] = useState(initializeNumber);
 
+  const [continuing, setContinuing] = useState(false);
   const [email, setEmail] = useState("");
+
+  function getEmail(){
+    Axios.post("http://localhost:3001/api/getEmail"
+    ).then((res) => {
+      console.log(res.data);
+      setEmail(res.data)
+      console.log(email.length);
+      if(email.length === 0) {
+        setContinuing(false);
+      }else {
+        setContinuing(true);
+      }
+    }
+    )
+  }
 
   return (
     <>
       <div>
       { getEmail() }
     </div>
+
+    {!continuing && <div>
+        <button onClick = {(()=>{window.location.href = "http://localhost:3000/WelcomePage"})}>Click here to go sign in and access this page</button>
+      </div>}
+    {continuing && <div>
+
+  
+
     <div className='header__container'>
       <div className='superstore__container'>
           <span class = "name1">  SUPERSTORE  </span>
@@ -408,7 +427,7 @@ export default function Produce() {
       
 
     
-      
+    </div>}
 
     </>
   )

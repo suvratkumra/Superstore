@@ -20,18 +20,29 @@ import smoked_classicCut_bacon from "../images/Meat/smoked_classicCut_bacon.png"
 import smokehouse_bacon from "../images/Meat/smokehouse_bacon.png"
 import Axios from 'axios';
 
-function getEmail(){
-  Axios.post("http://localhost:3001/api/getEmail"
-  ).then((res) => console.log(res.data) )
-}
-
 export default function Meat() {
   const initialBoolean = false;
   const initializeValues = {chicken_breast_clubPack:initialBoolean, chicken_leg_clubPack:initialBoolean, chicken_thigh_clubPack:initialBoolean, extra_lean_ground_beef:initialBoolean, juicy_jumbo_all_beef_wieners:initialBoolean, lean_ground_beef:initialBoolean, minced_turkey:initialBoolean, mild_sugar_cured_bacon:initialBoolean, ML_natural_top_dogs:initialBoolean, nn_hotdogs:initialBoolean, PC_boneless_chickenBreast:initialBoolean, PC_FF_mild_italian_pork:initialBoolean, pork_tendelion_2pack:initialBoolean, smoked_classicCut_bacon:initialBoolean, smokehouse_bacon:initialBoolean};
   const [cartText, setCartText] = useState(initializeValues);
   const initializeNumber = {chicken_breast_clubPack:1, chicken_leg_clubPack:1, chicken_thigh_clubPack:1, extra_lean_ground_beef:1, juicy_jumbo_all_beef_wieners:1, lean_ground_beef:1, minced_turkey:1, mild_sugar_cured_bacon:1, ML_natural_top_dogs:1, nn_hotdogs:1, PC_boneless_chickenBreast:1, PC_FF_mild_italian_pork:1, pork_tendelion_2pack:1, smoked_classicCut_bacon:1, smokehouse_bacon:1};
   const [itemIncrementer, setItemIncrementer] = useState(initializeNumber);
+  const [continuing, setContinuing] = useState(false);
   const [email, setEmail] = useState("");
+
+  function getEmail(){
+    Axios.post("http://localhost:3001/api/getEmail"
+    ).then((res) => {
+      console.log(res.data);
+      setEmail(res.data)
+      console.log(email.length);
+      if(email.length === 0) {
+        setContinuing(false);
+      }else {
+        setContinuing(true);
+      }
+    }
+    )
+  }
 
 
   return (
@@ -39,6 +50,13 @@ export default function Meat() {
     <div>
       { getEmail() }
     </div>
+
+    {!continuing && <div>
+        <button onClick = {(()=>{window.location.href = "http://localhost:3000/WelcomePage"})}>Click here to go sign in and access this page</button>
+      </div>}
+    {continuing && <div>
+
+    
     <div className='header__container'>
       <div className='superstore__container'>
           <span class = "name1">  SUPERSTORE  </span>
@@ -405,7 +423,7 @@ export default function Meat() {
   
       
 
-    
+    </div>}
       
 
     </>

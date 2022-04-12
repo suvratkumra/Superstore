@@ -109,13 +109,13 @@ app.post('/api/login', (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
 
-    emailConstant = email;
-
     const sqlCheck = "SELECT * FROM login_details WHERE Email_Id = ? AND Password = ?";
     db.query(sqlCheck, [email, password], (err, result) => {
         if(result.length != 0) {
+            emailConstant = email;
             return res.send("User Found, redirecting to the store page");
         }
+    
     })
 })
 
@@ -216,23 +216,16 @@ app.post("/api/cart", (req, res) => {
                 // console.log("added");
             })
         }
-        
-        // if(result !== undefined){
-        //     const insertQuery = "INSERT INTO cart_details (cust_id, added_products, quantity) VALUES (1, ?, ?)";
-        //     db.query(insertQuery, [product_name, quantity], (err2, result2) => {
-        //         console.log("edited");
-        //     })
-        // }
     })
-
-    // const sqlQuery = "INSERT INTO cart_details (cust_id, added_products, price, quantity) VALUES (1, ?, 1.4, ?)"; 
-    // db.query(sqlQuery, [product_name, quantity], (err, result) => {
-    //     console.log(result);
-    // })
 })
 
 app.post("/api/getEmail", (req, res) => {
     console.log(emailConstant);
+    res.send(emailConstant);
+})
+
+app.post("/api/logout", (req, res) =>{
+    emailConstant = "";
     res.send(emailConstant);
 })
 

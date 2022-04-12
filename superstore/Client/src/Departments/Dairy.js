@@ -21,10 +21,6 @@ import xlarge_eggs_12pack from "../images/Dairy/xlarge_eggs_12pack.png"
 
 import Axios from 'axios';
 
-function getEmail(){
-  Axios.post("http://localhost:3001/api/getEmail"
-  ).then((res) => console.log(res.data) )
-}
 
 export default function Dairy() {
   const initialBoolean = false;
@@ -34,13 +30,36 @@ export default function Dairy() {
   const initializeNumber = {astro_balkan_style_yogurt750g:1, beatrice_onePercent_milk:1, beatrice_twoPercent_milk:1, beatrice_threePercent_milk:1, becel_margarine_original907g:1, lactantia_half_n_half_10percent:1, lactantia_whipping_cream35percent:1, large_eggs_12pack:1, NN_pasteurized_cream_cheese:1, NN_salted_butter:1, NN_sourCream_14percent_500ml:1, NN_unsalted_butter454g:1, PC_free_run_brown_egg_large:1, saputo_mozzarellissima_500g:1, xlarge_eggs_12pack:1};
   const [itemIncrementer, setItemIncrementer] = useState(initializeNumber);
 
+  const [continuing, setContinuing] = useState(false);
   const [email, setEmail] = useState("");
+
+  function getEmail(){
+    Axios.post("http://localhost:3001/api/getEmail"
+    ).then((res) => {
+      console.log(res.data);
+      setEmail(res.data)
+      console.log(email.length);
+      if(email.length === 0) {
+        setContinuing(false);
+      }else {
+        setContinuing(true);
+      }
+    }
+    )
+  }
 
   return (
     <>
     <div>
       { getEmail() }
     </div>
+
+    {!continuing && <div>
+        <button onClick = {(()=>{window.location.href = "http://localhost:3000/WelcomePage"})}>Click here to go sign in and access this page</button>
+      </div>}
+    {continuing && <div>
+
+
     <div className='header__container'>
       <div className='superstore__container'>
           <span class = "name1">  SUPERSTORE  </span>
@@ -409,7 +428,7 @@ export default function Dairy() {
       
 
     
-      
+    </div>}
 
     </>
   )

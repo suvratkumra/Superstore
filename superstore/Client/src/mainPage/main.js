@@ -4,17 +4,7 @@ import "./main.css";
 import Search from '../images/search.png';
 import { useState } from 'react';
 import search from '../images/search.png';
-import Axios from 'axios'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLaptopHouse } from '@fortawesome/free-solid-svg-icons';
-import { text } from '@fortawesome/fontawesome-svg-core';
-
-
-
-//Importing all the departments.
-var FontAwesome = require('react-fontawesome');
-
-
+import Axios from 'axios';
 
 function MainPage(props) {
   const [username, setSearch] = useState('')
@@ -23,6 +13,36 @@ function MainPage(props) {
   const [dataRetrieved, setDataRetrieved] = useState([]);
   var [quantity, setQuantity] = useState({});      // initially the quantity will be 0
 
+  const [continuing, setContinuing] = useState(false);
+  const [email, setEmail] = useState("");
+
+  function getEmail(){
+    Axios.post("http://localhost:3001/api/getEmail"
+    ).then((res) => {
+      console.log(res.data);
+      setEmail(res.data)
+      console.log(email.length);
+      if(email.length === 0) {
+        setContinuing(false);
+      }else {
+        setContinuing(true);
+      }
+    }
+    )
+  }
+
+  function logoutFunction() {
+    Axios.post("http://localhost:3001/api/logout"
+    ).then((res) => {
+      setEmail(res.data);
+      if(email.length === 0) {
+        setContinuing(false);
+      }else {
+        setContinuing(true);
+      }
+    })
+
+  }
 
   const ColoredLine = ({ color }) => (
     <hr
@@ -76,21 +96,31 @@ function MainPage(props) {
 
   return (
     <>
-    
+    { getEmail() }
+
+    {!continuing && <div id = "errorPage__container">
+        <span id = "textError__text">ERROR! <br/> You need to log in first before accessing this page</span>
+        <br/><br/>
+        <button className= "button-29" onClick = {(()=>{window.location.href = "http://localhost:3000/WelcomePage"})}>Click here to go sign in.</button>
+      </div>}
+    {continuing && <div>
+      
     <div className='header__container_in_main'>
       <div className='superstore__container'>
           <span className = "name1"><h1 className = 'superstore'> SUPERSTORE </h1>  </span>
       </div>  
+      {/* <div className='internal__container'>   */}
+        <div className= 'cart__container'>
+          <button className = "button-29" onClick={logoutFunction}>Logout</button>
+        </div>
+      
+        <button className="button-29">CART</button>  
 
-      <div className= 'cart__container'>
-        <span className = "cartName">CART</span>
-      </div>
-
-      <div className="hamburger-menu">
-        <input id="menu__toggle" type="checkbox" />
-        <label className="menu__btn" for="menu__toggle">
-          <span></span>
-        </label>
+        <div className="hamburger-menu">
+          <input id="menu__toggle" type="checkbox" />
+          <label className="menu__btn" for="menu__toggle">
+            <span></span>
+          </label>
 
         <div className="menu__box">
           <div className="menu__item">
@@ -101,11 +131,13 @@ function MainPage(props) {
             <a href="#" onClick={() => {
                window.location.href = "http://localhost:3000/Menu/AccountSettings";
               }}>Account Settings</a>
+            
           </div>
           
         </div>
-      </div>
+      {/* </div> */}
       
+    </div>
     </div>
 
     <div className='search__container'>
@@ -396,7 +428,9 @@ function MainPage(props) {
 
 
   
-
+      
+      </div>
+    }
     </>
   )
 }
