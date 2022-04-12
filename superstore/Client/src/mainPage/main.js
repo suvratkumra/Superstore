@@ -99,9 +99,9 @@ function MainPage(props) {
     { getEmail() }
 
     {!continuing && <div id = "errorPage__container">
-        <span id = "textError__text">You successfully signed out.. <br/> <br/> Sign back in by clicking the link below... <br/></span>
+        <span id = "textError__text">You successfully signed out... <br/> <br/> Sign back in by clicking the link below... <br/></span>
         <br/><br/>
-        <button className= "button-29" onClick = {(()=>{window.location.href = "http://localhost:3000/WelcomePage"})}>Click here to go sign in.</button>
+        <button className= "button-29" onClick = {(()=>{window.location.href = "http://localhost:3000/WelcomePage"})}>Click here to sign in.</button>
       </div>}
     {continuing && <div>
       
