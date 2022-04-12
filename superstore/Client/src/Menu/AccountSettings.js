@@ -2,7 +2,7 @@ import React from 'react';
 import "./AccountSettings.css";
 import { Container,Row,Col,Form ,Button} from 'react-bootstrap';
 import {connect} from 'react-redux';
-import DefaultUserPic from "../images/team-male.png";
+import DefaultUserPic from "../images/pic.png";
 const axios = require('axios');
 
 
@@ -29,7 +29,6 @@ class AccountSettings extends React.Component {
             this.setState({email:res.data.results[0].email});
             this.setState({profileImage:res.data.results[0].profileImage})
         })
-
     }
 
     changeProfileImage=(event)=>{
@@ -77,46 +76,51 @@ render(){
         <div>
        
 
-        <div id="ProfilePic"> 
-       <img src={profilePic} alt="profils pic"/>
+        <div className="ProfilePic"> 
+            <img id = "profile__container" src={profilePic} alt="profils pic"/>
         </div>
 
        <div className="profile">
-        <span>User Profile</span>
+        <span>User Profile</span> 
 
         </div>
 
                
         <div className="formCategory1" >
-                <span>Username</span>
+            <div>
+            <span>Username</span>
                 <input className = 'username' 
                     type = "text" 
                     name = "username" 
                     placeholder='Type'
                     defaultValue={this.state.username} 
                 />
-
+            </div>
+                
+            <br/>
                 
         
-            </div>
-            <div className="formCategory2">
-                <span>Email</span>
+           <div>
+           <span>Email</span>
                 <input className = 'email' 
                     type = "text" 
                     name = "email" 
                     placeholder='Type'
                     defaultValue={this.state.email} 
                 />
-        
-            </div>
-            
- 
- 
-            <div className="formCategory4">
-                <span>Profile Image</span>
+           </div>
+               <br/>
+         
+            <div>
+            <span>Profile Image</span>
                 <Form.Control type="file" name="profileImage" onChange={this.changeProfileImage}/>
-                </div>
+            </div>
+            <br/>
+            
             <Button variant="primary" onClick={this.UpdateProfileHandler}>Update Profile</Button>
+
+                </div>
+                
 
             
     
