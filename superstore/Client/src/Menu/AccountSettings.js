@@ -109,7 +109,7 @@ render(){
             </div>
             <br/>
             
-            <div className="button">
+            <div className="button1">
             <Button variant="primary" onClick={this.UpdateProfileHandler}>Update Profile</Button>
 
             </div>
