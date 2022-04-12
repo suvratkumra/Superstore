@@ -52,6 +52,8 @@ return(
       <Route path="/ForgotPassword" element={<ForgotPassword />} />
       <Route path="/Manager" element={<Manager />} />
       <Route path="/Warehouse" element={<Warehouse />} />
+      {/* <Route path="/UserProfile" element={<UserProfile />} /> */}
+   
       <Route path="*" element={<ErrorPage />} />
     </Routes>
   </Router>

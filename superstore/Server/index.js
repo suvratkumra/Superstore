@@ -14,6 +14,7 @@ var expressValidator = require('express-validator');
 const mysql = require('mysql');      // to get the mysql dependency
 const { restart } = require('nodemon');
 const e = require('express');
+const { application } = require('express');
 
 const db = mysql.createPool({
     host: 'localhost',                      // host name
@@ -178,6 +179,50 @@ app.post('/api/warehouse/update_products', (req, res) => {
     }
 }) 
 
+app.post("/api/search_bar", (req, res) => {
+    const val = req.body.textValue;
+    // console.log(val);
+
+    const sqlQuery = "SELECT PName FROM product_details WHERE PName LIKE '%" + val + "%'" 
+    db.query(sqlQuery, [val], (err, result) => {
+        res.send(result);
+    })
+})
+
+app.post("/api/cart", (req, res) => {
+    const product_name = req.body.name;
+    var quantity = req.body.quantity;
+    quantity = quantity+1;
+    // console.log(product_name, quantity);
+
+    const checkQuery = "SELECT cust_id, added_products FROM cart_details WHERE cust_id = 1 AND added_products = ?";
+    db.query(checkQuery, [product_name], (err, result) => {
+        // console.log(result.length);        // this will undefined if no value with these property exists
+        if(result.length === 0) {
+            const sqlQuery = "INSERT INTO cart_details (cust_id, added_products, price, quantity) VALUES (1, ?, 1.4, ?)"; 
+            db.query(sqlQuery, [product_name, quantity], (err2, result2) => {
+                // console.log(result);
+            })
+        } else {
+            const updateQuery = "UPDATE cart_details SET quantity = ? WHERE cust_id = 1 AND added_products = ?";
+            db.query(updateQuery, [quantity, product_name], (err3, result3) => {
+                // console.log("added");
+            })
+        }
+        
+        // if(result !== undefined){
+        //     const insertQuery = "INSERT INTO cart_details (cust_id, added_products, quantity) VALUES (1, ?, ?)";
+        //     db.query(insertQuery, [product_name, quantity], (err2, result2) => {
+        //         console.log("edited");
+        //     })
+        // }
+    })
+
+    // const sqlQuery = "INSERT INTO cart_details (cust_id, added_products, price, quantity) VALUES (1, ?, 1.4, ?)"; 
+    // db.query(sqlQuery, [product_name, quantity], (err, result) => {
+    //     console.log(result);
+    // })
+})
 
 // to listen
 app.listen(3001, () => {

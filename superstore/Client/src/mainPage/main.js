@@ -4,8 +4,12 @@ import "./main.css";
 import Search from '../images/search.png';
 import { useState } from 'react';
 import search from '../images/search.png';
+import Axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLaptopHouse } from '@fortawesome/free-solid-svg-icons';
+import { text } from '@fortawesome/fontawesome-svg-core';
+
+
 
 //Importing all the departments.
 var FontAwesome = require('react-fontawesome');
@@ -15,6 +19,60 @@ var FontAwesome = require('react-fontawesome');
 function MainPage(props) {
   const [username, setSearch] = useState('')
   const [counter, setCounter] = useState(-1);
+  const [textValue, setTextValue] = useState({val: ""});
+  const [dataRetrieved, setDataRetrieved] = useState([]);
+  var [quantity, setQuantity] = useState({});      // initially the quantity will be 0
+
+
+  const ColoredLine = ({ color }) => (
+    <hr
+        style={{
+            color: color,
+            backgroundColor: color,
+            height: 5
+        }}
+    />
+);
+  const onChangeHandler = (e) => {
+  
+    setTextValue({val: e.target.value});
+
+    // this is the data which is updated every second.
+    console.log(textValue.val);
+
+    Axios.post("http://localhost:3001/api/search_bar", {
+      textValue: textValue.val
+    }).then((res) => {
+      setDataRetrieved([]);       // resetting
+      res.data.forEach(element => {
+        for(let key in element) {
+          setDataRetrieved(dataRetrieved => [...dataRetrieved, element[key]]);
+          setQuantity({...quantity, [element[key]]: 0})
+        }
+      })
+      console.log(quantity);
+      
+    })
+  }
+
+  const incrementHandler = (itemName, identifier) => {
+    // console.log(setQuantity({[itemName]: 10}));
+    if(identifier === "positive") {
+      setQuantity({...quantity, [itemName]: quantity[itemName]+1});
+    }
+    else if(identifier === "negative" && quantity[itemName] > 0)
+      setQuantity({...quantity, [itemName]: quantity[itemName]-1})
+
+
+    // now we will update our sql.
+    Axios.post("http://localhost:3001/api/cart", {
+      quantity: quantity[itemName],
+      name: itemName
+    }).then((res) => console.log(res.data));
+
+    console.log(itemName);
+  }
+
 
   return (
     <>
@@ -36,8 +94,13 @@ function MainPage(props) {
 
         <div className="menu__box">
           <div className="menu__item">
-            <a href ="#">View History</a>
-            <a href="#">Account Settings</a>
+            <a href ="#" onClick={() => {
+               window.location.href = "http://localhost:3000/Menu/ViewHistory";
+              }}>
+              View History</a>
+            <a href="#" onClick={() => {
+               window.location.href = "http://localhost:3000/Menu/AccountSettings";
+              }}>Account Settings</a>
           </div>
           
         </div>
@@ -50,14 +113,40 @@ function MainPage(props) {
         <div className='searchbar__container'>
           <input className = 'searchbar' 
             type = "text" 
-            name = "search" 
-            placeholder='Search'
+            placeholder='Search....'
+            value={textValue.val}
+            onChange={onChangeHandler}
+            
           />
+          
+  
+      
+          { Object.values(dataRetrieved).map((item, value) => {
+            return  <div id = "searchBarListing__container">
+                      <span id = "itemName__name">{item}</span>
+                      <div id = "buttonsForAddToCart">
+                        <button className= "minus" onClick = {() => {incrementHandler(item, "negative")}}>-</button>
+                        <span>{(quantity[item])}</span>
+                        <button className="plus" onClick = {() => {incrementHandler(item, "positive")}}>+</button>
+                      </div>
+                    </div>
+            
+          }) }
+
+
+          
+    
+
+    
+          
+
         </div>
         <div className='search__image'>
           <img src= {search} alt="Logo"/>
         </div>
       </div>
+
+      
        
       <div className="dropdown">
         <button className="button">Filter by Age</button>
@@ -252,6 +341,17 @@ function MainPage(props) {
                       window.location.href = "http://localhost:3000/Departments/Toys";
                     }}>
                     TOYS
+              </button> 
+            }
+            </div>
+            <div className='equipment__container'>
+            {
+              (counter === 0) ? null :
+              <button className="buttonStyle"
+                    type="button" onClick={() => {
+                      window.location.href = "http://localhost:3000/Departments/Equipment";
+                    }}>
+                    EQUIPMENT
               </button> 
             }
             </div>

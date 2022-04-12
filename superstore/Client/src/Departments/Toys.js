@@ -21,10 +21,10 @@ import { GiMagnifyingGlass } from "react-icons/gi";
 
 export default function Toys() {
   const initialBoolean = false;
-  const initializeValues = {Kid_Connection_Music_Keyboard:initialBoolean, Play_Doh_Drill_n_Fill_Dentist_Toy:initialBoolean, Mattel_Hot_Wheels_5_Car_Pack_Assortment:initialBoolean, Kid_Connection_Utility_Trucks_Toy:initialBoolean, Mattel_Hot_Wheels_Vehicles:initialBoolean, Pressman_Shark_Bite_Game:initialBoolean, Regent_Soccerball:initialBoolean, Size_3T_Paw_Patrol:initialBoolean, Spark_Wooden_Puzzle_Set:initialBoolean, Barbie_Pop_Star_Doll:initialBoolean, Munchkin_Duck_Dunk_Bath_Toy:initialBoolean, Mattel_Kerplunk:initialBoolean, Play_Day_Play_Balls:initialBoolean, Playmobil_School_Bus_Playset:initialBoolean};
+  const initializeValues = {Kid_Connection_Music_Keyboard:initialBoolean, Play_Doh_Drill_n_Fill_Dentist_Toy:initialBoolean, Mattel_Hot_Wheels_5_Car_Pack_Assortment:initialBoolean, Kid_Connection_Utility_Trucks_Toy:initialBoolean, Mattel_Hot_Wheels_Vehicles:initialBoolean, Pressman_Shark_Bite_Game:initialBoolean, Regent_Soccerball:initialBoolean, Size_3T_Paw_Patrol:initialBoolean, Spark_Wooden_Puzzle_Set:initialBoolean, Barbie_Pop_Star_Doll:initialBoolean, Munchkin_Duck_Dunk_Bath_Toy:initialBoolean, Mattel_Kerplunk:initialBoolean, PlayMonster_Things:initialBoolean, Play_Day_Play_Balls:initialBoolean, Playmobil_School_Bus_Playset:initialBoolean};
   const [cartText, setCartText] = useState(initializeValues);
   const [showButton, setShowButton] = useState({showButton: false, showButton2: false});  
-  const initializeNumber = {Kid_Connection_Music_Keyboard:1, Play_Doh_Drill_n_Fill_Dentist_Toy:1, Mattel_Hot_Wheels_5_Car_Pack_Assortment:1, Kid_Connection_Utility_Trucks_Toy:1, Mattel_Hot_Wheels_Vehicles:1, Pressman_Shark_Bite_Game:1, Regent_Soccerball:1, Size_3T_Paw_Patrol:1, Spark_Wooden_Puzzle_Set:1, Barbie_Pop_Star_Doll:1, Munchkin_Duck_Dunk_Bath_Toy:1, Mattel_Kerplunk:1, Play_Day_Play_Balls:1, Playmobil_School_Bus_Playset:1};
+  const initializeNumber = {Kid_Connection_Music_Keyboard:1, Play_Doh_Drill_n_Fill_Dentist_Toy:1, Mattel_Hot_Wheels_5_Car_Pack_Assortment:1, Kid_Connection_Utility_Trucks_Toy:1, Mattel_Hot_Wheels_Vehicles:1, Pressman_Shark_Bite_Game:1, Regent_Soccerball:1, Size_3T_Paw_Patrol:1, Spark_Wooden_Puzzle_Set:1, Barbie_Pop_Star_Doll:1, Munchkin_Duck_Dunk_Bath_Toy:1, Mattel_Kerplunk:1, PlayMonster_Things:1, Play_Day_Play_Balls:1, Playmobil_School_Bus_Playset:1};
   const [itemIncrementer, setItemIncrementer] = useState(initializeNumber);
 
 
@@ -335,7 +335,28 @@ export default function Toys() {
             }
           </button>
         </div>
-        
+        <div className='item__container'>
+          <span className = 'company_name'>PlayMonster_Things</span>
+          <img src = { PlayMonster_Things } alt = 'Mattel' className = 'product_image' />
+          <div className = 'price_product__container'>
+            <span className = 'product_name'>PlayMonster_Things</span>
+            <span className = 'price'>$6.99</span> 
+          </div>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, PlayMonster_Things: true});}}>
+            {
+              cartText.Mattel_Kerplunk ? <div className = 'increment__container'> 
+                                      <button className = 'minus' onClick = {() => {
+                                                                                    if(itemIncrementer.PlayMonster_Things > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, PlayMonster_Things: itemIncrementer.PlayMonster_Things-1});                                                                          
+                                                                                    } }> - </button>
+                                      <span className = 'number'> {itemIncrementer.PlayMonster_Things} </span>
+                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, PlayMonster_Things: itemIncrementer.PlayMonster_Things+1}) }> + </button>                                    
+                                     </div> 
+                                     : <span className = 'add_to_cart__name'> Add to Cart </span>
+            }
+          </button>
+        </div>
+
         <div className='item__container'>
           <span className = 'company_name'>Play Day</span>
           <img src = { Play_Day_Play_Balls } alt = 'Play Day' className = 'product_image' />
