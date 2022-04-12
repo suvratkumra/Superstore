@@ -180,7 +180,7 @@ app.post('/api/warehouse/update_products', (req, res) => {
 
 app.post("/api/search_bar", (req, res) => {
     const val = req.body.textValue;
-    console.log(val);
+    // console.log(val);
 
     const sqlQuery = "SELECT PName FROM product_details WHERE PName LIKE '%" + val + "%'" 
     db.query(sqlQuery, [val], (err, result) => {
@@ -196,16 +196,16 @@ app.post("/api/cart", (req, res) => {
 
     const checkQuery = "SELECT cust_id, added_products FROM cart_details WHERE cust_id = 1 AND added_products = ?";
     db.query(checkQuery, [product_name], (err, result) => {
-        console.log(result.length);        // this will undefined if no value with these property exists
+        // console.log(result.length);        // this will undefined if no value with these property exists
         if(result.length === 0) {
             const sqlQuery = "INSERT INTO cart_details (cust_id, added_products, price, quantity) VALUES (1, ?, 1.4, ?)"; 
             db.query(sqlQuery, [product_name, quantity], (err2, result2) => {
-                console.log(result);
+                // console.log(result);
             })
         } else {
             const updateQuery = "UPDATE cart_details SET quantity = ? WHERE cust_id = 1 AND added_products = ?";
             db.query(updateQuery, [quantity, product_name], (err3, result3) => {
-                console.log("added");
+                // console.log("added");
             })
         }
         
