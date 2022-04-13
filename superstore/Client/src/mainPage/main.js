@@ -115,7 +115,7 @@ function MainPage(props) {
           <button className = "button-29" onClick={logoutFunction}>Logout</button>
         </div>
       
-        <button className="button-29">CART</button>  
+        <button className="button-29" onClick= {()=>{window.location.href = "http://localhost:3000/Cart"}}>CART</button>  
 
         <div className="hamburger-menu">
           <input id="menu__toggle" type="checkbox" />

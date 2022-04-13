@@ -251,6 +251,16 @@ app.post("/api/add_to_cart", (req, res) => {
 
 })
 
+app.post('/api/getCart', (req, res) => {
+    const emailExtracted = req.body.email;
+
+    const sqlQuery = "SELECT * FROM cart_details WHERE email = ?";
+    db.query(sqlQuery, [emailExtracted], (err, result) => {
+        console.log(result);
+        res.send(result);
+    })
+})
+
 // to listen
 app.listen(3001, () => {
     console.log("Running on port 3001");
