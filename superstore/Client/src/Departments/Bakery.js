@@ -1,7 +1,6 @@
 import React from 'react'
 import '../css/Bakery.css'
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";
-import { GiMagnifyingGlass } from "react-icons/gi";
 import grain_whole_wheat_bread from "../images/Bakery/14_grain_whole_wheat_bread.png"
 import banana_chocolate_muffin from "../images/Bakery/banana_chocolate_muffin.png"
 import banana_loaf_cake from "../images/Bakery/banana_loaf_cake.png"
@@ -31,6 +30,17 @@ export default function Bakery() {
 
   const [continuing, setContinuing] = useState(false);
   const [email, setEmail] = useState("");
+
+  function addToCartListener(str, quantity, price) {
+    console.log(str, quantity);
+    Axios.post("http://localhost:3001/api/add_to_cart", {
+      email: email,
+      product_name: str, 
+      quantity: quantity, 
+      price: price
+    }).then((res) => console.log(res.data))
+  }
+
 
   function getEmail(){
     Axios.post("http://localhost:3001/api/getEmail"
@@ -77,11 +87,7 @@ export default function Bakery() {
       
     
     </div>
-    {/* <div>
-      {console.log(showButton)}
-      {showButton.showButton ? <h1> SHow me </h1> : null}
-      {showButton.showButton2 ? <h1> SHow me </h1> : null}
-    </div> */}
+    
 
     <div className='products_name__container'>
       <div className='departmentName'>
@@ -104,9 +110,12 @@ export default function Bakery() {
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.grainBread > 0)
                                                                                       setItemIncrementer({...itemIncrementer, grainBread: itemIncrementer.grainBread-1});                                                                          
+                                                                                      addToCartListener("grainBread", itemIncrementer.grainBread, 3.21);
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.grainBread} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, grainBread: itemIncrementer.grainBread+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, grainBread: itemIncrementer.grainBread+1});
+                                                                                    addToCartListener("grainBread", itemIncrementer.grainBread, 3.21);
+                                                                                    } }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
