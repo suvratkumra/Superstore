@@ -8,6 +8,8 @@ export default function Cart() {
     const [email, setEmail] = useState("");         // to get the email
     const [continuing, setContinuing] = useState(false); 
     const [resultStore, setResultStore] = useState({});
+    const [isEmail, setIsEmail] = useState(false)
+    const [isObject, setIsObject] = useState(false)
 
 
 useEffect(() => {
@@ -17,6 +19,7 @@ useEffect(() => {
           console.log(res.data);
           setEmail(res.data)
           console.log(email);
+          setIsEmail(true);
           console.log(email.length);
           if(res.length === 0) {
             setContinuing(false);
@@ -29,15 +32,16 @@ useEffect(() => {
         
     //   }
     // function getCartItems() {
-        // Axios.post("http://localhost:3001/api/getCart", {
-        //     email: email
-        // }).then((res) => {
-        //     console.log(res.data)
-        //     setResultStore(res.data);
-        //     console.log(resultStore)
-        // })
+        Axios.post("http://localhost:3001/api/getCart", {
+            email: email
+        }).then((res) => {
+            console.log(res.data)
+            setResultStore(res.data);
+            setIsObject(true);
+            console.log(resultStore)
+        })
     // }
-}, [])
+}, [isEmail, isObject])
     
 
     
