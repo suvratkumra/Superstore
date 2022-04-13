@@ -102,6 +102,7 @@ app.post('/api/signup', (req, res) => {
     //console.log(sqlInsert, [username, email, password]);
     db.query(sqlInsert, [username, email, password, hintQuestion, hintAnswer], (err, result) => {
       //  console.log(result);
+      res.send("12");
     })
 })
 
@@ -163,12 +164,7 @@ app.post('/api/warehouse/update_products', (req, res) => {
         /*first finding the quantity right now*/
         const sqlQuery = "SELECT quantity FROM product_details WHERE PName = ?;";
         db.query(sqlQuery, [property], (err, result) => {
-            // now we will increment the quantity with what is parsed in teh object above
-            
-            // console.log(Object.values(result[0])[0]);
-
             var updatedQuantity = Object.values(result[0])[0] + itemIncrementer[property];      
-            //console.log(updatedQuantity);
             const updateQuery = "UPDATE product_details SET quantity = ? WHERE PName = ?";
             db.query(updateQuery, [updatedQuantity, property], (err2, result2) => {
                 // console.log(result2);
@@ -203,11 +199,13 @@ app.post("/api/cart", (req, res) => {
             const sqlQuery = "INSERT INTO cart_details (email, added_products, price, quantity) VALUES (?, ?, 1.4, ?)"; 
             db.query(sqlQuery, [emailId, product_name, quantity], (err2, result2) => {
                 console.log(result);
+                res.send("12");
             })
         } else {
             const updateQuery = "UPDATE cart_details SET quantity = ? WHERE email = ? AND added_products = ?";
             db.query(updateQuery, [quantity, emailId, product_name], (err3, result3) => {
                 console.log("added");
+                res.send("12");
             })
         }
     })
@@ -240,11 +238,13 @@ app.post("/api/add_to_cart", (req, res) => {
             const sqlQuery = "INSERT INTO cart_details (email, added_products, price, quantity) VALUES (?, ?, 1.4, ?)"; 
             db.query(sqlQuery, [emailId, product_name, quantity], (err2, result2) => {
                 console.log(result);
+                res.send("12");
             })
         } else {
             const updateQuery = "UPDATE cart_details SET quantity = ? WHERE email = ? AND added_products = ?";
             db.query(updateQuery, [quantity, emailId, product_name], (err3, result3) => {
                 console.log("added");
+                res.send("12");
             })
         }
     })
