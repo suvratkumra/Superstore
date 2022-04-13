@@ -24,7 +24,7 @@ import Household from "./Departments/Household";
 import Manager from "./Manager_Warehouse/Manager";
 import Warehouse from "./Manager_Warehouse/Warehouse";
 import AccountSettings from "./Menu/AccountSettings";
-import ViewHistory from "./Menu/ViewHistory";
+
 function App() {
 
 return(
