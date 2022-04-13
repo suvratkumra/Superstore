@@ -44,6 +44,16 @@ export default function Meat() {
     )
   }
 
+  function addToCartListener(str, quantity, price) {
+    console.log(str, quantity);
+    Axios.post("http://localhost:3001/api/add_to_cart", {
+      email: email,
+      product_name: str, 
+      quantity: quantity, 
+      price: price
+    }).then((res) => console.log(res.data))
+  }
+
 
   return (
     <>
@@ -99,9 +109,11 @@ export default function Meat() {
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.grainBread > 0)
                                                                                       setItemIncrementer({...itemIncrementer, grainBread: itemIncrementer.grainBread-1});                                                                          
+                                                                                      addToCartListener("Chicken Breast ClubPack", itemIncrementer.grainBread, 23.99);
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.grainBread} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, grainBread: itemIncrementer.grainBread+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, grainBread: itemIncrementer.grainBread+1}) 
+                                                                                  addToCartListener("Chicken Breast ClubPack", itemIncrementer.grainBread, 23.99);}}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -123,9 +135,11 @@ export default function Meat() {
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.chicken_leg_clubPack > 0)
                                                                                       setItemIncrementer({...itemIncrementer, chicken_leg_clubPack: itemIncrementer.chicken_leg_clubPack-1});                                                                          
+                                                                                      addToCartListener("Chicken Leg ClubPack", itemIncrementer.chicken_leg_clubPack, 18.99);
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.chicken_leg_clubPack} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, chicken_leg_clubPack: itemIncrementer.chicken_leg_clubPack+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, chicken_leg_clubPack: itemIncrementer.chicken_leg_clubPack+1}) 
+                                                                                  addToCartListener("Chicken Leg ClubPack", itemIncrementer.chicken_leg_clubPack, 18.99);}}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -144,10 +158,12 @@ export default function Meat() {
               cartText.chicken_thigh_clubPack ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.chicken_thigh_clubPack > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, chicken_thigh_clubPack: itemIncrementer.chicken_thigh_clubPack-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, chicken_thigh_clubPack: itemIncrementer.chicken_thigh_clubPack-1}); 
+                                                                                      addToCartListener("Chicken Thigh ClubPack", itemIncrementer.chicken_thigh_clubPack, 16.99);                                                                         
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.chicken_thigh_clubPack} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, chicken_thigh_clubPack: itemIncrementer.chicken_thigh_clubPack+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, chicken_thigh_clubPack: itemIncrementer.chicken_thigh_clubPack+1}) 
+                                                                                  addToCartListener("Chicken Thigh ClubPack", itemIncrementer.chicken_thigh_clubPack, 16.99);   }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -166,10 +182,12 @@ export default function Meat() {
               cartText.extra_lean_ground_beef ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.extra_lean_ground_beef > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, extra_lean_ground_beef: itemIncrementer.extra_lean_ground_beef-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, extra_lean_ground_beef: itemIncrementer.extra_lean_ground_beef-1});  
+                                                                                      addToCartListener("Extra Lean Ground Beef (954g)", itemIncrementer.extra_lean_ground_beef, 12.99);                                                                           
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.extra_lean_ground_beef} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, extra_lean_ground_beef: itemIncrementer.extra_lean_ground_beef+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, extra_lean_ground_beef: itemIncrementer.extra_lean_ground_beef+1}) 
+                                                                                   addToCartListener("Extra Lean Ground Beef (954g)", itemIncrementer.extra_lean_ground_beef, 12.99);}}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -188,10 +206,12 @@ export default function Meat() {
               cartText.juicy_jumbo_all_beef_wieners ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.juicy_jumbo_all_beef_wieners > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, juicy_jumbo_all_beef_wieners: itemIncrementer.juicy_jumbo_all_beef_wieners-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, juicy_jumbo_all_beef_wieners: itemIncrementer.juicy_jumbo_all_beef_wieners-1});
+                                                                                      addToCartListener("Juicy Jumbo All Beef Wieners", itemIncrementer.juicy_jumbo_all_beef_wieners, 11.99);                                                                          
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.juicy_jumbo_all_beef_wieners} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, juicy_jumbo_all_beef_wieners: itemIncrementer.juicy_jumbo_all_beef_wieners+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, juicy_jumbo_all_beef_wieners: itemIncrementer.juicy_jumbo_all_beef_wieners+1}) 
+                                                                                  addToCartListener("Juicy Jumbo All Beef Wieners", itemIncrementer.juicy_jumbo_all_beef_wieners, 11.99); }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -210,10 +230,12 @@ export default function Meat() {
               cartText.lean_ground_beef ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.lean_ground_beef > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, lean_ground_beef: itemIncrementer.lean_ground_beef-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, lean_ground_beef: itemIncrementer.lean_ground_beef-1}); 
+                                                                                      addToCartListener("Lean Ground Beef (456g)", itemIncrementer.lean_ground_beef, 7.99);                                                                          
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.lean_ground_beef} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, lean_ground_beef: itemIncrementer.lean_ground_beef+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, lean_ground_beef: itemIncrementer.lean_ground_beef+1}) 
+                                                                                  addToCartListener("Lean Ground Beef (456g)", itemIncrementer.lean_ground_beef, 7.99);}}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -227,15 +249,17 @@ export default function Meat() {
             <span className = 'product_name'>Mild Sugar Cured Bacon</span>
             <span className = 'price'>$3.99</span>  
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, minced_turkey: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, mild_sugar_cured_bacon: true});}}>
             {
-              cartText.minced_turkey ? <div className = 'increment__container'> 
+              cartText.mild_sugar_cured_bacon ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.minced_turkey > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, minced_turkey: itemIncrementer.minced_turkey-1});                                                                          
+                                                                                    if(itemIncrementer.mild_sugar_cured_bacon > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, mild_sugar_cured_bacon: itemIncrementer.mild_sugar_cured_bacon-1});  
+                                                                                      addToCartListener("Mild Sugar Cured Bacon", itemIncrementer.mild_sugar_cured_bacon, 3.99);                                                                        
                                                                                     } }> - </button>
-                                      <span className = 'number'> {itemIncrementer.minced_turkey} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, minced_turkey: itemIncrementer.minced_turkey+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.mild_sugar_cured_bacon} </span>
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, mild_sugar_cured_bacon: itemIncrementer.mild_sugar_cured_bacon+1}) 
+                                                                                  addToCartListener("Mild Sugar Cured Bacon", itemIncrementer.mild_sugar_cured_bacon, 3.99);}}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -249,15 +273,17 @@ export default function Meat() {
             <span className = 'product_name'>Minced Turkey</span>
             <span className = 'price'>$6.99</span> 
           </div>
-          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, mild_sugar_cured_bacon: true});}}>
+          <button className = 'add_to_cart__container' onClick = {() => {setCartText({...cartText, minced_turkey: true});}}>
             {
-              cartText.mild_sugar_cured_bacon ? <div className = 'increment__container'> 
+              cartText.minced_turkey ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
-                                                                                    if(itemIncrementer.mild_sugar_cured_bacon > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, mild_sugar_cured_bacon: itemIncrementer.mild_sugar_cured_bacon-1});                                                                          
+                                                                                    if(itemIncrementer.minced_turkey > 0)
+                                                                                      setItemIncrementer({...itemIncrementer, minced_turkey: itemIncrementer.minced_turkey-1});
+                                                                                      addToCartListener("Minced Turkey", itemIncrementer.minced_turkey, 6.99);                                                                          
                                                                                     } }> -</button>
-                                      <span className = 'number'> {itemIncrementer.mild_sugar_cured_bacon} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, mild_sugar_cured_bacon: itemIncrementer.mild_sugar_cured_bacon+1}) }> + </button>                                    
+                                      <span className = 'number'> {itemIncrementer.minced_turkey} </span>
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, minced_turkey: itemIncrementer.minced_turkey+1}) 
+                                                                                  addToCartListener("Minced Turkey", itemIncrementer.minced_turkey, 6.99);   }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -276,10 +302,12 @@ export default function Meat() {
               cartText.ML_natural_top_dogs ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.ML_natural_top_dogs > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, ML_natural_top_dogs: itemIncrementer.ML_natural_top_dogs-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, ML_natural_top_dogs: itemIncrementer.ML_natural_top_dogs-1});
+                                                                                      addToCartListener("Natural Top Dogs", itemIncrementer.ML_natural_top_dogs, 8.99);                                                                             
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.ML_natural_top_dogs} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, ML_natural_top_dogs: itemIncrementer.ML_natural_top_dogs+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, ML_natural_top_dogs: itemIncrementer.ML_natural_top_dogs+1}) 
+                                                                                  addToCartListener("Natural Top Dogs", itemIncrementer.ML_natural_top_dogs, 8.99);}}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -298,10 +326,12 @@ export default function Meat() {
               cartText.nn_hotdogs ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.nn_hotdogs > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, nn_hotdogs: itemIncrementer.nn_hotdogs-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, nn_hotdogs: itemIncrementer.nn_hotdogs-1});     
+                                                                                      addToCartListener("Hot Dogs", itemIncrementer.nn_hotdogs, 5.99);                                                                     
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.nn_hotdogs} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, nn_hotdogs: itemIncrementer.nn_hotdogs+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, nn_hotdogs: itemIncrementer.nn_hotdogs+1}) 
+                                                                                  addToCartListener("Hot Dogs", itemIncrementer.nn_hotdogs, 5.99);  }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -321,9 +351,11 @@ export default function Meat() {
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.PC_boneless_chickenBreast > 0)
                                                                                       setItemIncrementer({...itemIncrementer, PC_boneless_chickenBreast: itemIncrementer.PC_boneless_chickenBreast-1});                                                                          
+                                                                                      addToCartListener("Boneless Chicken Breast", itemIncrementer.PC_boneless_chickenBreast, 10.99);  
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.PC_boneless_chickenBreast} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, PC_boneless_chickenBreast: itemIncrementer.PC_boneless_chickenBreast+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, PC_boneless_chickenBreast: itemIncrementer.PC_boneless_chickenBreast+1}) 
+                                                                                  addToCartListener("Boneless Chicken Breast", itemIncrementer.PC_boneless_chickenBreast, 10.99); }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -342,10 +374,12 @@ export default function Meat() {
               cartText.PC_FF_mild_italian_pork ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.PC_FF_mild_italian_pork > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, PC_FF_mild_italian_pork: itemIncrementer.PC_FF_mild_italian_pork-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, PC_FF_mild_italian_pork: itemIncrementer.PC_FF_mild_italian_pork-1});  
+                                                                                      addToCartListener("Mild Italian Pork (6-Pack)", itemIncrementer.PC_FF_mild_italian_pork, 9.99);                                                                        
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.PC_FF_mild_italian_pork} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, PC_FF_mild_italian_pork: itemIncrementer.PC_FF_mild_italian_pork+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, PC_FF_mild_italian_pork: itemIncrementer.PC_FF_mild_italian_pork+1}) 
+                                                                                  addToCartListener("Mild Italian Pork (6-Pack)", itemIncrementer.PC_FF_mild_italian_pork, 9.99);}}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -364,10 +398,12 @@ export default function Meat() {
               cartText.pork_tendelion_2pack ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.pork_tendelion_2pack > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, pork_tendelion_2pack: itemIncrementer.pork_tendelion_2pack-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, pork_tendelion_2pack: itemIncrementer.pork_tendelion_2pack-1});     
+                                                                                      addToCartListener("Pork Tendalion (2-Pack)", itemIncrementer.pork_tendelion_2pack, 21.99);                                                                     
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.pork_tendelion_2pack} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, pork_tendelion_2pack: itemIncrementer.pork_tendelion_2pack+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, pork_tendelion_2pack: itemIncrementer.pork_tendelion_2pack+1}) 
+                                                                                  addToCartListener("Pork Tendalion (2-Pack)", itemIncrementer.pork_tendelion_2pack, 21.99);  }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -386,10 +422,12 @@ export default function Meat() {
               cartText.smoked_classicCut_bacon ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.smoked_classicCut_bacon > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, smoked_classicCut_bacon: itemIncrementer.smoked_classicCut_bacon-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, smoked_classicCut_bacon: itemIncrementer.smoked_classicCut_bacon-1});   
+                                                                                      addToCartListener("Classic Cut Bacon", itemIncrementer.smoked_classicCut_bacon, 5.99);                                                                         
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.smoked_classicCut_bacon} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, smoked_classicCut_bacon: itemIncrementer.smoked_classicCut_bacon+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, smoked_classicCut_bacon: itemIncrementer.smoked_classicCut_bacon+1}) 
+                                                                                  addToCartListener("Classic Cut Bacon", itemIncrementer.smoked_classicCut_bacon, 5.99);     }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -408,10 +446,12 @@ export default function Meat() {
               cartText.smokehouse_bacon ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.smokehouse_bacon > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, smokehouse_bacon: itemIncrementer.smokehouse_bacon-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, smokehouse_bacon: itemIncrementer.smokehouse_bacon-1}); 
+                                                                                      addToCartListener("Bacon Original", itemIncrementer.smokehouse_bacon, 6.99);                                                                              
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.smokehouse_bacon} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, smokehouse_bacon: itemIncrementer.smokehouse_bacon+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, smokehouse_bacon: itemIncrementer.smokehouse_bacon+1}) 
+                                                                                   addToCartListener("Bacon Original", itemIncrementer.smokehouse_bacon, 6.99);  }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
