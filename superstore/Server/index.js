@@ -149,9 +149,32 @@ app.post('/api/warehouse/get_products', (req, res) => {
     
 }) 
 app.post('/api/Menu/AccountSettings', (req, res) => {
+    const val1 = req.body.emailAddress;
+    const val2 = req.body.password;
+    console.log(val1);
+    console.log(val2);
 
+    const sqlQuery = "SELECT Email_Id, Password FROM login_details WHERE Email_Id = ? AND Password = ?" 
+    db.query(sqlQuery, [val1, val2], (err, result) => {
+        res.send(result);
+    })
+   
 })
 
+app.post('/api/Menu/AccountSettings', (req, res) => {
+    const val1 = req.body.emailAddress;
+    const val2 = req.body.password;
+    console.log(val1);
+    console.log(val2);
+
+  
+    const updateQuery = "UPDATE login_details WHERE Email_Id = ? AND PName = ?";
+    db.query(updateQuery, [val1, val2], (err2, result2) => {
+        console.log(result2);
+    })
+    db.query()
+    
+})
 
 app.post('/api/warehouse/update_products', (req, res) => {
 

@@ -1,28 +1,34 @@
 import React from 'react';
 import "./AccountSettings.css";
-import { Container,Row,Col,Form ,Button} from 'react-bootstrap';
+import { Button} from 'react-bootstrap';
 import {connect} from 'react-redux';
-const axios = require('axios');
+import Axios from 'axios'
+import { useState, useEffect } from 'react';
 
+function AccountSettings() {
+    const [emailAddress, setemailAddress] = useState({val: ""});
+    const [password, setpassword] = useState({val: ""});
 
-class AccountSettings extends React.Component {
-    constructor(props){
-        super(props);
-        this.state={
-            username:this.props.username,
-            email:this.props.email,
-            password:this.props.password,
-            msg:this.props.msg,
-            uploadedFile:null
-        }
-    }
+    Axios.post("http://localhost:3001/api/Menu/AccountSettings", {
+        emailAddress: emailAddress.val,
+        password: password.val,
 
-render(){
+    }).then((res) => {
+        setemailAddress(res.data)
+        setpassword(res.data)
+        console.log(res.data)
 
+    })
+    
+    Axios.post("http://localhost:3001/api/Menu/UpdateAccountSettings", {
+        emailAddress: emailAddress.val,
+        password: password.val,
+    })
     
 
+
     return (
-      
+        <>
         <div className='overall'>
 
        <div className="profile">
@@ -38,7 +44,7 @@ render(){
                     type = "text" 
                     name = "email" 
                     placeholder='Type'
-                    defaultValue={this.state.email} 
+               
                 />
             </div>
                 
@@ -46,12 +52,21 @@ render(){
                 
         
            <div>
-           <span>Password      </span>
+           <span>Old Password      </span>
                 <input className = 'password' 
                     type = "text" 
                     name = "password" 
                     placeholder='Type'
-                    defaultValue={this.state.password} 
+                    
+                />
+           </div>
+           <div>
+           <span>New Password      </span>
+                <input className = 'password' 
+                    type = "text" 
+                    name = "password" 
+                    placeholder='Type'
+                    
                 />
            </div>
                <br/>
@@ -63,24 +78,12 @@ render(){
             <Button variant="primary" onClick={this.UpdateProfileHandler}>Update Profile</Button>
 
             </div>
-
          </div>       
     
         </div>
      
-
+        </>
     )
-}
-}
-
-const mapStatetoProps=(state)=>{
-    return{
-        username:state.user.userDetails.userid,
-        username:state.user.userDetails.username,
-        email:state.user.email,
-        profileImage: state.user.profileImage,
-        msg:state.user.msg
-    }
 }
 
 
