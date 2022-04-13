@@ -25,7 +25,7 @@ export default function Bakery() {
   const initializeValues = {grainBread:initialBoolean, bananaMuffin:initialBoolean, bananaCake:initialBoolean, butterCroissant:initialBoolean, chocolateMini:initialBoolean, chocChipMuffin:initialBoolean, cinnamonBread:initialBoolean, doubleChoc:initialBoolean, frenchBread:initialBoolean, largeOriginal:initialBoolean, PCtortillas:initialBoolean, rolls:initialBoolean, sourdoughLoaf:initialBoolean, roastedWheat:initialBoolean, naan:initialBoolean};
   const [cartText, setCartText] = useState(initializeValues);
   const [showButton, setShowButton] = useState({showButton: false, showButton2: false});  
-  const initializeNumber = {grainBread:1, bananaMuffin:1, bananaCake:1, butterCroissant:1, chocolateMini:1, chocChipMuffin:1, cinnamonBread:1, doubleChoc:1, frenchBread:1, largeOriginal:1, PCtortillas:1, rolls:1, sourdoughLoaf:1, roastedWheat:1, naan:1};
+  const initializeNumber = {grainBread:0, bananaMuffin:0, bananaCake:0, butterCroissant:0, chocolateMini:0, chocChipMuffin:0, cinnamonBread:0, doubleChoc:0, frenchBread:0, largeOriginal:0, PCtortillas:0, rolls:0, sourdoughLoaf:0, roastedWheat:0, naan:0};
   const [itemIncrementer, setItemIncrementer] = useState(initializeNumber);
 
   const [continuing, setContinuing] = useState(false);
@@ -110,11 +110,11 @@ export default function Bakery() {
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.grainBread > 0)
                                                                                       setItemIncrementer({...itemIncrementer, grainBread: itemIncrementer.grainBread-1});                                                                          
-                                                                                      addToCartListener("grainBread", itemIncrementer.grainBread, 3.21);
+                                                                                      addToCartListener("14 Grain Whole Wheat Bread", itemIncrementer.grainBread, 3.21);
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.grainBread} </span>
                                       <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, grainBread: itemIncrementer.grainBread+1});
-                                                                                    addToCartListener("grainBread", itemIncrementer.grainBread, 3.21);
+                                                                                    addToCartListener("14 Grain Whole Wheat Bread", itemIncrementer.grainBread, 3.21);
                                                                                     } }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
@@ -136,10 +136,12 @@ export default function Bakery() {
               cartText.bananaMuffin ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.bananaMuffin > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, bananaMuffin: itemIncrementer.bananaMuffin-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, bananaMuffin: itemIncrementer.bananaMuffin-1});
+                                                                                      addToCartListener("Banana Chocolate Muffin", itemIncrementer.bananaMuffin, 4.99);                                                                          
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.bananaMuffin} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, bananaMuffin: itemIncrementer.bananaMuffin+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, bananaMuffin: itemIncrementer.bananaMuffin+1}) 
+                                                                                  addToCartListener("Banana Chocolate Muffin", itemIncrementer.bananaMuffin, 4.99);}}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -158,10 +160,12 @@ export default function Bakery() {
               cartText.bananaCake ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.bananaCake > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, bananaCake: itemIncrementer.bananaCake-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, bananaCake: itemIncrementer.bananaCake-1});
+                                                                                      addToCartListener("Banana Loaf Cake", itemIncrementer.bananaCake, 4.49);                                                                          
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.bananaCake} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, bananaCake: itemIncrementer.bananaCake+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, bananaCake: itemIncrementer.bananaCake+1}) 
+                                                                                    addToCartListener("Banana Loaf Cake", itemIncrementer.bananaCake, 4.49);}}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -180,10 +184,12 @@ export default function Bakery() {
               cartText.butterCroissant ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.butterCroissant > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, butterCroissant: itemIncrementer.butterCroissant-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, butterCroissant: itemIncrementer.butterCroissant-1})
+                                                                                      addToCartListener("Butter Croissant", itemIncrementer.butterCroissant, 3.49);                                                                          
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.butterCroissant} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, butterCroissant: itemIncrementer.butterCroissant+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, butterCroissant: itemIncrementer.butterCroissant+1}) 
+                                                                                     addToCartListener("Butter Croissant", itemIncrementer.butterCroissant, 3.49);}}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -202,10 +208,12 @@ export default function Bakery() {
               cartText.chocolateMini ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.chocolateMini > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, chocolateMini: itemIncrementer.chocolateMini-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, chocolateMini: itemIncrementer.chocolateMini-1});  
+                                                                                      addToCartListener("Chocolate Mini Muffin", itemIncrementer.chocolateMini, 3.99)                                                                        
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.chocolateMini} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, chocolateMini: itemIncrementer.chocolateMini+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, chocolateMini: itemIncrementer.chocolateMini+1}) 
+                                                                                    addToCartListener("Chocolate Mini Muffin", itemIncrementer.chocolateMini, 3.99)}}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -224,10 +232,12 @@ export default function Bakery() {
               cartText.chocChipMuffin ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.chocChipMuffin > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, chocChipMuffin: itemIncrementer.chocChipMuffin-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, chocChipMuffin: itemIncrementer.chocChipMuffin-1}); 
+                                                                                      addToCartListener("Chocolate Chip Muffin", itemIncrementer.chocChipMuffin, 4.99)                                                                         
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.chocChipMuffin} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, chocChipMuffin: itemIncrementer.chocChipMuffin+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, chocChipMuffin: itemIncrementer.chocChipMuffin+1}) 
+                                     addToCartListener("Chocolate Chip Muffin", itemIncrementer.chocChipMuffin, 4.99)}}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -246,10 +256,12 @@ export default function Bakery() {
               cartText.cinnamonBread ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.cinnamonBread > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, cinnamonBread: itemIncrementer.cinnamonBread-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, cinnamonBread: itemIncrementer.cinnamonBread-1});   
+                                                                                      addToCartListener("cinnamon Raisin Bread", itemIncrementer.cinnamonBread, 2.99)                                                                       
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.cinnamonBread} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, cinnamonBread: itemIncrementer.cinnamonBread+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, cinnamonBread: itemIncrementer.cinnamonBread+1}) 
+                                                                                  addToCartListener("cinnamon Raisin Bread", itemIncrementer.cinnamonBread, 2.99)}}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -268,10 +280,12 @@ export default function Bakery() {
               cartText.doubleChoc ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.doubleChoc > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, doubleChoc: itemIncrementer.doubleChoc-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, doubleChoc: itemIncrementer.doubleChoc-1});   
+                                                                                      addToCartListener("Double Chocolate Muffin", itemIncrementer.doubleChoc, 4.99)                                                                       
                                                                                     } }> -</button>
                                       <span className = 'number'> {itemIncrementer.doubleChoc} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, doubleChoc: itemIncrementer.doubleChoc+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => { setItemIncrementer({...itemIncrementer, doubleChoc: itemIncrementer.doubleChoc+1}) 
+                                                                            addToCartListener("Double Chocolate Muffin", itemIncrementer.doubleChoc, 4.99)}}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -290,10 +304,12 @@ export default function Bakery() {
               cartText.frenchBread ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.frenchBread > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, frenchBread: itemIncrementer.frenchBread-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, frenchBread: itemIncrementer.frenchBread-1});
+                                                                                      addToCartListener("French Bread", itemIncrementer.frenchBread, 0.99)                                                                           
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.frenchBread} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, frenchBread: itemIncrementer.frenchBread+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, frenchBread: itemIncrementer.frenchBread+1})
+                                                                                    addToCartListener("French Bread", itemIncrementer.frenchBread, 0.99) } }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -312,10 +328,12 @@ export default function Bakery() {
               cartText.largeOriginal ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.largeOriginal > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, largeOriginal: itemIncrementer.largeOriginal-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, largeOriginal: itemIncrementer.largeOriginal-1}); 
+                                                                                      addToCartListener("Large Original Tortillas", itemIncrementer.largeOriginal, 5.99)                                                                          
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.largeOriginal} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, largeOriginal: itemIncrementer.largeOriginal+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, largeOriginal: itemIncrementer.largeOriginal+1})
+                                                                                    addToCartListener("Large Original Tortillas", itemIncrementer.largeOriginal, 5.99) }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -334,10 +352,12 @@ export default function Bakery() {
               cartText.PCtortillas ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.PCtortillas > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, PCtortillas: itemIncrementer.PCtortillas-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, PCtortillas: itemIncrementer.PCtortillas-1});  
+                                                                                      addToCartListener("Tortillas Original", itemIncrementer.PCtortillas, 4.99)                                                                        
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.PCtortillas} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, PCtortillas: itemIncrementer.PCtortillas+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, PCtortillas: itemIncrementer.PCtortillas+1}) 
+                                                                                  addToCartListener("Tortillas Original", itemIncrementer.PCtortillas, 4.99)}}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -357,9 +377,11 @@ export default function Bakery() {
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.rolls > 0)
                                                                                       setItemIncrementer({...itemIncrementer, rolls: itemIncrementer.rolls-1});                                                                          
+                                                                                      addToCartListener("Rolls 6 Pack", itemIncrementer.rolls, 2.49)             
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.rolls} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, rolls: itemIncrementer.rolls+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() =>{ setItemIncrementer({...itemIncrementer, rolls: itemIncrementer.rolls+1})
+                                                                          addToCartListener("Rolls 6 Pack", itemIncrementer.rolls, 2.49)              }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -378,10 +400,12 @@ export default function Bakery() {
               cartText.sourdoughLoaf ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.sourdoughLoaf > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, sourdoughLoaf: itemIncrementer.sourdoughLoaf-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, sourdoughLoaf: itemIncrementer.sourdoughLoaf-1});    
+                                                                                      addToCartListener("Sourdough Loaf Sliced", itemIncrementer.sourdoughLoaf, 1.49)                                                                       
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.sourdoughLoaf} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, sourdoughLoaf: itemIncrementer.sourdoughLoaf+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, sourdoughLoaf: itemIncrementer.sourdoughLoaf+1}) 
+                                                                                                      addToCartListener("Sourdough Loaf Sliced", itemIncrementer.sourdoughLoaf, 1.49) }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -400,10 +424,12 @@ export default function Bakery() {
               cartText.roastedWheat ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.roastedWheat > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, roastedWheat: itemIncrementer.roastedWheat-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, roastedWheat: itemIncrementer.roastedWheat-1}); 
+                                                                                      addToCartListener("Stone Milled With Roasted Wheat", itemIncrementer.roastedWheat, 2.99)                                                                         
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.roastedWheat} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, roastedWheat: itemIncrementer.roastedWheat+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, roastedWheat: itemIncrementer.roastedWheat+1})
+                                                                                  addToCartListener("Stone Milled With Roasted Wheat", itemIncrementer.roastedWheat, 2.99) }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -422,10 +448,12 @@ export default function Bakery() {
               cartText.naan ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.naan > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, naan: itemIncrementer.naan-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, naan: itemIncrementer.naan-1}); 
+                                                                                      addToCartListener("Naan Original (5-Pack)", itemIncrementer.naan, 3.99)                                                                         
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.naan} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, naan: itemIncrementer.naan+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, naan: itemIncrementer.naan+1}) 
+                                                                                  addToCartListener("Naan Original (5-Pack)", itemIncrementer.naan, 3.99)   }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
