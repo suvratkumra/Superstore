@@ -4,35 +4,124 @@ import "./main.css";
 import Search from '../images/search.png';
 import { useState } from 'react';
 import search from '../images/search.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLaptopHouse } from '@fortawesome/free-solid-svg-icons';
-
-//Importing all the departments.
-var FontAwesome = require('react-fontawesome');
-
-
+import Axios from 'axios';
 
 function MainPage(props) {
   const [username, setSearch] = useState('')
   const [counter, setCounter] = useState(-1);
+  const [textValue, setTextValue] = useState({val: ""});
+  const [dataRetrieved, setDataRetrieved] = useState([]);
+  var [quantity, setQuantity] = useState({});      // initially the quantity will be 0
+
+  const [continuing, setContinuing] = useState(false);
+  const [email, setEmail] = useState("");
+
+  function getEmail(){
+    Axios.post("http://localhost:3001/api/getEmail"
+    ).then((res) => {
+      console.log(res.data);
+      setEmail(res.data)
+      console.log(email.length);
+      if(email.length === 0) {
+        setContinuing(false);
+      }else {
+        setContinuing(true);
+      }
+    }
+    )
+  }
+
+  function logoutFunction() {
+    Axios.post("http://localhost:3001/api/logout"
+    ).then((res) => {
+      setEmail(res.data);
+      if(email.length === 0) {
+        setContinuing(false);
+      }else {
+        setContinuing(true);
+      }
+    })
+
+  }
+
+  const ColoredLine = ({ color }) => (
+    <hr
+        style={{
+            color: color,
+            backgroundColor: color,
+            height: 5
+        }}
+    />
+);
+  const onChangeHandler = (e) => {
+  
+    setTextValue({val: e.target.value});
+
+    // this is the data which is updated every second.
+    console.log(textValue.val);
+
+    Axios.post("http://localhost:3001/api/search_bar", {
+      textValue: textValue.val
+    }).then((res) => {
+      setDataRetrieved([]);       // resetting
+      res.data.forEach(element => {
+        for(let key in element) {
+          setDataRetrieved(dataRetrieved => [...dataRetrieved, element[key]]);
+          setQuantity({...quantity, [element[key]]: 0})
+        }
+      })
+      console.log(quantity);
+      
+    })
+  }
+
+  const incrementHandler = (itemName, identifier) => {
+    // console.log(setQuantity({[itemName]: 10}));
+    if(identifier === "positive") {
+      setQuantity({...quantity, [itemName]: quantity[itemName]+1});
+    }
+    else if(identifier === "negative" && quantity[itemName] > 0)
+      setQuantity({...quantity, [itemName]: quantity[itemName]-1})
+
+
+    // now we will update our sql.
+    Axios.post("http://localhost:3001/api/cart", {
+      quantity: quantity[itemName],
+      name: itemName,
+      email: email
+    }).then((res) => console.log(res.data));
+
+    console.log(itemName);
+  }
+
 
   return (
     <>
-    
+    { getEmail() }
+
+    {!continuing && <div id = "errorPage__container">
+        <span id = "textError__text">You successfully signed out... <br/> <br/> Sign back in by clicking the link below... <br/></span>
+        <br/><br/>
+        <button className= "button-29" onClick = {(()=>{window.location.href = "http://localhost:3000/WelcomePage"})}>Click here to sign in.</button>
+      </div>}
+    {continuing && <div>
+      
     <div className='header__container_in_main'>
       <div className='superstore__container'>
-          <span class = "name1"><h1 className = 'superstore'> SUPERSTORE </h1>  </span>
+          <span className = "name1"><h1 className = 'superstore'> SUPERSTORE </h1>  </span>
       </div>  
+      {/* <div className='internal__container'>   */}
+        <div className= 'cart__container'>
+          <button className = "button-29" onClick={logoutFunction}>Logout</button>
+        </div>
+      
+        <button className="button-29">CART</button>  
 
-      <div className= 'cart__container'>
-        <span className = "cartName">CART</span>
-      </div>
-
-      <div className="hamburger-menu">
-        <input id="menu__toggle" type="checkbox" />
-        <label className="menu__btn" for="menu__toggle">
-          <span></span>
-        </label>
+        <div className="hamburger-menu">
+          <input id="menu__toggle" type="checkbox" />
+          <label className="menu__btn" for="menu__toggle">
+            <span></span>
+          </label>
 
         <div className="menu__box">
           <div className="menu__item">
@@ -42,8 +131,9 @@ function MainPage(props) {
           </div>
           
         </div>
-      </div>
+      {/* </div> */}
       
+    </div>
     </div>
 
     <div className='search__container'>
@@ -51,14 +141,40 @@ function MainPage(props) {
         <div className='searchbar__container'>
           <input className = 'searchbar' 
             type = "text" 
-            name = "search" 
-            placeholder='Search'
+            placeholder='Search....'
+            value={textValue.val}
+            onChange={onChangeHandler}
+            
           />
+          
+  
+      
+          { Object.values(dataRetrieved).map((item, value) => {
+            return  <div id = "searchBarListing__container">
+                      <span id = "itemName__name">{item}</span>
+                      <div id = "buttonsForAddToCart">
+                        <button className= "minus" onClick = {() => {incrementHandler(item, "negative")}}>-</button>
+                        <span>{(quantity[item])}</span>
+                        <button className="plus" onClick = {() => {incrementHandler(item, "positive")}}>+</button>
+                      </div>
+                    </div>
+            
+          }) }
+
+
+          
+    
+
+    
+          
+
         </div>
         <div className='search__image'>
           <img src= {search} alt="Logo"/>
         </div>
       </div>
+
+      
        
       <div className="dropdown">
         <button className="button">Filter by Age</button>
@@ -256,6 +372,17 @@ function MainPage(props) {
               </button> 
             }
             </div>
+            <div className='equipment__container'>
+            {
+              (counter === 0) ? null :
+              <button className="buttonStyle"
+                    type="button" onClick={() => {
+                      window.location.href = "http://localhost:3000/Departments/Equipment";
+                    }}>
+                    EQUIPMENT
+              </button> 
+            }
+            </div>
             
           </div>
                  
@@ -297,7 +424,9 @@ function MainPage(props) {
 
 
   
-
+      
+      </div>
+    }
     </>
   )
 }

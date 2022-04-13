@@ -9,22 +9,57 @@ import Women_1X_Shapewear_Boyshorts from "../images/WomenClothes/Women_1X_Shapew
 import Large_Size_Womens_Cotton_Bikini_Briefs from "../images/WomenClothes/Large_Size_Womens_Cotton_Bikini_Briefs.webp"
 import Womens_1X_Full_Shapewear_Slip from "../images/WomenClothes/Womens_1X_Full_Shapewear_Slip.webp"
 import Womens_Seamless_Cross_Back_Sports_Bra from "../images/WomenClothes/Womens_Seamless_Cross_Back_Sports_Bra.webp"
-
 import { useState } from 'react';
+import Axios from 'axios';
 
 export default function WomenClothes() {
   const initialBoolean = false;
   const initializeValues = {Comfort_Cotton_Socks:initialBoolean, Womens_No_Show_Liner_Socks:initialBoolean, Women_1X_Shapewear_Boyshorts:initialBoolean, Large_Size_Womens_Cotton_Bikini_Briefs:initialBoolean, Womens_1X_Full_Shapewear_Slip:initialBoolean, Womens_Seamless_Cross_Back_Sports_Bra:initialBoolean, cinnamonBread:initialBoolean};
   const [cartText, setCartText] = useState(initializeValues);
   const [showButton, setShowButton] = useState({showButton: false, showButton2: false});  
-  const initializeNumber = {Comfort_Cotton_Socks:1, Womens_No_Show_Liner_Socks:1, Women_1X_Shapewear_Boyshorts:1, Large_Size_Womens_Cotton_Bikini_Briefs:1, Womens_1X_Full_Shapewear_Slip:1, Womens_Seamless_Cross_Back_Sports_Bra:1};
+  const initializeNumber = {Comfort_Cotton_Socks:0, Womens_No_Show_Liner_Socks:0, Women_1X_Shapewear_Boyshorts:0, Large_Size_Womens_Cotton_Bikini_Briefs:0, Womens_1X_Full_Shapewear_Slip:0, Womens_Seamless_Cross_Back_Sports_Bra:0};
   const [itemIncrementer, setItemIncrementer] = useState(initializeNumber);
+  const [continuing, setContinuing] = useState(false);
+  const [email, setEmail] = useState("");
 
+  function addToCartListener(str, quantity, price) {
+    console.log(str, quantity);
+    Axios.post("http://localhost:3001/api/add_to_cart", {
+      email: email,
+      product_name: str, 
+      quantity: quantity, 
+      price: price
+    }).then((res) => console.log(res.data))
+  }
+
+  function getEmail(){
+    Axios.post("http://localhost:3001/api/getEmail"
+    ).then((res) => {
+      console.log(res.data);
+      setEmail(res.data)
+      console.log(email.length);
+      if(email.length === 0) {
+        setContinuing(false);
+      }else {
+        setContinuing(true);
+      }
+    }
+    )
+  }
 
   return (
     <>
-    
-    <div className='header__container'>
+    <div>
+      { getEmail() }
+    </div>
+
+    {!continuing && <div id = "errorPage__container">
+        <span id = "textError__text">ERROR! <br/> You need to log in first before accessing this page</span>
+        <br/><br/>
+        <button className= "button-29" onClick = {(()=>{window.location.href = "http://localhost:3000/WelcomePage"})}>Click here to go sign in.</button>
+      </div>}
+    {continuing && <div>
+      <div className='header__container'>
       <div className='superstore__container'>
           <span class = "name1">  SUPERSTORE  </span>
       </div>  
@@ -36,18 +71,7 @@ export default function WomenClothes() {
         <span class='goto_previous'>  View all departments</span>
       </div>
       
-    <div className = 'search__container'>
-      <div>
-        <input className = 'searchbar__departments' 
-            type = "text" 
-            name = "search" 
-            placeholder='Search'
-          />
-      </div>
-  
-      
-      <span class = 'search__image'> <GiMagnifyingGlass/> </span>
-    </div>
+
     </div>
     {/* <div>
       {console.log(showButton)}
@@ -76,10 +100,13 @@ export default function WomenClothes() {
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.Comfort_Cotton_Socks > 0)
                                                                                       setItemIncrementer({...itemIncrementer, Comfort_Cotton_Socks: itemIncrementer.Comfort_Cotton_Socks-1});                                                                          
+                                                                                      addToCartListener("10 Comfort Cotton Socks", itemIncrementer.Comfort_Cotton_Socks, 7.89);
+
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.Comfort_Cotton_Socks} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Comfort_Cotton_Socks: itemIncrementer.Comfort_Cotton_Socks+1}) }> + </button>                                    
-                                     </div> 
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, Comfort_Cotton_Socks: itemIncrementer.Comfort_Cotton_Socks+1});
+                                      addToCartListener("10 Comfort Cotton Socks", itemIncrementer.Comfort_Cotton_Socks, 7.89); }}> + </button>                                    
+                                     </div>                                        
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
           </button>
@@ -100,9 +127,11 @@ export default function WomenClothes() {
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.Womens_No_Show_Liner_Socks > 0)
                                                                                       setItemIncrementer({...itemIncrementer, Womens_No_Show_Liner_Socks: itemIncrementer.Womens_No_Show_Liner_Socks-1});                                                                          
-                                                                                    } }> - </button>
+                                                                                      addToCartListener("Women's No Show Liner Socks", itemIncrementer.Womens_No_Show_Liner_Socks, 14.00);
+                                                                                      } }> - </button>
                                       <span className = 'number'> {itemIncrementer.Womens_No_Show_Liner_Socks} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Womens_No_Show_Liner_Socks: itemIncrementer.Womens_No_Show_Liner_Socks+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, Womens_No_Show_Liner_Socks: itemIncrementer.Womens_No_Show_Liner_Socks+1});
+                                      addToCartListener("Women's No Show Liner Socks", itemIncrementer.Womens_No_Show_Liner_Socks, 14.00); }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -122,9 +151,11 @@ export default function WomenClothes() {
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.Women_1X_Shapewear_Boyshorts > 0)
                                                                                       setItemIncrementer({...itemIncrementer, Women_1X_Shapewear_Boyshorts: itemIncrementer.Women_1X_Shapewear_Boyshorts-1});                                                                          
-                                                                                    } }> - </button>
+                                                                                      addToCartListener("Women's 1X Shapewear Boyshorts", itemIncrementer.Women_1X_Shapewear_Boyshorts, 16.50);
+                                                                                      } }> - </button>
                                       <span className = 'number'> {itemIncrementer.Women_1X_Shapewear_Boyshorts} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Women_1X_Shapewear_Boyshorts: itemIncrementer.Women_1X_Shapewear_Boyshorts+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, Women_1X_Shapewear_Boyshorts: itemIncrementer.Women_1X_Shapewear_Boyshorts+1});
+                                                                                  addToCartListener("Women's 1X Shapewear Boyshorts", itemIncrementer.Women_1X_Shapewear_Boyshorts, 16.50);}}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -144,9 +175,11 @@ export default function WomenClothes() {
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.Large_Size_Womens_Cotton_Bikini_Briefs > 0)
                                                                                       setItemIncrementer({...itemIncrementer, Large_Size_Womens_Cotton_Bikini_Briefs: itemIncrementer.Large_Size_Womens_Cotton_Bikini_Briefs-1});                                                                          
-                                                                                    } }> - </button>
+                                                                                      addToCartListener("Large Size Women's Cotton Bikini Briefs", itemIncrementer.Large_Size_Womens_Cotton_Bikini_Briefs, 7.00);
+                                                                                      } }> - </button>
                                       <span className = 'number'> {itemIncrementer.Large_Size_Womens_Cotton_Bikini_Briefs} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Large_Size_Womens_Cotton_Bikini_Briefs: itemIncrementer.Large_Size_Womens_Cotton_Bikini_Briefs+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, Large_Size_Womens_Cotton_Bikini_Briefs: itemIncrementer.Large_Size_Womens_Cotton_Bikini_Briefs+1})
+                                                                                  addToCartListener("Large Size Women's Cotton Bikini Briefs", itemIncrementer.Large_Size_Womens_Cotton_Bikini_Briefs, 7.00); }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -165,11 +198,15 @@ export default function WomenClothes() {
               cartText.Womens_1X_Full_Shapewear_Slip ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.Womens_1X_Full_Shapewear_Slip > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, Womens_1X_Full_Shapewear_Slip: itemIncrementer.Womens_1X_Full_Shapewear_Slip-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, Womens_1X_Full_Shapewear_Slip: itemIncrementer.Womens_1X_Full_Shapewear_Slip-1});
+                                                                                      addToCartListener("Women's 1X Full Shapewear Slip", itemIncrementer.Womens_1X_Full_Shapewear_Slip, 25.99);
+                                                                          
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.Womens_1X_Full_Shapewear_Slip} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Womens_1X_Full_Shapewear_Slip: itemIncrementer.Womens_1X_Full_Shapewear_Slip+1}) }> + </button>                                    
-                                     </div> 
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, Womens_1X_Full_Shapewear_Slip: itemIncrementer.Womens_1X_Full_Shapewear_Slip+1});
+                                                                                addToCartListener("Women's 1X Full Shapewear Slip", itemIncrementer.Womens_1X_Full_Shapewear_Slip, 25.99);
+                                      }}> + </button>                                    
+                                     </div>   
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
           </button>
@@ -187,10 +224,13 @@ export default function WomenClothes() {
               cartText.Womens_Seamless_Cross_Back_Sports_Bra ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.Womens_Seamless_Cross_Back_Sports_Bra > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, Womens_Seamless_Cross_Back_Sports_Bra: itemIncrementer.Womens_Seamless_Cross_Back_Sports_Bra-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, Womens_Seamless_Cross_Back_Sports_Bra: itemIncrementer.Womens_Seamless_Cross_Back_Sports_Bra-1});     
+                                                                                      addToCartListener("Women's Seamless Cross Back Sports Bra", itemIncrementer.Womens_Seamless_Cross_Back_Sports_Bra, 17.00);
+                                                                     
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.Womens_Seamless_Cross_Back_Sports_Bra} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Womens_Seamless_Cross_Back_Sports_Bra: itemIncrementer.Womens_Seamless_Cross_Back_Sports_Bra+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, Womens_Seamless_Cross_Back_Sports_Bra: itemIncrementer.Womens_Seamless_Cross_Back_Sports_Bra+1});
+                                                                                  addToCartListener("Women's Seamless Cross Back Sports Bra", itemIncrementer.Womens_Seamless_Cross_Back_Sports_Bra, 17.00);} }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -201,6 +241,9 @@ export default function WomenClothes() {
         
       </div>
     </div>
+    </div>}
+
+    
 
     </>
   )

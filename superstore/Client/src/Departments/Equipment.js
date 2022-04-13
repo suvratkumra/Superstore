@@ -18,19 +18,58 @@ import samsung_27_curved_FHD_VA_monitor from "../images/Equipment/samsung_27_cur
 import samsung_black_toner_cartridge from "../images/Equipment/samsung_black_toner_cartridge.png"
 import Xtrike_Me_HP_310_gaming_headset from "../images/Equipment/Xtrike_Me_HP-310_gaming_headset.png"
 import slim_cat6_ethernet_cable from "../images/Equipment/slim_cat6_ethernet_cable.png"
-
+import Axios from 'axios';
 
 export default function Equipment() {
   const initialBoolean = false;
   const initializeValues = {asus_prime_H410M_E_LGA_1200_Intel_H410_SATA:initialBoolean, canon_imageClass_D1650_monochrome_lazer:initialBoolean, cat5e_ethernet_cable:initialBoolean, cat6_green_ethernet_cable_10foot:initialBoolean, decora_wall_plate_white_dual:initialBoolean, energizer_batteries_alkaline_AA24:initialBoolean, energizer_maxAA_batteries_8pack:initialBoolean, fiber_optic_cable_LC_Duplex:initialBoolean, fiber_optic_cable_singlemodeDuplex:initialBoolean, globe_electric_with_slim_plug:initialBoolean, JVC_inear_headphones:initialBoolean, samsung_27_curved_FHD_VA_monitor:initialBoolean, samsung_black_toner_cartridge:initialBoolean, Xtrike_Me_HP_310_gaming_headset:initialBoolean, slim_cat6_ethernet_cable:initialBoolean};
   const [cartText, setCartText] = useState(initializeValues);
   const [showButton, setShowButton] = useState({showButton: false, showButton2: false});  
-  const initializeNumber = {asus_prime_H410M_E_LGA_1200_Intel_H410_SATA:1, canon_imageClass_D1650_monochrome_lazer:1, cat5e_ethernet_cable:1, cat6_green_ethernet_cable_10foot:1, decora_wall_plate_white_dual:1, energizer_batteries_alkaline_AA24:1, energizer_maxAA_batteries_8pack:1, fiber_optic_cable_LC_Duplex:1, fiber_optic_cable_singlemodeDuplex:1, globe_electric_with_slim_plug:1, JVC_inear_headphones:1, samsung_27_curved_FHD_VA_monitor:1, samsung_black_toner_cartridge:1, Xtrike_Me_HP_310_gaming_headset:1, slim_cat6_ethernet_cable:1};
+  const initializeNumber = {asus_prime_H410M_E_LGA_1200_Intel_H410_SATA:0, canon_imageClass_D1650_monochrome_lazer:0, cat5e_ethernet_cable:0, cat6_green_ethernet_cable_10foot:0, decora_wall_plate_white_dual:0, energizer_batteries_alkaline_AA24:0, energizer_maxAA_batteries_8pack:0, fiber_optic_cable_LC_Duplex:0, fiber_optic_cable_singlemodeDuplex:0, globe_electric_with_slim_plug:0, JVC_inear_headphones:0, samsung_27_curved_FHD_VA_monitor:0, samsung_black_toner_cartridge:0, Xtrike_Me_HP_310_gaming_headset:0, slim_cat6_ethernet_cable:0};
   const [itemIncrementer, setItemIncrementer] = useState(initializeNumber);
+
+  const [continuing, setContinuing] = useState(false);
+  const [email, setEmail] = useState("");
+
+  function getEmail(){
+    Axios.post("http://localhost:3001/api/getEmail"
+    ).then((res) => {
+      console.log(res.data);
+      setEmail(res.data)
+      console.log(email.length);
+      if(email.length === 0) {
+        setContinuing(false);
+      }else {
+        setContinuing(true);
+      }
+    }
+    )
+  }
+
+  function addToCartListener(str, quantity, price) {
+    console.log(str, quantity);
+    Axios.post("http://localhost:3001/api/add_to_cart", {
+      email: email,
+      product_name: str, 
+      quantity: quantity, 
+      price: price
+    }).then((res) => console.log(res.data))
+  }
 
 
   return (
     <>
+    <div>
+      { getEmail() }
+    </div>
+
+    {!continuing && <div id = "errorPage__container">
+        <span id = "textError__text">ERROR! <br/> You need to log in first before accessing this page</span>
+        <br/><br/>
+        <button className= "button-29" onClick = {(()=>{window.location.href = "http://localhost:3000/WelcomePage"})}>Click here to go sign in.</button>
+      </div>}
+    {continuing && <div>
+
     
     <div className='header__container'>
       <div className='superstore__container'>
@@ -44,18 +83,7 @@ export default function Equipment() {
         <span class='goto_previous'>  View all departments</span>
       </div>
       
-    <div className = 'search__container'>
-      <div>
-        <input className = 'searchbar__departments' 
-            type = "text" 
-            name = "search" 
-            placeholder='Search'
-          />
-      </div>
-  
-      
-      <span class = 'search__image'> <GiMagnifyingGlass/> </span>
-    </div>
+    
     </div>
 
     <div className='products_name__container'>
@@ -79,9 +107,11 @@ export default function Equipment() {
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.asus_prime_H410M_E_LGA_1200_Intel_H410_SATA > 0)
                                                                                       setItemIncrementer({...itemIncrementer, asus_prime_H410M_E_LGA_1200_Intel_H410_SATA: itemIncrementer.asus_prime_H410M_E_LGA_1200_Intel_H410_SATA-1});                                                                          
+                                                                                      addToCartListener("Prime H410M E-LGA 1200-Intel H410 SATA", itemIncrementer.asus_prime_H410M_E_LGA_1200_Intel_H410_SATA, 199.99);
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.asus_prime_H410M_E_LGA_1200_Intel_H410_SATA} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, asus_prime_H410M_E_LGA_1200_Intel_H410_SATA: itemIncrementer.asus_prime_H410M_E_LGA_1200_Intel_H410_SATA+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, asus_prime_H410M_E_LGA_1200_Intel_H410_SATA: itemIncrementer.asus_prime_H410M_E_LGA_1200_Intel_H410_SATA+1}) 
+                                                                                  addToCartListener("Prime H410M E-LGA 1200-Intel H410 SATA", itemIncrementer.asus_prime_H410M_E_LGA_1200_Intel_H410_SATA, 199.99);}}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -103,9 +133,11 @@ export default function Equipment() {
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.canon_imageClass_D1650_monochrome_lazer > 0)
                                                                                       setItemIncrementer({...itemIncrementer, canon_imageClass_D1650_monochrome_lazer: itemIncrementer.canon_imageClass_D1650_monochrome_lazer-1});                                                                          
+                                                                                      addToCartListener("Image Class D1650 Monochrome Lazer Printer", itemIncrementer.canon_imageClass_D1650_monochrome_lazer, 399.99);
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.canon_imageClass_D1650_monochrome_lazer} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, canon_imageClass_D1650_monochrome_lazer: itemIncrementer.canon_imageClass_D1650_monochrome_lazer+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, canon_imageClass_D1650_monochrome_lazer: itemIncrementer.canon_imageClass_D1650_monochrome_lazer+1}) 
+                                                                                  addToCartListener("Image Class D1650 Monochrome Lazer Printer", itemIncrementer.canon_imageClass_D1650_monochrome_lazer, 399.99);}}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -124,10 +156,12 @@ export default function Equipment() {
               cartText.cat5e_ethernet_cable ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.cat5e_ethernet_cable > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, cat5e_ethernet_cable: itemIncrementer.cat5e_ethernet_cable-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, cat5e_ethernet_cable: itemIncrementer.cat5e_ethernet_cable-1});     
+                                                                                      addToCartListener("cat5e Ethernet Cable", itemIncrementer.cat5e_ethernet_cable, 10.99);                                                                     
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.cat5e_ethernet_cable} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, cat5e_ethernet_cable: itemIncrementer.cat5e_ethernet_cable+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, cat5e_ethernet_cable: itemIncrementer.cat5e_ethernet_cable+1}) 
+                                                                                  addToCartListener("cat5e Ethernet Cable", itemIncrementer.cat5e_ethernet_cable, 10.99); }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -146,10 +180,12 @@ export default function Equipment() {
               cartText.cat6_green_ethernet_cable_10foot ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.cat6_green_ethernet_cable_10foot > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, cat6_green_ethernet_cable_10foot: itemIncrementer.cat6_green_ethernet_cable_10foot-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, cat6_green_ethernet_cable_10foot: itemIncrementer.cat6_green_ethernet_cable_10foot-1}); 
+                                                                                      addToCartListener("cat6 Green Ethernet Cable (10 Foot)", itemIncrementer.cat6_green_ethernet_cable_10foot, 9.99);                                                                          
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.cat6_green_ethernet_cable_10foot} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, cat6_green_ethernet_cable_10foot: itemIncrementer.cat6_green_ethernet_cable_10foot+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, cat6_green_ethernet_cable_10foot: itemIncrementer.cat6_green_ethernet_cable_10foot+1}) 
+                                                                                  addToCartListener("cat6 Green Ethernet Cable (10 Foot)", itemIncrementer.cat6_green_ethernet_cable_10foot, 9.99);  }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -168,10 +204,12 @@ export default function Equipment() {
               cartText.decora_wall_plate_white_dual ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.decora_wall_plate_white_dual > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, decora_wall_plate_white_dual: itemIncrementer.decora_wall_plate_white_dual-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, decora_wall_plate_white_dual: itemIncrementer.decora_wall_plate_white_dual-1});     
+                                                                                      addToCartListener("Wall Plate White Dual", itemIncrementer.decora_wall_plate_white_dual, 15.99);                                                                       
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.decora_wall_plate_white_dual} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, decora_wall_plate_white_dual: itemIncrementer.decora_wall_plate_white_dual+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, decora_wall_plate_white_dual: itemIncrementer.decora_wall_plate_white_dual+1}) 
+                                                                                  addToCartListener("Wall Plate White Dual", itemIncrementer.decora_wall_plate_white_dual, 15.99);  }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -190,10 +228,12 @@ export default function Equipment() {
               cartText.energizer_batteries_alkaline_AA24 ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.energizer_batteries_alkaline_AA24 > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, energizer_batteries_alkaline_AA24: itemIncrementer.energizer_batteries_alkaline_AA24-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, energizer_batteries_alkaline_AA24: itemIncrementer.energizer_batteries_alkaline_AA24-1});  
+                                                                                      addToCartListener("Batteries Alkaline AA (24-pack)", itemIncrementer.energizer_batteries_alkaline_AA24, 21.99);                                                                          
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.energizer_batteries_alkaline_AA24} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, energizer_batteries_alkaline_AA24: itemIncrementer.energizer_batteries_alkaline_AA24+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, energizer_batteries_alkaline_AA24: itemIncrementer.energizer_batteries_alkaline_AA24+1}) 
+                                                                                  addToCartListener("Batteries Alkaline AA (24-pack)", itemIncrementer.energizer_batteries_alkaline_AA24, 21.99);     }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -212,10 +252,12 @@ export default function Equipment() {
               cartText.energizer_maxAA_batteries_8pack ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.energizer_maxAA_batteries_8pack > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, energizer_maxAA_batteries_8pack: itemIncrementer.energizer_maxAA_batteries_8pack-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, energizer_maxAA_batteries_8pack: itemIncrementer.energizer_maxAA_batteries_8pack-1});  
+                                                                                      addToCartListener("Batteries Alkaline AA (8-pack)", itemIncrementer.energizer_maxAA_batteries_8pack, 8.99);                                                                             
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.energizer_maxAA_batteries_8pack} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, energizer_maxAA_batteries_8pack: itemIncrementer.energizer_maxAA_batteries_8pack+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, energizer_maxAA_batteries_8pack: itemIncrementer.energizer_maxAA_batteries_8pack+1}) 
+                                                                                  addToCartListener("Batteries Alkaline AA (8-pack)", itemIncrementer.energizer_maxAA_batteries_8pack, 8.99); }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -234,10 +276,12 @@ export default function Equipment() {
               cartText.fiber_optic_cable_LC_Duplex ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.fiber_optic_cable_LC_Duplex > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, fiber_optic_cable_LC_Duplex: itemIncrementer.fiber_optic_cable_LC_Duplex-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, fiber_optic_cable_LC_Duplex: itemIncrementer.fiber_optic_cable_LC_Duplex-1});    
+                                                                                      addToCartListener("Fiber Optic Cable LC-Duplex", itemIncrementer.fiber_optic_cable_LC_Duplex, 6.99);                                                                       
                                                                                     } }> -</button>
                                       <span className = 'number'> {itemIncrementer.fiber_optic_cable_LC_Duplex} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, fiber_optic_cable_LC_Duplex: itemIncrementer.fiber_optic_cable_LC_Duplex+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, fiber_optic_cable_LC_Duplex: itemIncrementer.fiber_optic_cable_LC_Duplex+1}) 
+                                                                                  addToCartListener("Fiber Optic Cable LC-Duplex", itemIncrementer.fiber_optic_cable_LC_Duplex, 6.99);}}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -256,10 +300,12 @@ export default function Equipment() {
               cartText.fiber_optic_cable_singlemodeDuplex ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.fiber_optic_cable_singlemodeDuplex > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, fiber_optic_cable_singlemodeDuplex: itemIncrementer.fiber_optic_cable_singlemodeDuplex-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, fiber_optic_cable_singlemodeDuplex: itemIncrementer.fiber_optic_cable_singlemodeDuplex-1});
+                                                                                      addToCartListener("Fiber Optic Cable Single Mode Duplex", itemIncrementer.fiber_optic_cable_singlemodeDuplex, 4.99);                                                                          
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.fiber_optic_cable_singlemodeDuplex} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, fiber_optic_cable_singlemodeDuplex: itemIncrementer.fiber_optic_cable_singlemodeDuplex+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, fiber_optic_cable_singlemodeDuplex: itemIncrementer.fiber_optic_cable_singlemodeDuplex+1}) 
+                                                                                  addToCartListener("Fiber Optic Cable Single Mode Duplex", itemIncrementer.fiber_optic_cable_singlemodeDuplex, 4.99); }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -278,10 +324,12 @@ export default function Equipment() {
               cartText.globe_electric_with_slim_plug ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.globe_electric_with_slim_plug > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, globe_electric_with_slim_plug: itemIncrementer.globe_electric_with_slim_plug-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, globe_electric_with_slim_plug: itemIncrementer.globe_electric_with_slim_plug-1});
+                                                                                      addToCartListener("Globe Electric With Slim Plug", itemIncrementer.globe_electric_with_slim_plug, 10.99);                                                                           
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.globe_electric_with_slim_plug} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, globe_electric_with_slim_plug: itemIncrementer.globe_electric_with_slim_plug+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, globe_electric_with_slim_plug: itemIncrementer.globe_electric_with_slim_plug+1}) 
+                                                                                  addToCartListener("Globe Electric With Slim Plug", itemIncrementer.globe_electric_with_slim_plug, 10.99);   }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -300,10 +348,12 @@ export default function Equipment() {
               cartText.JVC_inear_headphones ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.JVC_inear_headphones > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, JVC_inear_headphones: itemIncrementer.JVC_inear_headphones-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, JVC_inear_headphones: itemIncrementer.JVC_inear_headphones-1});  
+                                                                                      addToCartListener("In-Ear Headphones", itemIncrementer.JVC_inear_headphones, 23.99);                                                                           
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.JVC_inear_headphones} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, JVC_inear_headphones: itemIncrementer.JVC_inear_headphones+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, JVC_inear_headphones: itemIncrementer.JVC_inear_headphones+1}) 
+                                                                                  addToCartListener("In-Ear Headphones", itemIncrementer.JVC_inear_headphones, 23.99);  }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -322,10 +372,12 @@ export default function Equipment() {
               cartText.samsung_27_curved_FHD_VA_monitor ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.samsung_27_curved_FHD_VA_monitor > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, samsung_27_curved_FHD_VA_monitor: itemIncrementer.samsung_27_curved_FHD_VA_monitor-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, samsung_27_curved_FHD_VA_monitor: itemIncrementer.samsung_27_curved_FHD_VA_monitor-1});   
+                                                                                      addToCartListener('27" Curved FHD-VA monitor', itemIncrementer.samsung_27_curved_FHD_VA_monitor, 259.99);                                                                         
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.samsung_27_curved_FHD_VA_monitor} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, samsung_27_curved_FHD_VA_monitor: itemIncrementer.samsung_27_curved_FHD_VA_monitor+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, samsung_27_curved_FHD_VA_monitor: itemIncrementer.samsung_27_curved_FHD_VA_monitor+1}) 
+                                                                                  addToCartListener('27" Curved FHD-VA monitor', itemIncrementer.samsung_27_curved_FHD_VA_monitor, 259.99);}}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -344,10 +396,12 @@ export default function Equipment() {
               cartText.samsung_black_toner_cartridge ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.samsung_black_toner_cartridge > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, samsung_black_toner_cartridge: itemIncrementer.samsung_black_toner_cartridge-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, samsung_black_toner_cartridge: itemIncrementer.samsung_black_toner_cartridge-1});  
+                                                                                      addToCartListener('Black Toner Cartridge', itemIncrementer.samsung_black_toner_cartridge, 14.99);                                                                        
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.samsung_black_toner_cartridge} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, samsung_black_toner_cartridge: itemIncrementer.samsung_black_toner_cartridge+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, samsung_black_toner_cartridge: itemIncrementer.samsung_black_toner_cartridge+1}) 
+                                                                                  addToCartListener('Black Toner Cartridge', itemIncrementer.samsung_black_toner_cartridge, 14.99);  }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -367,9 +421,11 @@ export default function Equipment() {
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.Xtrike_Me_HP_310_gaming_headset > 0)
                                                                                       setItemIncrementer({...itemIncrementer, Xtrike_Me_HP_310_gaming_headset: itemIncrementer.Xtrike_Me_HP_310_gaming_headset-1});                                                                          
+                                                                                      addToCartListener('HP 310 Gaming Headset', itemIncrementer.Xtrike_Me_HP_310_gaming_headset, 23.99);
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.Xtrike_Me_HP_310_gaming_headset} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Xtrike_Me_HP_310_gaming_headset: itemIncrementer.Xtrike_Me_HP_310_gaming_headset+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, Xtrike_Me_HP_310_gaming_headset: itemIncrementer.Xtrike_Me_HP_310_gaming_headset+1}) 
+                                                                                  addToCartListener('HP 310 Gaming Headset', itemIncrementer.Xtrike_Me_HP_310_gaming_headset, 23.99);}}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -388,10 +444,12 @@ export default function Equipment() {
               cartText.slim_cat6_ethernet_cable ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.slim_cat6_ethernet_cable > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, slim_cat6_ethernet_cable: itemIncrementer.slim_cat6_ethernet_cable-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, slim_cat6_ethernet_cable: itemIncrementer.slim_cat6_ethernet_cable-1});
+                                                                                      addToCartListener('Slim cat6 Ethernet Cable', itemIncrementer.slim_cat6_ethernet_cable, 10.99);                                                                          
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.slim_cat6_ethernet_cable} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, slim_cat6_ethernet_cable: itemIncrementer.slim_cat6_ethernet_cable+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, slim_cat6_ethernet_cable: itemIncrementer.slim_cat6_ethernet_cable+1}) 
+                                                                                   addToCartListener('Slim cat6 Ethernet Cable', itemIncrementer.slim_cat6_ethernet_cable, 10.99);}}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -407,7 +465,7 @@ export default function Equipment() {
 
     
       
-
+    </div>}
     </>
   )
 }

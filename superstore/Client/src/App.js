@@ -54,7 +54,6 @@ return(
       <Route path="/Manager" element={<Manager />} />
       <Route path="/Warehouse" element={<Warehouse />} />
       <Route path="/Menu/AccountSettings" element={<AccountSettings />} />
-      <Route path="/Menu/ViewHistory" element={<ViewHistory />} />
       <Route path="*" element={<ErrorPage />} />
     </Routes>
   </Router>

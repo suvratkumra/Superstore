@@ -18,18 +18,58 @@ import QuoBeauty_CoolPowder_Bronzer from "../images/Cosmetics/QuoBeauty_CoolPowd
 import QuoBeauty_Cosmetic_Wedges from "../images/Cosmetics/QuoBeauty_Cosmetic_Wedges.png"
 import Refectocil_Soft_Cosmetic_Brush from "../images/Cosmetics/Refectocil_Soft_Cosmetic_Brush.png"
 import Friends_Cosmetic_Case_Set_packof3 from "../images/Cosmetics/Friends_Cosmetic_Case_Set_packof3.png"
+import Axios from 'axios';
 
 export default function Cosmetics() {
   const initialBoolean = false;
-  const initializeValues = {Annabelle_Perfect_Bronze_Pressed_Powder:initialBoolean, Annabelle_Perfect_Glow_Topaz8point2g:initialBoolean, BV_Dark_Spot_Corrector_Cream:initialBoolean, Deluxe_Unicorn_Cosmetic_Set:initialBoolean, Flower_Serum_Foundation_Warm_Beige:initialBoolean, GirlOnTheGo_Cosmetic_Compact:initialBoolean, Lomi_Rejuvenating_Foot_Spa_Bath:initialBoolean, LOreal_Paris_Infallible_24H_FreshWear_In_a_Powder:initialBoolean, LUG_Trolley_Cosmetic_Case:initialBoolean, LUG_Trolley_Cosmetic_Case_Blue:initialBoolean, QuoBeauty_Cheek_Lip_Multistick_Sunrise:initialBoolean, QuoBeauty_CoolPowder_Bronzer:initialBoolean, QuoBeauty_Cosmetic_Wedges:initialBoolean, Refectocil_Soft_Cosmetic_Brush:initialBoolean, Friends_Cosmetic_Case_Set_packof3:initialBoolean};
+  const initializeValues = {xLOreal_Paris_Infallible_24H_FreshWear_In_a_Powder: initialBoolean, Annabelle_Perfect_Bronze_Pressed_Powder:initialBoolean, Annabelle_Perfect_Glow_Topaz8point2g:initialBoolean, BV_Dark_Spot_Corrector_Cream:initialBoolean, Deluxe_Unicorn_Cosmetic_Set:initialBoolean, Flower_Serum_Foundation_Warm_Beige:initialBoolean, GirlOnTheGo_Cosmetic_Compact:initialBoolean, Lomi_Rejuvenating_Foot_Spa_Bath:initialBoolean, Loreal_Paris_Infallible_24H_FreshWear_In_a_Powder:initialBoolean, LUG_Trolley_Cosmetic_Case:initialBoolean, LUG_Trolley_Cosmetic_Case_Blue:initialBoolean, QuoBeauty_Cheek_Lip_Multistick_Sunrise:initialBoolean, QuoBeauty_CoolPowder_Bronzer:initialBoolean, QuoBeauty_Cosmetic_Wedges:initialBoolean, Refectocil_Soft_Cosmetic_Brush:initialBoolean, Friends_Cosmetic_Case_Set_packof3:initialBoolean};
   const [cartText, setCartText] = useState(initializeValues);
   const [showButton, setShowButton] = useState({showButton: false, showButton2: false});  
-  const initializeNumber = {Annabelle_Perfect_Bronze_Pressed_Powder:1, Annabelle_Perfect_Glow_Topaz8point2g:1, BV_Dark_Spot_Corrector_Cream:1, Deluxe_Unicorn_Cosmetic_Set:1, Flower_Serum_Foundation_Warm_Beige:1, GirlOnTheGo_Cosmetic_Compact:1, Lomi_Rejuvenating_Foot_Spa_Bath:1, LOreal_Paris_Infallible_24H_FreshWear_In_a_Powder:1, LUG_Trolley_Cosmetic_Case:1, LUG_Trolley_Cosmetic_Case_Blue:1, QuoBeauty_Cheek_Lip_Multistick_Sunrise:1, QuoBeauty_CoolPowder_Bronzer:1, QuoBeauty_Cosmetic_Wedges:1, Refectocil_Soft_Cosmetic_Brush:1, Friends_Cosmetic_Case_Set_packof3:1};
+  const initializeNumber = {xLOreal_Paris_Infallible_24H_FreshWear_In_a_Powder: 0, Annabelle_Perfect_Bronze_Pressed_Powder:0, Annabelle_Perfect_Glow_Topaz8point2g:0, BV_Dark_Spot_Corrector_Cream:0, Deluxe_Unicorn_Cosmetic_Set:0, Flower_Serum_Foundation_Warm_Beige:0, GirlOnTheGo_Cosmetic_Compact:0, Lomi_Rejuvenating_Foot_Spa_Bath:0, Loreal_Paris_Infallible_24H_FreshWear_In_a_Powder:0, LUG_Trolley_Cosmetic_Case:0, LUG_Trolley_Cosmetic_Case_Blue:0, QuoBeauty_Cheek_Lip_Multistick_Sunrise:0, QuoBeauty_CoolPowder_Bronzer:0, QuoBeauty_Cosmetic_Wedges:0, Refectocil_Soft_Cosmetic_Brush:0, Friends_Cosmetic_Case_Set_packof3:0};
   const [itemIncrementer, setItemIncrementer] = useState(initializeNumber);
 
+  const [continuing, setContinuing] = useState(false);
+  const [email, setEmail] = useState("");
+
+  function addToCartListener(str, quantity, price) {
+    console.log(str, quantity);
+    Axios.post("http://localhost:3001/api/add_to_cart", {
+      email: email,
+      product_name: str, 
+      quantity: quantity, 
+      price: price
+    }).then((res) => console.log(res.data))
+  }
+
+
+  function getEmail(){
+    Axios.post("http://localhost:3001/api/getEmail"
+    ).then((res) => {
+      console.log(res.data);
+      setEmail(res.data)
+      console.log(email.length);
+      if(email.length === 0) {
+        setContinuing(false);
+      }else {
+        setContinuing(true);
+      }
+    }
+    )
+  }
 
   return (
     <>
+    <div>
+      { getEmail() }
+    </div>
+
+    {!continuing && <div id = "errorPage__container">
+        <span id = "textError__text">ERROR! <br/> You need to log in first before accessing this page</span>
+        <br/><br/>
+        <button className= "button-29" onClick = {(()=>{window.location.href = "http://localhost:3000/WelcomePage"})}>Click here to go sign in.</button>
+      </div>}
+    {continuing && <div>
+
     
     <div className='header__container'>
       <div className='superstore__container'>
@@ -43,18 +83,7 @@ export default function Cosmetics() {
         <span class='goto_previous'>  View all departments</span>
       </div>
       
-    <div className = 'search__container'>
-      <div>
-        <input className = 'searchbar__departments' 
-            type = "text" 
-            name = "search" 
-            placeholder='Search'
-          />
-      </div>
-  
-      
-      <span class = 'search__image'> <GiMagnifyingGlass/> </span>
-    </div>
+    
     </div>
     {/* <div>
       {console.log(showButton)}
@@ -83,9 +112,11 @@ export default function Cosmetics() {
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.Annabelle_Perfect_Bronze_Pressed_Powder > 0)
                                                                                       setItemIncrementer({...itemIncrementer, Annabelle_Perfect_Bronze_Pressed_Powder: itemIncrementer.Annabelle_Perfect_Bronze_Pressed_Powder-1});                                                                          
+                                                                                      addToCartListener("Perfect Bronze Pressed Powder", itemIncrementer.Annabelle_Perfect_Bronze_Pressed_Powder, 7.19);
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.Annabelle_Perfect_Bronze_Pressed_Powder} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Annabelle_Perfect_Bronze_Pressed_Powder: itemIncrementer.Annabelle_Perfect_Bronze_Pressed_Powder+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, Annabelle_Perfect_Bronze_Pressed_Powder: itemIncrementer.Annabelle_Perfect_Bronze_Pressed_Powder+1}) 
+                                                                                    addToCartListener("Perfect Bronze Pressed Powder", itemIncrementer.Annabelle_Perfect_Bronze_Pressed_Powder, 7.19);}}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -107,9 +138,11 @@ export default function Cosmetics() {
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.Annabelle_Perfect_Glow_Topaz8point2g > 0)
                                                                                       setItemIncrementer({...itemIncrementer, Annabelle_Perfect_Glow_Topaz8point2g: itemIncrementer.Annabelle_Perfect_Glow_Topaz8point2g-1});                                                                          
+                                                                                      addToCartListener("Perfect Glow Topaz (8.2g)", itemIncrementer.Annabelle_Perfect_Glow_Topaz8point2g, 7.99);
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.Annabelle_Perfect_Glow_Topaz8point2g} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Annabelle_Perfect_Glow_Topaz8point2g: itemIncrementer.Annabelle_Perfect_Glow_Topaz8point2g+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, Annabelle_Perfect_Glow_Topaz8point2g: itemIncrementer.Annabelle_Perfect_Glow_Topaz8point2g+1}) 
+                                                                                  addToCartListener("Perfect Glow Topaz (8.2g)", itemIncrementer.Annabelle_Perfect_Glow_Topaz8point2g, 7.99);}}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -128,10 +161,12 @@ export default function Cosmetics() {
               cartText.BV_Dark_Spot_Corrector_Cream ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.BV_Dark_Spot_Corrector_Cream > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, BV_Dark_Spot_Corrector_Cream: itemIncrementer.BV_Dark_Spot_Corrector_Cream-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, BV_Dark_Spot_Corrector_Cream: itemIncrementer.BV_Dark_Spot_Corrector_Cream-1}); 
+                                                                                      addToCartListener("Dark Spot Corrector Cream", itemIncrementer.BV_Dark_Spot_Corrector_Cream, 50.00);                                                                         
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.BV_Dark_Spot_Corrector_Cream} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, BV_Dark_Spot_Corrector_Cream: itemIncrementer.BV_Dark_Spot_Corrector_Cream+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, BV_Dark_Spot_Corrector_Cream: itemIncrementer.BV_Dark_Spot_Corrector_Cream+1})
+                                                                                  addToCartListener("Dark Spot Corrector Cream", itemIncrementer.BV_Dark_Spot_Corrector_Cream, 50.00); }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -150,10 +185,12 @@ export default function Cosmetics() {
               cartText.Deluxe_Unicorn_Cosmetic_Set ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.Deluxe_Unicorn_Cosmetic_Set > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, Deluxe_Unicorn_Cosmetic_Set: itemIncrementer.Deluxe_Unicorn_Cosmetic_Set-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, Deluxe_Unicorn_Cosmetic_Set: itemIncrementer.Deluxe_Unicorn_Cosmetic_Set-1});       
+                                                                                      addToCartListener("Unicorn Cosmetic Set", itemIncrementer.Deluxe_Unicorn_Cosmetic_Set, 34.99);                                                                   
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.Deluxe_Unicorn_Cosmetic_Set} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Deluxe_Unicorn_Cosmetic_Set: itemIncrementer.Deluxe_Unicorn_Cosmetic_Set+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, Deluxe_Unicorn_Cosmetic_Set: itemIncrementer.Deluxe_Unicorn_Cosmetic_Set+1}) 
+                                                                                    addToCartListener("Unicorn Cosmetic Set", itemIncrementer.Deluxe_Unicorn_Cosmetic_Set, 34.99);  }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -173,9 +210,11 @@ export default function Cosmetics() {
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.Flower_Serum_Foundation_Warm_Beige > 0)
                                                                                       setItemIncrementer({...itemIncrementer, Flower_Serum_Foundation_Warm_Beige: itemIncrementer.Flower_Serum_Foundation_Warm_Beige-1});                                                                          
+                                                                                      addToCartListener("Serum Foundation Warm Beige", itemIncrementer.Flower_Serum_Foundation_Warm_Beige, 21.99);  
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.Flower_Serum_Foundation_Warm_Beige} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Flower_Serum_Foundation_Warm_Beige: itemIncrementer.Flower_Serum_Foundation_Warm_Beige+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, Flower_Serum_Foundation_Warm_Beige: itemIncrementer.Flower_Serum_Foundation_Warm_Beige+1}) 
+                                                                                  addToCartListener("Serum Foundation Warm Beige", itemIncrementer.Flower_Serum_Foundation_Warm_Beige, 21.99);  }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -194,10 +233,12 @@ export default function Cosmetics() {
               cartText.GirlOnTheGo_Cosmetic_Compact ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.GirlOnTheGo_Cosmetic_Compact > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, GirlOnTheGo_Cosmetic_Compact: itemIncrementer.GirlOnTheGo_Cosmetic_Compact-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, GirlOnTheGo_Cosmetic_Compact: itemIncrementer.GirlOnTheGo_Cosmetic_Compact-1}); 
+                                                                                      addToCartListener("Cosmetic Compact", itemIncrementer.GirlOnTheGo_Cosmetic_Compact, 27.59);                                                                           
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.GirlOnTheGo_Cosmetic_Compact} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, GirlOnTheGo_Cosmetic_Compact: itemIncrementer.GirlOnTheGo_Cosmetic_Compact+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, GirlOnTheGo_Cosmetic_Compact: itemIncrementer.GirlOnTheGo_Cosmetic_Compact+1}) 
+                                                                                    addToCartListener("Cosmetic Compact", itemIncrementer.GirlOnTheGo_Cosmetic_Compact, 27.59); }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -216,10 +257,12 @@ export default function Cosmetics() {
               cartText.Lomi_Rejuvenating_Foot_Spa_Bath ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.Lomi_Rejuvenating_Foot_Spa_Bath > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, Lomi_Rejuvenating_Foot_Spa_Bath: itemIncrementer.Lomi_Rejuvenating_Foot_Spa_Bath-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, Lomi_Rejuvenating_Foot_Spa_Bath: itemIncrementer.Lomi_Rejuvenating_Foot_Spa_Bath-1});  
+                                                                                      addToCartListener("Rejuvenating Foot Spa Bath", itemIncrementer.Lomi_Rejuvenating_Foot_Spa_Bath, 39.59);                                                                             
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.Lomi_Rejuvenating_Foot_Spa_Bath} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Lomi_Rejuvenating_Foot_Spa_Bath: itemIncrementer.Lomi_Rejuvenating_Foot_Spa_Bath+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, Lomi_Rejuvenating_Foot_Spa_Bath: itemIncrementer.Lomi_Rejuvenating_Foot_Spa_Bath+1})   
+                                                                                  addToCartListener("Rejuvenating Foot Spa Bath", itemIncrementer.Lomi_Rejuvenating_Foot_Spa_Bath, 39.59);        }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -238,10 +281,14 @@ export default function Cosmetics() {
               cartText.Loreal_Paris_Infallible_24H_FreshWear_In_a_Powder ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.Loreal_Paris_Infallible_24H_FreshWear_In_a_Powder > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, LOreal_Paris_Infallible_24H_FreshWear_In_a_Powder: itemIncrementer.Loreal_Paris_Infallible_24H_FreshWear_In_a_Powder-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, Loreal_Paris_Infallible_24H_FreshWear_In_a_Powder: itemIncrementer.Loreal_Paris_Infallible_24H_FreshWear_In_a_Powder-1});                                                                          
+                                                                                      addToCartListener("Infallible 24H Fresh Wear In a Powder", itemIncrementer.Loreal_Paris_Infallible_24H_FreshWear_In_a_Powder, 17.99);        
                                                                                     } }> -</button>
+
                                       <span className = 'number'> {itemIncrementer.Loreal_Paris_Infallible_24H_FreshWear_In_a_Powder} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Loreal_Paris_Infallible_24H_FreshWear_In_a_Powder: itemIncrementer.Loreal_Paris_Infallible_24H_FreshWear_In_a_Powder+1}) }> + </button>                                    
+
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, Loreal_Paris_Infallible_24H_FreshWear_In_a_Powder: itemIncrementer.Loreal_Paris_Infallible_24H_FreshWear_In_a_Powder+1}) 
+                                                                                  addToCartListener("Infallible 24H Fresh Wear In a Powder", itemIncrementer.Loreal_Paris_Infallible_24H_FreshWear_In_a_Powder, 17.99);     }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -260,10 +307,13 @@ export default function Cosmetics() {
               cartText.LUG_Trolley_Cosmetic_Case ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.LUG_Trolley_Cosmetic_Case > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, LUG_Trolley_Cosmetic_Case: itemIncrementer.LUG_Trolley_Cosmetic_Case-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, LUG_Trolley_Cosmetic_Case: itemIncrementer.LUG_Trolley_Cosmetic_Case-1});     
+                                                                                      addToCartListener("Trolley Cosmetic Case", itemIncrementer.LUG_Trolley_Cosmetic_Case, 67.99);                                                                          
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.LUG_Trolley_Cosmetic_Case} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, LUG_Trolley_Cosmetic_Case: itemIncrementer.LUG_Trolley_Cosmetic_Case+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, LUG_Trolley_Cosmetic_Case: itemIncrementer.LUG_Trolley_Cosmetic_Case+1}) 
+                                                                                    addToCartListener("Trolley Cosmetic Case", itemIncrementer.LUG_Trolley_Cosmetic_Case, 67.99);   }
+                                                                                  }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -282,10 +332,12 @@ export default function Cosmetics() {
               cartText.LUG_Trolley_Cosmetic_Case_Blue ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.LUG_Trolley_Cosmetic_Case_Blue > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, LUG_Trolley_Cosmetic_Case_Blue: itemIncrementer.LUG_Trolley_Cosmetic_Case_Blue-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, LUG_Trolley_Cosmetic_Case_Blue: itemIncrementer.LUG_Trolley_Cosmetic_Case_Blue-1});    
+                                                                                      addToCartListener("Trolley Cosmetic Case Blue", itemIncrementer.LUG_Trolley_Cosmetic_Case_Blue, 67.99);                                                                         
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.LUG_Trolley_Cosmetic_Case_Blue} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, LUG_Trolley_Cosmetic_Case_Blue: itemIncrementer.LUG_Trolley_Cosmetic_Case_Blue+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, LUG_Trolley_Cosmetic_Case_Blue: itemIncrementer.LUG_Trolley_Cosmetic_Case_Blue+1}) 
+                                                                                  addToCartListener("Trolley Cosmetic Case Blue", itemIncrementer.LUG_Trolley_Cosmetic_Case_Blue, 67.99);}}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -305,9 +357,11 @@ export default function Cosmetics() {
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.QuoBeauty_Cheek_Lip_Multistick_Sunrise > 0)
                                                                                       setItemIncrementer({...itemIncrementer, QuoBeauty_Cheek_Lip_Multistick_Sunrise: itemIncrementer.QuoBeauty_Cheek_Lip_Multistick_Sunrise-1});                                                                          
+                                                                                      addToCartListener("Cheek Lip Multistick Sunrise", itemIncrementer.QuoBeauty_Cheek_Lip_Multistick_Sunrise, 7.99);
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.QuoBeauty_Cheek_Lip_Multistick_Sunrise} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, QuoBeauty_Cheek_Lip_Multistick_Sunrise: itemIncrementer.QuoBeauty_Cheek_Lip_Multistick_Sunrise+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, QuoBeauty_Cheek_Lip_Multistick_Sunrise: itemIncrementer.QuoBeauty_Cheek_Lip_Multistick_Sunrise+1})
+                                                                                  addToCartListener("Cheek Lip Multistick Sunrise", itemIncrementer.QuoBeauty_Cheek_Lip_Multistick_Sunrise, 7.99);} }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -326,10 +380,12 @@ export default function Cosmetics() {
               cartText.QuoBeauty_CoolPowder_Bronzer ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.QuoBeauty_CoolPowder_Bronzer > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, QuoBeauty_CoolPowder_Bronzer: itemIncrementer.QuoBeauty_CoolPowder_Bronzer-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, QuoBeauty_CoolPowder_Bronzer: itemIncrementer.QuoBeauty_CoolPowder_Bronzer-1});    
+                                                                                      addToCartListener("Cool Powder Bronzer", itemIncrementer.QuoBeauty_CoolPowder_Bronzer, 9.99);                                                                      
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.QuoBeauty_CoolPowder_Bronzer} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, QuoBeauty_CoolPowder_Bronzer: itemIncrementer.QuoBeauty_CoolPowder_Bronzer+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, QuoBeauty_CoolPowder_Bronzer: itemIncrementer.QuoBeauty_CoolPowder_Bronzer+1}) 
+                                                                                    addToCartListener("Cool Powder Bronzer", itemIncrementer.QuoBeauty_CoolPowder_Bronzer, 9.99);}}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -348,10 +404,12 @@ export default function Cosmetics() {
               cartText.QuoBeauty_Cosmetic_Wedges ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.QuoBeauty_Cosmetic_Wedges > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, QuoBeauty_Cosmetic_Wedges: itemIncrementer.QuoBeauty_Cosmetic_Wedges-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, QuoBeauty_Cosmetic_Wedges: itemIncrementer.QuoBeauty_Cosmetic_Wedges-1});  
+                                                                                      addToCartListener("Cosmetic Wedges", itemIncrementer.QuoBeauty_Cosmetic_Wedges, 4.59);                                                                        
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.QuoBeauty_Cosmetic_Wedges} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, QuoBeauty_Cosmetic_Wedges: itemIncrementer.QuoBeauty_Cosmetic_Wedges+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, QuoBeauty_Cosmetic_Wedges: itemIncrementer.QuoBeauty_Cosmetic_Wedges+1}) 
+                                                                                  addToCartListener("Cosmetic Wedges", itemIncrementer.QuoBeauty_Cosmetic_Wedges, 4.59);  }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -370,10 +428,12 @@ export default function Cosmetics() {
               cartText.Refectocil_Soft_Cosmetic_Brush ? <div className = 'increment__container'> 
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.Refectocil_Soft_Cosmetic_Brush > 0)
-                                                                                      setItemIncrementer({...itemIncrementer, Refectocil_Soft_Cosmetic_Brush: itemIncrementer.Refectocil_Soft_Cosmetic_Brush-1});                                                                          
+                                                                                      setItemIncrementer({...itemIncrementer, Refectocil_Soft_Cosmetic_Brush: itemIncrementer.Refectocil_Soft_Cosmetic_Brush-1}); 
+                                                                                      addToCartListener("Soft Cosmetic Brush", itemIncrementer.Refectocil_Soft_Cosmetic_Brush, 32.99);                                                                           
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.Refectocil_Soft_Cosmetic_Brush} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Refectocil_Soft_Cosmetic_Brush: itemIncrementer.Refectocil_Soft_Cosmetic_Brush+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, Refectocil_Soft_Cosmetic_Brush: itemIncrementer.Refectocil_Soft_Cosmetic_Brush+1}) 
+                                                                                  addToCartListener("Soft Cosmetic Brush", itemIncrementer.Refectocil_Soft_Cosmetic_Brush, 32.99);   }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -393,9 +453,11 @@ export default function Cosmetics() {
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.xLOreal_Paris_Infallible_24H_FreshWear_In_a_Powder > 0)
                                                                                       setItemIncrementer({...itemIncrementer, xLOreal_Paris_Infallible_24H_FreshWear_In_a_Powder: itemIncrementer.xLOreal_Paris_Infallible_24H_FreshWear_In_a_Powder-1});                                                                          
+                                                                                      addToCartListener("Friends Cosmetic Case Set (Pack of 3)", itemIncrementer.xLOreal_Paris_Infallible_24H_FreshWear_In_a_Powder, 40.25);   
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.xLOreal_Paris_Infallible_24H_FreshWear_In_a_Powder} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, xLOreal_Paris_Infallible_24H_FreshWear_In_a_Powder: itemIncrementer.xLOreal_Paris_Infallible_24H_FreshWear_In_a_Powder+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, xLOreal_Paris_Infallible_24H_FreshWear_In_a_Powder: itemIncrementer.xLOreal_Paris_Infallible_24H_FreshWear_In_a_Powder+1}) 
+                                                                                  addToCartListener("Friends Cosmetic Case Set (Pack of 3)", itemIncrementer.xLOreal_Paris_Infallible_24H_FreshWear_In_a_Powder, 40.25);   }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -409,7 +471,7 @@ export default function Cosmetics() {
   
       
 
-    
+    </div>}
       
 
     </>

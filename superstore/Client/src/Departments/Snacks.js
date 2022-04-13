@@ -17,19 +17,61 @@ import PC_Peanut_Butter_Filled_Pretzels from "../images/Snacks/PC_Peanut_Butter_
 import Starburst_Original_Minis191g from "../images/Snacks/Starburst_Original_Minis191g.png"
 import Sunmaid_Yogurt_Raisins_Vanilla from "../images/Snacks/Sunmaid_Yogurt_Raisins_Vanilla.png"
 import TheSnackFactory_Pretzel_Crisps_Original from "../images/Snacks/TheSnackFactory_Pretzel_Crisps_Original.png"
+import Axios from 'axios';
+
+
 
 export default function Snacks() {
   const initialBoolean = false;
   const initializeValues = {Annies_Organic_Berry_Fruit_Snacks:initialBoolean, BettyCrocker_Fruit_By_The_Foot:initialBoolean, Christie_Chips_Ahoy_Mini:initialBoolean, Christie_Oreo_Mini_Snack_Pack:initialBoolean, Crispers_Original_Snacks:initialBoolean, Hersheys_CookiesNCreme_Snack_Size_Candy:initialBoolean, Kelloggs_MultiGrain_Cereal_Bars_Apple:initialBoolean, Nestle_KitKat_Hide_Me_Eggs:initialBoolean, Nestle_KitKat_Hide_Me_Eggs_Blue:initialBoolean, OhHenry_Snack_Size_Candy120g:initialBoolean, PC_Peanut_Butter_Filled_Pretzels:initialBoolean, Starburst_Original_Minis191g:initialBoolean, Sunmaid_Yogurt_Raisins_Vanilla:initialBoolean, TheSnackFactory_Pretzel_Crisps_Original:initialBoolean};
   const [cartText, setCartText] = useState(initializeValues);
   const [showButton, setShowButton] = useState({showButton: false, showButton2: false});  
-  const initializeNumber = {Annies_Organic_Berry_Fruit_Snacks:1, BettyCrocker_Fruit_By_The_Foot:1, Christie_Chips_Ahoy_Mini:1, Christie_Oreo_Mini_Snack_Pack:1, Crispers_Original_Snacks:1, Hersheys_CookiesNCreme_Snack_Size_Candy:1, Kelloggs_MultiGrain_Cereal_Bars_Apple:1, Nestle_KitKat_Hide_Me_Eggs:1, NN_Pretzel_Sticks:1, OhHenry_Snack_Size_Candy120g:1, PC_Peanut_Butter_Filled_Pretzels:1, Starburst_Original_Minis191g:1, Sunmaid_Yogurt_Raisins_Vanilla:1, TheSnackFactory_Pretzel_Crisps_Original:1};
+  const initializeNumber = {Annies_Organic_Berry_Fruit_Snacks:0, BettyCrocker_Fruit_By_The_Foot:0, Christie_Chips_Ahoy_Mini:0, Christie_Oreo_Mini_Snack_Pack:0, Crispers_Original_Snacks:0, Hersheys_CookiesNCreme_Snack_Size_Candy:0, Kelloggs_MultiGrain_Cereal_Bars_Apple:0, Nestle_KitKat_Hide_Me_Eggs:0, NN_Pretzel_Sticks:0, OhHenry_Snack_Size_Candy120g:0, PC_Peanut_Butter_Filled_Pretzels:0, Starburst_Original_Minis191g:0, Sunmaid_Yogurt_Raisins_Vanilla:0, TheSnackFactory_Pretzel_Crisps_Original:0};
   const [itemIncrementer, setItemIncrementer] = useState(initializeNumber);
 
+  const [continuing, setContinuing] = useState(false);
+  const [email, setEmail] = useState("");
 
+
+  function addToCartListener(str, quantity, price) {
+    console.log(str, quantity);
+    Axios.post("http://localhost:3001/api/add_to_cart", {
+      email: email,
+      product_name: str, 
+      quantity: quantity, 
+      price: price
+    }).then((res) => console.log(res.data))
+  }
+
+  function getEmail(){
+    Axios.post("http://localhost:3001/api/getEmail"
+    ).then((res) => {
+      console.log(res.data);
+      setEmail(res.data)
+      console.log(email.length);
+      if(email.length === 0) {
+        setContinuing(false);
+      }else {
+        setContinuing(true);
+      }
+    }
+    )
+  }
   return (
     <>
+    <div>
+      { getEmail() }
+    </div>
+
+    {!continuing && <div id = "errorPage__container">
+        <span id = "textError__text">ERROR! <br/> You need to log in first before accessing this page</span>
+        <br/><br/>
+        <button className= "button-29" onClick = {(()=>{window.location.href = "http://localhost:3000/WelcomePage"})}>Click here to go sign in.</button>
+      </div>}
+    {continuing && <div>
+
     
+
     <div className='header__container'>
       <div className='superstore__container'>
           <span class = "name1">  SUPERSTORE  </span>
@@ -42,18 +84,7 @@ export default function Snacks() {
         <span class='goto_previous'>  View all departments</span>
       </div>
       
-    <div className = 'search__container'>
-      <div>
-        <input className = 'searchbar__departments' 
-            type = "text" 
-            name = "search" 
-            placeholder='Search'
-          />
-      </div>
-  
-      
-      <span class = 'search__image'> <GiMagnifyingGlass/> </span>
-    </div>
+
     </div>
     {/* <div>
       {console.log(showButton)}
@@ -82,9 +113,12 @@ export default function Snacks() {
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.Annies_Organic_Berry_Fruit_Snacks > 0)
                                                                                       setItemIncrementer({...itemIncrementer, Annies_Organic_Berry_Fruit_Snacks: itemIncrementer.Annies_Organic_Berry_Fruit_Snacks-1});                                                                          
-                                                                                    } }> - </button>
+                                                                                      addToCartListener("Organic Berry Fruit Snacks", itemIncrementer.Annies_Organic_Berry_Fruit_Snacks, 2.19);
+                                                                                      } }> - </button>
                                       <span className = 'number'> {itemIncrementer.Annies_Organic_Berry_Fruit_Snacks} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Annies_Organic_Berry_Fruit_Snacks: itemIncrementer.Annies_Organic_Berry_Fruit_Snacks+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, Annies_Organic_Berry_Fruit_Snacks: itemIncrementer.Annies_Organic_Berry_Fruit_Snacks+1});
+                                                                                 addToCartListener("Organic Berry Fruit Snacks", itemIncrementer.Annies_Organic_Berry_Fruit_Snacks, 2.19);
+                                      }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -106,9 +140,12 @@ export default function Snacks() {
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.BettyCrocker_Fruit_By_The_Foot > 0)
                                                                                       setItemIncrementer({...itemIncrementer, BettyCrocker_Fruit_By_The_Foot: itemIncrementer.BettyCrocker_Fruit_By_The_Foot-1});                                                                          
+                                                                                      addToCartListener("Fruit By The Foot", itemIncrementer.BettyCrocker_Fruit_By_The_Foot, 4.99);
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.BettyCrocker_Fruit_By_The_Foot} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, BettyCrocker_Fruit_By_The_Foot: itemIncrementer.BettyCrocker_Fruit_By_The_Foot+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, BettyCrocker_Fruit_By_The_Foot: itemIncrementer.BettyCrocker_Fruit_By_The_Foot+1});
+                                                                                  addToCartListener("Fruit By The Foot", itemIncrementer.BettyCrocker_Fruit_By_The_Foot, 4.99);
+                                      }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -128,9 +165,12 @@ export default function Snacks() {
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.Christie_Chips_Ahoy_Mini > 0)
                                                                                       setItemIncrementer({...itemIncrementer, Christie_Chips_Ahoy_Mini: itemIncrementer.Christie_Chips_Ahoy_Mini-1});                                                                          
+                                                                                      addToCartListener("Chips Ahoy Mini", itemIncrementer.Christie_Chips_Ahoy_Mini, 6.99);
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.Christie_Chips_Ahoy_Mini} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Christie_Chips_Ahoy_Mini: itemIncrementer.Christie_Chips_Ahoy_Mini+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, Christie_Chips_Ahoy_Mini: itemIncrementer.Christie_Chips_Ahoy_Mini+1});
+                                                                                                                            addToCartListener("Chips Ahoy Mini", itemIncrementer.Christie_Chips_Ahoy_Mini, 6.99);
+                                      }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -150,9 +190,12 @@ export default function Snacks() {
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.Christie_Oreo_Mini_Snack_Pack > 0)
                                                                                       setItemIncrementer({...itemIncrementer, Christie_Oreo_Mini_Snack_Pack: itemIncrementer.Christie_Oreo_Mini_Snack_Pack-1});                                                                          
+                                                                                      addToCartListener("Oreo Mini Snack Pack", itemIncrementer.Christie_Oreo_Mini_Snack_Pack, 6.99);
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.Christie_Oreo_Mini_Snack_Pack} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Christie_Oreo_Mini_Snack_Pack: itemIncrementer.Christie_Oreo_Mini_Snack_Pack+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, Christie_Oreo_Mini_Snack_Pack: itemIncrementer.Christie_Oreo_Mini_Snack_Pack+1});
+                                                                                  addToCartListener("Oreo Mini Snack Pack", itemIncrementer.Christie_Oreo_Mini_Snack_Pack, 6.99);
+                                      }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -172,9 +215,12 @@ export default function Snacks() {
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.Crispers_Original_Snacks > 0)
                                                                                       setItemIncrementer({...itemIncrementer, Crispers_Original_Snacks: itemIncrementer.Crispers_Original_Snacks-1});                                                                          
+                                                                                      addToCartListener("Original Snacks", itemIncrementer.Crispers_Original_Snacks, 4.99);
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.Crispers_Original_Snacks} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Crispers_Original_Snacks: itemIncrementer.Crispers_Original_Snacks+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, Crispers_Original_Snacks: itemIncrementer.Crispers_Original_Snacks+1});
+                                                                                  addToCartListener("Original Snacks", itemIncrementer.Crispers_Original_Snacks, 4.99);
+                                      }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -196,9 +242,12 @@ export default function Snacks() {
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.Hersheys_CookiesNCreme_Snack_Size_Candy > 0)
                                                                                       setItemIncrementer({...itemIncrementer, Hersheys_CookiesNCreme_Snack_Size_Candy: itemIncrementer.Hersheys_CookiesNCreme_Snack_Size_Candy-1});                                                                          
+                                                                                      addToCartListener("Cookies'N'Creme Snack Size Candy", itemIncrementer.Hersheys_CookiesNCreme_Snack_Size_Candy, 3.59);
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.Hersheys_CookiesNCreme_Snack_Size_Candy} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Hersheys_CookiesNCreme_Snack_Size_Candy: itemIncrementer.Hersheys_CookiesNCreme_Snack_Size_Candy+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, Hersheys_CookiesNCreme_Snack_Size_Candy: itemIncrementer.Hersheys_CookiesNCreme_Snack_Size_Candy+1});
+                                                                                                                            addToCartListener("Cookies'N'Creme Snack Size Candy", itemIncrementer.Hersheys_CookiesNCreme_Snack_Size_Candy, 3.59);
+                                      }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -218,9 +267,12 @@ export default function Snacks() {
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.Kelloggs_MultiGrain_Cereal_Bars_Apple > 0)
                                                                                       setItemIncrementer({...itemIncrementer, Kelloggs_MultiGrain_Cereal_Bars_Apple: itemIncrementer.Kelloggs_MultiGrain_Cereal_Bars_Apple-1});                                                                          
-                                                                                    } }> -</button>
+                                                                                      addToCartListener("MultiGrain Cereal Bars Apple", itemIncrementer.Kelloggs_MultiGrain_Cereal_Bars_Apple, 8.99);
+                                                                                       } }> -</button>
                                       <span className = 'number'> {itemIncrementer.Kelloggs_MultiGrain_Cereal_Bars_Apple} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Kelloggs_MultiGrain_Cereal_Bars_Apple: itemIncrementer.Kelloggs_MultiGrain_Cereal_Bars_Apple+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, Kelloggs_MultiGrain_Cereal_Bars_Apple: itemIncrementer.Kelloggs_MultiGrain_Cereal_Bars_Apple+1});
+                                                                                  addToCartListener("MultiGrain Cereal Bars Apple", itemIncrementer.Kelloggs_MultiGrain_Cereal_Bars_Apple, 8.99);
+                                      }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -240,9 +292,11 @@ export default function Snacks() {
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.Nestle_KitKat_Hide_Me_Eggs > 0)
                                                                                       setItemIncrementer({...itemIncrementer, Nestle_KitKat_Hide_Me_Eggs: itemIncrementer.Nestle_KitKat_Hide_Me_Eggs-1});                                                                          
+                                                                                      addToCartListener("KitKat Hide Me Eggs", itemIncrementer.Nestle_KitKat_Hide_Me_Eggs, 5.99);
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.Nestle_KitKat_Hide_Me_Eggs} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Nestle_KitKat_Hide_Me_Eggs: itemIncrementer.Nestle_KitKat_Hide_Me_Eggs+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, Nestle_KitKat_Hide_Me_Eggs: itemIncrementer.Nestle_KitKat_Hide_Me_Eggs+1});
+                                                            addToCartListener("KitKat Hide Me Eggs", itemIncrementer.Nestle_KitKat_Hide_Me_Eggs, 5.99); }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -262,9 +316,12 @@ export default function Snacks() {
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.NN_Pretzel_Sticks > 0)
                                                                                       setItemIncrementer({...itemIncrementer, NN_Pretzel_Sticks: itemIncrementer.NN_Pretzel_Sticks-1});                                                                          
-                                                                                    } }> - </button>
+                                                                                      addToCartListener("Pretzel Sticks", itemIncrementer.NN_Pretzel_Sticks, 3.99);
+                                                                                      } }> - </button>
                                       <span className = 'number'> {itemIncrementer.NN_Pretzel_Sticks} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, NN_Pretzel_Sticks: itemIncrementer.NN_Pretzel_Sticks+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, NN_Pretzel_Sticks: itemIncrementer.NN_Pretzel_Sticks+1});
+                                                                                    addToCartListener("Pretzel Sticks", itemIncrementer.NN_Pretzel_Sticks, 3.99);
+                                                                                  }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -284,9 +341,12 @@ export default function Snacks() {
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.OhHenry_Snack_Size_Candy120g > 0)
                                                                                       setItemIncrementer({...itemIncrementer, OhHenry_Snack_Size_Candy120g: itemIncrementer.OhHenry_Snack_Size_Candy120g-1});                                                                          
+                                                                                      addToCartListener("Snack Size Candy (120g)", itemIncrementer.OhHenry_Snack_Size_Candy120g, 0.99);
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.OhHenry_Snack_Size_Candy120g} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, OhHenry_Snack_Size_Candy120g: itemIncrementer.OhHenry_Snack_Size_Candy120g+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, OhHenry_Snack_Size_Candy120g: itemIncrementer.OhHenry_Snack_Size_Candy120g+1});
+                                                                                  addToCartListener("Snack Size Candy (120g)", itemIncrementer.OhHenry_Snack_Size_Candy120g, 0.99);
+                                                                                }}>+ </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -306,9 +366,12 @@ export default function Snacks() {
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.PC_Peanut_Butter_Filled_Pretzels > 0)
                                                                                       setItemIncrementer({...itemIncrementer, PC_Peanut_Butter_Filled_Pretzels: itemIncrementer.PC_Peanut_Butter_Filled_Pretzels-1});                                                                          
+                                                                                      addToCartListener("Peanut Butter Filled Pretzels", itemIncrementer.PC_Peanut_Butter_Filled_Pretzels, 4.99);
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.PC_Peanut_Butter_Filled_Pretzels} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, PC_Peanut_Butter_Filled_Pretzels: itemIncrementer.PC_Peanut_Butter_Filled_Pretzels+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, PC_Peanut_Butter_Filled_Pretzels: itemIncrementer.PC_Peanut_Butter_Filled_Pretzels+1});
+                                                                                      addToCartListener("Peanut Butter Filled Pretzels", itemIncrementer.PC_Peanut_Butter_Filled_Pretzels, 4.99);
+                                                                                    }}>] + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -328,10 +391,13 @@ export default function Snacks() {
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.Starburst_Original_Minis191g > 0)
                                                                                       setItemIncrementer({...itemIncrementer, Starburst_Original_Minis191g: itemIncrementer.Starburst_Original_Minis191g-1});                                                                          
+                                                                                      addToCartListener("Original Minis (191g)", itemIncrementer.Starburst_Original_Minis191g, 4.59);
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.Starburst_Original_Minis191g} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Starburst_Original_Minis191g: itemIncrementer.Starburst_Original_Minis191g+1}) }> + </button>                                    
-                                     </div> 
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, Starburst_Original_Minis191g: itemIncrementer.Starburst_Original_Minis191g+1});
+                                                                                    addToCartListener("Original Minis (191g)", itemIncrementer.Starburst_Original_Minis191g, 4.59);
+                                                                                  }}> + </button>                                    
+                                    </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
           </button>
@@ -350,9 +416,12 @@ export default function Snacks() {
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.Sunmaid_Yogurt_Raisins_Vanilla > 0)
                                                                                       setItemIncrementer({...itemIncrementer, Sunmaid_Yogurt_Raisins_Vanilla: itemIncrementer.Sunmaid_Yogurt_Raisins_Vanilla-1});                                                                          
+                                                                                      addToCartListener("Yogurt Raisins Vanilla", itemIncrementer.Sunmaid_Yogurt_Raisins_Vanilla, 3.99);
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.Sunmaid_Yogurt_Raisins_Vanilla} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Sunmaid_Yogurt_Raisins_Vanilla: itemIncrementer.Sunmaid_Yogurt_Raisins_Vanilla+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, Sunmaid_Yogurt_Raisins_Vanilla: itemIncrementer.Sunmaid_Yogurt_Raisins_Vanilla+1});
+                                                                                  addToCartListener("Yogurt Raisins Vanilla", itemIncrementer.Sunmaid_Yogurt_Raisins_Vanilla, 3.99);
+                                                                                }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -372,9 +441,10 @@ export default function Snacks() {
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.TheSnackFactory_Pretzel_Crisps_Original > 0)
                                                                                       setItemIncrementer({...itemIncrementer, TheSnackFactory_Pretzel_Crisps_Original: itemIncrementer.TheSnackFactory_Pretzel_Crisps_Original-1});                                                                          
+                                                                                      addToCartListener("Pretzel Crisps Original", itemIncrementer.TheSnackFactory_Pretzel_Crisps_Original, 5.25);
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.TheSnackFactory_Pretzel_Crisps_Original} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, TheSnackFactory_Pretzel_Crisps_Original: itemIncrementer.TheSnackFactory_Pretzel_Crisps_Original+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, TheSnackFactory_Pretzel_Crisps_Original: itemIncrementer.TheSnackFactory_Pretzel_Crisps_Original+1});addToCartListener("Pretzel Crisps Original", itemIncrementer.TheSnackFactory_Pretzel_Crisps_Original, 5.25); }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -385,7 +455,7 @@ export default function Snacks() {
       </div>
     </div>
 
-  
+    </div>}
       
 
     

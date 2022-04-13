@@ -6,22 +6,171 @@
 }
 
 .header__container_in_main {
-  display:flex;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 3px black solid;
+  border-radius: 10px;
+  justify-content: space-around;
+}
+
+.internal__container{
+  display: flex;
   flex-direction: row;
   justify-content: space-around;
-  border: 10px 20px;
-  align-items: center;
-  border: 3px solid white;
-  border-radius: 10px;
+}
+
+.cart__container {
+  margin-left: 10%;
+}
+
+.container2{
+  display: flex;
+  flex-direction: row;
 }
 
 .searchbar__container {
   margin-left: 50px;
+  overflow-y: auto;
+  max-height: 40vh;
 }
 
-.cart__container {
-  margin-left: 800px;
+#errorPage__container{
+  margin:10%;
+  text-align: center;
 }
+
+#textError__text {
+  font-size: 100px;
+}
+
+#buttonsForAddToCart {
+  font-size: xx-large;
+}
+
+/* CSS */
+.button-29 {
+  align-items: center;
+  appearance: none;
+  background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+}
+
+.button-29:focus {
+  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+}
+
+.button-29:hover {
+  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.button-29:active {
+  box-shadow: #3c4fe0 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+
+#searchBarListing__container {
+  border: 1px black dotted;
+  display: block;
+  height: 0px;
+  width: 100%;      
+  overflow: hidden;
+  padding-top: 2em;
+  padding-bottom: 4em;
+}
+
+#itemName__name { 
+  font-size: large;
+}
+
+.item__container {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 40px;
+  /* border: 5px double darkgray; */
+  border-radius: 10px;
+}
+
+.product_name {
+  margin-top: 10px;
+  align-self: center;
+  font-size: 24px;
+  padding: 10px;
+}
+
+.price_product__container {
+  display: flex;
+  flex-direction: row;
+}
+
+.add_to_cart__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: rgb(253, 228, 228);
+  border-radius: 5px;
+}
+
+.add_to_cart__container:hover {
+  background-color: grey;
+}
+
+.add_to_cart__name {
+  font-size: 35px;
+  font-weight: bold;
+}
+.option_search{
+  display:flex;
+  margin-left: auto;
+  margin-right: 30px;
+  margin-bottom: 20px;
+
+
+}
+.option_search2{
+  display:flex;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 0;
+}
+.option_search3{
+  display:flex;
+  margin-left: auto;
+  margin-right: 50px;
+  margin-top: 0;
+}
+
+  
+  
+
 
 .superstore {
   background-color: #ff8177;
@@ -38,6 +187,13 @@
 .cartName {
   font-size: 2rem;
 }
+
+.product_container{
+  border: 4px black solid;
+  border-radius: 20px;
+  padding:4%;
+}
+
 
 .search__container {
   margin-top: 10px;
@@ -121,6 +277,25 @@ img {
   display:flex;
   justify-content: center;
   flex-direction: row;
+}
+
+.buttonStyle2 {
+  display: flex;
+  align-items: left;
+  align-self: left;
+  padding:10px 10px;
+  font-size: 50;
+  color:white;
+  
+  background: #121954;  /* fallback for old browsers */
+  background-image: linear-gradient(to top left,
+   rgba(0, 0, 0, .2),
+  rgba(0, 0, 0, .2) 30%,
+  rgba(0, 0, 0, 0));
+
+}
+.buttonStyle2:hover {
+  background-color: rgb(98, 90, 113);
 }
 
 .buttonStyle {
@@ -362,14 +537,13 @@ a {
   width: 300px;
   position: fixed;
   top: 0;
-  padding: 50px 0;
+  padding: 0px 0;
   background-color: #759cb6;
 }
 
 .menu__btn {
   position: fixed;
   top: 60px;
-  right: px;
   width: 26px;
   height: 26px;
   cursor:pointer;

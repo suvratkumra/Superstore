@@ -14,6 +14,10 @@ var expressValidator = require('express-validator');
 const mysql = require('mysql');      // to get the mysql dependency
 const { restart } = require('nodemon');
 const e = require('express');
+const { application } = require('express');
+
+
+var emailConstant = "";
 
 const db = mysql.createPool({
     host: 'localhost',                      // host name
@@ -85,6 +89,8 @@ app.post('/api/signup', (req, res) => {
     const hintQuestion = req.body.hintQuestion;
     const hintAnswer = req.body.hintAnswer;
 
+    
+
     const sqlCheck = "SELECT * FROM login_details WHERE Email_Id = ?";
     db.query(sqlCheck, [email], (err, result) => {
         if(result.length > 0) {
@@ -96,6 +102,7 @@ app.post('/api/signup', (req, res) => {
     //console.log(sqlInsert, [username, email, password]);
     db.query(sqlInsert, [username, email, password, hintQuestion, hintAnswer], (err, result) => {
       //  console.log(result);
+      res.send("12");
     })
 })
 
@@ -106,8 +113,10 @@ app.post('/api/login', (req, res) => {
     const sqlCheck = "SELECT * FROM login_details WHERE Email_Id = ? AND Password = ?";
     db.query(sqlCheck, [email, password], (err, result) => {
         if(result.length != 0) {
+            emailConstant = email;
             return res.send("User Found, redirecting to the store page");
         }
+    
     })
 })
 
@@ -136,19 +145,13 @@ app.post('/api/warehouse/get_products', (req, res) => {
     const sqlQuery = "SELECT PName FROM product_details WHERE dept_id = ?;";
     db.query(sqlQuery, [departmentValue], (err, result) => {
         res.send(result);
-        // result.forEach(element => {
-        //     for(let key in element) {
-                
-        //         sendBack[key] = element[key];
-        //         //console.log(`${element[key]}`);
-        //     } 
-        // });
     })
     
 }) 
 app.post('/api/Menu/AccountSettings', (req, res) => {
 
 })
+
 
 app.post('/api/warehouse/update_products', (req, res) => {
 
@@ -164,12 +167,7 @@ app.post('/api/warehouse/update_products', (req, res) => {
         /*first finding the quantity right now*/
         const sqlQuery = "SELECT quantity FROM product_details WHERE PName = ?;";
         db.query(sqlQuery, [property], (err, result) => {
-            // now we will increment the quantity with what is parsed in teh object above
-            
-            // console.log(Object.values(result[0])[0]);
-
             var updatedQuantity = Object.values(result[0])[0] + itemIncrementer[property];      
-            //console.log(updatedQuantity);
             const updateQuery = "UPDATE product_details SET quantity = ? WHERE PName = ?";
             db.query(updateQuery, [updatedQuantity, property], (err2, result2) => {
                 // console.log(result2);
@@ -180,6 +178,81 @@ app.post('/api/warehouse/update_products', (req, res) => {
     }
 }) 
 
+app.post("/api/search_bar", (req, res) => {
+    const val = req.body.textValue;
+    // console.log(val);
+
+    const sqlQuery = "SELECT PName FROM product_details WHERE PName LIKE '%" + val + "%'" 
+    db.query(sqlQuery, [val], (err, result) => {
+        res.send(result);
+    })
+})
+
+app.post("/api/cart", (req, res) => {
+    const product_name = req.body.name;
+    const emailId = req.body.email;
+    const quantity = req.body.quantity + 1;
+    const price = req.body.price;
+    // console.log(product_name, quantity);
+
+    const checkQuery = "SELECT email, added_products FROM cart_details WHERE email = ? AND added_products = ?";
+    db.query(checkQuery, [emailId, product_name], (err, result) => {
+        console.log(result.length);        // this will undefined if no value with these property exists
+        if(result.length === 0) {
+            const sqlQuery = "INSERT INTO cart_details (email, added_products, price, quantity) VALUES (?, ?, ?, ?)"; 
+            db.query(sqlQuery, [emailId, product_name, price, quantity], (err2, result2) => {
+                console.log(result);
+                res.send("12");
+            })
+        } else {
+            const updateQuery = "UPDATE cart_details SET quantity = ? WHERE email = ? AND added_products = ?";
+            db.query(updateQuery, [quantity, emailId, product_name], (err3, result3) => {
+                console.log("added");
+                res.send("12");
+            })
+        }
+    })
+})
+
+app.post("/api/getEmail", (req, res) => {
+  //  console.log(emailConstant);
+    res.send(emailConstant);
+})
+
+app.post("/api/logout", (req, res) =>{
+    emailConstant = "";
+    res.send(emailConstant);
+})
+
+
+// add to cart stuff
+app.post("/api/add_to_cart", (req, res) => {
+    const emailId = req.body.email;
+    const product_name = req.body.product_name;
+    const quantity = req.body.quantity + 1;
+    const price = req.body.price;
+
+    console.log(emailId, product_name, quantity)
+
+    const checkQuery = "SELECT email, added_products FROM cart_details WHERE email = ? AND added_products = ?";
+    db.query(checkQuery, [emailId, product_name], (err, result) => {
+        console.log(result.length);        // this will undefined if no value with these property exists
+        if(result.length === 0) {
+            const sqlQuery = "INSERT INTO cart_details (email, added_products, price, quantity) VALUES (?, ?, ?, ?)"; 
+            db.query(sqlQuery, [emailId, product_name, price, quantity], (err2, result2) => {
+                console.log(result);
+                res.send("12");
+            })
+        } else {
+            const updateQuery = "UPDATE cart_details SET quantity = ? WHERE email = ? AND added_products = ?";
+            db.query(updateQuery, [quantity, emailId, product_name], (err3, result3) => {
+                console.log("added");
+                res.send("12");
+            })
+        }
+    })
+
+})
 
 // to listen
 app.listen(3001, () => {
