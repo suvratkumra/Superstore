@@ -18,10 +18,21 @@ export default function MenClothes() {
   const initializeValues = {Crew_Sock:initialBoolean, Men_Poplin_Pajama_Pant:initialBoolean, Pack_Men_Comfort_Soft_Knit_Boxer:initialBoolean, Men_Large_Stretch_VNeck_Tee:initialBoolean, Men_Medium_Fleece_Crew_Neck:initialBoolean, Men_Medium_Sleep_Pants:initialBoolean};
   const [cartText, setCartText] = useState(initializeValues);
   const [showButton, setShowButton] = useState({showButton: false, showButton2: false});  
-  const initializeNumber = {Crew_Sock:1, Men_Poplin_Pajama_Pant:1, Pack_Men_Comfort_Soft_Knit_Boxer:1, Men_Large_Stretch_VNeck_Tee:1, Men_Medium_Fleece_Crew_Neck:1, Men_Medium_Sleep_Pants:1};
+  const initializeNumber = {Crew_Sock:0, Men_Poplin_Pajama_Pant:0, Pack_Men_Comfort_Soft_Knit_Boxer:0, Men_Large_Stretch_VNeck_Tee:0, Men_Medium_Fleece_Crew_Neck:0, Men_Medium_Sleep_Pants:0};
   const [itemIncrementer, setItemIncrementer] = useState(initializeNumber);
   const [continuing, setContinuing] = useState(false);
   const [email, setEmail] = useState("");
+
+  
+  function addToCartListener(str, quantity, price) {
+    console.log(str, quantity);
+    Axios.post("http://localhost:3001/api/add_to_cart", {
+      email: email,
+      product_name: str, 
+      quantity: quantity, 
+      price: price
+    }).then((res) => console.log(res.data))
+  }
 
   function getEmail(){
     Axios.post("http://localhost:3001/api/getEmail"
@@ -93,9 +104,12 @@ export default function MenClothes() {
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.Crew_Sock > 0)
                                                                                       setItemIncrementer({...itemIncrementer, Crew_Sock: itemIncrementer.Crew_Sock-1});                                                                          
+                                                                                      addToCartListener("Crew Sock", itemIncrementer.Crew_Sock, 12.99);
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.Crew_Sock} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Crew_Sock: itemIncrementer.Crew_Sock+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, Crew_Sock: itemIncrementer.Crew_Sock+1});
+                                                                                    addToCartListener("Crew Sock", itemIncrementer.Crew_Sock, 12.99);
+                                                                                  }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -117,9 +131,11 @@ export default function MenClothes() {
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.Men_Poplin_Pajama_Pant > 0)
                                                                                       setItemIncrementer({...itemIncrementer, Men_Poplin_Pajama_Pant: itemIncrementer.Men_Poplin_Pajama_Pant-1});                                                                          
-                                                                                    } }> - </button>
+                                                                                      addToCartListener("Men's Poplin Pajama Pant", itemIncrementer.Men_Poplin_Pajama_Pant, 11.99);
+                                                                                      } }> - </button>
                                       <span className = 'number'> {itemIncrementer.Men_Poplin_Pajama_Pant} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Men_Poplin_Pajama_Pant: itemIncrementer.Men_Poplin_Pajama_Pant+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, Men_Poplin_Pajama_Pant: itemIncrementer.Men_Poplin_Pajama_Pant+1});
+                                      addToCartListener("Men's Poplin Pajama Pant:", itemIncrementer.Men_Poplin_Pajama_Pant, 11.99);} }> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -139,9 +155,12 @@ export default function MenClothes() {
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.Pack_Men_Comfort_Soft_Knit_Boxer > 0)
                                                                                       setItemIncrementer({...itemIncrementer, Pack_Men_Comfort_Soft_Knit_Boxer: itemIncrementer.Pack_Men_Comfort_Soft_Knit_Boxer-1});                                                                          
-                                                                                    } }> - </button>
+                                                                                      addToCartListener("4 Pack Men's Comfort Soft Knit Boxer", itemIncrementer.Pack_Men_Comfort_Soft_Knit_Boxer, 23.58);
+                                                                                      } }> - </button>
                                       <span className = 'number'> {itemIncrementer.Pack_Men_Comfort_Soft_Knit_Boxer} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Pack_Men_Comfort_Soft_Knit_Boxer: itemIncrementer.Pack_Men_Comfort_Soft_Knit_Boxer+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, Pack_Men_Comfort_Soft_Knit_Boxer: itemIncrementer.Pack_Men_Comfort_Soft_Knit_Boxer+1});
+                                                                                      addToCartListener("4 Pack Men's Comfort Soft Knit Boxer", itemIncrementer.Pack_Men_Comfort_Soft_Knit_Boxer, 23.58);
+                                                                                    }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -161,9 +180,12 @@ export default function MenClothes() {
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.Men_Large_Stretch_VNeck_Tee > 0)
                                                                                       setItemIncrementer({...itemIncrementer, Men_Large_Stretch_VNeck_Tee: itemIncrementer.Men_Large_Stretch_VNeck_Tee-1});                                                                          
+                                                                                      addToCartListener("Men's Large Stretch V-Neck Tee", itemIncrementer.Men_Large_Stretch_VNeck_Tee, 9.99);
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.Men_Large_Stretch_VNeck_Tee} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Men_Large_Stretch_VNeck_Tee: itemIncrementer.Men_Large_Stretch_VNeck_Tee+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, Men_Large_Stretch_VNeck_Tee: itemIncrementer.Men_Large_Stretch_VNeck_Tee+1});
+                                                                                    addToCartListener("Men's Large Stretch V-Neck Tee", itemIncrementer.Men_Large_Stretch_VNeck_Tee, 9.99);
+                                                                                  }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -183,9 +205,12 @@ export default function MenClothes() {
                                       <button className = 'minus' onClick = {() => {
                                                                                     if(itemIncrementer.Men_Medium_Fleece_Crew_Neck > 0)
                                                                                       setItemIncrementer({...itemIncrementer, Men_Medium_Fleece_Crew_Neck: itemIncrementer.Men_Medium_Fleece_Crew_Neck-1});                                                                          
+                                                                                      addToCartListener("Men's Medium Fleece Crew Neck", itemIncrementer.Men_Medium_Fleece_Crew_Neck, 15.99);
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.Men_Medium_Fleece_Crew_Neck} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Men_Medium_Fleece_Crew_Neck: itemIncrementer.Men_Medium_Fleece_Crew_Neck+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, Men_Medium_Fleece_Crew_Neck: itemIncrementer.Men_Medium_Fleece_Crew_Neck+1}); 
+                                                                                                                            addToCartListener("Men's Medium Fleece Crew Neck", itemIncrementer.Men_Medium_Fleece_Crew_Neck, 15.99);
+                                      }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
@@ -207,7 +232,9 @@ export default function MenClothes() {
                                                                                       setItemIncrementer({...itemIncrementer, Men_Medium_Sleep_Pants: itemIncrementer.Men_Medium_Sleep_Pants-1});                                                                          
                                                                                     } }> - </button>
                                       <span className = 'number'> {itemIncrementer.Men_Medium_Sleep_Pants} </span>
-                                      <button className = 'plus' onClick = {() => setItemIncrementer({...itemIncrementer, Men_Medium_Sleep_Pants: itemIncrementer.Men_Medium_Sleep_Pants+1}) }> + </button>                                    
+                                      <button className = 'plus' onClick = {() => {setItemIncrementer({...itemIncrementer, Men_Medium_Sleep_Pants: itemIncrementer.Men_Medium_Sleep_Pants+1}); 
+                                                                              addToCartListener("Men's Medium Fleece Crew Neck", itemIncrementer.Men_Medium_Fleece_Crew_Neck, 15.99);
+                                                                            }}> + </button>                                    
                                      </div> 
                                      : <span className = 'add_to_cart__name'> Add to Cart </span>
             }
