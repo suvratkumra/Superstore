@@ -25,6 +25,10 @@ import Manager from "./Manager_Warehouse/Manager";
 import Warehouse from "./Manager_Warehouse/Warehouse";
 import AccountSettings from "./Menu/AccountSettings";
 
+import Cart from "./Cart/Cart";
+
+
+
 function App() {
 
 return(
@@ -53,7 +57,13 @@ return(
       <Route path="/ForgotPassword" element={<ForgotPassword />} />
       <Route path="/Manager" element={<Manager />} />
       <Route path="/Warehouse" element={<Warehouse />} />
+
       <Route path="/Menu/AccountSettings" element={<AccountSettings />} />
+
+
+      <Route path="/Cart" element={<Cart />} />
+      {/* <Route path="/UserProfile" element={<UserProfile />} /> */}
+
       <Route path="*" element={<ErrorPage />} />
     </Routes>
   </Router>
