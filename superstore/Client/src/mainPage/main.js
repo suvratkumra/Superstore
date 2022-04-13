@@ -87,7 +87,8 @@ function MainPage(props) {
     // now we will update our sql.
     Axios.post("http://localhost:3001/api/cart", {
       quantity: quantity[itemName],
-      name: itemName
+      name: itemName,
+      email: email
     }).then((res) => console.log(res.data));
 
     console.log(itemName);
