@@ -24,10 +24,8 @@ function AccountSettings() {
     
     if(formValues.email.length !== 0 && formValues.password.length !== 0)
       setIsSubmit(true);  
-    console.log(isSubmit);
-    if(isSubmit){
       window.location.href = "http://localhost:3000/Menu/AccountSettings";
-    }
+    
   }
 
   useEffect((values) => {
@@ -40,7 +38,7 @@ function AccountSettings() {
         setDataFetched(res.data);
       })    
     }
-    setDataFetched('');
+    // setDataFetched('');
     if(dataFetched.length === 0  && formValues.email.length !== 0 && formValues.password.length !== 0)
      setIsSubmit(true);
   },[formErrors]);
@@ -66,7 +64,7 @@ function AccountSettings() {
   return (
     <>
     <div>
-      <text className = "welcome">User Profile</text>
+      <span className = "welcome">User Profile</span>
     </div>
     
     <form className = "Update" onSubmit={handleSubmit}>

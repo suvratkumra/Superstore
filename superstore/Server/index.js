@@ -152,37 +152,34 @@ app.post('/api/Menu/AccountSettings', (req, res) => {
    
     const email = req.body.email;
     const password = req.body.password;
+    // console.log(email);
+    // console.log(password);
 
     const sqlCheck = "SELECT * FROM login_details WHERE Email_Id = ? AND Password = ?";
     db.query(sqlCheck, [email, password], (err, result) => {
+        console.log(email);
+        console.log(password);
+
         if(result.length > 0) {
             return res.send("User already registered with this Email and Password");
         }
-    })
 
-    const sqlUpdate = "UPDATE INTO login_details (Email_Id, Password) VALUES (?,?);";
-    //console.log(sqlInsert, [ email, password]);
-    db.query(sqlUpdate, [email, password], (err, result) => {
-      //  console.log(result);
-      res.send("12");
+        else{
+            const sqlCheck = "SELECT Password FROM login_details WHERE Email_Id = ?;";
+            console.log(sqlCheck, [email, password]);
+            db.query(sqlCheck, [email, password], (err, result) => {
+             //console.log(result);
+            res.send(result);
+            })
+        }
+       
     })
-   
-})
-
-app.post('/api/Menu/AccountSettings', (req, res) => {
-    const val1 = req.body.emailAddress;
-    const val2 = req.body.password;
-    console.log(val1);
-    console.log(val2);
-
-  
-    const updateQuery = "UPDATE login_details WHERE Email_Id = ? AND PName = ?";
-    db.query(updateQuery, [val1, val2], (err2, result2) => {
-        console.log(result2);
-    })
-    db.query()
     
+
+ 
 })
+
+
 
 app.post('/api/warehouse/update_products', (req, res) => {
 
