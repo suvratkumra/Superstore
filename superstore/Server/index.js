@@ -149,8 +149,35 @@ app.post('/api/warehouse/get_products', (req, res) => {
     
 }) 
 app.post('/api/Menu/AccountSettings', (req, res) => {
+   
+    const email = req.body.email;
+    const password = req.body.password;
+    // console.log(email);
+    // console.log(password);
 
+    const sqlCheck = "SELECT * FROM login_details WHERE Email_Id = ? AND Password = ?";
+    db.query(sqlCheck, [email, password], (err, result) => {
+        console.log(email);
+        console.log(password);
+
+        if(result.length > 0) {
+            return res.send("User already registered with this Email and Password");
+        }
+
+        else{
+            const sqlCheck = "UPDATE login_details SET Password = ? WHERE Email_Id = ?";
+            db.query(sqlCheck, [password, email], (err, result) => {
+            console.log(err);
+            // res.send(result);
+            })
+        }
+       
+    })
+    
+
+ 
 })
+
 
 
 app.post('/api/warehouse/update_products', (req, res) => {
@@ -252,16 +279,6 @@ app.post("/api/add_to_cart", (req, res) => {
         }
     })
 
-})
-
-app.post('/api/getCart', (req, res) => {
-    const emailExtracted = req.body.email;
-
-    const sqlQuery = "SELECT * FROM cart_details WHERE email = ?";
-    db.query(sqlQuery, [emailExtracted], (err, result) => {
-        console.log(result);
-        res.send(result);
-    })
 })
 
 // to listen

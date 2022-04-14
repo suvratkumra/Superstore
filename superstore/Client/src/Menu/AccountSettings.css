@@ -58,23 +58,7 @@
 
 }
 
-/* .ProfilePic
-{
-    width:200px;
-    height: 400px;
-    left: 0px;
-    right: 0px;
-    
-} */
 
-/* #profile__container
-{
-    display: block;
-    margin-left: 50px;
-    width: 500px;
-    height: 500px;
-    
-} */
 .profile
 {
     margin-left: 0px;
@@ -88,13 +72,138 @@
 {
     background-color: aquamarine;
 }
-/* img {
-    border: 1px solid #ddd;
- 
-    border-radius: 4px;
-    padding: 5px;
-    width: 4rem;
-    height: 4rem;
-  } */
 
+.welcome1 {
+    padding: 100px;
+    background-color: rgb(20, 37, 189);
+    background-image: linear-gradient(to right, #9c7dd646, #2203d1);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 3rem;
+    
+  }
+  
+  .Update {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 20px 250px;
+        padding: 30px;
+        border: 2px solid black;
+        border-radius: 30px;
+  }
+
+  .Update input {
+    width: 300px;
+    height: 30px;
+    margin: 10px;
+    padding: 5px;
+    font-size: large;
+    background-color: rgb(250, 233, 233);
+    border-radius: 5px;
+}
+
+.make_btn1 {
+    display: flex;
+    justify-content: center;
+    font-style: italic;
+    width: 200px;
+    margin-left: 60px;
+    background-color: #2203d1;
+    color: white;
+    font-size: large;
+}
+
+
+.previous__container1 {
+    border-radius: 10px;
+    justify-content: space-around;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: -600px;
+    background-color: black;
+    color: white;
+    font-style: italic;
+    font-size: 30px;
+}
+
+@media screen and (max-width:900px) {
  
+    .Update {
+      justify-content: center;
+      font-size: medium;
+      border: 2px solid black;
+
+  }
+    
+    .Update input {
+      font-size: large;
+      width: 200px;
+      height: 30px;
+    }
+
+  .make_btn1 {
+
+    font-size: large;
+      width: 100px;
+  }
+}
+
+
+@media screen and (max-width:760px) {
+ 
+  .Update {
+    justify-content: center;
+    font-size: medium;
+    border: 2px solid black;
+
+}
+  
+  .Update input {
+    font-size: medium;
+    width: 180px;
+    height: 30px;
+  }
+
+.make_btn1 {
+
+  font-size: large;
+  width: 90px;
+}
+}
+
+
+@media screen and (max-width:730px) {
+ 
+  .Update {
+      justify-content: center;
+      font-size: medium;
+      border: 2px solid black;
+
+  }
+    
+    .Update input {
+      font-size: medium;
+      width: 120px;
+      height: 30px;
+    }
+
+  .make_btn1 {
+
+    font-size: large;
+    width: 80px;
+    margin-left: 40px;
+    
+  }
+}
