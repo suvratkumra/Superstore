@@ -6,6 +6,7 @@ import Axios from 'axios'
 import {Navigate} from 'react-router-dom';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";
+import pic from '../images/team-male.png';
 
 function AccountSettings() {
 
@@ -40,6 +41,7 @@ function AccountSettings() {
         setDataFetched(res.data);
       })    
     }
+
     // setDataFetched('');
     if(dataFetched.length === 0  && formValues.email.length !== 0 && formValues.oldPassword.length !== 0 && formValues.password.length !== 0)
      setIsSubmit(true);
@@ -69,7 +71,8 @@ function AccountSettings() {
 
   return (
     <>
-    <div>
+
+    <div className="color">
       <span className = "welcome1">User Profile</span>
     </div>
     
@@ -88,7 +91,7 @@ function AccountSettings() {
       <input type = "oldPassword" 
         name = "oldPassword" 
         placeholder="Old Password"
-        value = { formValues.email }
+        value = { formValues.oldPassword }
         onChange = {handleChange} />
       <p> { formErrors.oldPassword } </p>
       <br/> <br/>
@@ -113,16 +116,20 @@ function AccountSettings() {
 
       <button className = 'make_btn1'>Update</button>
 
+      <img src={pic} className="photo" alt="pic1" width={200} height={200} />
+
   
     </form>
     <div className = 'previous__container1'>
       <div classname = 'back'>
          <a href = '../MainPage' ><span class = "back_icon"><BsFillArrowLeftCircleFill /></span></a>
         <span class='goto_previous'>  View all departments</span>
+        
       </div>
-      
+
+  
+      </div>
     
-    </div>
     </>
   )
 }
