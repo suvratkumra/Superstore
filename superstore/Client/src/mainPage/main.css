@@ -533,12 +533,12 @@ a {
 .menu__item a {
 
   display: block;
-  margin-top: 60px;
-  margin-left: 5
-  x;
+  margin-top: 70px;
+  margin-left: 25px;
+  padding: 10px;
   color: #333;
   font-family:'Times New Roman', Times, serif;
-  font-size: 20px;
+  font-size: 30px;
 
 }
 

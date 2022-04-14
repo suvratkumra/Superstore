@@ -148,6 +148,43 @@ app.post('/api/warehouse/get_products', (req, res) => {
     })
     
 }) 
+app.post('/api/Menu/AccountSettings', (req, res) => {
+   
+    const email = req.body.email;
+    const oldPassword = req.body.oldPassword;
+    const password = req.body.password;
+    
+
+    const sqlCheck = "SELECT * FROM login_details WHERE Email_Id = ? AND Password = ?";
+    db.query(sqlCheck, [email, oldPassword], (err, result) => {
+        console.log(email);
+        console.log(oldPassword);
+        console.log(password);
+
+        if(oldPassword != sqlCheck)
+        {
+            return res.send("Invalid Old Password");
+
+        }
+
+        if(result.length > 0) {
+            return res.send("User already registered with this Email and Password");
+        }
+
+        else{
+            const sqlCheck = "UPDATE login_details SET Password = ? WHERE Email_Id = ?";
+            db.query(sqlCheck, [password, email], (err, result) => {
+            console.log(err);
+            // res.send(result);
+            })
+        }
+       
+    })
+    
+
+ 
+})
+
 
 
 app.post('/api/warehouse/update_products', (req, res) => {
