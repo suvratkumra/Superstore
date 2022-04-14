@@ -149,14 +149,22 @@ app.post('/api/warehouse/get_products', (req, res) => {
     
 }) 
 app.post('/api/Menu/AccountSettings', (req, res) => {
-    const val1 = req.body.emailAddress;
-    const val2 = req.body.password;
-    console.log(val1);
-    console.log(val2);
+   
+    const email = req.body.email;
+    const password = req.body.password;
 
-    const sqlQuery = "SELECT Email_Id, Password FROM login_details WHERE Email_Id = ? AND Password = ?" 
-    db.query(sqlQuery, [val1, val2], (err, result) => {
-        res.send(result);
+    const sqlCheck = "SELECT * FROM login_details WHERE Email_Id = ? AND Password = ?";
+    db.query(sqlCheck, [email, password], (err, result) => {
+        if(result.length > 0) {
+            return res.send("User already registered with this Email and Password");
+        }
+    })
+
+    const sqlUpdate = "UPDATE INTO login_details (Email_Id, Password) VALUES (?,?);";
+    //console.log(sqlInsert, [ email, password]);
+    db.query(sqlUpdate, [email, password], (err, result) => {
+      //  console.log(result);
+      res.send("12");
     })
    
 })

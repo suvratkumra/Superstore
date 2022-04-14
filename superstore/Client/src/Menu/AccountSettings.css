@@ -1,100 +1,45 @@
-
-.formCategory1 {
-    display:flex;
-    justify-content: space-between;
-    flex-direction: column;
-    margin-left: 35%;
-    margin-top: 9%;
-    padding-bottom: 20%;
-    width: 35%;
-    font-size: 30px;
-    background-color:aquamarine;
-    font-family:'Times New Roman', Times, serif;
-
-    
-}
-
-.profile_name{
-    display: flex;
-    justify-content: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 5rem;
-    font-weight: 900;
-    background-color: #da3226;
-    background-image: linear-gradient(to left, #a83636, #801717);
+.welcome {
+    padding: 100px;
+    background-color: rgb(20, 37, 189);
+    background-image: linear-gradient(to right, #9c7dd646, #2203d1);
     background-size: 100%;
     -webkit-background-clip: text;
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
-}
-
-.username
-{
-    margin-top:20px;
-    width: 500px;
-    height: 40px;
-}
-
-.email
-{
-    margin-top:20px;
-    width: 500px;
-    height: 40px;
-}
-
-.update_profile
-{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 900;
     display: flex;
-    align-items: center;
-    align-self: center;
     justify-content: center;
-    justify-items: center;
-    font-size: 4rem;
-    font-weight:900;
-    color:white;
-    width: 300px;  
-    background-color:aquamarine;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 3rem;
+  }
+  
+  .Update {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 20px 250px;
+        padding: 30px;
+        border: 2px solid black;
+        border-radius: 30px;
+  }
 
-}
-
-/* .ProfilePic
-{
-    width:200px;
-    height: 400px;
-    left: 0px;
-    right: 0px;
-    
-} */
-
-/* #profile__container
-{
-    display: block;
-    margin-left: 50px;
-    width: 500px;
-    height: 500px;
-    
-} */
-.profile
-{
-    margin-left: 0px;
-    border-radius: 70%;
-    font-size: 40px;
-    border: 3px solid rgb(245, 230, 230);
-
-
-}    
-.overall
-{
-    background-color: aquamarine;
-}
-/* img {
-    border: 1px solid #ddd;
- 
-    border-radius: 4px;
+  .Update input {
+    width: 300px;
+    height: 30px;
+    margin: 10px;
     padding: 5px;
-    width: 4rem;
-    height: 4rem;
-  } */
+    font-size: large;
+    background-color: rgb(250, 233, 233);
+    border-radius: 5px;
+}
 
- 
+.make_btn {
+    display: flex;
+    justify-content: center;
+    font-style: italic;
+    width: 200px;
+}
