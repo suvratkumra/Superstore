@@ -72,6 +72,7 @@ function AccountSettings() {
   return (
     <>
 
+    
     <div className="color">
       <span className = "welcome1">User Profile</span>
     </div>

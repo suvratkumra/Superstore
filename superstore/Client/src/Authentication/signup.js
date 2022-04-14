@@ -78,11 +78,11 @@ function Signup() {
 
   return (
     <>
-    <div>
+    <div className="stylingWelcome">
       <text className = "welcome">Create an Account</text>
     </div>
     
-    <form className = "signup" onSubmit={handleSubmit}>
+    <form className = "signup1" onSubmit={handleSubmit}>
        <p> {dataFetched} </p>
       <label for = "username">Username*: </label>
       <input type = "text" 
@@ -103,7 +103,7 @@ function Signup() {
       <label for = "password">Password*: </label>
           <input type = "password" 
             name = "password"
-            placeholder='password' 
+            placeholder='Password' 
             value = { formValues.password }
             onChange= {handleChange} />
         <p>{ formErrors.password }</p>
@@ -111,7 +111,7 @@ function Signup() {
       <label for = "Confirm Password">Confirm Password*: </label>
         <input type = "password" 
           name = "confirmPassword"
-          placeholder='password' 
+          placeholder='Password' 
           value = { formValues.confirmPassword }
           onChange= {handleChange} />
       <p>{ formErrors.confirmPassword }</p>
@@ -124,8 +124,9 @@ function Signup() {
         value = { formValues.hintQuestion }
         onChange={handleChange} /> */}
 
+   
       <label for = "hintQuestion">Security Question*: </label>
-        <select id="hintQuestion" name="hintQuestion" value = {formValues.hintQuestion} onChange = {handleChange}>
+          <select id="hintQuestion" name="hintQuestion" value = {formValues.hintQuestion} onChange = {handleChange}>
           <option value="none">Select a question</option>
           <option value="What is your mother's maiden name?">What is your mother's maiden name?</option>
           <option value="Who is your childhood hero?">Who is your childhood hero?</option>
@@ -133,6 +134,7 @@ function Signup() {
           <option value="What is your favorite movie?">What is your favorite movie?</option>
         </select>
       <p>{ formErrors.hintQuestion }</p>
+     
      <br/> <br/>
 
       <label for = "hintAnswer">Hint Answer*: </label>

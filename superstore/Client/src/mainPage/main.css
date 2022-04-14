@@ -509,14 +509,15 @@ a {
   opacity: 0;
 }
 
+#menu__toggle:checked + .menu__btn > span {
+  transform: rotate(45deg);
+}
+
 #menu__toggle:checked + .menu__btn > span::before {
   top: 0;
   transform: rotate(0deg);
 }
 
-#menu__toggle:checked + .menu__btn > span {
-  transform: rotate(45deg);
-}
 
 #menu__toggle:checked + .menu__btn > span::after {
   top: 0;
@@ -533,9 +534,9 @@ a {
 .menu__item a {
 
   display: block;
-  margin-top: 70px;
+  margin-top: 150px;
   margin-left: 25px;
-  padding: 10px;
+  padding: 14px;
   color: #333;
   font-family:'Times New Roman', Times, serif;
   font-size: 30px;

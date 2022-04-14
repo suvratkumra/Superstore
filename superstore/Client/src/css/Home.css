@@ -30,8 +30,9 @@
 .login__container {
     margin: 20px 250px;
     padding: 10px;
-    border: 2px solid black;
+    border: 4px solid rgb(37, 4, 185);
     border-radius: 30px;
+    position: fixed;
 }
 
 .login__containerHeader{
@@ -43,12 +44,19 @@
     border-radius: 10px;
     justify-content: center;
     font-size: 2rem;
+    background: rgb(132,63,251);
+    background: radial-gradient(circle, rgba(132,63,251,1) 0%, rgba(176,66,251,1) 39%, rgba(109,70,252,1) 86%);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
+
 }
 
 .login__credentials{
     display: flex;
     flex-direction: column;
     font-size: 1.3rem;
+    margin-left: 100px;
 
 }
 
@@ -56,7 +64,7 @@
     width: 350px;
     height: 30px;
     margin: 10px;
-    padding: 5px;
+    padding: 15px;
     font-size: large;
     background-color: rgb(250, 233, 233);
     border-radius: 5px;
@@ -81,6 +89,12 @@ p {
 
 #forgotPasswordLine:hover {   
     text-decoration: none;
+    
+
+}
+.forgotPassword__container{   
+
+    margin-left: 110px;
 }
 
 
@@ -91,16 +105,42 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    margin: 20px 250px;
+    padding: 50px;
+    margin-top: 4%;
+    border: 4px solid rgb(37, 4, 185);
+    border-radius: 30px;
+    margin-left: 1000px;;
 }
 
 #signup_line:hover {
     text-decoration: none;
 }
 
-#guest_continue_line:hover {
-    text-decoration: none;
-}
+.signup__containerHeader{
+    width:auto;
+    background-color: rgb(8, 6, 17);
+    color:white;
+    display: flex;
+    margin:30px 50px;
+    
+    border-radius: 10px;
+    justify-content: center;
+    font-size: 2rem;
+    background: rgb(132,63,251);
+    background: radial-gradient(circle, rgba(132,63,251,1) 0%, rgba(176,66,251,1) 39%, rgba(109,70,252,1) 86%);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
 
+}
+.signup{
+    margin-top: 15%;
+    font-size: large;
+
+    
+}
 #manager_continue_line:hover {
     text-decoration: none;
 }   
@@ -108,7 +148,9 @@ p {
 .footer__manager_guest {
     font-size: 2rem;
     display: flex;
-    flex-direction: row;
+    position: absolute;
+    margin-left: 45%;
+    margin-top: 25%;
     justify-content: space-around;
 }
 

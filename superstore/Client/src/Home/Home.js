@@ -96,9 +96,17 @@ function WelcomePage() {
           <span className='forgotPassword'> <i> <a href = '/ForgotPassword' id = "forgotPasswordLine"> Forgot your password? </a> </i> </span>
         </div>
         <br/>
+      </form>
+      <form>
         <div className='signup__container'>
-          <span id = "new_user"> New user? </span>
-          <span className='signup'><a href = "/signup" id='signup_line'>Sign Up!</a></span>
+        <div className='signup__containerHeader'>
+          New user?
+
+        </div>
+        <a href = "/signup" id='signup_line'>Sign Up!</a>
+
+          {/* <span id = "new_user"> New user? </span>
+          <span className='signup'><a href = "/signup" id='signup_line'>Sign Up!</a></span> */}
         </div>
 
         <div className = 'footer__manager_guest'>

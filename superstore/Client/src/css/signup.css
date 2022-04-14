@@ -15,19 +15,32 @@
       cursor: pointer;
       text-decoration: none;
       font-size: 3rem;
-  }
-  
-  .signup {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin: 20px 250px;
-        padding: 30px;
-        border: 2px solid black;
-        border-radius: 30px;
+      margin-left: 100px;
   }
 
-  .signup input {
+  .stylingWelcome{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    background: rgb(132,63,251);
+    background: radial-gradient(circle, rgba(132,63,251,1) 0%, rgba(176,66,251,1) 39%, rgba(109,70,252,1) 86%);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
+    height:220px;
+}
+  .signup1 {
+        display: block;
+        flex-direction: column;
+        position: fixed;
+        justify-content: center;
+        margin: 0px 750px;
+        padding: 10px;
+        border: 4px solid black;
+        border-radius: 30px;
+        margin-bottom: 10px;
+        
+  }
+
+  .signup1 input {
     width: 300px;
     height: 30px;
     margin: 10px;
@@ -35,11 +48,26 @@
     font-size: large;
     background-color: rgb(250, 233, 233);
     border-radius: 5px;
+    margin-left: 50px;
+    
 }
 
 .make_btn {
     display: flex;
     justify-content: center;
     font-style: italic;
-    width: 200px;
+    width: 250px;
+    margin-left: 60px;
+    background-color:rgb(5, 9, 223);
+    color: rgb(255, 255, 255);
+}
+
+#hintQuestion
+{
+        font-style: italic;
+        width: 300px;
+        margin-left: 50px;
+
+
+
 }
