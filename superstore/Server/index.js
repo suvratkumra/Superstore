@@ -81,13 +81,24 @@ app.post('/api/signup', (req, res) => {
 
     // if (errors) {
     //     console.log(`errors: ${JSON.stringify(errors)}`);
-    // }
+
+    const cyrb53 = function(str, seed = 0) {
+        let h1 = 0xdeadbeef ^ seed, h2 = 0x41c6ce57 ^ seed;
+        for (let i = 0, ch; i < str.length; i++) {
+            ch = str.charCodeAt(i);
+            h1 = Math.imul(h1 ^ ch, 2654435761);
+            h2 = Math.imul(h2 ^ ch, 1597334677);
+        }
+        h1 = Math.imul(h1 ^ (h1>>>16), 2246822507) ^ Math.imul(h2 ^ (h2>>>13), 3266489909);
+        h2 = Math.imul(h2 ^ (h2>>>16), 2246822507) ^ Math.imul(h1 ^ (h1>>>13), 3266489909);
+        return 4294967296 * (2097151 & h2) + (h1>>>0);
+    };
 
     const username = req.body.username;
     const email = req.body.email;
-    const password = req.body.password;
+    const password = cyrb53(req.body.password);
     const hintQuestion = req.body.hintQuestion;
-    const hintAnswer = req.body.hintAnswer;
+    const hintAnswer = cyrb53(req.body.hintAnswer);
 
     const sqlCheck = "SELECT * FROM login_details WHERE Email_Id = ?";
     db.query(sqlCheck, [email], (err, result) => {
@@ -108,8 +119,22 @@ app.post('/api/signup', (req, res) => {
 })
 
 app.post('/api/login', (req, res) => {
+
+    const cyrb53 = function(str, seed = 0) {
+        let h1 = 0xdeadbeef ^ seed, h2 = 0x41c6ce57 ^ seed;
+        for (let i = 0, ch; i < str.length; i++) {
+            ch = str.charCodeAt(i);
+            h1 = Math.imul(h1 ^ ch, 2654435761);
+            h2 = Math.imul(h2 ^ ch, 1597334677);
+        }
+        h1 = Math.imul(h1 ^ (h1>>>16), 2246822507) ^ Math.imul(h2 ^ (h2>>>13), 3266489909);
+        h2 = Math.imul(h2 ^ (h2>>>16), 2246822507) ^ Math.imul(h1 ^ (h1>>>13), 3266489909);
+        return 4294967296 * (2097151 & h2) + (h1>>>0);
+    };
+
+
     const email = req.body.email;
-    const password = req.body.password;
+    const password = cyrb53(req.body.password);
 
     const sqlCheck = "SELECT * FROM login_details WHERE Email_Id = ? AND Password = ?";
     db.query(sqlCheck, [email, password], (err, result) => {
@@ -150,10 +175,22 @@ app.post('/api/warehouse/get_products', (req, res) => {
     
 }) 
 app.post('/api/Menu/AccountSettings', (req, res) => {
+
+    const cyrb53 = function(str, seed = 0) {
+        let h1 = 0xdeadbeef ^ seed, h2 = 0x41c6ce57 ^ seed;
+        for (let i = 0, ch; i < str.length; i++) {
+            ch = str.charCodeAt(i);
+            h1 = Math.imul(h1 ^ ch, 2654435761);
+            h2 = Math.imul(h2 ^ ch, 1597334677);
+        }
+        h1 = Math.imul(h1 ^ (h1>>>16), 2246822507) ^ Math.imul(h2 ^ (h2>>>13), 3266489909);
+        h2 = Math.imul(h2 ^ (h2>>>16), 2246822507) ^ Math.imul(h1 ^ (h1>>>13), 3266489909);
+        return 4294967296 * (2097151 & h2) + (h1>>>0);
+    };
    
     const email = req.body.email;
-    const oldPassword = req.body.oldPassword;
-    const password = req.body.password;
+    const oldPassword = cyrb53(req.body.oldPassword);
+    const password = cyrb53(req.body.password);
     
 
     const sqlCheck = "SELECT * FROM login_details WHERE Email_Id = ? AND Password = ?";
@@ -162,28 +199,39 @@ app.post('/api/Menu/AccountSettings', (req, res) => {
         console.log(oldPassword);
         console.log(password);
 
-        if(oldPassword != sqlCheck)
-        {
-            return res.send("Invalid Old Password");
-
-        }
-
-        if(result.length > 0) {
-            return res.send("User already registered with this Email and Password");
-        }
-
-        else{
             const sqlCheck = "UPDATE login_details SET Password = ? WHERE Email_Id = ?";
             db.query(sqlCheck, [password, email], (err, result) => {
-            console.log(err);
-            // res.send(result);
+            console.log(result);
+            res.send(result);
             })
-        }
        
     })
     
 
  
+})
+
+
+app.post('/api/ForgetPassword/UpdatePassword', (req, res) => {
+    const cyrb53 = function(str, seed = 0) {
+        let h1 = 0xdeadbeef ^ seed, h2 = 0x41c6ce57 ^ seed;
+        for (let i = 0, ch; i < str.length; i++) {
+            ch = str.charCodeAt(i);
+            h1 = Math.imul(h1 ^ ch, 2654435761);
+            h2 = Math.imul(h2 ^ ch, 1597334677);
+        }
+        h1 = Math.imul(h1 ^ (h1>>>16), 2246822507) ^ Math.imul(h2 ^ (h2>>>13), 3266489909);
+        h2 = Math.imul(h2 ^ (h2>>>16), 2246822507) ^ Math.imul(h1 ^ (h1>>>13), 3266489909);
+        return 4294967296 * (2097151 & h2) + (h1>>>0);
+    };
+    
+    const newPassword = cyrb53(req.body.newPassword);
+    const emailId = req.body.email;
+
+    db.query('UPDATE login_details SET Password = ? WHERE Email_Id = ?', [newPassword, emailId], (err, result) =>{
+        console.log(result)
+        res.send(result);
+    })
 })
 
 

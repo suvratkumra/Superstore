@@ -3,10 +3,11 @@ import './ForgotPassword.js.css';
 import {useState, useEffect} from 'react';
 import Axios from 'axios';
 import * as ReactDOM from 'react-dom';
+import { validEmail, validPassword } from '../HelpPages/RegEx';
 
 export default function ForgotPassword() {
   
-  const initialValues = {email: "", hintQuestion: "", hintAnswer: "", passwordRetrived:""};
+  const initialValues = {email: "", hintQuestion: "", hintAnswer: "", passwordRetrived:"", password: ""};
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
@@ -31,6 +32,7 @@ export default function ForgotPassword() {
         if(res.data.length > 1) {
           setDataDisplay(false);      // the user does not exist with this email
           setEmailDoesntExist(true);    // cuz the email id does not exist in the database
+          window.location.href = "http://localhost:3000/ForgotPassword";
         }
         else {
           setFormValues({...formValues, hintQuestion: Object.values(res.data[0])})
@@ -53,13 +55,25 @@ export default function ForgotPassword() {
         console.log(res.data);
         if(res.data == "Wrong Answer to your question.") {
           setFormErrors({"wrongAnswer": "The Answer is wrong"});
+          window.location.href = "http://localhost:3000/ForgotPassword";
         }
         else{
           setFormValues({...formValues, passwordRetrived: Object.values(res.data[0])})
           console.log(formValues.passwordRetrived)
+         
         } 
         })
       }
+  }
+
+  const changePassword = () => {
+    Axios.post('http://localhost:3001/api/ForgetPassword/UpdatePassword', {
+      newPassword: formValues.password,
+      email: formValues.email
+    }).then((res) =>{ console.log(res.data)
+    
+      window.location.href = "http://localhost:3000/";
+    })
   }
 
 
@@ -68,6 +82,12 @@ export default function ForgotPassword() {
     if(!values.email) {
       errors.email = "Email is required!";
     }
+    if(!validPassword.test(values.password))
+      errors.password = "Password is of invalid type";
+    if(!validEmail.test(values.email))
+      errors.email = "Email is of invalid type";
+    if(!values.password) 
+      errors.password = "Password is empty"
     return errors;
   }
 
@@ -117,7 +137,13 @@ export default function ForgotPassword() {
          <br/>
          {(formValues.passwordRetrived.length > 0) &&
          <div>
-           <span id = "displayPassword__text">Your Password is: {formValues.passwordRetrived}</span>
+           <span id = "displayPassword__text">Enter your new Password:</span>
+           <input type = "password" 
+            name = "password"
+            placeholder='Password' 
+            value = { formValues.password }
+            onChange= {handleChange}/>
+            <button className= 'button-29' onClick = {changePassword()}>Change Password</button>
            <br/>
            <span id = "login__below"><a href = "/WelcomePage">Login</a></span>
           </div>

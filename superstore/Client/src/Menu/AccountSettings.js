@@ -24,7 +24,7 @@ function AccountSettings() {
     
     if(formValues.email.length !== 0 && formValues.oldPassword.length !== 0 && formValues.password.length !== 0)
       setIsSubmit(true);  
-      window.location.href = "http://localhost:3000/Menu/AccountSettings";
+      // window.location.href = "http://localhost:3000/Menu/AccountSettings";
     
   }
 

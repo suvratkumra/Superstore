@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import '../css/Home.css';     // two dots because you have to go to previous directory first
 import MainPage from '../mainPage/main';
 import Axios from 'axios'
-
+import  {emailExists} from '../Authentication/signup'
 import { validEmail, validPassword } from '../HelpPages/RegEx'      // for regex  
 
 
@@ -76,6 +76,8 @@ function WelcomePage() {
 
   return (
     <>
+    {console.log(emailExists)}
+    {emailExists && <div>This Email Already Exists. Log in Below</div>}
     <div className='body'>
       <div className='name__container'>
           <span className = "superstore_name">WELCOME </span>

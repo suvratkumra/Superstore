@@ -5,6 +5,8 @@ import Axios from 'axios'
 import {validAnswer, validEmail, validPassword, validUsername} from '../HelpPages/RegEx'
 
 
+var emailExists = false;
+
 function Signup() {
 
   const initialValues = {email:"", password:"", username:"", confirmPassword:"", hintQuestion:"", hintAnswer:""};
@@ -41,6 +43,10 @@ function Signup() {
       hintQuestion: formValues.hintQuestion,
       hintAnswer: formValues.hintAnswer
       }).then((res) => {
+        if(res.data === "User already registered with this Email") {
+          
+          window.location.href = "http://localhost:3000/WelcomePage";
+        }
         console.log(res.data);
         setDataFetched(res.data);
       })    
@@ -86,10 +92,10 @@ function Signup() {
     if(!values.hintAnswer){
       errors.hintAnswer = "Please enter the password";
     }
-    if(Object.keys(formErrors).length === 0)
+    if(Object.keys(errors).length === 0)
       setIsSubmit(true);  
 
-    console.log(Object.keys(values).length, isSubmit);
+    console.log(Object.keys(formErrors).length, isSubmit);
     return errors;
   };
 
@@ -154,10 +160,10 @@ function Signup() {
      
      <br/> <br/>
 
-      <label for = "hintAnswer">Hint Answer*: </label>
+      <label for = "hintAnswer">Answer*: </label>
       <input type = "text" 
         name = "hintAnswer" 
-        placeholder='Hint Question'
+        placeholder='Answer'
         value = { formValues.hintAnswer }
         onChange={handleChange} />
       <p>{ formErrors.hintAnswer }</p>
@@ -170,3 +176,5 @@ function Signup() {
 }
 
 export default Signup;
+
+export {emailExists};
