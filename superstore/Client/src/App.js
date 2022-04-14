@@ -26,6 +26,7 @@ import Warehouse from "./Manager_Warehouse/Warehouse";
 import AccountSettings from "./Menu/AccountSettings";
 
 import Cart from "./Cart/Cart";
+import Thankyou from "./Thankyou"
 
 
 
@@ -55,6 +56,7 @@ return(
       <Route path="/Departments/Household" element={<Household />} />
       <Route path="/Departments/Kid_Clothes" element={<Kid_Clothes />} />
       <Route path="/ForgotPassword" element={<ForgotPassword />} />
+      <Route path="/Thankyou" element={<Thankyou />} />
       <Route path="/Manager" element={<Manager />} />
       <Route path="/Warehouse" element={<Warehouse />} />
 

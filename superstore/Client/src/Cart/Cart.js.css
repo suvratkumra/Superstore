@@ -1,5 +1,10 @@
 #cartOverall__container {
+    display: grid;
+    grid-template-columns: 9fr 1fr;
     background-color: white;
+    align-items: center;
+    max-height: 150px;
+    margin-bottom: 2%;
 }
 
 .cart__Heading {
@@ -24,14 +29,184 @@
     display: grid;
     grid-template-columns: 3fr 2fr;
     column-gap: 5%;
+    
 }
 
 #products_section__container {
-    background-color: black;
-    color:white;
+    background-color: white;
+    color:black;
+    border-radius: 30px;
+    margin-left: 2%;
+    
 }
 
-#price_sectino__container {
+#heading__container_cart { 
+    display: flex;
+    flex-direction: row;
+    font-size: xx-large;
+    font-weight: bold;
+    justify-content: space-around;
+    color: black;
+    background-color: white;
+    margin-bottom:2%;
+    margin-left: 2%;
+    border-radius: 30px;
+    padding-bottom: 1%;
+    padding-top: 1%
+}
+
+#price_section__container {
+    background-color: white;
+    color:black;
+    border-radius: 30px;
+    margin-right: 3%;
+    height: 70%;
+    width: 35%;
+    position: fixed;
+    right:0;
+}
+
+#item_displaying__container {
+    display: grid;
+    grid-template-columns: 5fr 3.3fr 1.2fr;
+    margin: 2%;
+    padding: 2%;
+    border: 1.5px solid black;
+    border-radius: 20px;
+    font-weight: 300;
+}
+
+#textBill__text {
+    display: block;
+    font-size: 60px;
+    font-weight: 800;
+    text-align: center;
+    justify-content: center;
+    border: 2px;
+}
+
+#totalSubBill__text {
+    font-size: 50px;
+    width: 90%;
+    margin: 10px auto;
+    background: rgb(60,89,218);
+background: linear-gradient(0deg, rgba(60,89,218,1) 0%, rgba(38,26,227,1) 51%, rgba(118,122,232,1) 100%);
+    color:white;
+    display:block;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+    border-radius: 30px;
+    
+}
+
+#totalBill__text {
+    font-size: 50px;
+    width: 90%;
+    margin: 10px auto;
     background-color: black;
     color:white;
+    display:block;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+    border-radius: 30px;
+}
+
+#payUsing__text {
+    /* font-size: 50px; */
+    width: 90%;
+    margin: 0px auto;
+    background-color: white;
+    color:black;
+    display:block;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+    border-radius: 30px;
+    box-shadow: 10px 5px 5px rgb(255, 255, 255);
+    font-size: xx-large;
+}
+
+img {
+    max-width: 10px;
+    max-height: 10px;
+   }
+
+#buttons__payment { 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+@media screen and (max-width: 1380px){
+    #price_section__container{
+        font-size:20px !important;
+    }
+
+    #textBill__text{
+        font-size: 40px;
+    }
+
+    #payUsing__text {
+        font-size: 20px;
+    }
+
+    #totalBill__text {
+        font-size: 30px;
+    }
+
+    #totalSubBill__text {
+        font-size: 40px;
+    }
+
+    #buttons__payment { 
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 2%;
+        row-gap: 10%;
+        
+    }
+}
+
+@media screen and (max-width: 750px){
+    .cart__Heading {
+        font-size: xx-large;
+    }
+
+    #price_section__container{
+        font-size:15px !important;
+    }
+
+    #textBill__text{
+        font-size: 25px;
+    }
+
+    #payUsing__text {
+        font-size: 15px;
+    }
+
+    #totalBill__text {
+        font-size: 20px;
+    }
+
+    #totalSubBill__text {
+        font-size: 30px;
+    }
+
+    #buttons__payment { 
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+        column-gap: 2%;
+        row-gap: 10%;
+        
+    }
+
+    #price_section__container {
+        max-height: 60%;
+    }
 }

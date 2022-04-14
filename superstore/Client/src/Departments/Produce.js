@@ -40,7 +40,18 @@ export default function Produce() {
       price: price
     }).then((res) => console.log(res.data))
   }
+  function logoutFunction() {
+    Axios.post("http://localhost:3001/api/logout"
+    ).then((res) => {
+      setEmail(res.data);
+      if(email.length === 0) {
+        setContinuing(false);
+      }else {
+        setContinuing(true);
+      }
+    })
 
+  }
   function getEmail(){
     Axios.post("http://localhost:3001/api/getEmail"
     ).then((res) => {
@@ -74,6 +85,8 @@ export default function Produce() {
     <div className='header__container'>
       <div className='superstore__container'>
           <span class = "name1">  SUPERSTORE  </span>
+          <button className="button-29" onClick= {()=>{window.location.href = "http://localhost:3000/Cart"}}>CART</button> 
+          <button className = "button-29" onClick={logoutFunction}>Logout</button>
       </div>  
     </div>
 

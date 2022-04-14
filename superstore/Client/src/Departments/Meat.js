@@ -43,7 +43,18 @@ export default function Meat() {
     }
     )
   }
+  function logoutFunction() {
+    Axios.post("http://localhost:3001/api/logout"
+    ).then((res) => {
+      setEmail(res.data);
+      if(email.length === 0) {
+        setContinuing(false);
+      }else {
+        setContinuing(true);
+      }
+    })
 
+  }
   function addToCartListener(str, quantity, price) {
     console.log(str, quantity);
     Axios.post("http://localhost:3001/api/add_to_cart", {
@@ -72,6 +83,8 @@ export default function Meat() {
     <div className='header__container'>
       <div className='superstore__container'>
           <span class = "name1">  SUPERSTORE  </span>
+          <button className="button-29" onClick= {()=>{window.location.href = "http://localhost:3000/Cart"}}>CART</button> 
+          <button className = "button-29" onClick={logoutFunction}>Logout</button>
       </div>  
     </div>
 
