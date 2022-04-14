@@ -15,21 +15,26 @@ function MainPage(props) {
 
   const [continuing, setContinuing] = useState(false);
   const [email, setEmail] = useState("");
+  const [isEmail, setIsEmail] = useState(false)
 
-  function getEmail(){
-    Axios.post("http://localhost:3001/api/getEmail"
-    ).then((res) => {
-      console.log(res.data);
-      setEmail(res.data)
-      console.log(email.length);
-      if(email.length === 0) {
-        setContinuing(false);
-      }else {
-        setContinuing(true);
-      }
-    }
-    )
-  }
+  useEffect(() => {
+    // function getEmail(){
+        Axios.post("http://localhost:3001/api/getEmail"
+        ).then((res) => {
+          // console.log(res.data);
+          setEmail(res.data)
+          // console.log(email);
+          setIsEmail(true);
+          // console.log(email.length);
+          if(res.length === 0) {
+            setContinuing(false);
+          }else {
+            setContinuing(true);
+          }
+        //   return (setEmail(res.data))
+        })
+      },[isEmail])
+
 
   function logoutFunction() {
     Axios.post("http://localhost:3001/api/logout"
@@ -54,23 +59,21 @@ function MainPage(props) {
     />
 );
   const onChangeHandler = (e) => {
-  
+    // console.log(e.target.value);
     setTextValue({val: e.target.value});
 
-    // this is the data which is updated every second.
-    console.log(textValue.val);
-
     Axios.post("http://localhost:3001/api/search_bar", {
-      textValue: textValue.val
+      textValue: e.target.value
     }).then((res) => {
+      console.log(res.data)
       setDataRetrieved([]);       // resetting
       res.data.forEach(element => {
         for(let key in element) {
           setDataRetrieved(dataRetrieved => [...dataRetrieved, element[key]]);
-          setQuantity({...quantity, [element[key]]: 0})
+          setQuantity({[element[key]]: 0})
         }
       })
-      console.log(quantity);
+      //console.log(quantity);
       
     })
   }
@@ -91,13 +94,13 @@ function MainPage(props) {
       email: email
     }).then((res) => console.log(res.data));
 
-    console.log(itemName);
+    // console.log(itemName);
   }
 
 
   return (
     <>
-    { getEmail() }
+    {/* {email} */}
 
     {!continuing && <div id = "errorPage__container">
         <span id = "textError__text">You successfully signed out... <br/> <br/> Sign back in by clicking the link below... <br/></span>
@@ -136,7 +139,7 @@ function MainPage(props) {
       
     </div>
     </div>
-
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/>
     <div className='search__container'>
       <div className='searchbar_withImage'>
         <div className='searchbar__container'>

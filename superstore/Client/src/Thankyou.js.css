@@ -1,0 +1,8 @@
+.thankyou__container{
+    display: flex;
+    flex-direction: column;
+    padding: 10%;
+    justify-content: center;
+    text-align: center;
+    font-size: 100px;
+}

@@ -24,6 +24,7 @@ import Household from "./Departments/Household";
 import Manager from "./Manager_Warehouse/Manager";
 import Warehouse from "./Manager_Warehouse/Warehouse";
 import Cart from "./Cart/Cart";
+import Thankyou from "./Thankyou"
 
 function App() {
 
@@ -51,6 +52,7 @@ return(
       <Route path="/Departments/Household" element={<Household />} />
       <Route path="/Departments/Kid_Clothes" element={<Kid_Clothes />} />
       <Route path="/ForgotPassword" element={<ForgotPassword />} />
+      <Route path="/Thankyou" element={<Thankyou />} />
       <Route path="/Manager" element={<Manager />} />
       <Route path="/Warehouse" element={<Warehouse />} />
       <Route path="/Cart" element={<Cart />} />

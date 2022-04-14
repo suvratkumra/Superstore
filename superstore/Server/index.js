@@ -189,23 +189,31 @@ app.post("/api/cart", (req, res) => {
     const product_name = req.body.name;
     const emailId = req.body.email;
     const quantity = req.body.quantity + 1;
-    const price = req.body.price;
-    // console.log(product_name, quantity);
+    
+    var price = 0.00;
+    db.query("SELECT price FROM product_details WHERE PName = ?", [product_name], (err, result)=>{
+        console.log(result);
+        price = Object.values(result[0])[0];
+        // console.log(Object.values(price[0])[0])
+    })
+    
+    
+    console.log(product_name, quantity, price);
 
     const checkQuery = "SELECT email, added_products FROM cart_details WHERE email = ? AND added_products = ?";
     db.query(checkQuery, [emailId, product_name], (err, result) => {
-        console.log(result.length);        // this will undefined if no value with these property exists
+        console.log(err);        // this will undefined if no value with these property exists
         if(result.length === 0) {
             const sqlQuery = "INSERT INTO cart_details (email, added_products, price, quantity) VALUES (?, ?, ?, ?)"; 
             db.query(sqlQuery, [emailId, product_name, price, quantity], (err2, result2) => {
-                console.log(result);
+                // console.log(result);
                 res.send("12");
             })
         } else {
             const updateQuery = "UPDATE cart_details SET quantity = ? WHERE email = ? AND added_products = ?";
             db.query(updateQuery, [quantity, emailId, product_name], (err3, result3) => {
-                console.log("added");
-                res.send("12");
+                // console.log("added");
+                res.send("122");
             })
         }
     })
@@ -256,6 +264,15 @@ app.post('/api/getCart', (req, res) => {
 
     const sqlQuery = "SELECT * FROM cart_details WHERE email = ?";
     db.query(sqlQuery, [emailExtracted], (err, result) => {
+        console.log(result);
+        res.send(result);
+    })
+})
+
+app.post('/api/Cart/Delete_Queries', (req, res) => {
+    const emailExtracted = req.body.email;
+
+    db.query("DELETE FROM cart_details WHERE email = ?", [emailExtracted], (err, result) => {
         console.log(result);
         res.send(result);
     })

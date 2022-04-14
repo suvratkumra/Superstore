@@ -9,6 +9,11 @@
 }
 
 .superstore__container {
+    display: grid;
+    grid-template-columns: 17fr 1fr 1fr;
+    column-gap: 3%;
+    justify-content: center;
+    align-items: center;
     font-weight: 600;
     color: white;
 }
@@ -60,6 +65,29 @@
     row-gap: 30px;
     border-style: inset;
     border-radius: 10px;
+}
+
+@media screen and (max-width: 1400px) {
+    .superstore__container {
+        grid-template-columns: 10fr 1fr 1fr;
+        column-gap: 3%;
+        
+    }
+    
+    .bigProducts__container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    .name1 {
+        font-size: 40px;
+        font-family: 'Libre Baskerville', serif;
+    }
+    .bigProducts__container {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 .item__container {

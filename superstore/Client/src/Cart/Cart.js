@@ -14,6 +14,19 @@ export default function Cart() {
     // const [totalBill, setTotalBill] = useState(0.00)
   var totalBill = 0;
 
+  function logoutFunction() {
+    Axios.post("http://localhost:3001/api/logout"
+    ).then((res) => {
+      setEmail(res.data);
+      if(email.length === 0) {
+        setContinuing(false);
+      }else {
+        setContinuing(true);
+      }
+    })
+
+  }
+
 
 useEffect(() => {
     // function getEmail(){
@@ -47,7 +60,11 @@ useEffect(() => {
 }, [isEmail, isObject])
     
 
-    
+    const deleteQueries = () => {
+      Axios.post("http://localhost:3001/api/Cart/Delete_Queries", {
+        email: email
+      }).then((res) => console.log(res));
+    }
     
     return(
         <>
@@ -64,7 +81,9 @@ useEffect(() => {
     {continuing && <div>
         <div id = "cartOverall__container">
             <span className='cart__Heading'>YOUR CART</span>
+            <button className = "button-29" onClick={logoutFunction}>Logout</button>
         </div>
+        
         <div id = "products_and_prices__container">
           <div id = "heading__container_cart">
             <span>Product Name</span>
@@ -105,11 +124,11 @@ useEffect(() => {
                 <div id = "payUsing__text">
                   Pay Using:<br/><br/>
                   <div id = "buttons__payment">
-                    <button className= "button-29" onClick = {"#"}>CRYPTO</button>
-                    <button className= "button-29" onClick = {"#"}>VISA</button>
-                    <button className= "button-29" onClick = {"#"}>INSTADEBIT</button>
-                    <button className= "button-29" onClick = {"#"}>PAYPAL</button>
-                    <button className= "button-29" onClick = {"#"}>MASTERCARD</button>
+                    <button className= "button-29" onClick = {() => {window.location.href = "http://localhost:3000/Thankyou"; deleteQueries()}}>GIFT CARD</button>
+                    <button className= "button-29" onClick = {() => {window.location.href = "http://localhost:3000/Thankyou"; deleteQueries()}}>VISA</button>
+                    <button className= "button-29" onClick = {() => {window.location.href = "http://localhost:3000/Thankyou"; deleteQueries()}}>INSTADEBIT</button>
+                    <button className= "button-29" onClick = {() => {window.location.href = "http://localhost:3000/Thankyou"; deleteQueries()}}>PAYPAL</button>
+                    <button className= "button-29" onClick = {() => {window.location.href = "http://localhost:3000/Thankyou"; deleteQueries()}}>MASTERCARD</button>
                   </div>
                   
                   </div>

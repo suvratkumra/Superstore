@@ -5,11 +5,20 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+
 .header__container_in_main {
-  display: flex;
-  flex-direction: row;
+  z-index: 999;
+  background: rgb(102,125,231);
+  background: linear-gradient(0deg, rgba(102,125,231,1) 0%, rgba(139,133,236,1) 51%, rgba(99,104,236,1) 100%);
+  overflow: hidden;
+  padding-left: 2%;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;display: grid;
+  grid-template-columns: 18fr 2fr 1fr 1fr;
+  column-gap:5%;
   align-items: center;
-  border: 3px black solid;
   border-radius: 10px;
   justify-content: space-around;
 }
@@ -47,6 +56,7 @@
 #buttonsForAddToCart {
   font-size: xx-large;
 }
+
 
 /* CSS */
 .button-29 {
@@ -226,9 +236,13 @@ img {
   height: 40px;
 }
 
-@media screen and (max-width:1300px) {
+@media screen and (max-width:1000px) {
   .menu__container{
     margin-right: 40px;
+  }
+
+  .superstore{
+    font-size: 50%;
   }
   
   .cart__container {
@@ -252,18 +266,13 @@ img {
     rgba(0, 0, 0, 0));
   
   }
+
   
   .buttonStyle:hover {
     background-color: rgb(87, 3, 241);
   }
 }
 
-.departments__container {
-  display:flex;
-  justify-content: center;
-  flex-direction: column;
-  padding-top:30px
-}
 
 .departments__container {
   align-items: center;
@@ -271,6 +280,10 @@ img {
   color:white;
   font-weight: 900;
   font-size: 3rem;
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-top:30px
 }
 
 .row1__container {
@@ -336,7 +349,7 @@ img {
   justify-content: center;
   flex-direction: row;
 }
-@media screen and (max-width:900px) {
+@media screen and (max-width:1100px) {
 .buttonStyle {
     display: flex;
     align-items: center;
