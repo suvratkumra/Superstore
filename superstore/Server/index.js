@@ -140,7 +140,7 @@ app.post('/api/login', (req, res) => {
     db.query(sqlCheck, [email, password], (err, result) => {
         if(result.length != 0) {
             emailConstant = email;
-            return res.send("User Found, redirecting to the store page");
+            res.send("User Found, redirecting to the store page");
         }
     
     })
@@ -293,13 +293,13 @@ app.post("/api/cart", (req, res) => {
             const sqlQuery = "INSERT INTO cart_details (email, added_products, price, quantity) VALUES (?, ?, ?, ?)"; 
             db.query(sqlQuery, [emailId, product_name, price, quantity], (err2, result2) => {
                 // console.log(result);
-                res.send("12");
+                res.send(result2);
             })
         } else {
             const updateQuery = "UPDATE cart_details SET quantity = ? WHERE email = ? AND added_products = ?";
             db.query(updateQuery, [quantity, emailId, product_name], (err3, result3) => {
                 // console.log("added");
-                res.send("122");
+                res.send(result3);
             })
         }
     })
@@ -332,13 +332,13 @@ app.post("/api/add_to_cart", (req, res) => {
             const sqlQuery = "INSERT INTO cart_details (email, added_products, price, quantity) VALUES (?, ?, ?, ?)"; 
             db.query(sqlQuery, [emailId, product_name, price, quantity], (err2, result2) => {
                 console.log(result);
-                res.send("12");
+                res.send("The Item has been added to the cart");
             })
         } else {
             const updateQuery = "UPDATE cart_details SET quantity = ? WHERE email = ? AND added_products = ?";
             db.query(updateQuery, [quantity, emailId, product_name], (err3, result3) => {
                 console.log("added");
-                res.send("12");
+                res.send("The quantity of the product is updated");
             })
         }
     })

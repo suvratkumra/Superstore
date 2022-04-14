@@ -14,6 +14,7 @@ export default function ForgotPassword() {
   const [dataFetched, setDataFetched] = useState('');
   const [dataDisplay, setDataDisplay] = useState(false);
   const [emailDoesntExist, setEmailDoesntExist] = useState(false);
+  const [isContinuing, setContinuing] = useState(false);
 
   const handleChange = (e) => {
     const {name, value} = e.target;
@@ -36,6 +37,7 @@ export default function ForgotPassword() {
         }
         else {
           setFormValues({...formValues, hintQuestion: Object.values(res.data[0])})
+          setContinuing(true);
           console.log(res.data);
           setDataDisplay(true);
         }
@@ -58,6 +60,7 @@ export default function ForgotPassword() {
           window.location.href = "http://localhost:3000/ForgotPassword";
         }
         else{
+          // setContinuing(true);
           setFormValues({...formValues, passwordRetrived: Object.values(res.data[0])})
           console.log(formValues.passwordRetrived)
          
@@ -130,13 +133,13 @@ export default function ForgotPassword() {
             value = { formValues.hintAnswer }
             onChange= {handleChange} />
             <p>{ formErrors.hintAnswer }</p>
+            {console.log(formErrors)}
             <p>{ formErrors.wrongAnswer }</p>
             <button type = "submit" id = "submitEmail__button"> Submit </button>
       </form>
          }
-         {console.log(formValues.passwordRetrived)}
          <br/>
-         {(formValues.passwordRetrived.length > 0) &&
+         {isContinuing &&
          <div>
            <span id = "displayPassword__text">Enter your new Password:</span>
            <input type = "password" 
