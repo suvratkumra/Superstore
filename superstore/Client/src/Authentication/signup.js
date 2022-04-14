@@ -1,11 +1,9 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import '../css/signup.css'
 import Axios from 'axios'
-import {Navigate} from 'react-router-dom';
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import MainPage from '../mainPage/main';
+import {validAnswer, validEmail, validPassword, validUsername} from '../HelpPages/RegEx'
+
 
 function Signup() {
 
@@ -24,8 +22,8 @@ function Signup() {
     e.preventDefault();       // so that page doesnt refresh on submit
     setFormErrors(validate(formValues));
     
-    if(formValues.username.length !== 0 && formValues.email.length !== 0 && formValues.password.length !== 0)
-      setIsSubmit(true);  
+    // if(formValues.username.length !== 0 && formValues.email.length !== 0 && formValues.password.length !== 0)
+      
     console.log(isSubmit);
     if(isSubmit){
       window.location.href = "http://localhost:3000/MainPage";
@@ -33,6 +31,8 @@ function Signup() {
   }
 
   useEffect((values) => {
+    
+
     if(Object.keys(formErrors).length === 0 && isSubmit) {
       Axios.post("http://localhost:3001/api/signup", {
       username:formValues.username,
@@ -45,13 +45,26 @@ function Signup() {
         setDataFetched(res.data);
       })    
     }
-    setDataFetched('');
-    if(dataFetched.length === 0 && formValues.username.length !== 0 && formValues.email.length !== 0 && formValues.password.length !== 0)
-     setIsSubmit(true);
+    
   },[formErrors]);
 
   const validate = (values) => {
     const errors = {};
+    if(!validEmail.test(values.email)){
+      errors.email = "Email is Invalid type";
+    }
+    if(!validPassword.test(values.password)){
+      errors.password = "Password is Invalid type";
+    }
+    if(!validUsername.test(values.username)){
+      errors.username = "Username is Invalid type";
+    }
+    if(!validPassword.test(values.confirmPassword)){
+      errors.confirmPassword = "Password is Invalid type";
+    }
+    if(!validAnswer.test(values.hintAnswer)){
+      errors.hintAnswer = "The Answer is not a text."
+    }
     if(!values.email) {
       errors.email = "Email is required!";
     }
@@ -73,6 +86,10 @@ function Signup() {
     if(!values.hintAnswer){
       errors.hintAnswer = "Please enter the password";
     }
+    if(Object.keys(formErrors).length === 0)
+      setIsSubmit(true);  
+
+    console.log(Object.keys(values).length, isSubmit);
     return errors;
   };
 
@@ -83,7 +100,7 @@ function Signup() {
     </div>
     
     <form className = "signup1" onSubmit={handleSubmit}>
-       <p> {dataFetched} </p>
+       {/* <p> {dataFetched} </p> */}
       <label for = "username">Username*: </label>
       <input type = "text" 
         name = "username" 

@@ -4,15 +4,25 @@ import '../css/Home.css';     // two dots because you have to go to previous dir
 import MainPage from '../mainPage/main';
 import Axios from 'axios'
 
+import { validEmail, validPassword } from '../HelpPages/RegEx'      // for regex  
+
 
 
 function WelcomePage() {
+
+  const validEmail = new RegExp(
+    '^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$'
+  );
+  const validPassword = new RegExp('^(?=.*?[A-Za-z])(?=.*?[0-9]).{6,}$');
 
   const initialValues = {email:"", password:""};
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
   const [dataFetched, setDataFetched] = useState('');
+  
+  const [emailErr, setEmailErr] = useState(false);
+  const [pwdError, setPwdError] = useState(false);
 
 
   const handleChange = (e) => {
@@ -54,6 +64,12 @@ function WelcomePage() {
     }
     if (!values.password) {
       errors.password = "Password is required!";
+    }
+    if(!validEmail.test(values.email)){
+      errors.email = "Email is Invalid type";
+    }
+    if(!validPassword.test(values.password)) {
+      errors.password = "Password is Invalid Type."
     }
     return errors;
   };

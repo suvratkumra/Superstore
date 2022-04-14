@@ -2,7 +2,6 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import './Cart.js.css';     // two dots because you have to go to previous directory first
 import Axios from 'axios'
-import PaymentMethod from '../images/PaymentMethod.png'
 
 export default function Cart() {
     
@@ -102,7 +101,7 @@ useEffect(() => {
               <span id = "itemName__name">${(Object.values(item).at(2)*Object.values(item).at(3)).toFixed(2)}</span>
               <span id = "itemName__name">{Object.values(item).at(3)}</span>
                 
-            </div>
+              </div>
             }) }
             </div>
 

@@ -145,13 +145,17 @@ p {
     text-decoration: none;
 }   
 
-.footer__manager_guest {
-    font-size: 2rem;
-    display: flex;
-    position: absolute;
-    margin-left: 45%;
-    margin-top: 25%;
-    justify-content: space-around;
+.footer__manager_guest{
+    font-size: xx-large;
+    left: 10%;
+    display: block;
+    position: fixed;
+    bottom: 5%;
+    margin-left:25%;
+}
+
+@media screen and (max-width: 1550px) {
+    
 }
 
 #new_user {

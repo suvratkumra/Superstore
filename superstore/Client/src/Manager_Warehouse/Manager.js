@@ -3,6 +3,7 @@ import './Manager.js.css';
 import {useState, useEffect} from 'react';
 import Axios from 'axios';
 import * as ReactDOM from 'react-dom';
+import {validEmail, validPassword} from '../HelpPages/RegEx'
 
 export default function Manager() {
     const initialValues = {email:"", password:""};
@@ -53,6 +54,12 @@ export default function Manager() {
     }
     if (!values.password) {
       errors.password = "Password is required!";
+    }
+    if(!validEmail.test(values.email)){
+      errors.email = "Email is Invalid type";
+    }
+    if(!validPassword.test(values.password)) {
+      errors.password = "Password is Invalid Type."
     }
     return errors;
   };

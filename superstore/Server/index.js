@@ -89,21 +89,22 @@ app.post('/api/signup', (req, res) => {
     const hintQuestion = req.body.hintQuestion;
     const hintAnswer = req.body.hintAnswer;
 
-    
-
     const sqlCheck = "SELECT * FROM login_details WHERE Email_Id = ?";
     db.query(sqlCheck, [email], (err, result) => {
+        console.log(result.length);
         if(result.length > 0) {
-            return res.send("User already registered with this Email");
+            res.send("User already registered with this Email");
+        }
+        else {
+            const sqlInsert = "INSERT INTO login_details (Username, Email_Id, Password, Hint_Question, Hint_Answer) VALUES (?,?,?,?,?);";
+            //console.log(sqlInsert, [username, email, password]);
+            db.query(sqlInsert, [username, email, password, hintQuestion, hintAnswer], (err, result) => {
+                res.send("successful")
+            })
         }
     })
 
-    const sqlInsert = "INSERT INTO login_details (Username, Email_Id, Password, Hint_Question, Hint_Answer) VALUES (?,?,?,?,?);";
-    //console.log(sqlInsert, [username, email, password]);
-    db.query(sqlInsert, [username, email, password, hintQuestion, hintAnswer], (err, result) => {
-      //  console.log(result);
-      res.send("12");
-    })
+    
 })
 
 app.post('/api/login', (req, res) => {

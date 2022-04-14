@@ -49,15 +49,7 @@ function MainPage(props) {
 
   }
 
-  const ColoredLine = ({ color }) => (
-    <hr
-        style={{
-            color: color,
-            backgroundColor: color,
-            height: 5
-        }}
-    />
-);
+  
   const onChangeHandler = (e) => {
     // console.log(e.target.value);
     setTextValue({val: e.target.value});
@@ -164,12 +156,6 @@ function MainPage(props) {
             
           }) }
 
-
-          
-    
-
-    
-          
 
         </div>
         <div className='search__image'>

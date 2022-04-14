@@ -1,12 +1,10 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import './AccountSettings.css'
 import Axios from 'axios'
-import {Navigate} from 'react-router-dom';
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 import pic from '../images/team-male.png';
+import {validEmail, validPassword} from '../HelpPages/RegEx'
 
 function AccountSettings() {
 
@@ -55,7 +53,18 @@ function AccountSettings() {
     if (!values.oldPassword) {
       errors.oldPassword = "Old Password is required!";
     }
-
+    if(!validEmail.test(values.email)){
+      errors.email = "Email is Invalid type";
+    }
+    if(!validPassword.test(values.oldPassword)) {
+      errors.oldPassword = "Password is Invalid Type."
+    }
+    if(!validPassword.test(values.confirmPassword)) {
+      errors.confirmPassword = "Password is Invalid Type."
+    }
+    if(!validPassword.test(values.password)) {
+      errors.password = "Password is Invalid Type."
+    }
     if (!values.password) {
       errors.password = "Password is required!";
     }
@@ -65,7 +74,6 @@ function AccountSettings() {
     if(!values.confirmPassword){
       errors.confirmPassword = "Please enter the password again";
     }
-    
     return errors;
   };
 
