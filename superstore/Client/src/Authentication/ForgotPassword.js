@@ -113,7 +113,7 @@ export default function ForgotPassword() {
             value = { formValues.email }
             onChange= {handleChange} />
             <p>{ formErrors.email }</p>
-        <button type = "submit" id = "submitEmail__button"> Retrieve my data </button>
+        <button type = "submit" id = "submitEmail__button">  Retrieve my data </button>
       </form>
       
         <br/><br/>
@@ -136,7 +136,7 @@ export default function ForgotPassword() {
          }
          {console.log(formValues.passwordRetrived)}
          <br/>
-         {(formValues.passwordRetrived.length === 0) &&
+         {(formValues.passwordRetrived.length > 0) &&
          <div>
            <span id = "displayPassword__text">Enter your new Password:</span>
            <input type = "password" 
