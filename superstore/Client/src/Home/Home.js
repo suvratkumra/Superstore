@@ -35,7 +35,7 @@ function WelcomePage() {
     setFormErrors(validate(formValues));
     console.log(dataFetched);
     
-    if(dataFetched.length > 0){ 
+    if(isSubmit){ 
       window.location.href = "http://localhost:3000/MainPage";
     }
   }
@@ -49,8 +49,7 @@ function WelcomePage() {
         setDataFetched(res.data);
         //console.log(dataFetched);
       }) 
-      setDataFetched('')
-      if(dataFetched > 0){
+      if(dataFetched === "User Found, redirecting to the store page"){
         setIsSubmit(true);
       }
     }

@@ -179,10 +179,10 @@ function Warehouse() {
         })
     }
 
-    const handleSubmission = (departmentName) => {
+    const handleSubmission = (departmentName, itemIncrementerValue) => {
         Axios.post("http://localhost:3001/api/warehouse/update_products", {
             departmentName: departmentName,
-            arraySending: itemIncrementerBakery
+            arraySending: itemIncrementerValue
         })
     }
 
@@ -214,7 +214,7 @@ function Warehouse() {
                                     </div>    
                         })}
                         {disable.bakery && 
-                        <button className = "button-84" type="submit" onClick = {() => {handleSubmission("bakery")}} >Submit Order For Bakery</button>
+                        <button className = "button-84" type="submit" onClick = {() => {handleSubmission("bakery", {itemIncrementerBakery})}} >Submit Order For Bakery</button>
                         }   
                         </div>
                         
@@ -240,7 +240,7 @@ function Warehouse() {
                                     </div>    
                         })}
                         {disable.meat_seafood && 
-                        <button className = "button-84" type="submit" onClick = {() => {handleSubmission("Meat/Seafood")}} >Submit Order For Meat/Seafood</button>
+                        <button className = "button-84" type="submit" onClick = {() => {handleSubmission("Meat/Seafood", {itemIncrementerMeat})}} >Submit Order For Meat/Seafood</button>
                         }   
                         </div>
                     </div>
@@ -264,7 +264,7 @@ function Warehouse() {
                                     </div>    
                         })}
                         {disable.dairy_eggs && 
-                        <button className = "button-84" type="submit" onClick = {() => {handleSubmission("Dairy/Eggs")}} >Submit Order For Dairy/Eggs</button>
+                        <button className = "button-84" type="submit" onClick = {() => {handleSubmission("Dairy/Eggs", {itemIncrementerDairy})}} >Submit Order For Dairy/Eggs</button>
                         }   
                         </div>
                         
@@ -289,7 +289,7 @@ function Warehouse() {
                                     </div>    
                         })}
                         {disable.cosmetics && 
-                        <button className = "button-84" type="submit" onClick = {() => {handleSubmission("Cosmetics")}} >Submit Order For Cosmetics</button>
+                        <button className = "button-84" type="submit" onClick = {() => {handleSubmission("Cosmetics", {itemIncrementerCosmetic})}} >Submit Order For Cosmetics</button>
                         }   
                         </div>
                         
@@ -314,7 +314,7 @@ function Warehouse() {
                                     </div>    
                         })}
                         {disable.equipment && 
-                        <button className = "button-84" type="submit" onClick = {() => {handleSubmission("Equipment")}} >Submit Order For Equipment</button>
+                        <button className = "button-84" type="submit" onClick = {() => {handleSubmission("Equipment", {itemIncrementerEquipment})}} >Submit Order For Equipment</button>
                         }   
                         </div>
                         
@@ -341,7 +341,7 @@ function Warehouse() {
                             </div>    
                 })}
                 {disable.produce && 
-                <button className = "button-84" type="submit" onClick = {() => {handleSubmission("Produce")}} >Submit Order For Produce</button>
+                <button className = "button-84" type="submit" onClick = {() => {handleSubmission("Produce", {itemIncrementerProduce})}} >Submit Order For Produce</button>
                 }   
                 </div>
             </div>
@@ -365,7 +365,7 @@ function Warehouse() {
                                     </div>    
                         })}
                         {disable.frozen && 
-                        <button className = "button-84" type="submit" onClick = {() => {handleSubmission("Frozen")}} >Submit Order For Frozen</button>
+                        <button className = "button-84" type="submit" onClick = {() => {handleSubmission("Frozen", {itemIncrementerFrozen})}} >Submit Order For Frozen</button>
                         }   
                         </div>
                     </div>
@@ -389,7 +389,7 @@ function Warehouse() {
                                     </div>    
                         })}
                         {disable.household && 
-                        <button className = "button-84" type="submit" onClick = {() => {handleSubmission("Household")}} >Submit Order For Household</button>
+                        <button className = "button-84" type="submit" onClick = {() => {handleSubmission("Household", {itemIncrementerHouse})}} >Submit Order For Household</button>
                         }   
                         </div>
                     </div>
@@ -413,7 +413,7 @@ function Warehouse() {
                                     </div>    
                         })}
                         {disable.kids_clothes && 
-                        <button className = "button-84" type="submit" onClick = {() => {handleSubmission("Kids Clothes")}} >Submit Order For Clothes (Kids)</button>
+                        <button className = "button-84" type="submit" onClick = {() => {handleSubmission("Kids Clothes", {itemIncrementerKid})}} >Submit Order For Clothes (Kids)</button>
                         }   
                         </div>
                     </div>
@@ -437,7 +437,7 @@ function Warehouse() {
                                     </div>    
                         })}
                         {disable.medical && 
-                        <button className = "button-84" type="submit" onClick = {() => {handleSubmission("Medical")}} >Submit Order For Medical</button>
+                        <button className = "button-84" type="submit" onClick = {() => {handleSubmission("Medical", {itemIncrementerMedical})}} >Submit Order For Medical</button>
                         }   
                         </div>
                     </div>
@@ -465,7 +465,7 @@ function Warehouse() {
                                     </div>    
                         })}
                         {disable.women_clothes && 
-                        <button className = "button-84" type="submit" onClick = {() => {handleSubmission("WomenClothes")}} >Submit Order For Clothes (Women)</button>
+                        <button className = "button-84" type="submit" onClick = {() => {handleSubmission("WomenClothes", {itemIncrementerWomen})}} >Submit Order For Clothes (Women)</button>
                         }   
                         </div>
                     </div>
@@ -490,7 +490,7 @@ function Warehouse() {
                             </div>    
                 })}
                 {disable.men_clothes && 
-                <button className = "button-84" type="submit" onClick = {() => {handleSubmission("MenClothes")}} >Submit Order For Clothes (Men)</button>
+                <button className = "button-84" type="submit" onClick = {() => {handleSubmission("MenClothes", {itemIncrementerMen})}} >Submit Order For Clothes (Men)</button>
                 }   
                 </div>
             </div>
@@ -516,7 +516,7 @@ function Warehouse() {
                             </div>    
                 })}
                 {disable.snacks_candy && 
-                <button className = "button-84" type="submit" onClick = {() => {handleSubmission("Snacks")}} >Submit Order For Snacks</button>
+                <button className = "button-84" type="submit" onClick = {() => {handleSubmission("Snacks", {itemIncrementerSnacks})}} >Submit Order For Snacks</button>
                 }   
                 </div>
             </div>
@@ -542,7 +542,7 @@ function Warehouse() {
                             </div>    
                 })}
                 {disable.toys && 
-                <button className = "button-84" type="submit" onClick = {() => {handleSubmission("Toys")}} >Submit Order For Toys</button>
+                <button className = "button-84" type="submit" onClick = {() => {handleSubmission("Toys", {itemIncrementerToys})}} >Submit Order For Toys</button>
                 }   
                 </div>
             </div>

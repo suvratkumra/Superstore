@@ -38,8 +38,21 @@ app.get('/', (req, res) => {
 })
 
 app.post('/api/reset_password', (req, res) => {
+
+    const cyrb53 = function(str, seed = 0) {
+        let h1 = 0xdeadbeef ^ seed, h2 = 0x41c6ce57 ^ seed;
+        for (let i = 0, ch; i < str.length; i++) {
+            ch = str.charCodeAt(i);
+            h1 = Math.imul(h1 ^ ch, 2654435761);
+            h2 = Math.imul(h2 ^ ch, 1597334677);
+        }
+        h1 = Math.imul(h1 ^ (h1>>>16), 2246822507) ^ Math.imul(h2 ^ (h2>>>13), 3266489909);
+        h2 = Math.imul(h2 ^ (h2>>>16), 2246822507) ^ Math.imul(h1 ^ (h1>>>13), 3266489909);
+        return 4294967296 * (2097151 & h2) + (h1>>>0);
+    };
+
     const email = req.body.email;
-    const hintAnswer = req.body.hintAnswer;
+    const hintAnswer = cyrb53(req.body.hintAnswer);
 
     const extractAnswer = "SELECT Hint_Answer FROM login_details WHERE Email_Id = ?;";
     db.query(extractAnswer, [email], (err, result) => {
@@ -110,7 +123,7 @@ app.post('/api/signup', (req, res) => {
             const sqlInsert = "INSERT INTO login_details (Username, Email_Id, Password, Hint_Question, Hint_Answer) VALUES (?,?,?,?,?);";
             //console.log(sqlInsert, [username, email, password]);
             db.query(sqlInsert, [username, email, password, hintQuestion, hintAnswer], (err, result) => {
-                res.send("successful")
+                res.send("User successfully created.")
             })
         }
     })
@@ -119,7 +132,7 @@ app.post('/api/signup', (req, res) => {
 })
 
 app.post('/api/login', (req, res) => {
-
+//code used from the internet.
     const cyrb53 = function(str, seed = 0) {
         let h1 = 0xdeadbeef ^ seed, h2 = 0x41c6ce57 ^ seed;
         for (let i = 0, ch; i < str.length; i++) {
@@ -138,11 +151,13 @@ app.post('/api/login', (req, res) => {
 
     const sqlCheck = "SELECT * FROM login_details WHERE Email_Id = ? AND Password = ?";
     db.query(sqlCheck, [email, password], (err, result) => {
+        console.log(result);
         if(result.length != 0) {
-            emailConstant = email;
             res.send("User Found, redirecting to the store page");
+        }else{
+            res.send("User with this Email Id and Password does not exist.")
         }
-    
+        emailConstant = email;
     })
 })
 
@@ -241,6 +256,7 @@ app.post('/api/warehouse/update_products', (req, res) => {
     const departmentValue = req.body.departmentName;
     const itemIncrementer = req.body.arraySending;
 
+    
     for (const property in itemIncrementer) {
         //console.log(`${property}: ${itemIncrementerBakery[property]}`);
     
@@ -268,6 +284,7 @@ app.post("/api/search_bar", (req, res) => {
     const sqlQuery = "SELECT PName FROM product_details WHERE PName LIKE '%" + val + "%'" 
     db.query(sqlQuery, [val], (err, result) => {
         res.send(result);
+        console.log(result);
     })
 })
 
